@@ -1,0 +1,12 @@
+torch
+hydra-core
+hydra-submitit-launcher
+hydra-optuna-sweeper
+numpy
+scipy
+numba
+scikit-learn
+g2p_en
+edit_distance
+matplotlib
+jupyter

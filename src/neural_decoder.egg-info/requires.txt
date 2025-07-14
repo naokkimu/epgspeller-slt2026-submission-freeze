@@ -1,0 +1,14 @@
+torch
+hydra-core
+hydra-submitit-launcher
+hydra-optuna-sweeper
+numpy
+scipy
+numba
+scikit-learn
+g2p_en
+edit_distance
+matplotlib
+
+[:python_version < "3.8"]
+importlib-metadata

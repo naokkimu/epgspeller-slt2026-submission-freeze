@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: neural_decoder
+Version: 0.0.1
+Summary: PyTorch neural sequence decoder for speech BCI (https://github.com/fwillett/speechBCI/tree/main/NeuralDecoder)
+Author: Chaofei Fan, Frank Willett
+Author-email: stfan@stanford.edu
+License: MIT
+Platform: Linux
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Requires-Python: >=3.9
+Requires-Dist: importlib-metadata; python_version < "3.8"
+Requires-Dist: torch
+Requires-Dist: hydra-core
+Requires-Dist: hydra-submitit-launcher
+Requires-Dist: hydra-optuna-sweeper
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: numba
+Requires-Dist: scikit-learn
+Requires-Dist: g2p_en
+Requires-Dist: edit_distance
+Requires-Dist: matplotlib
