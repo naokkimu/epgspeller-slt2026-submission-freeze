@@ -33,3 +33,15 @@ dropout: 0.4
 strideLen: 4
 kernelLen: 32
 bidirectional: True
+
+# Augmentation configuration
+aug_conf:
+  time_mask:
+    T: 12
+    p: 0.4
+  electrode_mask:
+    F: 6
+    p: 0.4
+  time_warp:
+    W: 0.2
+    p: 0.2

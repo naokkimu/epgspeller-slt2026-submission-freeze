@@ -62,6 +62,13 @@ def main():
     model_args['bidirectional'] = True
     model_args['l2_decay'] = 1e-5
 
+    # Augmentation configuration
+    model_args['aug_conf'] = {
+        'time_mask': {'T': 12, 'p': 0.4},
+        'electrode_mask': {'F': 6, 'p': 0.4},
+        'time_warp': {'W': 0.2, 'p': 0.2}
+    }
+
     trainModel(model_args)
 
 

@@ -1,9 +1,10 @@
 import torch
 from torch.utils.data import Dataset
+from neural_decoder.augmentations import TimeMask, ElectrodeMask, TimeWarp
 
 
 class SpeechDataset(Dataset):
-    def __init__(self, data, transform=None, sort_by_length=False):
+    def __init__(self, data, transform=None, sort_by_length=False, aug_conf=None):
         self.data = data
         self.transform = transform
         self.n_days = len(data)
@@ -32,6 +33,16 @@ class SpeechDataset(Dataset):
             self.phone_seq_lens = [self.phone_seq_lens[i] for i in sorted_indices]
             self.days = [self.days[i] for i in sorted_indices]
 
+        # Initialize augmentation operations
+        self.aug_ops = []
+        if aug_conf:
+            if aug_conf.get("time_mask"):
+                self.aug_ops.append(TimeMask(**aug_conf["time_mask"]))
+            if aug_conf.get("electrode_mask"):
+                self.aug_ops.append(ElectrodeMask(**aug_conf["electrode_mask"]))
+            if aug_conf.get("time_warp"):
+                self.aug_ops.append(TimeWarp(**aug_conf["time_warp"]))
+
     def __len__(self):
         return self.n_trials
 
@@ -40,6 +51,10 @@ class SpeechDataset(Dataset):
 
         if self.transform:
             neural_feats = self.transform(neural_feats)
+
+        # Apply augmentations
+        for op in self.aug_ops:
+            neural_feats = op(neural_feats)
 
         return (
             neural_feats,

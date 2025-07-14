@@ -16,6 +16,7 @@ from .dataset import SpeechDataset
 def getDatasetLoaders(
     datasetName,
     batchSize,
+    aug_conf=None,
 ):
     with open(datasetName, "rb") as handle:
         loadedData = pickle.load(handle)
@@ -33,7 +34,7 @@ def getDatasetLoaders(
             torch.stack(days),
         )
 
-    train_ds = SpeechDataset(loadedData["train"], transform=None)
+    train_ds = SpeechDataset(loadedData["train"], transform=None, aug_conf=aug_conf)
     test_ds = SpeechDataset(loadedData["test"])
 
     train_loader = DataLoader(
@@ -52,7 +53,7 @@ def getDatasetLoaders(
         pin_memory=True,
         collate_fn=_padding,
     )
-
+    
     return train_loader, test_loader, loadedData
 
 def trainModel(args):
@@ -77,6 +78,7 @@ def trainModel(args):
     trainLoader, testLoader, loadedData = getDatasetLoaders(
         args["datasetPath"],
         args["batchSize"],
+        aug_conf=args.get("aug_conf", None),
     )
 
     model = GRUDecoder(
