@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import Dataset
-from neural_decoder.augmentations import TimeMask, ElectrodeMask, TimeWarp
+from .augmentations import TimeMask, ElectrodeMask, TimeWarp
 
 
 class SpeechDataset(Dataset):
