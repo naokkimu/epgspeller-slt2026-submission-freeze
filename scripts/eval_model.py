@@ -29,6 +29,10 @@ def load_model_and_args(model_path):
     
     # Load model with correct number of days
     model = loadModel(model_path, nInputLayers=n_days)
+    
+    # Ensure model is on CPU first to avoid device conflicts
+    model = model.cpu()
+    
     return model, args
 
 def padding_collate(batch):
@@ -410,7 +414,12 @@ def main():
     
     # Load model and configuration
     model, model_args = load_model_and_args(args.model_path)
+    
+    # Move model to specified device
     model = model.to(args.device)
+    # Ensure all parameters are on the same device
+    for param in model.parameters():
+        param.data = param.data.to(args.device)
     
     # Load dataset
     with open(model_args["datasetPath"], "rb") as f:

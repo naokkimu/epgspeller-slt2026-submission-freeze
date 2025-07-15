@@ -1,0 +1,10 @@
+raw_dataset
+raw_dataset.zip
+data/*
+logs/*
+.archived
+__pycache__/*
+__MACOSX/
+.venv/
+.specstory/
+*.pyc

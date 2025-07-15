@@ -106,14 +106,14 @@ class GRUDecoder(nn.Module):
                 self.layer_dim * 2,
                 transformedNeural.size(0),
                 self.hidden_dim,
-                device=self.device,
+                device=transformedNeural.device,
             ).requires_grad_()
         else:
             h0 = torch.zeros(
                 self.layer_dim,
                 transformedNeural.size(0),
                 self.hidden_dim,
-                device=self.device,
+                device=transformedNeural.device,
             ).requires_grad_()
 
         hid, _ = self.gru_decoder(stridedInputs, h0.detach())

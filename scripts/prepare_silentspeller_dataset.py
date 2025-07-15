@@ -293,39 +293,20 @@ def prepare_silentspeller_dataset(
         ts2vec_params = {**default_ts2vec_params, **ts2vec_params}
 
     # Load and preprocess data
-    print("Loading old dataset...")
-    split_path = "raw_dataset/p1_2328_old_dataset.npz"
+    print("Loading split dataset...")
+    split_path = "raw_dataset/train_test_competition_split.npz"
     split_data = np.load(split_path, allow_pickle=True)
     
     # データの取り出しと電極の選択
     def select_electrodes(data):
-        """電極選択を適用"""
-        if selected_electrodes == set(range(124)):  # 全電極を使用
-            return data
-        selected_indices = sorted(list(selected_electrodes))
-        return [sample[:, selected_indices] for sample in data]
+        return [sample[:, list(selected_electrodes)] for sample in data]
     
-    # データの読み込み（p1_2328_old_dataset.npzの構造に対応）
-    all_data = select_electrodes(split_data['data'])
-    all_labels = split_data['label']
-    
-    # データを手動で分割（80% train, 10% test, 10% competition）
-    n_total = len(all_data)
-    n_train = int(n_total * 0.8)
-    n_test = int(n_total * 0.1)
-    
-    # シャッフル
-    indices = np.random.permutation(n_total)
-    train_indices = indices[:n_train]
-    test_indices = indices[n_train:n_train + n_test]
-    competition_indices = indices[n_train + n_test:]
-    
-    train_data = [all_data[i] for i in train_indices]
-    train_labels = [all_labels[i] for i in train_indices]
-    test_data = [all_data[i] for i in test_indices]
-    test_labels = [all_labels[i] for i in test_indices]
-    competition_data = [all_data[i] for i in competition_indices]
-    competition_labels = [all_labels[i] for i in competition_indices]
+    train_data = select_electrodes(split_data['train_data'])
+    train_label = split_data['train_label']
+    test_data = select_electrodes(split_data['test_data'])
+    test_label = split_data['test_label']
+    competition_data = select_electrodes(split_data['competition_data'])
+    competition_label = split_data['competition_label']
 
     # Adjust training data size if ratio is less than 1.0
     if train_data_ratio < 1.0:
@@ -334,7 +315,7 @@ def prepare_silentspeller_dataset(
         n_selected = int(n_samples * train_data_ratio)
         indices = np.random.RandomState(random_seed).permutation(n_samples)[:n_selected]
         train_data = [train_data[i] for i in indices]
-        train_labels = [train_labels[i] for i in indices]
+        train_label = [train_label[i] for i in indices]
         print(f"Selected {n_selected} samples from {n_samples} original samples")
 
     # Apply lowpass filter if specified
@@ -423,7 +404,7 @@ def prepare_silentspeller_dataset(
     print("Transforming datasets...")
     train_sequences, train_label = transform_data(
         train_data, 
-        train_labels, 
+        train_label, 
         apply_augment=True,
         augment_params=spec_augment_params
     )
@@ -446,7 +427,7 @@ def prepare_silentspeller_dataset(
     test_data = [
         create_session_data(
             test_sequences,
-            test_labels
+            test_label
         )
     ]
     
@@ -454,7 +435,7 @@ def prepare_silentspeller_dataset(
     competition_data = [
         create_session_data(
             competition_sequences,
-            competition_labels
+            competition_label
         )
     ]
     

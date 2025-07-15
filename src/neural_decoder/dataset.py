@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import Dataset
-from .augmentations import TimeMask, ElectrodeMask, TimeWarp
+from neural_decoder.augmentations import TimeMask, ElectrodeMask, TimeWarp
 
 
 class SpeechDataset(Dataset):
@@ -56,10 +56,13 @@ class SpeechDataset(Dataset):
         for op in self.aug_ops:
             neural_feats = op(neural_feats)
 
+        # Update the actual time length after augmentation
+        actual_time_bins = neural_feats.shape[0]
+
         return (
             neural_feats,
             torch.tensor(self.phone_seqs[idx], dtype=torch.int32),
-            torch.tensor(self.neural_time_bins[idx], dtype=torch.int32),
+            torch.tensor(actual_time_bins, dtype=torch.int32),
             torch.tensor(self.phone_seq_lens[idx], dtype=torch.int32),
             torch.tensor(self.days[idx], dtype=torch.int64),
         )

@@ -48,7 +48,7 @@ def main():
     model_args['lrStart'] = 0.02
     model_args['lrEnd'] = 0.02
     model_args['nUnits'] = 32
-    model_args['nBatch'] = 10000
+    model_args['nBatch'] = 10000  # 元の値に戻す（100 → 10000）
     model_args['nLayers'] = 5
     model_args['seed'] = 0
     model_args['nClasses'] = 40
@@ -62,7 +62,7 @@ def main():
     model_args['bidirectional'] = True
     model_args['l2_decay'] = 1e-5
 
-    # Augmentation configuration
+    # Augmentation configuration - ENABLED for SpecAugment benchmark
     model_args['aug_conf'] = {
         'time_mask': {'T': 12, 'p': 0.4},
         'electrode_mask': {'F': 6, 'p': 0.4},
