@@ -3,6 +3,27 @@ import numpy as np
 from torch.utils.data import Dataset
 from neural_decoder.transforms import *
 
+# Simple label mapping for characters
+CHAR_TO_ID = {chr(i): i - ord('A') for i in range(ord('A'), ord('Z') + 1)}
+CHAR_TO_ID.update({' ': 26, 'SIL': 27})  # Space and silence
+
+def encode_string_label(label_str):
+    """Convert string label to character IDs."""
+    # Simple approach: use first few characters
+    label_str = label_str.upper()[:10]  # Take first 10 chars, uppercase
+    char_ids = []
+    for char in label_str:
+        if char in CHAR_TO_ID:
+            char_ids.append(CHAR_TO_ID[char])
+        else:
+            char_ids.append(26)  # Unknown -> space
+    
+    # Pad to fixed length
+    while len(char_ids) < 10:
+        char_ids.append(27)  # SIL padding
+    
+    return char_ids[:10]
+
 def load_npz(data_path):
     """Load npz dataset and split into train/test."""
     data = np.load(data_path, allow_pickle=True)
@@ -93,10 +114,9 @@ class UnifiedEPGDataset(Dataset):
             for op in self.train_ops:
                 x = op(x)
         
-        # Convert label to simple integer (placeholder for now)
-        # TODO: Implement proper phoneme encoding
-        label = hash(self.label[idx]) % 1000  # Simple hash for now
+        # Convert label to character sequence
+        label_ids = encode_string_label(self.label[idx])
         
-        return x, torch.tensor(label, dtype=torch.long)
+        return x, torch.tensor(label_ids, dtype=torch.long)
 
-__all__ = ["UnifiedEPGDataset", "load_npz"] 
+__all__ = ["UnifiedEPGDataset", "load_npz", "encode_string_label"] 

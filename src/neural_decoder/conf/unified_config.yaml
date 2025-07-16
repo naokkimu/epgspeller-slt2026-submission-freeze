@@ -32,6 +32,11 @@ strideLen: 4
 kernelLen: 32
 bidirectional: True
 
+# Model-specific settings for unified pipeline
+model:
+  input_proj_dim: 256  # Project 16 -> 256 for compatibility
+  use_day_embed: false  # Disable day embedding for unified dataset
+
 # Legacy noise parameters (for backward compatibility)
 whiteNoiseSD: 0.0
 constantOffsetSD: 0.0

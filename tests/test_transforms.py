@@ -69,11 +69,14 @@ def test_unified_dataset():
     
     # Test data loading
     x, y = train_ds[0]
-    print(f"Sample shape: {x.shape}, label: {y}")
+    print(f"Sample shape: {x.shape}, label shape: {y.shape}, label: {y}")
     
     # Check PCA reduced dimension
     if cfg.pca.enable:
         assert x.shape[1] == cfg.pca.n_components, f"Expected {cfg.pca.n_components} features, got {x.shape[1]}"
+        
+    # Check label encoding
+    assert y.shape[0] == 10, f"Expected label length 10, got {y.shape[0]}"
     
     # Test a few samples
     for i in range(min(3, len(train_ds))):

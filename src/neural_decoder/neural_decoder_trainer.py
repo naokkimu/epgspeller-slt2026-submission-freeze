@@ -21,15 +21,15 @@ def getUnifiedDatasetLoaders(cfg):
         X, y = zip(*batch)
         X_padded = pad_sequence(X, batch_first=True, padding_value=0)
         
-        # y is already tensor of shape (batch_size,), no padding needed
-        y_stacked = torch.stack(y)
+        # y is now sequence of character IDs
+        y_padded = pad_sequence(y, batch_first=True, padding_value=27)  # SIL padding
         
         # Calculate actual lengths
         X_lens = torch.tensor([x.size(0) for x in X], dtype=torch.int32)
-        y_lens = torch.tensor([1 for _ in y], dtype=torch.int32)  # Simple placeholder
+        y_lens = torch.tensor([len(seq) for seq in y], dtype=torch.int32)
         days = torch.zeros(len(X), dtype=torch.int64)  # No day info for unified
         
-        return X_padded, y_stacked, X_lens, y_lens, days
+        return X_padded, y_padded, X_lens, y_lens, days
     
     train_ds = UnifiedEPGDataset("train", cfg)
     test_ds = UnifiedEPGDataset("test", cfg)
@@ -133,18 +133,28 @@ def trainModel(args):
             aug_conf=args.get("aug_conf", None),
         )
 
+    # Handle both unified and legacy model configuration
+    model_cfg = args.get("model", {})
+    use_day_embed = model_cfg.get("use_day_embed", True)
+    input_proj_dim = model_cfg.get("input_proj_dim", None)
+    
+    # For unified dataset, use dummy nDays=1 when day embedding is disabled
+    nDays = 1 if not use_day_embed else len(loadedData["train"])
+    
     model = GRUDecoder(
         neural_dim=args["nInputFeatures"],
         n_classes=args["nClasses"],
         hidden_dim=args["nUnits"],
         layer_dim=args["nLayers"],
-        nDays=len(loadedData["train"]),
+        nDays=nDays,
         dropout=args["dropout"],
         device=device,
         strideLen=args["strideLen"],
         kernelLen=args["kernelLen"],
         gaussianSmoothWidth=args["gaussianSmoothWidth"],
         bidirectional=args["bidirectional"],
+        input_proj_dim=input_proj_dim,
+        use_day_embed=use_day_embed,
     ).to(device)
 
     loss_ctc = torch.nn.CTCLoss(blank=0, reduction="mean", zero_infinity=True)
