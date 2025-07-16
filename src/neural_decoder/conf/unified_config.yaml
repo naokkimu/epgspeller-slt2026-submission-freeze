@@ -1,0 +1,93 @@
+hydra:
+  run:
+    dir: ${outputDir}
+  sweep:
+    dir: ${outputDir}
+    subdir: ${hydra.job.override_dirname}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - outputDir
+          - datasetPath
+
+# Original model settings
+outputDir: /oak/stanford/groups/henderj/stfan/logs/speech_logs/pt_neural_decoder
+datasetPath: /oak/stanford/groups/henderj/stfan/data/ptDecoder_ctc
+
+seed: 0
+batchSize: 64
+lrStart: 0.02
+lrEnd: 0.02
+l2_decay: 1e-5
+nBatch: 10000
+nEpoch: 10
+
+nUnits: 1024
+nLayers: 5
+nInputFeatures: 16  # Changed to match PCA16 output
+nClasses: 40
+dropout: 0.4
+strideLen: 4
+kernelLen: 32
+bidirectional: True
+
+# Legacy noise parameters (for backward compatibility)
+whiteNoiseSD: 0.0
+constantOffsetSD: 0.0
+gaussianSmoothWidth: 2.0
+
+# ========== New Unified Pipeline Settings ==========
+
+# Dataset configuration
+data:
+  path: data/silentspeller_dataset/p1_2328_old_dataset.npz
+
+# PCA transformation
+pca:
+  enable: true
+  n_components: 16
+  model_path: models/pca16.npy
+
+# Lowpass filter
+lowpass:
+  enable: true
+  window: 5
+
+# TS2Vec encoder (disabled by default)
+ts2vec:
+  enable: false
+  output_dims: 320
+  hidden_dims: 128
+  depth: 8
+  epochs: 200
+  batch_size: 32
+  sliding_length: null
+  sliding_padding: 0
+
+# SpecAug operations
+specaug:
+  time_mask:
+    T: 12
+    p: 0.4
+  electrode_mask:
+    F: 6
+    p: 0.4
+  time_warp:
+    W: 0.05
+    p: 0.2
+
+# Noise operations
+noise:
+  white_noise:
+    sd: 0.1
+    p: 0.3
+  drift_noise:
+    sd: 0.05
+    p: 0.3
+  gaussian_smooth:
+    width: 2.0
+    p: 0.3
+
+# Dataset selection (for trainer hook)
+dataset_cls: unified 

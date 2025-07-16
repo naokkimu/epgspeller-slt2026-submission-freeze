@@ -1,0 +1,30 @@
+/home/naokkimu/.local/lib/python3.9/site-packages/torch/functional.py:554: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /pytorch/aten/src/ATen/native/TensorShape.cpp:4314.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/data/naokkimu/epg_speller_base/scripts/../src/neural_decoder/augmentations.py:92: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /pytorch/aten/src/ATen/native/Convolution.cpp:1036.)
+  return self.conv(input, weight=self.weight, groups=self.groups, padding="same")
+Loading model from logs/20250715_115950_pca16_best_config_retest
+Loading dataset from data/pca16
+Evaluating on test set with 232 samples
+KenLM parameters: alpha=0.8, beta=-0.3, beam_width=32
+Loaded KenLM model from lm/lm_char.bin
+Parameters: alpha=0.8, beta=-0.3, beam_width=32
+Processed 0 samples
+Loaded KenLM model from lm/lm_char.bin
+Parameters: alpha=0.8, beta=-0.3, beam_width=32
+Loaded KenLM model from lm/lm_char.bin
+Parameters: alpha=0.8, beta=-0.3, beam_width=32
+Loaded KenLM model from lm/lm_char.bin
+Parameters: alpha=0.8, beta=-0.3, beam_width=32
+Loaded KenLM model from lm/lm_char.bin
+Parameters: alpha=0.8, beta=-0.3, beam_width=32
+Loaded KenLM model from lm/lm_char.bin
+Parameters: alpha=0.8, beta=-0.3, beam_width=32
+Loaded KenLM model from lm/lm_char.bin
+Parameters: alpha=0.8, beta=-0.3, beam_width=32
+Loaded KenLM model from lm/lm_char.bin
+Parameters: alpha=0.8, beta=-0.3, beam_width=32
+
+Evaluation Results:
+Character Error Rate (CER): 0.7327
+Word Error Rate (WER): 0.9784
+Results saved to grid_search_results/alpha0.8_beta-0.3

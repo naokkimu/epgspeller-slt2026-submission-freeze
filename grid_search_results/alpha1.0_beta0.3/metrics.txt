@@ -1,0 +1,5 @@
+Character Error Rate (CER): 0.8100
+Word Error Rate (WER): 0.9871
+Alpha: 1.0
+Beta: 0.3
+Beam Width: 32

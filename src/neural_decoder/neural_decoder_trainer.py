@@ -13,6 +13,52 @@ from .model import GRUDecoder
 from .dataset import SpeechDataset
 
 
+def getUnifiedDatasetLoaders(cfg):
+    """New unified dataset loader for npz-based data."""
+    from .unified_dataset import UnifiedEPGDataset
+    
+    def _padding(batch):
+        X, y = zip(*batch)
+        X_padded = pad_sequence(X, batch_first=True, padding_value=0)
+        
+        # y is already tensor of shape (batch_size,), no padding needed
+        y_stacked = torch.stack(y)
+        
+        # Calculate actual lengths
+        X_lens = torch.tensor([x.size(0) for x in X], dtype=torch.int32)
+        y_lens = torch.tensor([1 for _ in y], dtype=torch.int32)  # Simple placeholder
+        days = torch.zeros(len(X), dtype=torch.int64)  # No day info for unified
+        
+        return X_padded, y_stacked, X_lens, y_lens, days
+    
+    train_ds = UnifiedEPGDataset("train", cfg)
+    test_ds = UnifiedEPGDataset("test", cfg)
+    
+    # Handle both OmegaConf and dict access
+    batch_size = cfg.batchSize if hasattr(cfg, 'batchSize') else cfg.get('batchSize', 64)
+    
+    train_loader = DataLoader(
+        train_ds,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=0,
+        pin_memory=True,
+        collate_fn=_padding,
+    )
+    test_loader = DataLoader(
+        test_ds,
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=0,
+        pin_memory=True,
+        collate_fn=_padding,
+    )
+    
+    # Return dummy loadedData for compatibility
+    dummy_data = {"train": [], "test": []}
+    return train_loader, test_loader, dummy_data
+
+
 def getDatasetLoaders(
     datasetName,
     batchSize,
@@ -75,11 +121,17 @@ def trainModel(args):
     with open(args["outputDir"] + "/args", "wb") as file:
         pickle.dump(args, file)
 
-    trainLoader, testLoader, loadedData = getDatasetLoaders(
-        args["datasetPath"],
-        args["batchSize"],
-        aug_conf=args.get("aug_conf", None),
-    )
+    # Dataset selection: unified vs legacy
+    if args.get("dataset_cls", "legacy") == "unified":
+        print("Using unified dataset pipeline")
+        trainLoader, testLoader, loadedData = getUnifiedDatasetLoaders(args)
+    else:
+        print("Using legacy dataset pipeline")
+        trainLoader, testLoader, loadedData = getDatasetLoaders(
+            args["datasetPath"],
+            args["batchSize"],
+            aug_conf=args.get("aug_conf", None),
+        )
 
     model = GRUDecoder(
         neural_dim=args["nInputFeatures"],
