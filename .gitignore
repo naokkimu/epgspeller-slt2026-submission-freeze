@@ -8,3 +8,15 @@ __MACOSX/
 .venv/
 .specstory/
 *.pyc
+raw/.DS_Store
+raw/silentspeller_dataset/.DS_Store
+raw/silentspeller_dataset/p1_2328_old_dataset.npz
+raw/silentspeller_dataset/test_2328/.DS_Store
+raw/silentspeller_dataset/test_2328/naoki_2328_old_dataset.npz
+raw/silentspeller_dataset/test_2328/test/transcription.txt
+raw/silentspeller_dataset/test_2328/test/val.ark
+raw/silentspeller_dataset/test_2328/test/val.scp
+src/neural_decoder/__pycache__/augmentations.cpython-310.pyc
+src/neural_decoder/__pycache__/dataset.cpython-310.pyc
+src/neural_decoder/__pycache__/model.cpython-310.pyc
+src/neural_decoder/__pycache__/neural_decoder_trainer.cpython-310.pyc
