@@ -231,7 +231,9 @@ def prepare_silentspeller_dataset(
     augment_multiplier: int = 1,
     apply_ts2vec: bool = False,
     ts2vec_params: Optional[Dict[str, Any]] = None,
-    electrode_regions: List[str] = ['all']
+    electrode_regions: List[str] = ['all'],
+    split_path: str = "raw_dataset/train_test_competition_split.npz",
+    output_path: Optional[str] = None,
 ):
     """
     Prepare the Silent Speller dataset with optional data augmentation and filtering.
@@ -294,7 +296,6 @@ def prepare_silentspeller_dataset(
 
     # Load and preprocess data
     print("Loading split dataset...")
-    split_path = "raw_dataset/train_test_competition_split.npz"
     split_data = np.load(split_path, allow_pickle=True)
     
     # データの取り出しと電極の選択
@@ -439,6 +440,12 @@ def prepare_silentspeller_dataset(
         )
     ]
     
+    # Sanity check: target IDs must be within A-Z (1..26) + SIL=0
+    def _max_phoneme(session_list):
+        return np.max(session_list[0]["phonemes"])
+    max_id = max(_max_phoneme(train_data), _max_phoneme(test_data), _max_phoneme(competition_data))
+    assert max_id <= 26, f"Found target id {max_id} (>26). Fix label mapping before saving."
+    
     # データの保存
     print("Saving formatted data...")
     formatted_data = {
@@ -464,21 +471,23 @@ def prepare_silentspeller_dataset(
     formatted_data['processing_info'] = processing_info
     
     # Generate output path with processing information
-    output_name = []
-    if train_data_ratio < 1.0:
-        output_name.append(f"train{int(train_data_ratio*100)}p")
-    if n_components != -1:
-        output_name.append(f"pca{n_components}")
-    if 'all' not in electrode_regions:
-        output_name.append('_'.join(sorted(electrode_regions)))  # 領域名をソートして一貫性を保つ
-    if apply_lowpass:
-        output_name.append(f"lpf{lowpass_window_size}")
-    if apply_spec_augment:
-        output_name.append(f"aug{augment_multiplier+1}x")
-    if apply_ts2vec:
-        output_name.append(f"ts2vec{ts2vec_params['output_dims']}")
-    
-    formatted_output_path = f"data/{'_'.join(output_name)}"
+    if output_path:
+        formatted_output_path = output_path
+    else:
+        output_name = []
+        if train_data_ratio < 1.0:
+            output_name.append(f"train{int(train_data_ratio*100)}p")
+        if n_components != -1:
+            output_name.append(f"pca{n_components}")
+        if 'all' not in electrode_regions:
+            output_name.append('_'.join(sorted(electrode_regions)))  # 領域名をソートして一貫性を保つ
+        if apply_lowpass:
+            output_name.append(f"lpf{lowpass_window_size}")
+        if apply_spec_augment:
+            output_name.append(f"aug{augment_multiplier+1}x")
+        if apply_ts2vec:
+            output_name.append(f"ts2vec{ts2vec_params['output_dims']}")
+        formatted_output_path = f"data/{'_'.join(output_name)}"
     
     os.makedirs(os.path.dirname(formatted_output_path), exist_ok=True)
     with open(formatted_output_path, 'wb') as f:
@@ -523,6 +532,10 @@ if __name__ == '__main__':
                       choices=['anterior', 'middle', 'posterior', 'left', 'right', 'all'],
                       default=['all'],
                       help='Anatomical regions of electrodes to use. Multiple regions can be specified.')
+    parser.add_argument('--split_path', type=str, default="raw_dataset/train_test_competition_split.npz",
+                      help='Path to the split npz file')
+    parser.add_argument('--output_path', type=str, default=None,
+                      help='Optional explicit output path (pickle). If not set, auto-named path is used.')
     
     args = parser.parse_args()
     
@@ -549,7 +562,9 @@ if __name__ == '__main__':
         augment_multiplier=args.augment_multiplier,
         apply_ts2vec=args.apply_ts2vec,
         ts2vec_params=ts2vec_params,
-        electrode_regions=args.electrode_regions
+        electrode_regions=args.electrode_regions,
+        split_path=args.split_path,
+        output_path=args.output_path
     )
 
 # %%

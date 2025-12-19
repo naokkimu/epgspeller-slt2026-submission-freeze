@@ -63,9 +63,13 @@ def getDatasetLoaders(
     datasetName,
     batchSize,
     aug_conf=None,
+    val_split="test",
 ):
     with open(datasetName, "rb") as handle:
         loadedData = pickle.load(handle)
+    
+    if val_split not in ["test", "competition"]:
+        raise ValueError(f"val_split must be 'test' or 'competition', got {val_split}")
 
     def _padding(batch):
         X, y, X_lens, y_lens, days = zip(*batch)
@@ -81,7 +85,7 @@ def getDatasetLoaders(
         )
 
     train_ds = SpeechDataset(loadedData["train"], transform=None, aug_conf=aug_conf)
-    test_ds = SpeechDataset(loadedData["test"])
+    val_ds = SpeechDataset(loadedData[val_split])
 
     train_loader = DataLoader(
         train_ds,
@@ -92,7 +96,7 @@ def getDatasetLoaders(
         collate_fn=_padding,
     )
     test_loader = DataLoader(
-        test_ds,
+        val_ds,
         batch_size=batchSize,
         shuffle=False,
         num_workers=0,
@@ -131,6 +135,7 @@ def trainModel(args):
             args["datasetPath"],
             args["batchSize"],
             aug_conf=args.get("aug_conf", None),
+            val_split=args.get("val_split", "test"),
         )
 
     # Handle both unified and legacy model configuration
@@ -271,7 +276,7 @@ def trainModel(args):
 
                 endTime = time.time()
                 print(
-                    f"batch {batch}, ctc loss: {avgDayLoss:>7f}, cer: {cer:>7f}, time/batch: {(endTime - startTime)/100:>7.3f}"
+                    f"batch {batch}, val ctc loss: {avgDayLoss:>7f}, val cer: {cer:>7f}, time/batch: {(endTime - startTime)/100:>7.3f}"
                 )
                 startTime = time.time()
 
