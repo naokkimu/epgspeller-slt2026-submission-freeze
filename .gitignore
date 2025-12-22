@@ -20,3 +20,4 @@ src/neural_decoder/__pycache__/augmentations.cpython-310.pyc
 src/neural_decoder/__pycache__/dataset.cpython-310.pyc
 src/neural_decoder/__pycache__/model.cpython-310.pyc
 src/neural_decoder/__pycache__/neural_decoder_trainer.cpython-310.pyc
+raw/silentspeller_dataset/thad_2328_old_dataset.npz

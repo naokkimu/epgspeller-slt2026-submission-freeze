@@ -3,6 +3,22 @@ import argparse
 import pickle
 from datetime import datetime
 from pathlib import Path
+
+# Make `src/` importable when running from a fresh checkout without editable install.
+import sys
+
+
+def _ensure_src_on_path() -> None:
+    here = Path(__file__).resolve()
+    for p in [here] + list(here.parents):
+        candidate = p / "src"
+        if (candidate / "neural_decoder").is_dir():
+            sys.path.insert(0, str(candidate))
+            return
+
+
+_ensure_src_on_path()
+
 from neural_decoder.neural_decoder_trainer import trainModel
 from neural_decoder.model import GRUDecoder
 

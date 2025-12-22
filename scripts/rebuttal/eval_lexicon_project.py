@@ -14,6 +14,21 @@ import torch
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader
 
+# Make `src/` importable when running from a fresh checkout without editable install.
+import sys
+
+
+def _ensure_src_on_path() -> None:
+    here = Path(__file__).resolve()
+    for p in [here] + list(here.parents):
+        candidate = p / "src"
+        if (candidate / "neural_decoder").is_dir():
+            sys.path.insert(0, str(candidate))
+            return
+
+
+_ensure_src_on_path()
+
 from neural_decoder.dataset import SpeechDataset
 from neural_decoder.neural_decoder_trainer import loadModel
 
@@ -111,7 +126,8 @@ def build_lexicon(dataset_path: Path, source: str, lexicon_path: Path = None) ->
     def collect_from(split_key: str) -> List[str]:
         words = []
         for day in dataset[split_key]:
-            words.extend(day["transcriptions"])
+            # Normalize to uppercase to match greedy-decoded predictions/targets.
+            words.extend(str(w).upper().strip() for w in day["transcriptions"])
         return words
 
     if source == "file":
