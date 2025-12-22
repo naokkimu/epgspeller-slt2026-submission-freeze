@@ -141,7 +141,11 @@ def aggregate(inputs: List[str], out_yaml: Path, out_md: Path):
     }
 
     # Protocol-S aggregation (seen-word / instance holdout across subjects)
-    proto_records = [r for r in records if is_protocol_s(r)]
+    def is_protocol_sx(rec: Dict[str, Any]) -> bool:
+        return "protocolSx_eval_" in rec.get("source_file", "")
+
+    proto_records = [r for r in records if is_protocol_s(r) and not is_protocol_sx(r)]
+    proto_sx_records = [r for r in records if is_protocol_sx(r)]
 
     def summarize_proto(rows: List[Dict[str, Any]]) -> Dict[str, Any]:
         if not rows:
@@ -167,20 +171,26 @@ def aggregate(inputs: List[str], out_yaml: Path, out_md: Path):
             ],
         }
 
-    proto_greedy_test = [
-        r for r in proto_records if r.get("partition") == "test" and "lexicon_source" not in r
-    ]
-    proto_lex_train_test = [
-        r
-        for r in proto_records
-        if r.get("partition") == "test" and r.get("lexicon_source") == "train"
-    ]
+    def _proto_pairs(arr: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+        greedy_test = [r for r in arr if r.get("partition") == "test" and "lexicon_source" not in r]
+        lex_train_test = [
+            r for r in arr if r.get("partition") == "test" and r.get("lexicon_source") == "train"
+        ]
+        return {"greedy_test": summarize_proto(greedy_test), "lex_train_test": summarize_proto(lex_train_test)}
+
+    proto_noaug = [r for r in proto_records if r.get("specaug_on") is False]
+    proto_specaug = [r for r in proto_records if r.get("specaug_on") is True]
+    proto_sx_noaug = [r for r in proto_sx_records if r.get("specaug_on") is False]
 
     if proto_records:
-        result["ProtocolS"] = {
-            "greedy_test": summarize_proto(proto_greedy_test),
-            "lex_train_test": summarize_proto(proto_lex_train_test),
-        }
+        # ProtocolS = within-subject, SpecAug OFF
+        result["ProtocolS"] = _proto_pairs(proto_noaug)
+        # ProtocolS_SpecAug = within-subject, SpecAug ON
+        if proto_specaug:
+            result["ProtocolS_SpecAug"] = _proto_pairs(proto_specaug)
+    if proto_sx_records:
+        # ProtocolS_CrossSubject = cross-subject, SpecAug OFF
+        result["ProtocolS_CrossSubject"] = _proto_pairs(proto_sx_noaug)
 
     out_yaml.parent.mkdir(parents=True, exist_ok=True)
     with open(out_yaml, "w") as f:
@@ -203,31 +213,38 @@ def aggregate(inputs: List[str], out_yaml: Path, out_md: Path):
         f"{cv['test']['mean'] if cv['test']['mean'] is not None else 'NA'} ± "
         f"{cv['test']['std'] if cv['test']['std'] is not None else 'NA'}",
     ]
-    # Protocol-S summary (test partition) if available
-    if "ProtocolS" in result:
-        ps = result["ProtocolS"]
-        ps_g = ps["greedy_test"]
-        ps_l = ps["lex_train_test"]
+    def _append_protocol_block(title: str, block: Dict[str, Any], *, per_run: bool):
+        ps_g = block["greedy_test"]
+        ps_l = block["lex_train_test"]
 
         def fmt_mean_std(block):
             if not block or block["n"] == 0 or block["mean"] is None:
                 return "NA"
             return f"{block['mean']:.4f} ± {block['std']:.4f} (n={block['n']})"
 
-        lines.append(f"Protocol-S greedy test CER mean±std: {fmt_mean_std(ps_g)}")
-        lines.append(f"Protocol-S train-lex test CER mean±std: {fmt_mean_std(ps_l)}")
-        lines.append("Protocol-S per-run (subj, seed, greedy_CER, lex_train_CER):")
-        greedy_lookup = {(r.get('subject'), r.get('seed')): r for r in ps_g.get('items', [])}
-        lex_lookup = {(r.get('subject'), r.get('seed')): r for r in ps_l.get('items', [])}
-        keys = sorted(set(list(greedy_lookup.keys()) + list(lex_lookup.keys())))
-        for key in keys:
-            g = greedy_lookup.get(key)
-            l = lex_lookup.get(key)
-            lines.append(
-                f"  subj{key[0]} seed{key[1]}: "
-                f"greedy_CER={g['cer'] if g else 'NA'}, "
-                f"lex_train_CER={l['cer'] if l else 'NA'}"
-            )
+        lines.append(f\"{title} greedy test CER mean±std: {fmt_mean_std(ps_g)}\")
+        lines.append(f\"{title} train-lex test CER mean±std: {fmt_mean_std(ps_l)}\")
+        if per_run:
+            lines.append(f\"{title} per-run (subj, seed, greedy_CER, lex_train_CER):\")
+            greedy_lookup = {(r.get('subject'), r.get('seed')): r for r in ps_g.get('items', [])}
+            lex_lookup = {(r.get('subject'), r.get('seed')): r for r in ps_l.get('items', [])}
+            keys = sorted(set(list(greedy_lookup.keys()) + list(lex_lookup.keys())))
+            for key in keys:
+                g = greedy_lookup.get(key)
+                l = lex_lookup.get(key)
+                lines.append(
+                    f\"  subj{key[0]} seed{key[1]}: \"
+                    f\"greedy_CER={g['cer'] if g else 'NA'}, \"
+                    f\"lex_train_CER={l['cer'] if l else 'NA'}\"
+                )
+
+    # Protocol-S blocks (test partition) if available
+    if "ProtocolS" in result:
+        _append_protocol_block("Protocol-S", result["ProtocolS"], per_run=True)
+    if "ProtocolS_SpecAug" in result:
+        _append_protocol_block("Protocol-S (SpecAug)", result["ProtocolS_SpecAug"], per_run=True)
+    if "ProtocolS_CrossSubject" in result:
+        _append_protocol_block("Protocol-S (CrossSubject)", result["ProtocolS_CrossSubject"], per_run=True)
     out_md.parent.mkdir(parents=True, exist_ok=True)
     with open(out_md, "w") as f:
         f.write("\n".join(lines) + "\n")

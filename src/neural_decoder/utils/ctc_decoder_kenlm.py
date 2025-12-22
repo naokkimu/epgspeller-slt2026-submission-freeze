@@ -49,69 +49,139 @@ class CTCKenLMDecoder:
     
     def decode_beam_search(self, logits: np.ndarray, length: int) -> List[Tuple[str, float]]:
         """
-        Perform beam search decoding with KenLM shallow-fusion.
-        
-        Args:
-            logits: Logits of shape (seq_len, vocab_size)
-            length: Actual sequence length
-            
-        Returns:
-            List of (text, score) tuples sorted by score
+        Prefix beam search for CTC with KenLM shallow fusion.
+        This implementation correctly handles repeated characters under CTC
+        (repeats without blank do not emit a new symbol).
         """
-        # Convert logits to log probabilities
+        # Convert logits to log probabilities: [T, C]
         log_probs = logits - np.logaddexp.reduce(logits, axis=-1, keepdims=True)
-        
-        # Initialize beam with empty sequence
-        beam = [{'text': '', 'ctc_score': 0.0, 'lm_score': 0.0, 'last_char': None}]
-        
-        # Process each timestep
-        for t in range(min(length, logits.shape[0])):
-            new_beam = []
-            
-            for candidate in beam:
-                # Get current probabilities
-                probs = log_probs[t]
-                
-                # Extend with blank
-                blank_score = candidate['ctc_score'] + probs[self.blank_id]
-                new_beam.append({
-                    'text': candidate['text'],
-                    'ctc_score': blank_score,
-                    'lm_score': candidate['lm_score'],
-                    'last_char': candidate['last_char']
-                })
-                
-                # Extend with characters
+        T = min(int(length), int(logits.shape[0]))
+
+        # KenLM state tracking per prefix
+        init_state = kenlm.State()
+        self.lm.BeginSentenceWrite(init_state)
+
+        # Beam: prefix -> dict(p_b, p_nb, lm_state, lm_score)
+        beam = {
+            "": {
+                "p_b": 0.0,  # log(1)
+                "p_nb": -np.inf,
+                "lm_state": init_state,
+                "lm_score": 0.0,
+            }
+        }
+
+        def logsumexp(a: float, b: float) -> float:
+            if a == -np.inf:
+                return b
+            if b == -np.inf:
+                return a
+            m = a if a > b else b
+            return m + np.log(np.exp(a - m) + np.exp(b - m))
+
+        def total_logp(entry: dict) -> float:
+            return logsumexp(entry["p_b"], entry["p_nb"])
+
+        for t in range(T):
+            probs = log_probs[t]
+            new_beam: dict = {}
+
+            for prefix, entry in beam.items():
+                p_b = entry["p_b"]
+                p_nb = entry["p_nb"]
+                p_total = total_logp(entry)
+
+                # 1) Extend with blank: stays on same prefix
+                nb_entry = new_beam.get(prefix)
+                if nb_entry is None:
+                    new_beam[prefix] = {
+                        "p_b": p_total + probs[self.blank_id],
+                        "p_nb": -np.inf,
+                        "lm_state": entry["lm_state"],
+                        "lm_score": entry["lm_score"],
+                    }
+                else:
+                    nb_entry["p_b"] = logsumexp(nb_entry["p_b"], p_total + probs[self.blank_id])
+
+                # 2) Extend with characters
+                last_char = prefix[-1] if prefix else None
                 for char_id in range(1, len(probs)):
-                    if char_id in self.id_to_char:
-                        char = self.id_to_char[char_id]
-                        
-                        # Skip if same as last character (CTC property)
-                        if char == candidate['last_char']:
-                            continue
-                        
-                        new_text = candidate['text'] + char
-                        ctc_score = candidate['ctc_score'] + probs[char_id]
-                        
-                        # Calculate LM score
-                        lm_score = self._get_lm_score(new_text)
-                        
-                        new_beam.append({
-                            'text': new_text,
-                            'ctc_score': ctc_score,
-                            'lm_score': lm_score,
-                            'last_char': char
-                        })
-            
-            # Sort by combined score and keep top beam_width
-            beam = sorted(new_beam, key=lambda x: self._combined_score(x), reverse=True)[:self.beam_width]
-        
-        # Return results
+                    if char_id not in self.id_to_char:
+                        continue
+                    char = self.id_to_char[char_id]
+
+                    # Case A: same as last char
+                    if last_char == char:
+                        # Repeat without emitting a new symbol (stay on same prefix) from p_nb
+                        stay = new_beam.get(prefix)
+                        if stay is None:
+                            new_beam[prefix] = {
+                                "p_b": -np.inf,
+                                "p_nb": p_nb + probs[char_id],
+                                "lm_state": entry["lm_state"],
+                                "lm_score": entry["lm_score"],
+                            }
+                        else:
+                            stay["p_nb"] = logsumexp(stay["p_nb"], p_nb + probs[char_id])
+
+                        # Emit a new symbol (prefix+char) only from p_b
+                        new_prefix = prefix + char
+                        # LM advances only when a symbol is emitted
+                        out_state = kenlm.State()
+                        lm_delta = self.lm.BaseScore(entry["lm_state"], char, out_state)
+                        lm_score_new = entry["lm_score"] + lm_delta
+
+                        tgt = new_beam.get(new_prefix)
+                        if tgt is None:
+                            new_beam[new_prefix] = {
+                                "p_b": -np.inf,
+                                "p_nb": p_b + probs[char_id],
+                                "lm_state": out_state,
+                                "lm_score": lm_score_new,
+                            }
+                        else:
+                            tgt["p_nb"] = logsumexp(tgt["p_nb"], p_b + probs[char_id])
+                            # keep better LM state if scores differ (approx)
+                            if lm_score_new > tgt["lm_score"]:
+                                tgt["lm_state"] = out_state
+                                tgt["lm_score"] = lm_score_new
+                        continue
+
+                    # Case B: different char => emit new symbol from (p_b + p_nb)
+                    new_prefix = prefix + char
+                    out_state = kenlm.State()
+                    lm_delta = self.lm.BaseScore(entry["lm_state"], char, out_state)
+                    lm_score_new = entry["lm_score"] + lm_delta
+
+                    tgt = new_beam.get(new_prefix)
+                    if tgt is None:
+                        new_beam[new_prefix] = {
+                            "p_b": -np.inf,
+                            "p_nb": p_total + probs[char_id],
+                            "lm_state": out_state,
+                            "lm_score": lm_score_new,
+                        }
+                    else:
+                        tgt["p_nb"] = logsumexp(tgt["p_nb"], p_total + probs[char_id])
+                        if lm_score_new > tgt["lm_score"]:
+                            tgt["lm_state"] = out_state
+                            tgt["lm_score"] = lm_score_new
+
+            # Prune beam by combined score
+            def combined(prefix: str, e: dict) -> float:
+                return total_logp(e) + self.alpha * e["lm_score"] + self.beta * len(prefix)
+
+            top = sorted(new_beam.items(), key=lambda kv: combined(kv[0], kv[1]), reverse=True)[: self.beam_width]
+            beam = {k: v for k, v in top}
+
         results = []
-        for candidate in beam:
-            score = self._combined_score(candidate)
-            results.append((candidate['text'], score))
-        
+        for prefix, e in sorted(
+            beam.items(),
+            key=lambda kv: (total_logp(kv[1]) + self.alpha * kv[1]["lm_score"] + self.beta * len(kv[0])),
+            reverse=True,
+        ):
+            score = total_logp(e) + self.alpha * e["lm_score"] + self.beta * len(prefix)
+            results.append((prefix, float(score)))
         return results
     
     def _get_lm_score(self, text: str) -> float:

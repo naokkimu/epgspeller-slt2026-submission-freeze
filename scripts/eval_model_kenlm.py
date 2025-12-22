@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from neural_decoder.dataset import SpeechDataset
 from neural_decoder.neural_decoder_trainer import loadModel
-from neural_decoder.utils.ctc_decoder_kenlm import decode_ctc_kenlm
+from neural_decoder.utils.ctc_decoder_kenlm import CTCKenLMDecoder
 import matplotlib.pyplot as plt
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader
@@ -153,6 +153,15 @@ def main():
     
     print(f"Evaluating on {args.partition} set with {len(eval_dataset)} samples")
     print(f"KenLM parameters: alpha={args.alpha}, beta={args.beta}, beam_width={args.beam_width}")
+
+    # Initialize decoder once (avoid re-loading KenLM per batch)
+    decoder = CTCKenLMDecoder(
+        lm_path=args.lm_path,
+        alpha=args.alpha,
+        beta=args.beta,
+        beam_width=args.beam_width,
+        blank_id=0,
+    )
     
     # Run evaluation
     all_predictions = []
@@ -173,11 +182,11 @@ def main():
             logits_np = logits.cpu().numpy()
             lengths_np = X_lens.cpu().numpy()
             
-            # Decode with KenLM
-            predictions = decode_ctc_kenlm(
-                logits_np, lengths_np, args.lm_path,
-                alpha=args.alpha, beta=args.beta, beam_width=args.beam_width
-            )
+            # Decode with KenLM (beam search per sample)
+            predictions = []
+            for i in range(logits_np.shape[0]):
+                beam_results = decoder.decode_beam_search(logits_np[i], logits_np[i].shape[0])
+                predictions.append(beam_results[0][0] if beam_results else "")
             
             # Convert targets to strings
             targets = []
