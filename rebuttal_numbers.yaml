@@ -218,6 +218,7 @@ A:
     source_file: logs/20251219_160453_rebuttal_seed0_pca32_rebuttal_s0_pca32_noaug/rebuttal_eval_greedy_test.json
     specaug_on: false
     subject: null
+    run_id: null
   competition: &id002
     partition: competition
     cer: 0.10815047021943573
@@ -437,6 +438,7 @@ A:
     source_file: logs/20251219_160453_rebuttal_seed0_pca32_rebuttal_s0_pca32_noaug/rebuttal_eval_greedy_competition.json
     specaug_on: false
     subject: null
+    run_id: null
 C_train:
   test:
     partition: test
@@ -456,6 +458,7 @@ C_train:
     source_file: logs/20251219_160453_rebuttal_seed0_pca32_rebuttal_s0_pca32_noaug/rebuttal_eval_lex_train.json
     specaug_on: false
     subject: null
+    run_id: null
   competition: null
 C_all:
   test:
@@ -476,6 +479,7 @@ C_all:
     source_file: logs/20251219_160453_rebuttal_seed0_pca32_rebuttal_s0_pca32_noaug/rebuttal_eval_lex_all.json
     specaug_on: false
     subject: null
+    run_id: null
   competition: null
 D:
   test:
@@ -697,6 +701,7 @@ D:
     source_file: logs/20251219_162050_rebuttal_seed0_pca32_rebuttal_s0_pca32_specaug/rebuttal_eval_greedy_test.json
     specaug_on: true
     subject: null
+    run_id: null
   competition:
     partition: competition
     cer: 0.11442006269592477
@@ -916,14 +921,15 @@ D:
     source_file: logs/20251219_162050_rebuttal_seed0_pca32_rebuttal_s0_pca32_specaug/rebuttal_eval_greedy_competition.json
     specaug_on: true
     subject: null
+    run_id: null
 E:
   test: *id001
   competition: *id002
 CV:
   test:
-    mean: 0.13015497865812992
-    std: 0.012249103386278977
-    n: 3
+    mean: 0.1361436312538714
+    std: 0.01483651846166267
+    n: 4
   competition:
     mean: 0.10815047021943573
     std: 0.0
@@ -931,14 +937,16 @@ CV:
 sources:
 - logs/**/rebuttal_eval_*.json
 - logs/**/protocolS_eval_*.json
+- logs/**/protocolSx_eval_*.json
 ProtocolS:
   greedy_test:
-    mean: 0.13056895573212257
-    std: 0.010440488110268537
-    n: 4
+    mean: 0.12742976730987512
+    std: 0.009786781795324408
+    n: 8
     items:
     - subject: '1'
       seed: 0
+      run_id: subj1
       cer: 0.14060726447219069
       wer: 0.5463917525773195
       model_path: logs/20251222_110236_protocolS_seed0_subj1_ds1_pca32_protocolS_s0_subj1_ds1_noaug
@@ -946,13 +954,31 @@ ProtocolS:
       source_file: logs/20251222_110236_protocolS_seed0_subj1_ds1_pca32_protocolS_s0_subj1_ds1_noaug/protocolS_eval_greedy_test.json
     - subject: '1'
       seed: 1
+      run_id: subj1
       cer: 0.11677071509648126
       wer: 0.47164948453608246
       model_path: logs/20251222_110325_protocolS_seed1_subj1_ds1_pca32_protocolS_s1_subj1_ds1_noaug
       dataset_path: data/protocolS_seed1_subj1_ds1_pca32
       source_file: logs/20251222_110325_protocolS_seed1_subj1_ds1_pca32_protocolS_s1_subj1_ds1_noaug/protocolS_eval_greedy_test.json
+    - subject: '1'
+      seed: 2
+      run_id: subj1
+      cer: 0.11833144154370034
+      wer: 0.48711340206185566
+      model_path: logs/20251222_170940_protocolS_seed2_subj1_ds1_pca32_protocolS_s2_subj1_ds1_noaug
+      dataset_path: data/protocolS_seed2_subj1_ds1_pca32
+      source_file: logs/20251222_170940_protocolS_seed2_subj1_ds1_pca32_protocolS_s2_subj1_ds1_noaug/protocolS_eval_greedy_test.json
+    - subject: '1'
+      seed: 3
+      run_id: subj1
+      cer: 0.11577752553916004
+      wer: 0.47508591065292094
+      model_path: logs/20251222_171311_protocolS_seed3_subj1_ds1_pca32_protocolS_s3_subj1_ds1_noaug
+      dataset_path: data/protocolS_seed3_subj1_ds1_pca32
+      source_file: logs/20251222_171311_protocolS_seed3_subj1_ds1_pca32_protocolS_s3_subj1_ds1_noaug/protocolS_eval_greedy_test.json
     - subject: '2'
       seed: 0
+      run_id: subj2
       cer: 0.14074914869466515
       wer: 0.5618556701030928
       model_path: logs/20251222_142800_protocolS_seed0_subj2_ds1_pca32_protocolS_s0_subj2_ds1_noaug
@@ -960,18 +986,36 @@ ProtocolS:
       source_file: logs/20251222_142800_protocolS_seed0_subj2_ds1_pca32_protocolS_s0_subj2_ds1_noaug/protocolS_eval_greedy_test.json
     - subject: '2'
       seed: 1
+      run_id: subj2
       cer: 0.12414869466515323
       wer: 0.5025773195876289
       model_path: logs/20251222_142831_protocolS_seed1_subj2_ds1_pca32_protocolS_s1_subj2_ds1_noaug
       dataset_path: data/protocolS_seed1_subj2_ds1_pca32
       source_file: logs/20251222_142831_protocolS_seed1_subj2_ds1_pca32_protocolS_s1_subj2_ds1_noaug/protocolS_eval_greedy_test.json
+    - subject: '2'
+      seed: 2
+      run_id: subj2
+      cer: 0.1271282633371169
+      wer: 0.5094501718213058
+      model_path: logs/20251222_171356_protocolS_seed2_subj2_ds1_pca32_protocolS_s2_subj2_ds1_noaug
+      dataset_path: data/protocolS_seed2_subj2_ds1_pca32
+      source_file: logs/20251222_171356_protocolS_seed2_subj2_ds1_pca32_protocolS_s2_subj2_ds1_noaug/protocolS_eval_greedy_test.json
+    - subject: '2'
+      seed: 3
+      run_id: subj2
+      cer: 0.13592508513053347
+      wer: 0.5515463917525774
+      model_path: logs/20251222_171734_protocolS_seed3_subj2_ds1_pca32_protocolS_s3_subj2_ds1_noaug
+      dataset_path: data/protocolS_seed3_subj2_ds1_pca32
+      source_file: logs/20251222_171734_protocolS_seed3_subj2_ds1_pca32_protocolS_s3_subj2_ds1_noaug/protocolS_eval_greedy_test.json
   lex_train_test:
-    mean: 0.0781427355278093
-    std: 0.008949045760256862
-    n: 4
+    mean: 0.07592579455164586
+    std: 0.007046675838217043
+    n: 8
     items:
     - subject: '1'
       seed: 0
+      run_id: subj1
       cer: 0.08725879682179341
       wer: 0.20790378006872853
       model_path: logs/20251222_110236_protocolS_seed0_subj1_ds1_pca32_protocolS_s0_subj1_ds1_noaug
@@ -979,13 +1023,31 @@ ProtocolS:
       source_file: logs/20251222_110236_protocolS_seed0_subj1_ds1_pca32_protocolS_s0_subj1_ds1_noaug/protocolS_eval_lex_train.json
     - subject: '1'
       seed: 1
+      run_id: subj1
       cer: 0.06682746878547105
       wer: 0.16065292096219932
       model_path: logs/20251222_110325_protocolS_seed1_subj1_ds1_pca32_protocolS_s1_subj1_ds1_noaug
       dataset_path: data/protocolS_seed1_subj1_ds1_pca32
       source_file: logs/20251222_110325_protocolS_seed1_subj1_ds1_pca32_protocolS_s1_subj1_ds1_noaug/protocolS_eval_lex_train.json
+    - subject: '1'
+      seed: 2
+      run_id: subj1
+      cer: 0.06895573212258797
+      wer: 0.16666666666666666
+      model_path: logs/20251222_170940_protocolS_seed2_subj1_ds1_pca32_protocolS_s2_subj1_ds1_noaug
+      dataset_path: data/protocolS_seed2_subj1_ds1_pca32
+      source_file: logs/20251222_170940_protocolS_seed2_subj1_ds1_pca32_protocolS_s2_subj1_ds1_noaug/protocolS_eval_lex_train.json
+    - subject: '1'
+      seed: 3
+      run_id: subj1
+      cer: 0.07377979568671963
+      wer: 0.18384879725085912
+      model_path: logs/20251222_171311_protocolS_seed3_subj1_ds1_pca32_protocolS_s3_subj1_ds1_noaug
+      dataset_path: data/protocolS_seed3_subj1_ds1_pca32
+      source_file: logs/20251222_171311_protocolS_seed3_subj1_ds1_pca32_protocolS_s3_subj1_ds1_noaug/protocolS_eval_lex_train.json
     - subject: '2'
       seed: 0
+      run_id: subj2
       cer: 0.08654937570942112
       wer: 0.2104810996563574
       model_path: logs/20251222_142800_protocolS_seed0_subj2_ds1_pca32_protocolS_s0_subj2_ds1_noaug
@@ -993,8 +1055,111 @@ ProtocolS:
       source_file: logs/20251222_142800_protocolS_seed0_subj2_ds1_pca32_protocolS_s0_subj2_ds1_noaug/protocolS_eval_lex_train.json
     - subject: '2'
       seed: 1
+      run_id: subj2
       cer: 0.07193530079455164
       wer: 0.18642611683848798
       model_path: logs/20251222_142831_protocolS_seed1_subj2_ds1_pca32_protocolS_s1_subj2_ds1_noaug
       dataset_path: data/protocolS_seed1_subj2_ds1_pca32
       source_file: logs/20251222_142831_protocolS_seed1_subj2_ds1_pca32_protocolS_s1_subj2_ds1_noaug/protocolS_eval_lex_train.json
+    - subject: '2'
+      seed: 2
+      run_id: subj2
+      cer: 0.0746311010215664
+      wer: 0.18041237113402062
+      model_path: logs/20251222_171356_protocolS_seed2_subj2_ds1_pca32_protocolS_s2_subj2_ds1_noaug
+      dataset_path: data/protocolS_seed2_subj2_ds1_pca32
+      source_file: logs/20251222_171356_protocolS_seed2_subj2_ds1_pca32_protocolS_s2_subj2_ds1_noaug/protocolS_eval_lex_train.json
+    - subject: '2'
+      seed: 3
+      run_id: subj2
+      cer: 0.07746878547105562
+      wer: 0.1958762886597938
+      model_path: logs/20251222_171734_protocolS_seed3_subj2_ds1_pca32_protocolS_s3_subj2_ds1_noaug
+      dataset_path: data/protocolS_seed3_subj2_ds1_pca32
+      source_file: logs/20251222_171734_protocolS_seed3_subj2_ds1_pca32_protocolS_s3_subj2_ds1_noaug/protocolS_eval_lex_train.json
+ProtocolS_SpecAug:
+  greedy_test:
+    mean: 0.09449489216799092
+    std: 0.01021566401816118
+    n: 2
+    items:
+    - subject: '1'
+      seed: 0
+      run_id: subj1
+      cer: 0.08427922814982974
+      wer: 0.38316151202749144
+      model_path: logs/20251222_170829_protocolS_seed0_subj1_ds1_pca32_protocolS_s0_subj1_ds1_specaug
+      dataset_path: data/protocolS_seed0_subj1_ds1_pca32
+      source_file: logs/20251222_170829_protocolS_seed0_subj1_ds1_pca32_protocolS_s0_subj1_ds1_specaug/protocolS_eval_greedy_test.json
+    - subject: '2'
+      seed: 0
+      run_id: subj2
+      cer: 0.1047105561861521
+      wer: 0.43986254295532645
+      model_path: logs/20251222_170846_protocolS_seed0_subj2_ds1_pca32_protocolS_s0_subj2_ds1_specaug
+      dataset_path: data/protocolS_seed0_subj2_ds1_pca32
+      source_file: logs/20251222_170846_protocolS_seed0_subj2_ds1_pca32_protocolS_s0_subj2_ds1_specaug/protocolS_eval_greedy_test.json
+  lex_train_test:
+    mean: 0.058811010215664025
+    std: 0.0039018161180476747
+    n: 2
+    items:
+    - subject: '1'
+      seed: 0
+      run_id: subj1
+      cer: 0.05490919409761635
+      wer: 0.14690721649484537
+      model_path: logs/20251222_170829_protocolS_seed0_subj1_ds1_pca32_protocolS_s0_subj1_ds1_specaug
+      dataset_path: data/protocolS_seed0_subj1_ds1_pca32
+      source_file: logs/20251222_170829_protocolS_seed0_subj1_ds1_pca32_protocolS_s0_subj1_ds1_specaug/protocolS_eval_lex_train.json
+    - subject: '2'
+      seed: 0
+      run_id: subj2
+      cer: 0.0627128263337117
+      wer: 0.16151202749140894
+      model_path: logs/20251222_170846_protocolS_seed0_subj2_ds1_pca32_protocolS_s0_subj2_ds1_specaug
+      dataset_path: data/protocolS_seed0_subj2_ds1_pca32
+      source_file: logs/20251222_170846_protocolS_seed0_subj2_ds1_pca32_protocolS_s0_subj2_ds1_specaug/protocolS_eval_lex_train.json
+ProtocolS_CrossSubject:
+  greedy_test:
+    mean: 0.7342508513053347
+    std: 0.029511918274687854
+    n: 2
+    items:
+    - subject: null
+      seed: 0
+      run_id: subj1to2
+      cer: 0.7047389330306469
+      wer: 0.9939862542955327
+      model_path: logs/20251222_171859_protocolSx_seed0_subj1to2_ds1_pca32_protocolSx_s0_subj1to2_ds1_noaug
+      dataset_path: data/protocolSx_seed0_subj1to2_ds1_pca32
+      source_file: logs/20251222_171859_protocolSx_seed0_subj1to2_ds1_pca32_protocolSx_s0_subj1to2_ds1_noaug/protocolSx_eval_greedy_test.json
+    - subject: null
+      seed: 0
+      run_id: subj2to1
+      cer: 0.7637627695800226
+      wer: 0.9896907216494846
+      model_path: logs/20251222_171910_protocolSx_seed0_subj2to1_ds1_pca32_protocolSx_s0_subj2to1_ds1_noaug
+      dataset_path: data/protocolSx_seed0_subj2to1_ds1_pca32
+      source_file: logs/20251222_171910_protocolSx_seed0_subj2to1_ds1_pca32_protocolSx_s0_subj2to1_ds1_noaug/protocolSx_eval_greedy_test.json
+  lex_train_test:
+    mean: 0.6729568671963677
+    std: 0.04256526674233824
+    n: 2
+    items:
+    - subject: null
+      seed: 0
+      run_id: subj1to2
+      cer: 0.715522133938706
+      wer: 0.9372852233676976
+      model_path: logs/20251222_171859_protocolSx_seed0_subj1to2_ds1_pca32_protocolSx_s0_subj1to2_ds1_noaug
+      dataset_path: data/protocolSx_seed0_subj1to2_ds1_pca32
+      source_file: logs/20251222_171859_protocolSx_seed0_subj1to2_ds1_pca32_protocolSx_s0_subj1to2_ds1_noaug/protocolSx_eval_lex_train.json
+    - subject: null
+      seed: 0
+      run_id: subj2to1
+      cer: 0.6303916004540295
+      wer: 0.8350515463917526
+      model_path: logs/20251222_171910_protocolSx_seed0_subj2to1_ds1_pca32_protocolSx_s0_subj2to1_ds1_noaug
+      dataset_path: data/protocolSx_seed0_subj2to1_ds1_pca32
+      source_file: logs/20251222_171910_protocolSx_seed0_subj2to1_ds1_pca32_protocolSx_s0_subj2to1_ds1_noaug/protocolSx_eval_lex_train.json

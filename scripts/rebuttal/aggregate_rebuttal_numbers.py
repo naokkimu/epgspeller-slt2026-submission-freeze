@@ -42,7 +42,20 @@ def _parse_subject_seed(entry: Dict[str, Any]) -> Dict[str, Any]:
 
     dataset_path = entry.get("dataset_path", "") or ""
     model_path = entry.get("model_path", "") or ""
+
+    # within-subject: subj{N}_ds1
     subject = _find(r"subj(\d+)_ds1", dataset_path) or _find(r"subj(\d+)_ds1", model_path)
+
+    # cross-subject: subj{A}to{B}_ds1
+    src = _find(r"subj(\d+)to(\d+)_ds1", dataset_path) or _find(r"subj(\d+)to(\d+)_ds1", model_path)
+    run_id = None
+    if src:
+        # When regex has two groups, _find returns only group(1); re-run explicitly.
+        m = re.search(r"subj(\d+)to(\d+)_ds1", dataset_path) or re.search(r"subj(\d+)to(\d+)_ds1", model_path)
+        if m:
+            run_id = f"subj{m.group(1)}to{m.group(2)}"
+    elif subject:
+        run_id = f"subj{subject}"
     seed = entry.get("seed")
     if seed is None:
         seed = _find(r"protocolS_seed(\d+)", dataset_path) or _find(r"protocolS_seed(\d+)", model_path)
@@ -51,7 +64,7 @@ def _parse_subject_seed(entry: Dict[str, Any]) -> Dict[str, Any]:
                 seed = int(seed)
             except ValueError:
                 pass
-    return {"subject": subject, "seed": seed}
+    return {"subject": subject, "seed": seed, "run_id": run_id}
 
 
 def aggregate(inputs: List[str], out_yaml: Path, out_md: Path):
@@ -70,6 +83,7 @@ def aggregate(inputs: List[str], out_yaml: Path, out_md: Path):
             parsed = _parse_subject_seed(payload)
             payload["subject"] = payload.get("subject", parsed.get("subject"))
             payload["seed"] = payload.get("seed", parsed.get("seed"))
+            payload["run_id"] = payload.get("run_id", parsed.get("run_id"))
             records.append(payload)
 
     def is_protocol_s(rec: Dict[str, Any]) -> bool:
@@ -159,6 +173,7 @@ def aggregate(inputs: List[str], out_yaml: Path, out_md: Path):
                 {
                     "subject": r.get("subject"),
                     "seed": r.get("seed"),
+                    "run_id": r.get("run_id"),
                     "cer": r.get("cer"),
                     "wer": r.get("wer"),
                     "model_path": r.get("model_path"),
@@ -166,7 +181,7 @@ def aggregate(inputs: List[str], out_yaml: Path, out_md: Path):
                     "source_file": r.get("source_file"),
                 }
                 for r in sorted(
-                    rows, key=lambda x: (str(x.get("subject") or ""), x.get("seed"))
+                    rows, key=lambda x: (str(x.get("run_id") or ""), x.get("seed"))
                 )
             ],
         }
@@ -222,20 +237,20 @@ def aggregate(inputs: List[str], out_yaml: Path, out_md: Path):
                 return "NA"
             return f"{block['mean']:.4f} ± {block['std']:.4f} (n={block['n']})"
 
-        lines.append(f\"{title} greedy test CER mean±std: {fmt_mean_std(ps_g)}\")
-        lines.append(f\"{title} train-lex test CER mean±std: {fmt_mean_std(ps_l)}\")
+        lines.append(f"{title} greedy test CER mean±std: {fmt_mean_std(ps_g)}")
+        lines.append(f"{title} train-lex test CER mean±std: {fmt_mean_std(ps_l)}")
         if per_run:
-            lines.append(f\"{title} per-run (subj, seed, greedy_CER, lex_train_CER):\")
-            greedy_lookup = {(r.get('subject'), r.get('seed')): r for r in ps_g.get('items', [])}
-            lex_lookup = {(r.get('subject'), r.get('seed')): r for r in ps_l.get('items', [])}
+            lines.append(f"{title} per-run (subj, seed, greedy_CER, lex_train_CER):")
+            greedy_lookup = {(r.get('run_id'), r.get('seed')): r for r in ps_g.get('items', [])}
+            lex_lookup = {(r.get('run_id'), r.get('seed')): r for r in ps_l.get('items', [])}
             keys = sorted(set(list(greedy_lookup.keys()) + list(lex_lookup.keys())))
             for key in keys:
                 g = greedy_lookup.get(key)
                 l = lex_lookup.get(key)
                 lines.append(
-                    f\"  subj{key[0]} seed{key[1]}: \"
-                    f\"greedy_CER={g['cer'] if g else 'NA'}, \"
-                    f\"lex_train_CER={l['cer'] if l else 'NA'}\"
+                    f"  {key[0]} seed{key[1]}: "
+                    f"greedy_CER={g['cer'] if g else 'NA'}, "
+                    f"lex_train_CER={l['cer'] if l else 'NA'}"
                 )
 
     # Protocol-S blocks (test partition) if available
