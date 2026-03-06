@@ -1,0 +1,53 @@
+{
+  "raw_npz": "/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw/silentspeller_dataset/p1_2328_old_dataset.npz",
+  "repo_root": "/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready",
+  "runs": [
+    {
+      "enable_spatial_aug": false,
+      "model_family": "spatial2d_uni_gru",
+      "output_isfinite": true,
+      "output_shape": [
+        1,
+        55,
+        27
+      ],
+      "param_count": 10276587,
+      "train_mode": false
+    },
+    {
+      "enable_spatial_aug": false,
+      "model_family": "spatial2d_patchpool_uni_gru",
+      "output_isfinite": true,
+      "output_shape": [
+        1,
+        55,
+        27
+      ],
+      "param_count": 10342315,
+      "train_mode": false
+    },
+    {
+      "enable_spatial_aug": true,
+      "model_family": "spatial2d_patchpool_uni_gru",
+      "output_isfinite": true,
+      "output_shape": [
+        1,
+        55,
+        27
+      ],
+      "param_count": 10342315,
+      "train_mode": true
+    }
+  ],
+  "sample_idx": 0,
+  "sample_label_raw": "always",
+  "sample_stats": {
+    "K": 124,
+    "T": 250
+  },
+  "versions": {
+    "numpy": "2.0.2",
+    "python": "3.9.16",
+    "torch": "2.6.0+cu124"
+  }
+}

@@ -1,0 +1,402 @@
+# Inputs manifest (dataset audit) — 2026-02-24
+
+## Environment
+- python: `3.9.16`
+- numpy: `2.0.2`
+- platform: `Linux-5.14.0-284.30.1.el9_2.x86_64-x86_64-with-glibc2.34`
+
+## Command
+```
+/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/.venv/bin/python scripts/rebuttal/da_run_full_audit.py --raw_dir raw/silentspeller_dataset --out_dir results/dataset_audit_silentspeller_2026-02-24 --smartpalate_csv scripts/smartpalate_distribution.csv
+```
+
+## Input files (raw datasets)
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw/silentspeller_dataset/john_2328_dataset.npz`
+  - dataset_id: `john_2328`
+  - size_bytes: `804204331`
+  - sha256: `4182fb23ea88575fa317509658a17b707f66fe27996bd636f30d657a3491c626`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw/silentspeller_dataset/su_1167_old_dataset.npz`
+  - dataset_id: `su_1167_old`
+  - size_bytes: `285635524`
+  - sha256: `7e5026c9d937c43cc4b3c96d145af596704e12ac6fd85b707996cc9dc44a7215`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw/silentspeller_dataset/p1_2328_old_dataset.npz`
+  - dataset_id: `p1_2328_old`
+  - size_bytes: `566443297`
+  - sha256: `c729f341560786f94a6f1b73c815573c2d1452394def8a766a704fdcc810d265`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw/silentspeller_dataset/thad_2328_old_dataset.npz`
+  - dataset_id: `thad_2328_old`
+  - size_bytes: `480968208`
+  - sha256: `a1089e5d7538e1f238268f79b49489c04cf4efb96f15c4d8fa57c50aec9713c5`
+
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/scripts/smartpalate_distribution.csv` (SmartPalate 16×16 proxy map)
+  - size_bytes: `802`
+  - sha256: `d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84`
+
+## Exclusions
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/results/dataset_audit_silentspeller_2026-02-24/exclusions/john_2328_exclude_indices.json`
+
+## Input files (protocol split NPZ: P1/P2/P3)
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed0_subj1_ds1.npz`
+  - split_id: `P1_subj1_seed0`
+  - protocol: `P1`
+  - seed: `0`
+  - subject: `subj1`
+  - size_bytes: `566410495`
+  - sha256: `74d84150970fe8f8d10da5ea7801cd3ab9c30daebfb52028d28e3f6e662329a8`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed1_subj1_ds1.npz`
+  - split_id: `P1_subj1_seed1`
+  - protocol: `P1`
+  - seed: `1`
+  - subject: `subj1`
+  - size_bytes: `566410495`
+  - sha256: `3dfbbe4b23b2c3238ef72620231ca7a14ee9e2b722db9d94b142c40ecf8f2f12`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed2_subj1_ds1.npz`
+  - split_id: `P1_subj1_seed2`
+  - protocol: `P1`
+  - seed: `2`
+  - subject: `subj1`
+  - size_bytes: `566410495`
+  - sha256: `eb30f72afbdbfb03ed60daa49f279893886c6fd67e9340428786ef991d726bcb`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed3_subj1_ds1.npz`
+  - split_id: `P1_subj1_seed3`
+  - protocol: `P1`
+  - seed: `3`
+  - subject: `subj1`
+  - size_bytes: `566443339`
+  - sha256: `17dd342c1f71ee2fe09b7c0da08716519031a1423b26fadbd2cffe7ce90bee0f`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed0_subj2_ds1.npz`
+  - split_id: `P1_subj2_seed0`
+  - protocol: `P1`
+  - seed: `0`
+  - subject: `subj2`
+  - size_bytes: `480935406`
+  - sha256: `16064cbe1670980cbfa51e1cd4358f51b18909ebd2e3f76ce9d64c3716d7de41`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed1_subj2_ds1.npz`
+  - split_id: `P1_subj2_seed1`
+  - protocol: `P1`
+  - seed: `1`
+  - subject: `subj2`
+  - size_bytes: `480935406`
+  - sha256: `829f07bf0fcb92b682c62d6cb5d87d99a151918d06d7336bb69df87b46bcbc3d`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed2_subj2_ds1.npz`
+  - split_id: `P1_subj2_seed2`
+  - protocol: `P1`
+  - seed: `2`
+  - subject: `subj2`
+  - size_bytes: `480935406`
+  - sha256: `3448ee679335046948346618348b2e3e9c3c178e99b239b7bebbb0cb953680ce`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed3_subj2_ds1.npz`
+  - split_id: `P1_subj2_seed3`
+  - protocol: `P1`
+  - seed: `3`
+  - subject: `subj2`
+  - size_bytes: `480935406`
+  - sha256: `cb080b34859967b2b79b76a41cd527c68003a7e86a8b049203b26375109c044d`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed0_subj3_ds1.npz`
+  - split_id: `P1_subj3_seed0`
+  - protocol: `P1`
+  - seed: `0`
+  - subject: `subj3`
+  - size_bytes: `803788142`
+  - sha256: `91c45aa200b48f6eeee850f8f19c0efab9e4d67bc66fdd70fae779f689572e43`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed1_subj3_ds1.npz`
+  - split_id: `P1_subj3_seed1`
+  - protocol: `P1`
+  - seed: `1`
+  - subject: `subj3`
+  - size_bytes: `803788142`
+  - sha256: `5df976c7168687c52aa4a8b7ea502d215541d038ea6816824619f6930a15ab69`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed2_subj3_ds1.npz`
+  - split_id: `P1_subj3_seed2`
+  - protocol: `P1`
+  - seed: `2`
+  - subject: `subj3`
+  - size_bytes: `803788142`
+  - sha256: `21ffcefa59bf8a4906307cca15dea4c55e7f3a9c3eb8cd2041947ce6ab173206`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed3_subj3_ds1.npz`
+  - split_id: `P1_subj3_seed3`
+  - protocol: `P1`
+  - seed: `3`
+  - subject: `subj3`
+  - size_bytes: `803788142`
+  - sha256: `c224e70a0ffed1b26fa2961da8a08e13edb493de06b8b2c7a28c9dcfd960947a`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed0_subj4_ds1.npz`
+  - split_id: `P1_subj4_seed0`
+  - protocol: `P1`
+  - seed: `0`
+  - subject: `subj4`
+  - size_bytes: `285620137`
+  - sha256: `cea2d0e2550c5e14d84dcaff0957d16c218469f143d0094f6322ec3c85cc1e0f`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed1_subj4_ds1.npz`
+  - split_id: `P1_subj4_seed1`
+  - protocol: `P1`
+  - seed: `1`
+  - subject: `subj4`
+  - size_bytes: `285620137`
+  - sha256: `126ffe7ee533bcd443791ed130f92b05acdab9e9981e153847c26c266a669725`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed2_subj4_ds1.npz`
+  - split_id: `P1_subj4_seed2`
+  - protocol: `P1`
+  - seed: `2`
+  - subject: `subj4`
+  - size_bytes: `285620137`
+  - sha256: `7d12f07baa512f5f98c454b1ae15144184e61173a16e792f0dcfb658dafdae46`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/train_test_competition_split_seed3_subj4_ds1.npz`
+  - split_id: `P1_subj4_seed3`
+  - protocol: `P1`
+  - seed: `3`
+  - subject: `subj4`
+  - size_bytes: `285620137`
+  - sha256: `b43e653e92fb516deccc84f719b196f7708d81786fafb413311975224b597489`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed0_subj1_ds1.npz`
+  - split_id: `P2_subj1_seed0`
+  - protocol: `P2`
+  - seed: `0`
+  - subject: `subj1`
+  - size_bytes: `566358532`
+  - sha256: `1b8bde44dab5024a260938bac20913d0ef1ac952939741a8d2db48b64f9a01ca`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed1_subj1_ds1.npz`
+  - split_id: `P2_subj1_seed1`
+  - protocol: `P2`
+  - seed: `1`
+  - subject: `subj1`
+  - size_bytes: `566358532`
+  - sha256: `7c99abc859a5fa762f7eab4a6fa4570758e061845c354188e21071fb38c8f98c`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed2_subj1_ds1.npz`
+  - split_id: `P2_subj1_seed2`
+  - protocol: `P2`
+  - seed: `2`
+  - subject: `subj1`
+  - size_bytes: `566358532`
+  - sha256: `64fffa66215b322186b32bf48713347ef70120fa8e88743d67c41f2b3f6b3c1e`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed3_subj1_ds1.npz`
+  - split_id: `P2_subj1_seed3`
+  - protocol: `P2`
+  - seed: `3`
+  - subject: `subj1`
+  - size_bytes: `566358532`
+  - sha256: `b298481d21ce74ea220b60a10783c30def60aa009dd1fbea9c619b1023ab2eab`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed0_subj2_ds1.npz`
+  - split_id: `P2_subj2_seed0`
+  - protocol: `P2`
+  - seed: `0`
+  - subject: `subj2`
+  - size_bytes: `480883443`
+  - sha256: `184667361478a935ea7d77aa1e9479d6f5783db0a6082fba3327cd01d23d203f`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed1_subj2_ds1.npz`
+  - split_id: `P2_subj2_seed1`
+  - protocol: `P2`
+  - seed: `1`
+  - subject: `subj2`
+  - size_bytes: `480883443`
+  - sha256: `c7a6fdfb7f3afc54e86f8353278d03797d695d0989e5ead13630e23f5b9fd67b`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed2_subj2_ds1.npz`
+  - split_id: `P2_subj2_seed2`
+  - protocol: `P2`
+  - seed: `2`
+  - subject: `subj2`
+  - size_bytes: `480883443`
+  - sha256: `75e4fba0c9722143de4144b53fb2e53b7912b2d8700e04956b561aac8cb701ed`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed3_subj2_ds1.npz`
+  - split_id: `P2_subj2_seed3`
+  - protocol: `P2`
+  - seed: `3`
+  - subject: `subj2`
+  - size_bytes: `480883443`
+  - sha256: `7f5709641727a733ded756459aa965515bf73ccb034d266542b15a04d29b171a`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed0_subj3_ds1.npz`
+  - split_id: `P2_subj3_seed0`
+  - protocol: `P2`
+  - seed: `0`
+  - subject: `subj3`
+  - size_bytes: `668586516`
+  - sha256: `123dc636b5f7ea6b95fbf45d1b9b710917f074478a8fbc2b403c24618e7ee9b2`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed1_subj3_ds1.npz`
+  - split_id: `P2_subj3_seed1`
+  - protocol: `P2`
+  - seed: `1`
+  - subject: `subj3`
+  - size_bytes: `668119289`
+  - sha256: `f68698e27a5fee8d676b273080bbbde39558cc6b8c1cdde583f5ceae9877e9a8`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed2_subj3_ds1.npz`
+  - split_id: `P2_subj3_seed2`
+  - protocol: `P2`
+  - seed: `2`
+  - subject: `subj3`
+  - size_bytes: `668427798`
+  - sha256: `c96c8a06036625be4aa82ba6003e0d2812ec7b9ea9e370736249bdc8863b41e9`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolS_split_seed3_subj3_ds1.npz`
+  - split_id: `P2_subj3_seed3`
+  - protocol: `P2`
+  - seed: `3`
+  - subject: `subj3`
+  - size_bytes: `668700603`
+  - sha256: `fc12e922d2084b15b07a939083a311ecbf26ffd566599471358e17d860ae5f58`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed0_subj1to2_ds1.npz`
+  - split_id: `P3_subj1to2_seed0`
+  - protocol: `P3`
+  - seed: `0`
+  - subject: `subj1to2`
+  - size_bytes: `523568401`
+  - sha256: `fcd73a5a7f26302832773ea516e5c51cc52c8917dae21ab8903bbbe500b97618`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed1_subj1to2_ds1.npz`
+  - split_id: `P3_subj1to2_seed1`
+  - protocol: `P3`
+  - seed: `1`
+  - subject: `subj1to2`
+  - size_bytes: `522808611`
+  - sha256: `d73dac0014b4ebc36d0429f61159064b6ba4709e225d0168e204d4a6a17bddcd`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed2_subj1to2_ds1.npz`
+  - split_id: `P3_subj1to2_seed2`
+  - protocol: `P3`
+  - seed: `2`
+  - subject: `subj1to2`
+  - size_bytes: `523763901`
+  - sha256: `2ff7223c44c0678030dc0ec991020e68103baa1e9135ee071f7d4ad4d8c1fc14`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed3_subj1to2_ds1.npz`
+  - split_id: `P3_subj1to2_seed3`
+  - protocol: `P3`
+  - seed: `3`
+  - subject: `subj1to2`
+  - size_bytes: `524141845`
+  - sha256: `1a4e74826953c708f122131a4d173d56cbf3f3d0503dcd36a165b7c7b02739d1`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed0_subj2to1_ds1.npz`
+  - split_id: `P3_subj2to1_seed0`
+  - protocol: `P3`
+  - seed: `0`
+  - subject: `subj2to1`
+  - size_bytes: `522806542`
+  - sha256: `2edd72ad6496eedf90c819600e431afebde58bbc6db6636e44c48ccf40bc4d0d`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed1_subj2to1_ds1.npz`
+  - split_id: `P3_subj2to1_seed1`
+  - protocol: `P3`
+  - seed: `1`
+  - subject: `subj2to1`
+  - size_bytes: `524209307`
+  - sha256: `ea5123de29485b943ae861c11a34ed8b6eeac98405a21038355b19cb2a02a3b8`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed2_subj2to1_ds1.npz`
+  - split_id: `P3_subj2to1_seed2`
+  - protocol: `P3`
+  - seed: `2`
+  - subject: `subj2to1`
+  - size_bytes: `524201372`
+  - sha256: `0b44c4ab6db5037bb9796ec992950445337d37769d74e43d0addbb8d42ed02ea`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed3_subj2to1_ds1.npz`
+  - split_id: `P3_subj2to1_seed3`
+  - protocol: `P3`
+  - seed: `3`
+  - subject: `subj2to1`
+  - size_bytes: `523434563`
+  - sha256: `4d58d6848592feb143ec906084b747e4790efb9367a8643f991d0981315da8e6`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed0_subj1to3_ds1.npz`
+  - split_id: `P3_subj1to3_seed0`
+  - protocol: `P3`
+  - seed: `0`
+  - subject: `subj1to3`
+  - size_bytes: `618222360`
+  - sha256: `0d8cf6f5d9df3f7841d2f11e2b8290912a50151affadfc2ce10cbc281fb46164`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed1_subj1to3_ds1.npz`
+  - split_id: `P3_subj1to3_seed1`
+  - protocol: `P3`
+  - seed: `1`
+  - subject: `subj1to3`
+  - size_bytes: `617188672`
+  - sha256: `a7aff56ef463f555aa00d5fc85a1e42ab753cc173c9df44da4fdda6d469556bb`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed2_subj1to3_ds1.npz`
+  - split_id: `P3_subj1to3_seed2`
+  - protocol: `P3`
+  - seed: `2`
+  - subject: `subj1to3`
+  - size_bytes: `615898080`
+  - sha256: `62fdbf17029d020685ce684de01a4a236d90b367ee5f0cce7de07a03bab7b47a`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed3_subj1to3_ds1.npz`
+  - split_id: `P3_subj1to3_seed3`
+  - protocol: `P3`
+  - seed: `3`
+  - subject: `subj1to3`
+  - size_bytes: `616590507`
+  - sha256: `4813dd448664aa4242bfca3af8ebb4841dd030b2005c7eaadae83ae65db6ea7d`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed0_subj3to1_ds1.npz`
+  - split_id: `P3_subj3to1_seed0`
+  - protocol: `P3`
+  - seed: `0`
+  - subject: `subj3to1`
+  - size_bytes: `615499303`
+  - sha256: `f102719d9483fc8f19252990d2c0ff14ea82094441e0fe9cacf4fc07a5998345`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed1_subj3to1_ds1.npz`
+  - split_id: `P3_subj3to1_seed1`
+  - protocol: `P3`
+  - seed: `1`
+  - subject: `subj3to1`
+  - size_bytes: `617148025`
+  - sha256: `be5e7cd6a5eaf55a96bffe99bc9dd13d2c6b896d5700e4a29b306f0e958e1cfd`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed2_subj3to1_ds1.npz`
+  - split_id: `P3_subj3to1_seed2`
+  - protocol: `P3`
+  - seed: `2`
+  - subject: `subj3to1`
+  - size_bytes: `617208528`
+  - sha256: `53c3435e3bb18d48519c3f4009bc01cb513389a76d4163f3092d825323415aa5`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed3_subj3to1_ds1.npz`
+  - split_id: `P3_subj3to1_seed3`
+  - protocol: `P3`
+  - seed: `3`
+  - subject: `subj3to1`
+  - size_bytes: `616360369`
+  - sha256: `f7b7c2a752f268b1db178b216b8a3df87bdc2a10bfd3cbd4a28a857bf56721c2`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed0_subj2to3_ds1.npz`
+  - split_id: `P3_subj2to3_seed0`
+  - protocol: `P3`
+  - seed: `0`
+  - subject: `subj2to3`
+  - size_bytes: `574401549`
+  - sha256: `13e45275012dbf6af8a1c6bfa258a296a10af84d891cfa994c1377367ce9bccd`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed1_subj2to3_ds1.npz`
+  - split_id: `P3_subj2to3_seed1`
+  - protocol: `P3`
+  - seed: `1`
+  - subject: `subj2to3`
+  - size_bytes: `573736881`
+  - sha256: `fa3a6b9006c34cb0de19f3251f844972e798d2539b13707b86dc1572aec903d2`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed2_subj2to3_ds1.npz`
+  - split_id: `P3_subj2to3_seed2`
+  - protocol: `P3`
+  - seed: `2`
+  - subject: `subj2to3`
+  - size_bytes: `572939328`
+  - sha256: `51baccfe0b349f343d169442e60bc4a3be89f6f1c0c52d69413d4123c1b6ebd6`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed3_subj2to3_ds1.npz`
+  - split_id: `P3_subj2to3_seed3`
+  - protocol: `P3`
+  - seed: `3`
+  - subject: `subj2to3`
+  - size_bytes: `573484922`
+  - sha256: `b472fb7f2179a8b0137ea1ca9e20b62b7c63e0b3ee96bb487ddbb8d31f25ab8f`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed0_subj3to2_ds1.npz`
+  - split_id: `P3_subj3to2_seed0`
+  - protocol: `P3`
+  - seed: `0`
+  - subject: `subj3to2`
+  - size_bytes: `573437318`
+  - sha256: `0e7cb20cc8a21e918d274e6e1cf05e4bd1d9d46219c659344f203962f58babd7`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed1_subj3to2_ds1.npz`
+  - split_id: `P3_subj3to2_seed1`
+  - protocol: `P3`
+  - seed: `1`
+  - subject: `subj3to2`
+  - size_bytes: `574043432`
+  - sha256: `f701c1f68e028d69ace034fdd0b28b4b1701d84c415638ac6de23977cdbfb301`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed2_subj3to2_ds1.npz`
+  - split_id: `P3_subj3to2_seed2`
+  - protocol: `P3`
+  - seed: `2`
+  - subject: `subj3to2`
+  - size_bytes: `574189252`
+  - sha256: `dcacc9c7037ac0a8efc65ac59d1ea2419af3555f64cdd8e3b9287f173c266edd`
+- `/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSx_split_seed3_subj3to2_ds1.npz`
+  - split_id: `P3_subj3to2_seed3`
+  - protocol: `P3`
+  - seed: `3`
+  - subject: `subj3to2`
+  - size_bytes: `573715078`
+  - sha256: `a828f1b5e9af2b68d6afc06dc2b466700364a752eb2ee8d660a6fdbbdfb2c110`

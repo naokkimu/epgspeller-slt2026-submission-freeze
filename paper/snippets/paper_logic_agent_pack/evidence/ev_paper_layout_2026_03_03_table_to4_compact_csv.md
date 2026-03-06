@@ -1,0 +1,22 @@
+# ev_paper_layout_2026_03_03_table_to4_compact_csv
+
+- kind: `table`
+- path: `results/paper_layout_2026-03-03/table_to4_compact.csv`
+- sha256: `81b08893439527b346bcbf828270dace69d5e3bacfaaf16b5ece081cee6bcc9d`
+- size_bytes: 366
+- root_guess: `/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo`
+- abs_path_guess: `/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/results/paper_layout_2026-03-03/table_to4_compact.csv`
+
+## Excerpt
+
+```csv
+proto,lvl,group,cer,lex
+P3,dir,p1->p4,0.666±0.024,0.651±0.026
+P3,dir,p2->p4,0.809±0.021,0.736±0.022
+P3,dir,p3->p4,0.584±0.018,0.591±0.029
+P3,all,all->p4,0.686±0.114,0.659±0.073
+P3MS,dir,p12->p4,0.655±0.016,0.593±0.016
+P3MS,dir,p13->p4,0.536±0.009,0.533±0.008
+P3MS,dir,p23->p4,0.555±0.005,0.537±0.011
+P3MS,all,all->p4,0.582±0.064,0.554±0.034
+```

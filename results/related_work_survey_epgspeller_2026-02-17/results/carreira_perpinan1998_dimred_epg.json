@@ -1,0 +1,75 @@
+{
+  "paper_id": "carreira_perpinan1998_dimred_epg",
+  "title": "Dimensionality reduction of electropalatographic data using latent variable models",
+  "authors": [
+    "Miguel A. Carreira-Perpi\u00f1\u00e1n",
+    "Steve Renals"
+  ],
+  "year": 1998,
+  "venue": "Speech Communication 26(4):259-282",
+  "doi": "10.1016/S0167-6393(98)00059-4",
+  "primary_url": "https://www.sciencedirect.com/science/article/pii/S0167639398000594",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "carreiraperpinan1998epg",
+
+  "modality": "Electropalatography (EPG)",
+  "device": "Reading EPG system (EPG frames as binary electrode-contact vectors; EUR-ACCOR database)",
+  "task": "Unsupervised dimensionality reduction / representation learning for EPG frames",
+  "output_unit": "continuous latent variables / low-dimensional embeddings",
+  "vocabulary_setting": "N/A",
+  "datasets": "Subset of the EUR-ACCOR database (as reported in the paper)",
+  "evaluation_protocol": "Train/test splits on EPG frame datasets; evaluation via log-likelihood and reconstruction error across speakers/styles (as reported)",
+  "metrics_reported": "Log-likelihood and reconstruction error for latent variable models (paper reports comparisons)",
+
+  "decoder": "Latent variable modeling (factor analysis, PCA, GTM, mixture models) for EPG frame modeling",
+  "model_architecture": "Probabilistic latent variable models (linear and nonlinear)",
+  "spatial_frontend": "EPG frames treated as high-dimensional binary vectors; dimensionality reduction learns low-D representations",
+  "augmentation": "N/A",
+
+  "key_contributions": [
+    "Applies probabilistic latent variable models to learn low-dimensional representations of EPG frames.",
+    "Compares linear (FA/PCA) vs nonlinear (GTM, mixture models) methods and reports nonlinear advantages.",
+    "Connects EPG dimensionality reduction to applications in analysis, visualization, and speech-related modeling."
+  ],
+  "limitations": [
+    "Focuses on spatial dimensionality reduction of EPG frames; temporal dynamics are treated separately.",
+    "Data and conclusions are specific to the EUR-ACCOR subset and EPG configuration used."
+  ],
+  "reported_results_summary": "The paper reports that nonlinear latent variable models outperform linear ones in log-likelihood and reconstruction error on EUR-ACCOR EPG data; see the official paper for exact figures.",
+
+  "relevance_to_epgspeller": "Directly relevant to representation choice and why PCA-like compression is a standard baseline in EPG analysis; provides historical context for Axis C (representation) and motivates exploring richer nonlinear/spatial models.",
+  "takeaways_for_related_work_section": "A foundational EPG representation paper comparing PCA/FA to nonlinear latent-variable models on EUR-ACCOR; supports discussing PCA as a principled compression baseline and motivates more expressive spatial front-ends."
+  ,
+  "sources": [
+    {
+      "url": "https://www.sciencedirect.com/science/article/pii/S0167639398000594",
+      "title": "ScienceDirect: Dimensionality reduction of electropalatographic data using latent variable models",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.1016/S0167-6393(98)00059-4",
+      "year": 1998,
+      "venue": "Speech Communication"
+    },
+    {
+      "url": "https://doi.org/10.1016/S0167-6393(98)00059-4",
+      "title": "DOI: 10.1016/S0167-6393(98)00059-4",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.1016/S0167-6393(98)00059-4",
+      "year": 1998,
+      "venue": "Speech Communication"
+    },
+    {
+      "url": "https://faculty.ucmerced.edu/mcarreira-perpinan/research/epg.html",
+      "title": "Carreira-Perpi\u00f1\u00e1n research page: Dimensionality reduction of EPG data (lists 1998 papers)",
+      "retrieved_at": "2026-02-17",
+      "source_type": "web",
+      "year": 2005
+    }
+  ],
+
+  "uncertain": [
+    "The research page is used as a secondary source listing the publications; primary details are from the Speech Communication article."
+  ]
+}

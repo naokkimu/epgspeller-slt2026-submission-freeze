@@ -1,0 +1,968 @@
+{
+  "format": {
+    "name": "paper-json",
+    "version": "0.1.0"
+  },
+  "claims": [
+    {
+      "id": "cl_ed20260217_h11_spatial2d_vs_vector_p1",
+      "statement": "For protocol P1 (seed0\u20133), for each setting in {topk,fps2k}\u00d7{K=32,K=64,K=96} and also for K=124 (all electrodes), spatial2d_uni_gru greedy test CER mean is higher than uni_gru, and spatial2d_uni_gru streaming rtf mean is higher than uni_gru.",
+      "status": "supported",
+      "tags": [
+        "ed20260217",
+        "H11",
+        "P1",
+        "epg-design",
+        "spatial2d",
+        "vector",
+        "frontend"
+      ],
+      "evidence_ids": [
+        "ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17"
+      ]
+    },
+    {
+      "id": "cl_ed20260217_h12_spatial_aug_improves_dropout_robustness_p1",
+      "statement": "For protocol P1 (seed0\u20133) with spatial2d_uni_gru using topk K=64, training with enable_spatial_aug=1 yields lower mean CER degradation (\u0394CER) than enable_spatial_aug=0 under fixed electrode dropout rates q\u2208{0.1,0.2,0.3}.",
+      "status": "supported",
+      "tags": [
+        "ed20260217",
+        "H12",
+        "P1",
+        "epg-design",
+        "spatial2d",
+        "augmentation",
+        "dropout-robustness"
+      ],
+      "evidence_ids": [
+        "ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17"
+      ]
+    },
+    {
+      "id": "cl_ed20260217_h13_rowcol_vs_vector_p1",
+      "statement": "For protocol P1 (seed0\u20133), for each setting in {topk,fps2k}\u00d7{K=32,K=64}, rowcol_uni_gru greedy test CER mean differs from uni_gru by <0.01 absolute, while rowcol_uni_gru streaming rtf is higher.",
+      "status": "supported",
+      "tags": [
+        "ed20260217",
+        "H13",
+        "P1",
+        "epg-design",
+        "rowcol",
+        "vector",
+        "frontend"
+      ],
+      "evidence_ids": [
+        "ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17"
+      ]
+    },
+    {
+      "id": "cl_positioning_analysis_epgspeller_2026-02-18_completed",
+      "statement": "A multi-lens positioning analysis of EPGSpeller in the SSI/EPG literature space, with a dedicated spatial-modeling assessment grounded in H11\u2013H13 evidence, was compiled into report.md.",
+      "status": "supported",
+      "tags": [
+        "positioning",
+        "spatial",
+        "epgspeller",
+        "ssi",
+        "epg",
+        "ed20260217",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "evidence_ids": [
+        "ev_positioning_analysis_epgspeller_2026_02_18_report_md",
+        "ev_positioning_analysis_epgspeller_2026_02_18_prior_work_raw_csv",
+        "ev_positioning_analysis_epgspeller_2026_02_18_prior_work_taxonomy_csv",
+        "ev_positioning_analysis_epgspeller_2026_02_18_ours_spatial_findings_csv",
+        "ev_positioning_analysis_epgspeller_2026_02_18_taxonomy_rubric_md",
+        "ev_positioning_analysis_epgspeller_2026_02_18_taxonomy_rules_json",
+        "ev_positioning_analysis_epgspeller_2026_02_18_inputs_manifest_md",
+        "ev_positioning_analysis_epgspeller_2026_02_18_fig_positioning_space_systems_png",
+        "ev_positioning_analysis_epgspeller_2026_02_18_fig_positioning_space_representation_png",
+        "ev_positioning_analysis_epgspeller_2026_02_18_fig_w_matrix_evidence_map_png"
+      ]
+    },
+    {
+      "id": "cl_related_work_survey_epgspeller_2026-02-17_completed",
+      "statement": "A related-work survey focused on EPG-based silent spelling/SSI up to 2026-02-17 was compiled into report.md with traceable sources and an audited bibliography.",
+      "status": "supported",
+      "tags": [
+        "related-work",
+        "survey",
+        "epg",
+        "ssi",
+        "epgspeller"
+      ],
+      "evidence_ids": [
+        "ev_related_work_survey_epgspeller_2026-02-17_report_md",
+        "ev_related_work_survey_epgspeller_2026-02-17_references_bib",
+        "ev_related_work_survey_epgspeller_2026-02-17_references_audit_md",
+        "ev_related_work_survey_epgspeller_2026-02-17_coverage_matrix_csv"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_docs_report_epg_design_results_2026_02_17_md",
+      "kind": "document",
+      "path": "docs/report/epg_design_results_2026-02-17.md",
+      "sha256": "d273f01af99de72053abf1a100eecf28921c836ce45bf2d2bf3eab83845f7fd5",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_cer_vs_k_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/cer_vs_k.png",
+      "sha256": "6e5cc8712328a058d15bc5eed4126217a995174f2efbe6c2840999834436b36b",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_compare_frontends_k32_64_96_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/compare_frontends_k32_64_96.png",
+      "sha256": "fe3eabbd30cf9b19d89bf85efcaa3fd163d1f5a27f8cbe3084a4e60ba7a97013",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_delta_fps2k_minus_topk_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/delta_fps2k_minus_topk.png",
+      "sha256": "cab19129ab9e195b0c41b22b2eea7902a2bb147081dcebab56bee3517f74cbae",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_delta_topk_minus_random_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/delta_topk_minus_random.png",
+      "sha256": "ff845b7a747f8136f1c8c1ce023a87f0f630a0b2cc2b206ccd7f4cdc41567bce",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_delta_vs_baseline_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/delta_vs_baseline.png",
+      "sha256": "694c197e2e2b1ce29aa5ea2aed056bc07aa6348266bf5617ed0ead8f5a8b8ab8",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_dropout_spatial2d_aug_vs_noaug_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/dropout_spatial2d_aug_vs_noaug.png",
+      "sha256": "8e7d6a56fad143680561a9e0e38b9690476a975af52d4d46ad55004a4fc3deb4",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_layout_fps2k_k32_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/layout_fps2k_k32.png",
+      "sha256": "d59c783fc6d847fb96e90baa388a4df4f5c6b12926e9672054333b2f14b69ce6",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_layout_fps2k_k64_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/layout_fps2k_k64.png",
+      "sha256": "4c225c2f0c7fb3208e4472e5b147eb4e7a91136c707cf1ac15dea878f8f8f84e",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_layout_fps2k_k96_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/layout_fps2k_k96.png",
+      "sha256": "0b7884e95a1a7d7cb0368754c2be2d368140266526e65ff50a2740a44d9e07b6",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_layout_topk_k32_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/layout_topk_k32.png",
+      "sha256": "c011e5ee04d46749b84cf38603a101008b79cd46d79c66f822a9d1913e864c15",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_layout_topk_k64_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/layout_topk_k64.png",
+      "sha256": "21671a20ad2687cce5facbf0baeb62f9472db955449e15d9629e8561edbafae8",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_layout_topk_k96_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/layout_topk_k96.png",
+      "sha256": "f22df696050b2e8f94d6a49cc1cc2dfc0796ad71c159e5a54c94d6a5ac2d2d97",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_docs_report_figures_ed20260217_rtf_vs_k_png",
+      "kind": "figure",
+      "path": "docs/report/figures/ed20260217/rtf_vs_k.png",
+      "sha256": "ecb6450e542a5b2ebc695484d6a0137551a04a41a16b2cd26476e4049a9c433d",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17",
+      "kind": "table",
+      "path": "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv",
+      "sha256": "2f2840f6dee5b8b9e17faf696f9fb8f5f86c2a952d6c239eee2c202b747f0b06",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17",
+      "kind": "table",
+      "path": "results/ed20260217/paperjson/h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17.csv",
+      "sha256": "0cd1fecedc166c732da45187356434c85c9316a546151dd6d5100e6caec19284",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17",
+      "kind": "table",
+      "path": "results/ed20260217/paperjson/h13_rowcol_vs_vector_p1_k32_k64_2026-02-17.csv",
+      "sha256": "a7fb56ec370de19333dc4ab1f059fbd473b9d0f4b40af525375c1c7d3877bb4b",
+      "notes": "Snapshot export from logs/*/eval_{greedy_test,lex_train,lex_all}.json for P1 seeds0-3 comparing uni_gru(vector) vs rowcol_uni_gru for K in {32,64} and subset methods {topk,fps2k}. Generated by scripts/rebuttal/ed_export_paperjson_evidence.py on 2026-02-17."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_fig_positioning_space_representation_png",
+      "kind": "figure",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/figures/positioning_space_representation.png",
+      "sha256": "406d5e9e392436ebad07f75cff3bbe724717f966c999c03222fe117886040c3a",
+      "notes": "2D positioning plot for EPG-related prior work + EPGSpeller variants."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_fig_positioning_space_systems_png",
+      "kind": "figure",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/figures/positioning_space_systems.png",
+      "sha256": "0d75061bf4bbd7661df6c39f6c9c3fe307b9ec30f8907e9a844b5f447dcd9fc1",
+      "notes": "2D positioning plot for system-like papers + EPGSpeller variants."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_fig_w_matrix_evidence_map_png",
+      "kind": "figure",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/figures/w_matrix_evidence_map.png",
+      "sha256": "11a54c8f8c5b168b2b132f9c11d6e0aa0bbb7505985d3e2f8cd40100510650b7",
+      "notes": "Binary map from review weaknesses (W1\u2013W9) to evidence bundles."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_inputs_manifest_md",
+      "kind": "document",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/inputs_manifest.md",
+      "sha256": "32ac47d795afc3567d79a025c479689514a1a68d0446c53c652642edecba1b9f",
+      "notes": "List of input artifacts used to generate this positioning analysis."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_ours_spatial_findings_csv",
+      "kind": "table",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv",
+      "sha256": "428b07fee4f1f66d11d614a61d06f79cd6dcfe23a1f108a4642a93f118f523dc",
+      "notes": "Tidy extraction of H11\u2013H13 spatial findings (aggregated from evidence snapshots)."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_prior_work_raw_csv",
+      "kind": "table",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/prior_work_raw.csv",
+      "sha256": "30a76a988106ec2ae87705eea459f65efad9ae9085582912da3e45047890d898",
+      "notes": "Flat export of frozen related-work survey JSON (required fields + provenance)."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_prior_work_taxonomy_csv",
+      "kind": "table",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/prior_work_taxonomy.csv",
+      "sha256": "6a1966058db4f179961a16020396557443f2d9aab448a03ce755a275a507d8f2",
+      "notes": "Prior-work survey export with explicit taxonomy labels applied (no heuristic inference)."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_report_md",
+      "kind": "document",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/report.md",
+      "sha256": "94f8a086cc48489bf7b1377903b996aca2e7617b25b933cd41c6af8c75ccf356",
+      "notes": "Positioning analysis report (paper-ready English; evidence-only)."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_taxonomy_rubric_md",
+      "kind": "document",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rubric.md",
+      "sha256": "345b10ff46cfb66647341e1c25c119259bfaa63a9dc32948f667ccb7fd42c0f5",
+      "notes": "Taxonomy rubric defining the multi-lens positioning space."
+    },
+    {
+      "id": "ev_positioning_analysis_epgspeller_2026_02_18_taxonomy_rules_json",
+      "kind": "data",
+      "path": "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rules.json",
+      "sha256": "f0415e9db00489a6087cc0db09c265fa27e1fa5fc4a0f5b915bc7b001f2771e9",
+      "notes": "Explicit per-paper taxonomy assignments (frozen survey set)."
+    },
+    {
+      "id": "ev_related_work_survey_epgspeller_2026-02-17_coverage_matrix_csv",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/coverage_matrix.csv",
+      "sha256": "a0c95633125d1160553587a8cc0be33670543456899451021a0a04e1041bcdfe",
+      "notes": "Coverage matrix mapping surveyed papers to Related Work sections (machine-readable)."
+    },
+    {
+      "id": "ev_related_work_survey_epgspeller_2026-02-17_references_audit_md",
+      "kind": "document",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/references_audit.md",
+      "sha256": "2ced8d4c1aef2d56632720bea56ec9b46f60762bfc469fe011259296568a37d7",
+      "notes": "DOI verification summary for references.bib export."
+    },
+    {
+      "id": "ev_related_work_survey_epgspeller_2026-02-17_references_bib",
+      "kind": "bibtex",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/references.bib",
+      "sha256": "58cae1f1bb9c2d84644f1717143847fe7201d68affed763720dbc25c00174a23",
+      "notes": "Audited BibTeX exported from results/*.json sources (scope=papers)."
+    },
+    {
+      "id": "ev_related_work_survey_epgspeller_2026-02-17_report_md",
+      "kind": "document",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/report.md",
+      "sha256": "3ee6f36219209631bb14cf2b8639d6f70fe3b896a0e903be8164818edf14fe55",
+      "notes": "Paper-ready Related Work draft (Markdown) for EPGSpeller-focused survey up to 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_doi_cache_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/doi_cache.json",
+      "sha256": "714dce5e00be3a1fd13ae8cc1925c60e320b9d0dbc24ecb7829f509b2748d826",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_fields_yaml",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/fields.yaml",
+      "sha256": "1c6b37c03baa24c7447affdf775d6de736d055b94b44c1c2e248b677e29b6776",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_outline_yaml",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/outline.yaml",
+      "sha256": "90e6a179b29cca1331e7613fce62e3c1529fca96c12bc7dbd81112fc1f642fa8",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_references_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/references.json",
+      "sha256": "58def53d443b5fc09c55adbf1a6f97dc79a3a28a5f98dd6543727653572b108b",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_carreira_perpinan1998_dimred_epg_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/carreira_perpinan1998_dimred_epg.json",
+      "sha256": "bc04172cd92e6dcd47d0892cbe1a7d55ff871ad51df91a30cb7956c5765bc281",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_chen2022_epg2s_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/chen2022_epg2s.json",
+      "sha256": "efa21973f414984c35ac2fbf7ed10b987795930a22d25931133b9ac5e8a7b42a",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_denby2010_silent_speech_interfaces_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/denby2010_silent_speech_interfaces.json",
+      "sha256": "12636049fd759f1df5b8c9597883ca0d714dd3418a706af74534303441537411",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_gilbert2010_magnetic_implants_silent_speech_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/gilbert2010_magnetic_implants_silent_speech.json",
+      "sha256": "7f9dacd60ec37e470a8c086a400a36c9f67a0fec1d77035d0dcfd0942dd7ff6c",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_gonzalezlopez2020_ssi_restoration_review_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/gonzalezlopez2020_ssi_restoration_review.json",
+      "sha256": "eddf950ec7c54d58d4962a9e6e0150a4dc62eeec8c4cb46a01467ed7e7be7e2e",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_graves2006_ctc_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/graves2006_ctc.json",
+      "sha256": "73d5c132156e3876559f76236f3ab147be63d273d249afbb8447a126c727a9c5",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_hardcastle1989_state_of_art_epg_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/hardcastle1989_state_of_art_epg.json",
+      "sha256": "93e1607abcf69bd05c444facf73935d7d0d542ecf8dd4f1acdc79202ae4ecc97",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_hardcastle1990_epg_phonetic_research_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/hardcastle1990_epg_phonetic_research.json",
+      "sha256": "7f741be141a60f9af27dae525d3dec1da66159895c5dc15e6847ffce305255a9",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_hardcastle1991_epg_data_reduction_coarticulation_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/hardcastle1991_epg_data_reduction_coarticulation.json",
+      "sha256": "b124a00362f055e890e6570ccc0e7006d8260cdb4ad5ec486c3bec7d5c82cf5f",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_hueber2010_ultrasound_optical_ssi_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/hueber2010_ultrasound_optical_ssi.json",
+      "sha256": "5f0f08e3d2f4697d9ccce2f71038566f5d325552df8071403eb4a734cb00aadb",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_lee2021_biosignal_speechrec_review_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/lee2021_biosignal_speechrec_review.json",
+      "sha256": "2ee1eff31e38076188f53468ba831c516a019a3d8a42ae35bb2d92a797b89f35",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_park2019_specaugment_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/park2019_specaugment.json",
+      "sha256": "62d78bbe367fe772d6fd8ba1be8e9a5a97c1961799922335f5790e0253c1c8c2",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_rehearsse_chi2024_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/rehearsse_chi2024.json",
+      "sha256": "ad588415bd7c434c638d7ae85cf59d5bf817a86057c1b54a343e259d93a08ab5",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_shadle1993_epg_structured_light_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/shadle1993_epg_structured_light.json",
+      "sha256": "7abfb656d8353233bcec0f75167e687a6183018ad08a7f05e7927377d8c286c6",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_silentspeller_chi2022_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/silentspeller_chi2022.json",
+      "sha256": "c9b067f17f90006fe0c1b5b21e8cfdb8dc6540ac68c2ff09816a0ba913efa5ef",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_ssi_book_springer2017_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/ssi_book_springer2017.json",
+      "sha256": "3bda239298ae86fe79c9f7508ea871170c7d53485bf5279d4c1ec46392c3b7b7",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_toutios2006_acoustic_to_epg_mapping_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/toutios2006_acoustic_to_epg_mapping.json",
+      "sha256": "ca3b113422fb0f1b8a01d4565be41a67887cd2f2cd8cef874dcb151d8881120e",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_toutios2006_learning_epg_from_acoustics_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/toutios2006_learning_epg_from_acoustics.json",
+      "sha256": "72c0f6646a8a89453f46286650c1ea625342753fd983ed489f57a0de2bf1f45c",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_verhoeven2019_visualisation_analysis_epg_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/verhoeven2019_visualisation_analysis_epg.json",
+      "sha256": "60ced93c09d38ca1e8ac2a9d9951338368a01e9cbe52cc7c1b65353c761679d9",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_results_woo2021_kepg_design_json",
+      "kind": "data",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/results/woo2021_kepg_design.json",
+      "sha256": "56682370c0181690a112528f5d1c77a2f22b263649445088fdee9a41f8ff3ca4",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_results_related_work_survey_epgspeller_2026_02_17_search_log_md",
+      "kind": "document",
+      "path": "results/related_work_survey_epgspeller_2026-02-17/search_log.md",
+      "sha256": "29f54055cb30d5a12c870c71b74539366466695e7007c06e850f42401d7e608a",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_scripts_smartpalate_distribution_csv",
+      "kind": "data",
+      "path": "scripts/smartpalate_distribution.csv",
+      "sha256": "d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84",
+      "notes": "SmartPalate electrode layout proxy (CSV grid)."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_importance_p1_channel_importance_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/importance/P1_channel_importance.csv",
+      "sha256": "abfbec219a27385e04eb5399bf907b60f343a3e96d1e61d4a4f918adc0eed169",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_importance_p1_rank_stability_md",
+      "kind": "document",
+      "path": "sweeps/ed20260217/importance/P1_rank_stability.md",
+      "sha256": "0403a9f261b1fee5403f3a82f70bfd1f77b3144cfcfda99a6a0a3c6bc383babd",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_matrices_ed_p1_k64_spec0_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/matrices/ed_p1_k64_spec0.csv",
+      "sha256": "ecd28c731a4959801c8e80dae9e7383b315822857b2be6fb8f4992b205a23950",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/matrices/ed_p1_kcurve.csv",
+      "sha256": "a8df88fd5da02cf637f19dd8d18ee01b12ca3b9027bf8ff08f376ad80e35afe3",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_random_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/matrices/ed_p1_kcurve_random.csv",
+      "sha256": "aa814a14021d5ff51d74fb38076da64181fec095458a604997ba474deae241ac",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_matrices_ed_p1_projnone_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/matrices/ed_p1_projNone.csv",
+      "sha256": "16334d0b70be2c718b587fdc87956904666c41d3a5e8e140819c9a5f55f06568",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_matrices_ed_p1_rowcol_compare_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/matrices/ed_p1_rowcol_compare.csv",
+      "sha256": "e1568e451ee93b7fa4c810e2b39f3bcad01534784a9cb7cd9c278b5dc6fb987e",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_matrices_ed_p1_spatial2d_aug_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/matrices/ed_p1_spatial2d_aug.csv",
+      "sha256": "248b1bcebdb19762fb4fe622e01da2a34b6dfe155958bf2f4d836c08aa30f62d",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_matrices_ed_p1_spatial2d_compare_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/matrices/ed_p1_spatial2d_compare.csv",
+      "sha256": "4387e0796c0772b48efeba4c9ae1a10558c8fc8fb1362a87f9ca5804baa7f407",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_results_dropout_summary_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/results/dropout_summary.csv",
+      "sha256": "2db4aef434f05c3fcb0d35a4d9a9ff223ded833106e6a01d49d8ece9df16b43c",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_results_dropout_summary_spatial2d_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/results/dropout_summary_spatial2d.csv",
+      "sha256": "069e554d033156c3d0395aaddcb3ac79c051930c94f3dee9e2f2c89c4cecc403",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_results_ed20260217_partial_with_random_incomplete_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/results/ed20260217.partial_with_random_incomplete.csv",
+      "sha256": "d5cf79b8adec721d8ccc5e7be2af699ab963e647fe39004f921c69192bcc0449",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_results_ed20260217_partial_with_random_incomplete_missing_txt",
+      "kind": "data",
+      "path": "sweeps/ed20260217/results/ed20260217.partial_with_random_incomplete.missing.txt",
+      "sha256": "9605ef625b837661b53227ef460c859b606cc696c01a2c24f4e57c7d644b4941",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_results_ed20260217_results_vector_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/results/ed20260217.results_vector.csv",
+      "sha256": "c151b5e1941318c9f88855979afdce5a29198c521adf6c752073e020ccffdec9",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_results_ed20260217_results_with_spatial_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/results/ed20260217.results_with_spatial.csv",
+      "sha256": "c930253acb8ca60211609c973d4f1b11e05732c105d78859935df2fee7ec3437",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_results_ed20260217_results_with_spatial_incomplete_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/results/ed20260217.results_with_spatial_incomplete.csv",
+      "sha256": "c930253acb8ca60211609c973d4f1b11e05732c105d78859935df2fee7ec3437",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_results_ed20260217_vector_full_with_random_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/results/ed20260217.vector_full_with_random.csv",
+      "sha256": "c151b5e1941318c9f88855979afdce5a29198c521adf6c752073e020ccffdec9",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_results_ed20260217_vector_partial_no_random_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/results/ed20260217.vector_partial_no_random.csv",
+      "sha256": "81b4e801ba86c2a6f0aca2182b9b297b6d9ac41d3188fffd6c31d93041535297",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    },
+    {
+      "id": "ev_sweeps_ed20260217_subsets_p1_subset_defs_csv",
+      "kind": "data",
+      "path": "sweeps/ed20260217/subsets/P1_subset_defs.csv",
+      "sha256": "a9b8704260370aff5f0b5ab2dab1f82aa14e8d27896bb55b646ee557c5332a92",
+      "notes": "Auto-registered artifact on 2026-02-17."
+    }
+  ],
+  "runs": [
+    {
+      "id": "run_ed20260217_snapshot_h11_spatial2d_vs_vector_2026-02-17",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          ".venv/bin/python",
+          "scripts/rebuttal/ed_export_paperjson_evidence.py",
+          "--export",
+          "h11_spatial2d_vs_vector",
+          "--out_csv",
+          "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv",
+          "--snapshot_date",
+          "2026-02-17"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv"
+        }
+      ],
+      "notes": "Produces paper.json evidence snapshot for H11 (spatial2d vs vector)."
+    },
+    {
+      "id": "run_ed20260217_snapshot_h12_spatial_aug_dropout_summary_2026-02-17",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          ".venv/bin/python",
+          "scripts/rebuttal/ed_export_paperjson_evidence.py",
+          "--export",
+          "h12_spatial_aug_dropout_summary",
+          "--out_csv",
+          "results/ed20260217/paperjson/h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17.csv",
+          "--snapshot_date",
+          "2026-02-17"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/ed20260217/paperjson/h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17.csv"
+        }
+      ],
+      "notes": "Produces paper.json evidence snapshot for H12 (spatial aug fixed-dropout summary)."
+    },
+    {
+      "id": "run_ed20260217_snapshot_h13_rowcol_vs_vector_2026-02-17",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          ".venv/bin/python",
+          "scripts/rebuttal/ed_export_paperjson_evidence.py",
+          "--out_csv",
+          "results/ed20260217/paperjson/h13_rowcol_vs_vector_p1_k32_k64_2026-02-17.csv",
+          "--snapshot_date",
+          "2026-02-17"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/ed20260217/paperjson/h13_rowcol_vs_vector_p1_k32_k64_2026-02-17.csv"
+        }
+      ],
+      "notes": "Produces paper.json evidence snapshot for H13 (rowcol vs vector)."
+    },
+    {
+      "id": "run_positioning_analysis_2026-02-18_apply_taxonomy",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          ".venv/bin/python",
+          "scripts/rebuttal/pa_positioning_apply_taxonomy.py",
+          "--raw_csv",
+          "results/positioning_analysis_epgspeller_2026-02-18/prior_work_raw.csv",
+          "--rubric_md",
+          "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rubric.md",
+          "--rules_json",
+          "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rules.json"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/prior_work_taxonomy.csv"
+        }
+      ],
+      "notes": "Applies explicit (non-heuristic) taxonomy labels to the frozen survey export."
+    },
+    {
+      "id": "run_positioning_analysis_2026-02-18_author_static_inputs",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          "manual",
+          "authored results/positioning_analysis_epgspeller_2026-02-18/{inputs_manifest.md,taxonomy_rubric.md,taxonomy_rules.json}"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/inputs_manifest.md"
+        },
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rubric.md"
+        },
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rules.json"
+        }
+      ],
+      "notes": "Static inputs for positioning analysis were authored by hand (no heuristic inference)."
+    },
+    {
+      "id": "run_positioning_analysis_2026-02-18_extract_ours_spatial",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          ".venv/bin/python",
+          "scripts/rebuttal/pa_positioning_extract_ours_spatial.py",
+          "--h11_csv",
+          "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv",
+          "--h12_csv",
+          "results/ed20260217/paperjson/h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17.csv",
+          "--h13_csv",
+          "results/ed20260217/paperjson/h13_rowcol_vs_vector_p1_k32_k64_2026-02-17.csv",
+          "--out_csv",
+          "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv"
+        }
+      ],
+      "notes": "Normalizes H11\u2013H13 evidence snapshots into a tidy findings CSV (aggregated across seeds when applicable)."
+    },
+    {
+      "id": "run_positioning_analysis_2026-02-18_extract_priorwork",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          ".venv/bin/python",
+          "scripts/rebuttal/pa_positioning_extract_priorwork.py",
+          "--survey_dir",
+          "results/related_work_survey_epgspeller_2026-02-17/results",
+          "--out_csv",
+          "results/positioning_analysis_epgspeller_2026-02-18/prior_work_raw.csv"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/prior_work_raw.csv"
+        }
+      ],
+      "notes": "Extracts frozen related-work survey JSON (required fields) into a flat CSV for taxonomy/plots."
+    },
+    {
+      "id": "run_positioning_analysis_2026-02-18_make_plots",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          ".venv/bin/python",
+          "scripts/rebuttal/pa_positioning_make_plots.py",
+          "--prior_tax_csv",
+          "results/positioning_analysis_epgspeller_2026-02-18/prior_work_taxonomy.csv",
+          "--ours_csv",
+          "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv",
+          "--out_dir",
+          "results/positioning_analysis_epgspeller_2026-02-18/figures"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/figures/positioning_space_systems.png"
+        },
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/figures/positioning_space_representation.png"
+        },
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/figures/w_matrix_evidence_map.png"
+        }
+      ],
+      "notes": "Generates positioning plots (systems space / representation space / W-matrix)."
+    },
+    {
+      "id": "run_positioning_analysis_2026-02-18_write_report",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          ".venv/bin/python",
+          "scripts/rebuttal/pa_positioning_write_report.py",
+          "--prior_tax_csv",
+          "results/positioning_analysis_epgspeller_2026-02-18/prior_work_taxonomy.csv",
+          "--ours_csv",
+          "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv",
+          "--review_weakness_md",
+          "docs/report/icassp2026_review_weaknesses_and_rebuttal_actions.md",
+          "--related_work_md",
+          "results/related_work_survey_epgspeller_2026-02-17/report.md",
+          "--out_md",
+          "results/positioning_analysis_epgspeller_2026-02-18/report.md",
+          "--fig_dir",
+          "results/positioning_analysis_epgspeller_2026-02-18/figures"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/positioning_analysis_epgspeller_2026-02-18/report.md"
+        }
+      ],
+      "notes": "Writes the paper-ready English positioning report with strict H11\u2013H13 assertions and explicit evidence references."
+    },
+    {
+      "id": "run_related_work_survey_epgspeller_2026-02-17_export_bib",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          "python3",
+          "~/.claude/skills/research/citation_export.py",
+          "--outline",
+          "results/related_work_survey_epgspeller_2026-02-17/outline.yaml",
+          "--scope",
+          "papers",
+          "--verify-doi",
+          "true",
+          "--verify-url",
+          "true"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/related_work_survey_epgspeller_2026-02-17/references.bib"
+        },
+        {
+          "path": "results/related_work_survey_epgspeller_2026-02-17/references.json"
+        },
+        {
+          "path": "results/related_work_survey_epgspeller_2026-02-17/references_audit.md"
+        },
+        {
+          "path": "results/related_work_survey_epgspeller_2026-02-17/doi_cache.json"
+        }
+      ],
+      "notes": "BibTeX export and DOI audit run (executed on a workstation with ~/.claude/skills/research tooling available)."
+    },
+    {
+      "id": "run_related_work_survey_epgspeller_2026-02-17_generate_report",
+      "status": "succeeded",
+      "command": {
+        "cwd": ".",
+        "argv": [
+          "manual"
+        ]
+      },
+      "outputs": [
+        {
+          "path": "results/related_work_survey_epgspeller_2026-02-17/report.md"
+        },
+        {
+          "path": "results/related_work_survey_epgspeller_2026-02-17/coverage_matrix.csv"
+        },
+        {
+          "path": "results/related_work_survey_epgspeller_2026-02-17/search_log.md"
+        }
+      ],
+      "notes": "Report and coverage matrix authored based on results/*.json and exported citekeys; no automated generator script was vendored in this repo for this step."
+    }
+  ],
+  "experiments": [
+    {
+      "id": "exp_ed20260217_h11_spatial2d_vs_vector_p1",
+      "title": "H11: 16\u00d716 reconstruction + 2D Conv frontend vs vector (P1, K=32/64/96/124)",
+      "claim_ids": [
+        "cl_ed20260217_h11_spatial2d_vs_vector_p1"
+      ],
+      "run_ids": [
+        "run_ed20260217_snapshot_h11_spatial2d_vs_vector_2026-02-17"
+      ],
+      "notes": "Snapshot-based comparison; underlying model runs are referenced by run_id inside the evidence CSV."
+    },
+    {
+      "id": "exp_ed20260217_h12_spatial_aug_dropout_robustness_p1",
+      "title": "H12: spatial augmentation improves fixed-dropout robustness (P1, spatial2d, K=64 topk)",
+      "claim_ids": [
+        "cl_ed20260217_h12_spatial_aug_improves_dropout_robustness_p1"
+      ],
+      "run_ids": [
+        "run_ed20260217_snapshot_h12_spatial_aug_dropout_summary_2026-02-17"
+      ],
+      "notes": "Summary table derived from sweeps/ed20260217/results/dropout_summary_spatial2d.csv, which aggregates eval_dropout_q*.json artifacts under logs/<run_id>/."
+    },
+    {
+      "id": "exp_ed20260217_h13_rowcol_vs_vector_p1",
+      "title": "H13: row/col compression vs vector frontend (P1, K=32/64)",
+      "claim_ids": [
+        "cl_ed20260217_h13_rowcol_vs_vector_p1"
+      ],
+      "run_ids": [
+        "run_ed20260217_snapshot_h13_rowcol_vs_vector_2026-02-17"
+      ],
+      "notes": "Snapshot-based comparison; underlying model runs are referenced by run_id inside the evidence CSV."
+    },
+    {
+      "id": "exp_related_work_survey_epgspeller_2026-02-17",
+      "title": "Related Work survey (EPG-centered) up to 2026-02-17",
+      "claim_ids": [
+        "cl_related_work_survey_epgspeller_2026-02-17_completed"
+      ],
+      "run_ids": [
+        "run_related_work_survey_epgspeller_2026-02-17_generate_report",
+        "run_related_work_survey_epgspeller_2026-02-17_export_bib"
+      ],
+      "notes": "Survey artifacts are stored under results/related_work_survey_epgspeller_2026-02-17/."
+    }
+  ]
+}

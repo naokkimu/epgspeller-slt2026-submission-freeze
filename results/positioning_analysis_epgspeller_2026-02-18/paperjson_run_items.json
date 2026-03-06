@@ -1,0 +1,132 @@
+[
+  {
+    "id": "run_positioning_analysis_2026-02-18_author_static_inputs",
+    "status": "succeeded",
+    "command": {
+      "cwd": ".",
+      "argv": [
+        "manual",
+        "authored results/positioning_analysis_epgspeller_2026-02-18/{inputs_manifest.md,taxonomy_rubric.md,taxonomy_rules.json}"
+      ]
+    },
+    "outputs": [
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/inputs_manifest.md"},
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rubric.md"},
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rules.json"}
+    ],
+    "notes": "Static inputs for positioning analysis were authored by hand (no heuristic inference)."
+  },
+  {
+    "id": "run_positioning_analysis_2026-02-18_extract_priorwork",
+    "status": "succeeded",
+    "command": {
+      "cwd": ".",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/rebuttal/pa_positioning_extract_priorwork.py",
+        "--survey_dir",
+        "results/related_work_survey_epgspeller_2026-02-17/results",
+        "--out_csv",
+        "results/positioning_analysis_epgspeller_2026-02-18/prior_work_raw.csv"
+      ]
+    },
+    "outputs": [
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/prior_work_raw.csv"}
+    ],
+    "notes": "Extracts frozen related-work survey JSON (required fields) into a flat CSV for taxonomy/plots." 
+  },
+  {
+    "id": "run_positioning_analysis_2026-02-18_apply_taxonomy",
+    "status": "succeeded",
+    "command": {
+      "cwd": ".",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/rebuttal/pa_positioning_apply_taxonomy.py",
+        "--raw_csv",
+        "results/positioning_analysis_epgspeller_2026-02-18/prior_work_raw.csv",
+        "--rubric_md",
+        "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rubric.md",
+        "--rules_json",
+        "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rules.json"
+      ]
+    },
+    "outputs": [
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/prior_work_taxonomy.csv"}
+    ],
+    "notes": "Applies explicit (non-heuristic) taxonomy labels to the frozen survey export." 
+  },
+  {
+    "id": "run_positioning_analysis_2026-02-18_extract_ours_spatial",
+    "status": "succeeded",
+    "command": {
+      "cwd": ".",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/rebuttal/pa_positioning_extract_ours_spatial.py",
+        "--h11_csv",
+        "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv",
+        "--h12_csv",
+        "results/ed20260217/paperjson/h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17.csv",
+        "--h13_csv",
+        "results/ed20260217/paperjson/h13_rowcol_vs_vector_p1_k32_k64_2026-02-17.csv",
+        "--out_csv",
+        "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv"
+      ]
+    },
+    "outputs": [
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv"}
+    ],
+    "notes": "Normalizes H11–H13 evidence snapshots into a tidy findings CSV (aggregated across seeds when applicable)."
+  },
+  {
+    "id": "run_positioning_analysis_2026-02-18_make_plots",
+    "status": "succeeded",
+    "command": {
+      "cwd": ".",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/rebuttal/pa_positioning_make_plots.py",
+        "--prior_tax_csv",
+        "results/positioning_analysis_epgspeller_2026-02-18/prior_work_taxonomy.csv",
+        "--ours_csv",
+        "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv",
+        "--out_dir",
+        "results/positioning_analysis_epgspeller_2026-02-18/figures"
+      ]
+    },
+    "outputs": [
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/figures/positioning_space_systems.png"},
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/figures/positioning_space_representation.png"},
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/figures/w_matrix_evidence_map.png"}
+    ],
+    "notes": "Generates positioning plots (systems space / representation space / W-matrix)."
+  },
+  {
+    "id": "run_positioning_analysis_2026-02-18_write_report",
+    "status": "succeeded",
+    "command": {
+      "cwd": ".",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/rebuttal/pa_positioning_write_report.py",
+        "--prior_tax_csv",
+        "results/positioning_analysis_epgspeller_2026-02-18/prior_work_taxonomy.csv",
+        "--ours_csv",
+        "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv",
+        "--review_weakness_md",
+        "docs/report/icassp2026_review_weaknesses_and_rebuttal_actions.md",
+        "--related_work_md",
+        "results/related_work_survey_epgspeller_2026-02-17/report.md",
+        "--out_md",
+        "results/positioning_analysis_epgspeller_2026-02-18/report.md",
+        "--fig_dir",
+        "results/positioning_analysis_epgspeller_2026-02-18/figures"
+      ]
+    },
+    "outputs": [
+      {"path": "results/positioning_analysis_epgspeller_2026-02-18/report.md"}
+    ],
+    "notes": "Writes the paper-ready English positioning report with strict H11–H13 assertions and explicit evidence references." 
+  }
+]

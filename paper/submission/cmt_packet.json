@@ -1,0 +1,20 @@
+{
+  "fields": {},
+  "format": {
+    "name": "interspeech2026-cmt-packet",
+    "version": "0.1.0"
+  },
+  "generated_files": [],
+  "inputs": {
+    "cmt_inputs_json": "paper/cmt_inputs.json"
+  },
+  "missing": [
+    "authors",
+    "cmt_inputs_missing",
+    "domain_conflicts",
+    "preferred_presentation_format",
+    "student_paper_award",
+    "subject_areas.primary",
+    "toronto_paper_matching_system_authorize"
+  ]
+}

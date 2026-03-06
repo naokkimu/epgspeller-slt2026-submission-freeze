@@ -1,0 +1,121 @@
+[
+  {
+    "id": "ev_msx20260224_metrics_csv",
+    "kind": "data",
+    "notes": "Aggregated metrics for msx20260224 (missing=0).",
+    "path": "sweeps/msx20260224/results/msx_all_metrics.csv",
+    "sha256": "5a0cff21afab9ccb14d2d3cbc15bb9257cca6d765ed8b26232d2e47b10e3f706"
+  },
+  {
+    "id": "ev_msx20260224_extended_report_md",
+    "kind": "document",
+    "notes": "Evidence-only extended multi-subject report for msx20260224.",
+    "path": "docs/report/multi_subject_extended_results_2026-02-24.md",
+    "sha256": "3be7d9ac26b33562d04703d6b287ed740105c5ca7d7a555b360969ad9e9d214e"
+  },
+  {
+    "id": "ev_msx20260224_split_npz_manifest_csv",
+    "kind": "data",
+    "notes": "Manifest of split NPZ archives referenced by msx metrics (size and sha256).",
+    "path": "results/msx20260224/split_npz_manifest.csv",
+    "sha256": "8eef0bb574044a4d527c4a3d16a1fa17c31c3b61f83fc7c25a9f8462c5c33363"
+  },
+  {
+    "id": "ev_msx20260224_fig_spatial_k124_p1_cer_bar_png",
+    "kind": "figure",
+    "notes": "Spatial modeling @ full channels: word-holdout protocol.",
+    "path": "docs/report/figures/msx20260224/spatial_k124_P1_cer_bar.png",
+    "sha256": "8231216066f37ddef24e11fcb161510a50a49c76e5e669c29a4597e81c5b1ae7"
+  },
+  {
+    "id": "ev_msx20260224_fig_spatial_k124_p2_cer_bar_png",
+    "kind": "figure",
+    "notes": "Spatial modeling @ full channels: instance-holdout protocol.",
+    "path": "docs/report/figures/msx20260224/spatial_k124_P2_cer_bar.png",
+    "sha256": "4e94a1e18183b01b5ab0597e184978ed75e3dfd9bb53d1fcc46d7a3afacdb86e"
+  },
+  {
+    "id": "ev_msx20260224_fig_spatial_k124_p3_cer_bar_png",
+    "kind": "figure",
+    "notes": "Spatial modeling @ full channels: cross-subject protocol.",
+    "path": "docs/report/figures/msx20260224/spatial_k124_P3_cer_bar.png",
+    "sha256": "5fe2788a94883c03676b03aead6b642a15ab78f1b0f143363b453a7383317843"
+  },
+  {
+    "id": "ev_msx20260224_fig_k64_p1_cer_bar_png",
+    "kind": "figure",
+    "notes": "Electrode reduction @ reduced channels: word-holdout protocol.",
+    "path": "docs/report/figures/msx20260224/k64_P1_cer_bar.png",
+    "sha256": "939f6874a918cae2a11aa7d71d375f66215c31bca5b2ccd7b5e4f94b9b8ce902"
+  },
+  {
+    "id": "ev_msx20260224_fig_k64_p2_cer_bar_png",
+    "kind": "figure",
+    "notes": "Electrode reduction @ reduced channels: instance-holdout protocol.",
+    "path": "docs/report/figures/msx20260224/k64_P2_cer_bar.png",
+    "sha256": "6914786dcab80a1d51bb94112a702193a2559ac3f64fbc119a74f988c14cdcc5"
+  },
+  {
+    "id": "ev_msx20260224_fig_k64_p3_cer_bar_png",
+    "kind": "figure",
+    "notes": "Electrode reduction @ reduced channels: cross-subject protocol.",
+    "path": "docs/report/figures/msx20260224/k64_P3_cer_bar.png",
+    "sha256": "d237867ce6d74f221ca37efba431b40f51735a91ef99363a4803ebf2553fc4f8"
+  },
+  {
+    "id": "ev_msx20260224_table_main_csv",
+    "kind": "table",
+    "notes": "Compact table: baseline recap aggregated over groups.",
+    "path": "results/msx20260224/paper_tables/table_main.csv",
+    "sha256": "dff6b3436c265008bc53754745b6fd44b0cd6fcca7bd92a34fcf7d1f13ae9570"
+  },
+  {
+    "id": "ev_msx20260224_table_spatial_k124_csv",
+    "kind": "table",
+    "notes": "Compact table: spatial modeling at full channels.",
+    "path": "results/msx20260224/paper_tables/table_spatial_k124.csv",
+    "sha256": "74bd2da304d330f3230103baede46960f994dfcd55563d2f6021fddc1d87240e"
+  },
+  {
+    "id": "ev_msx20260224_table_k64_methods_csv",
+    "kind": "table",
+    "notes": "Compact table: electrode reduction methods at reduced channels.",
+    "path": "results/msx20260224/paper_tables/table_k64_methods.csv",
+    "sha256": "4deb9957f723e91475a974b20ff5e6a105ffed8d40646901d7df8cae18b93573"
+  },
+  {
+    "id": "ev_msx20260224_table_spatial_k64_csv",
+    "kind": "table",
+    "notes": "Compact table: spatial modeling at reduced channels (within-topk subset).",
+    "path": "results/msx20260224/paper_tables/table_spatial_k64.csv",
+    "sha256": "48c274f9ec2043d91f695560bf1833471f8495862469beb39bccc061d99159cf"
+  },
+  {
+    "id": "ev_msx20260224_table_p3ms_csv",
+    "kind": "table",
+    "notes": "Compact table: multi-source cross-subject protocol.",
+    "path": "results/msx20260224/paper_tables/table_p3ms.csv",
+    "sha256": "11097b4d1edb99125d487667697cbd39c9fd49b0230f2d9c635fb9f6493a24ad"
+  },
+  {
+    "id": "ev_msx20260224_table_kshot_csv",
+    "kind": "table",
+    "notes": "Compact table: k-shot adaptation protocol for new participant.",
+    "path": "results/msx20260224/paper_tables/table_kshot.csv",
+    "sha256": "67248482a1c901f1fc2a35b2a0c41ea27541ac3b172eb5e4cf73dd41cedc38bb"
+  },
+  {
+    "id": "ev_scripts_paper_export_msx_tables_for_paperjson_py",
+    "kind": "data",
+    "notes": "Deterministic exporter from msx aggregated metrics to compact paper tables.",
+    "path": "scripts/paper/export_msx_tables_for_paperjson.py",
+    "sha256": "2100f045c5b121e7167cbb5cb59136bc2e6d61f8b64b2663f8fc317e4d801e84"
+  },
+  {
+    "id": "ev_scripts_rebuttal_msx_export_split_npz_manifest_py",
+    "kind": "data",
+    "notes": "Deterministic exporter for a split NPZ sha256 manifest (from msx metrics).",
+    "path": "scripts/rebuttal/msx_export_split_npz_manifest.py",
+    "sha256": "5c345cc8905f2b43745381fba9d8f379008a046e012c295274cd68caf316bfc1"
+  }
+]

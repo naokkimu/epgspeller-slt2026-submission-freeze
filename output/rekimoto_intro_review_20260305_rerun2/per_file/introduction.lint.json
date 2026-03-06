@@ -1,0 +1,154 @@
+{
+  "checks": {
+    "abstract": {
+      "can_be_used_to_count": 0,
+      "can_count": 0,
+      "claim_marker": true,
+      "problem_markers": 0,
+      "stats": {
+        "char_count": 916,
+        "sentence_count": 6,
+        "word_count": 130
+      }
+    },
+    "acronyms": {
+      "all": [
+        {
+          "acronym": "SSI",
+          "first_sent_index": 1
+        },
+        {
+          "acronym": "EPG",
+          "first_sent_index": 2
+        }
+      ],
+      "defined": [
+        "EPG",
+        "SSI"
+      ],
+      "undefined_common": [],
+      "undefined_other": []
+    },
+    "claim_first": {
+      "label": "claim",
+      "sent_index": 4,
+      "snippet": null
+    },
+    "contribution_first": null,
+    "evaluation_first": {
+      "label": "evaluation",
+      "sent_index": 4,
+      "snippet": null
+    },
+    "good_adjectives": {
+      "hits": [],
+      "total": 0
+    },
+    "investigate_only": {
+      "count": 0,
+      "hits": []
+    },
+    "logic_jump_candidates": {
+      "candidates": [
+        {
+          "jaccard": 0.018,
+          "sent_index_a": 1,
+          "sent_index_b": 2,
+          "snippet_a": null,
+          "snippet_b": null
+        },
+        {
+          "jaccard": 0.02,
+          "sent_index_a": 4,
+          "sent_index_b": 5,
+          "snippet_a": null,
+          "snippet_b": null
+        },
+        {
+          "jaccard": 0.0,
+          "sent_index_a": 5,
+          "sent_index_b": 6,
+          "snippet_a": null,
+          "snippet_b": null
+        },
+        {
+          "jaccard": 0.0,
+          "sent_index_a": 6,
+          "sent_index_b": 7,
+          "snippet_a": null,
+          "snippet_b": null
+        },
+        {
+          "jaccard": 0.043,
+          "sent_index_a": 7,
+          "sent_index_b": 8,
+          "snippet_a": null,
+          "snippet_b": null
+        },
+        {
+          "jaccard": 0.0,
+          "sent_index_a": 8,
+          "sent_index_b": 9,
+          "snippet_a": null,
+          "snippet_b": null
+        },
+        {
+          "jaccard": 0.023,
+          "sent_index_a": 9,
+          "sent_index_b": 10,
+          "snippet_a": null,
+          "snippet_b": null
+        },
+        {
+          "jaccard": 0.043,
+          "sent_index_a": 10,
+          "sent_index_b": 11,
+          "snippet_a": null,
+          "snippet_b": null
+        },
+        {
+          "jaccard": 0.04,
+          "sent_index_a": 11,
+          "sent_index_b": 12,
+          "snippet_a": null,
+          "snippet_b": null
+        }
+      ],
+      "count": 9
+    },
+    "naming_first": {
+      "label": "naming",
+      "sent_index": 4,
+      "snippet": null
+    },
+    "recently_however_claim_windows": [
+      {
+        "claim_sent": 4,
+        "however_sent": 3,
+        "recently_sent": 2,
+        "snippets": {
+          "claim": null,
+          "however": null,
+          "recently": null
+        },
+        "window_sent_end": 6,
+        "window_sent_start": 1
+      }
+    ],
+    "tradeoff_first": {
+      "label": "tradeoff",
+      "sent_index": 3,
+      "snippet": null
+    }
+  },
+  "input": {
+    "input_bytes": 2809,
+    "input_path": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/output/rekimoto_intro_review_20260305_rerun2/introduction.txt",
+    "input_sha256": "e554b7f22e3f080f45c6f49e48da053049308948f85901f08d395a6a1c58c4a0"
+  },
+  "stats": {
+    "char_count": 2809,
+    "sentence_count": 14,
+    "word_count": 345
+  }
+}

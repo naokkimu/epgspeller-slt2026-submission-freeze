@@ -1,0 +1,16 @@
+
+Silent speech interfaces (SSI) infer linguistic intent from non-acoustic signals, including articulatory sensing and other biosignals. For silent spelling with electropalatography (EPG), a practical failure remains: many evaluations mix word-identity holdout, repeated-instance holdout, and cross-participant transfer, so reported gains can reflect protocol differences rather than decoder differences.~\cite{denby2010silent,freitas2017an,gonzalez2020silent,hardcastle1989new,hardcastle1990electropalatography,lee2021biosignal,verhoeven2019visualisation,woo2021design}
+
+Recent systems such as SilentSpeller and ReHEarSSE show lexicon-scale character-level spelling beyond small command sets. However, these lines of work do not provide a unified, auditable protocol stack that isolates each generalization regime under a shared artifact trace. In parallel, prior EPG studies motivate structured representations and spatial inductive bias, but their evaluation settings are heterogeneous across datasets and tasks.~\cite{carreira1998dimensionality,denby2010silent,dong2024rehearsse,gilbert2010isolated,graves2006connectionist,hardcastle1991epg,hueber2010development,kimura2022silentspeller,shadle1993depth,toutios2006learning,toutios2006on}
+
+To address this gap, we introduce EPGSpeller, an evidence-tracked evaluation framework for EPG silent spelling. EPGSpeller fixes deterministic split generation, pinned split manifests, and a common metric harness for greedy decoding, lexicon projection, and streaming cost. It explicitly separates word holdout, instance holdout, and cross-participant transfer so model comparisons remain protocol-specific and reproducible. We validate EPGSpeller with four participant datasets and compare a vector baseline with row-column and grid-based front ends under matched settings. We also evaluate electrode reduction and low-shot adaptation under the same audit rules. Across our audited runs, row-column pooling tracks the vector baseline more consistently than grid variants, while cross-participant transfer remains the dominant bottleneck.~\cite{carreira1998dimensionality,hardcastle1991epg,shadle1993depth,toutios2006learning,toutios2006on}
+
+Claim: protocol-level auditability is a first-order requirement for defensible progress in EPG silent spelling.
+
+\begin{itemize}
+\item We define deterministic protocol families that isolate word-identity, instance-level, and cross-participant generalization.
+\item We provide checksum-pinned split archives and manifests so each reported result is reproducible from audited artifacts.
+\item We benchmark vector, row-column, and grid front ends under a shared evaluation harness with accuracy and streaming metrics.
+\item We report electrode-reduction and low-shot analyses under the same protocol constraints.
+\end{itemize}
+

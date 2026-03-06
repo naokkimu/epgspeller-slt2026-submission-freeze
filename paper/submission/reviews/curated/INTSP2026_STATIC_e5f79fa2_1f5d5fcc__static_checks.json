@@ -1,0 +1,168 @@
+{
+  "checks": [
+    {
+      "evidence": {},
+      "id": "abstract_ascii",
+      "message": "abstract is ASCII-only",
+      "ok": true,
+      "severity": "info"
+    },
+    {
+      "evidence": {
+        "abstract_chars": 880,
+        "max_characters": 1000
+      },
+      "id": "abstract_length",
+      "message": "abstract_chars=880 <= max_characters=1000",
+      "ok": true,
+      "severity": "info"
+    },
+    {
+      "evidence": {},
+      "id": "abstract_no_citations",
+      "message": "no \\cite* in abstract",
+      "ok": true,
+      "severity": "info"
+    },
+    {
+      "evidence": {
+        "positions": {
+          "ack": null,
+          "disclosure": 22899,
+          "printbibliography": null,
+          "references_heading": 23125,
+          "refs": 23066,
+          "thebibliography": null
+        }
+      },
+      "id": "ai_disclosure_placement_heuristic",
+      "message": "disclosure placement looks plausible",
+      "ok": true,
+      "severity": "info"
+    },
+    {
+      "evidence": {
+        "required_title": "Generative AI Use Disclosure"
+      },
+      "id": "ai_disclosure_present",
+      "message": "Generative AI Use Disclosure section found",
+      "ok": true,
+      "severity": "info"
+    },
+    {
+      "evidence": {
+        "documentclass": {
+          "class": "Interspeech",
+          "found": true,
+          "has_cameraready": false,
+          "is_interspeech": true,
+          "options": [],
+          "options_raw": ""
+        }
+      },
+      "id": "anonymity_cameraready_flag",
+      "message": "no cameraready option in review stage",
+      "ok": true,
+      "severity": "info"
+    },
+    {
+      "evidence": {
+        "email_hits": []
+      },
+      "id": "anonymity_email_heuristic",
+      "message": "no email-like strings detected in extracted PDF text",
+      "ok": true,
+      "severity": "info"
+    },
+    {
+      "evidence": {
+        "banned_token_re": "\\\\b(TBD|TODO|placeholder|mock)\\\\b",
+        "hits": []
+      },
+      "id": "banned_tokens",
+      "message": "no banned tokens",
+      "ok": true,
+      "severity": "info"
+    },
+    {
+      "evidence": {
+        "max_pages": 6,
+        "page_count": 4
+      },
+      "id": "page_limit",
+      "message": "page_count=4 <= max_pages=6",
+      "ok": true,
+      "severity": "info"
+    }
+  ],
+  "format": {
+    "name": "interspeech-static-review",
+    "version": "0.1.0"
+  },
+  "inputs": {
+    "ai_tools_used": "unknown",
+    "paper_type": "regular",
+    "pdf": {
+      "extracted_chars": 24494,
+      "max_chars": 120000,
+      "media_boxes": [
+        {
+          "height_pt": 841.89,
+          "page": 1,
+          "width_pt": 595.276
+        },
+        {
+          "height_pt": 841.89,
+          "page": 2,
+          "width_pt": 595.276
+        },
+        {
+          "height_pt": 841.89,
+          "page": 3,
+          "width_pt": 595.276
+        },
+        {
+          "height_pt": 841.89,
+          "page": 4,
+          "width_pt": 595.276
+        }
+      ],
+      "page_count": 4,
+      "path": "interspeech2026_review.pdf",
+      "sha256": "e5f79fa2e23868ae95437efae0413c4cd5b976d8b1b8fdc987478ed1c5349832",
+      "sha8": "e5f79fa2",
+      "truncated": false
+    },
+    "rules": "/Users/naokkimu/.codex/skills/interspeech-manuscript-review/references/interspeech2026_rules.yaml",
+    "rules_meta": {
+      "source": {
+        "kind": "overleaf_template",
+        "notes": "Rules extracted from the template instructions embedded in the Overleaf source and abstract comments.",
+        "retrieved_local_date": "2026-02-24",
+        "title": "Interspeech Paper Kit",
+        "url": "https://www.overleaf.com/latex/templates/interspeech-paper-kit/svqkgcpdbxfg"
+      },
+      "venue": "Interspeech",
+      "year": 2026
+    },
+    "stage": "review",
+    "tex": {
+      "abstract": {
+        "found": true,
+        "plain_characters": 880
+      },
+      "documentclass": {
+        "class": "Interspeech",
+        "found": true,
+        "has_cameraready": false,
+        "is_interspeech": true,
+        "options": [],
+        "options_raw": ""
+      },
+      "path": "interspeech2026_review.tex",
+      "sha256": "1f5d5fcc575d2c63809432a773a586c56129dcedde989c0462bcb39ec26055c5",
+      "sha8": "1f5d5fcc"
+    }
+  },
+  "run_id": "INTSP2026_STATIC_e5f79fa2_1f5d5fcc"
+}

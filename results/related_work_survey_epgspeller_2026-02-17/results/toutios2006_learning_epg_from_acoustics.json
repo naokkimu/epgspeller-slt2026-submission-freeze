@@ -1,0 +1,75 @@
+{
+  "paper_id": "toutios2006_learning_epg_from_acoustics",
+  "title": "Learning Electropalatograms from Acoustics",
+  "authors": [
+    "A. Toutios",
+    "K. Margaritis"
+  ],
+  "year": 2006,
+  "venue": "ICASSP 2006 (IEEE International Conference on Acoustics, Speech and Signal Processing)",
+  "doi": "10.1109/ICASSP.2006.1660032",
+  "primary_url": "https://doi.org/10.1109/ICASSP.2006.1660032",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "toutios2006learnedepg",
+
+  "modality": "Speech acoustics + Electropalatography (EPG)",
+  "device": "Audio recording + EPG palate-contact sensing (as reported)",
+  "task": "Acoustic-to-EPG mapping (predicting electropalatograms from acoustics)",
+  "output_unit": "EPG contact patterns (electropalatograms)",
+  "vocabulary_setting": "N/A (mapping task; not a lexicon-decoding benchmark)",
+  "datasets": "Acoustic + EPG paired data as reported in the paper",
+  "evaluation_protocol": "Mapping evaluation on held-out data as reported (see paper for details)",
+  "metrics_reported": "Mapping/reconstruction performance metrics as reported in the paper",
+
+  "decoder": "Supervised mapping model from acoustics to EPG patterns",
+  "model_architecture": "Machine learning model for acoustic-to-EPG prediction (paper-specific)",
+  "spatial_frontend": "EPG represented as multi-electrode contact patterns (palatograms) predicted from acoustic features",
+  "augmentation": "N/A / not central",
+
+  "key_contributions": [
+    "Proposes learning to predict EPG contact patterns from acoustic observations (acoustic-to-EPG mapping).",
+    "Illustrates that EPG contact patterns can be modeled/predicted as structured high-dimensional outputs, motivating representation discussions.",
+    "Useful related work for articulatory modeling context and for motivating spatially structured EPG representations."
+  ],
+  "limitations": [
+    "Task is acoustic-to-EPG prediction rather than EPG-to-text decoding; relevance is indirect (representation/modeling context).",
+    "Specific dataset and evaluation details are paper-specific and must be consulted for precise reproduction."
+  ],
+  "reported_results_summary": "The paper reports performance for predicting EPG patterns from acoustics under its protocol; consult DOI/Crossref sources and the paper for details.",
+
+  "relevance_to_epgspeller": "Provides articulatory modeling context for EPG as a learnable structured signal; supports the Related Work discussion on spatial representations and why richer front-ends (2D/geometry-aware) may be appropriate.",
+  "takeaways_for_related_work_section": "An ICASSP 2006 paper on acoustic-to-EPG mapping; useful to cite for articulatory modeling context and for motivating structured representations of EPG contact patterns.",
+
+  "sources": [
+    {
+      "url": "https://doi.org/10.1109/ICASSP.2006.1660032",
+      "title": "DOI: 10.1109/ICASSP.2006.1660032",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.1109/ICASSP.2006.1660032",
+      "year": 2006,
+      "venue": "ICASSP 2006"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1109/ICASSP.2006.1660032",
+      "title": "Crossref API: 10.1109/ICASSP.2006.1660032",
+      "retrieved_at": "2026-02-17",
+      "source_type": "web",
+      "doi": "10.1109/ICASSP.2006.1660032"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1109/ICASSP.2006.1660032",
+      "title": "OpenAlex: Learning Electropalatograms from Acoustics",
+      "retrieved_at": "2026-02-17",
+      "source_type": "web",
+      "doi": "10.1109/ICASSP.2006.1660032",
+      "year": 2006,
+      "venue": "ICASSP"
+    }
+  ],
+
+  "uncertain": [
+    "Crossref/doi.org metadata for this DOI does not include a fully populated issued date; year is set to 2006 based on the conference/DOI context."
+  ]
+}

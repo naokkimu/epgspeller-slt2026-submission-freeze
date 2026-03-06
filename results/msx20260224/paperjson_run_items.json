@@ -1,0 +1,62 @@
+[
+  {
+    "id": "run_msx20260224_export_paper_tables_2026-02-26",
+    "notes": "Export compact msx tables for paperjson manuscript blocks.",
+    "status": "succeeded",
+    "command": {
+      "cwd": ".",
+      "argv": [
+        "python3",
+        "scripts/paper/export_msx_tables_for_paperjson.py",
+        "--metrics_csv",
+        "sweeps/msx20260224/results/msx_all_metrics.csv",
+        "--out_dir",
+        "results/msx20260224/paper_tables"
+      ]
+    },
+    "outputs": [
+      {
+        "path": "results/msx20260224/paper_tables/table_main.csv"
+      },
+      {
+        "path": "results/msx20260224/paper_tables/table_spatial_k124.csv"
+      },
+      {
+        "path": "results/msx20260224/paper_tables/table_k64_methods.csv"
+      },
+      {
+        "path": "results/msx20260224/paper_tables/table_spatial_k64.csv"
+      },
+      {
+        "path": "results/msx20260224/paper_tables/table_p3ms.csv"
+      },
+      {
+        "path": "results/msx20260224/paper_tables/table_kshot.csv"
+      },
+      {
+        "path": "results/msx20260224/paperjson_evidence_items.json"
+      }
+    ]
+  },
+  {
+    "id": "run_msx20260224_export_split_npz_manifest_2026-02-26",
+    "notes": "Export a sha256 manifest for split NPZ archives referenced by msx metrics.",
+    "status": "succeeded",
+    "command": {
+      "cwd": ".",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/rebuttal/msx_export_split_npz_manifest.py",
+        "--metrics_csv",
+        "sweeps/msx20260224/results/msx_all_metrics.csv",
+        "--out_csv",
+        "results/msx20260224/split_npz_manifest.csv"
+      ]
+    },
+    "outputs": [
+      {
+        "path": "results/msx20260224/split_npz_manifest.csv"
+      }
+    ]
+  }
+]

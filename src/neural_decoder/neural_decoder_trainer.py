@@ -9,7 +9,7 @@ import torch
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader
 
-from .model import GRUDecoder
+from .model import build_model
 from .dataset import SpeechDataset
 
 
@@ -142,11 +142,20 @@ def trainModel(args):
     model_cfg = args.get("model", {})
     use_day_embed = model_cfg.get("use_day_embed", True)
     input_proj_dim = model_cfg.get("input_proj_dim", None)
+    model_family = model_cfg.get("model_family", "gru")
+    selected_channel_indices = model_cfg.get("selected_channel_indices", None)
+    enable_spatial_aug = bool(model_cfg.get("enable_spatial_aug", False))
+    tcn_layers = int(model_cfg.get("tcn_layers", 4))
+    tcn_kernel_size = int(model_cfg.get("tcn_kernel_size", 3))
+    transformer_heads = int(model_cfg.get("transformer_heads", 4))
+    transformer_layers = int(model_cfg.get("transformer_layers", 2))
+    transformer_ff_mult = int(model_cfg.get("transformer_ff_mult", 4))
     
     # For unified dataset, use dummy nDays=1 when day embedding is disabled
     nDays = 1 if not use_day_embed else len(loadedData["train"])
     
-    model = GRUDecoder(
+    model = build_model(
+        model_family,
         neural_dim=args["nInputFeatures"],
         n_classes=args["nClasses"],
         hidden_dim=args["nUnits"],
@@ -160,6 +169,13 @@ def trainModel(args):
         bidirectional=args["bidirectional"],
         input_proj_dim=input_proj_dim,
         use_day_embed=use_day_embed,
+        tcn_layers=tcn_layers,
+        tcn_kernel_size=tcn_kernel_size,
+        transformer_heads=transformer_heads,
+        transformer_layers=transformer_layers,
+        transformer_ff_mult=transformer_ff_mult,
+        selected_channel_indices=selected_channel_indices,
+        enable_spatial_aug=enable_spatial_aug,
     ).to(device)
 
     loss_ctc = torch.nn.CTCLoss(blank=0, reduction="mean", zero_infinity=True)
@@ -207,10 +223,13 @@ def trainModel(args):
         # Compute prediction error
         pred = model.forward(X, dayIdx)
 
+        ctc_input_lens = ((X_len - model.kernelLen) / model.strideLen).to(torch.int32)
+        ctc_input_lens = torch.clamp(ctc_input_lens, min=1)
+
         loss = loss_ctc(
             torch.permute(pred.log_softmax(2), [1, 0, 2]),
             y,
-            ((X_len - model.kernelLen) / model.strideLen).to(torch.int32),
+            ctc_input_lens,
             y_len,
         )
         loss = torch.sum(loss)
@@ -240,18 +259,19 @@ def trainModel(args):
                     )
 
                     pred = model.forward(X, testDayIdx)
+                    ctc_input_lens = ((X_len - model.kernelLen) / model.strideLen).to(torch.int32)
+                    ctc_input_lens = torch.clamp(ctc_input_lens, min=1)
+
                     loss = loss_ctc(
                         torch.permute(pred.log_softmax(2), [1, 0, 2]),
                         y,
-                        ((X_len - model.kernelLen) / model.strideLen).to(torch.int32),
+                        ctc_input_lens,
                         y_len,
                     )
                     loss = torch.sum(loss)
                     allLoss.append(loss.cpu().detach().numpy())
 
-                    adjustedLens = ((X_len - model.kernelLen) / model.strideLen).to(
-                        torch.int32
-                    )
+                    adjustedLens = ctc_input_lens
                     for iterIdx in range(pred.shape[0]):
                         decodedSeq = torch.argmax(
                             torch.tensor(pred[iterIdx, 0 : adjustedLens[iterIdx], :]),
@@ -280,7 +300,7 @@ def trainModel(args):
                 )
                 startTime = time.time()
 
-            if len(testCER) > 0 and cer < np.min(testCER):
+            if cer < best_cer:
                 torch.save(model.state_dict(), args["outputDir"] + "/modelWeights")
                 best_cer = cer
             testLoss.append(avgDayLoss)
@@ -314,18 +334,43 @@ def loadModel(modelDir, nInputLayers=24, device=None):
     with open(modelDir + "/args", "rb") as handle:
         args = pickle.load(handle)
 
-    model = GRUDecoder(
+    model_cfg = args.get("model", {})
+    if not isinstance(model_cfg, dict):
+        model_cfg = {}
+    use_day_embed = bool(model_cfg.get("use_day_embed", True))
+    input_proj_dim = model_cfg.get("input_proj_dim", None)
+    model_family = model_cfg.get("model_family", "gru")
+    selected_channel_indices = model_cfg.get("selected_channel_indices", None)
+    enable_spatial_aug = bool(model_cfg.get("enable_spatial_aug", False))
+    tcn_layers = int(model_cfg.get("tcn_layers", 4))
+    tcn_kernel_size = int(model_cfg.get("tcn_kernel_size", 3))
+    transformer_heads = int(model_cfg.get("transformer_heads", 4))
+    transformer_layers = int(model_cfg.get("transformer_layers", 2))
+    transformer_ff_mult = int(model_cfg.get("transformer_ff_mult", 4))
+    effective_n_input_layers = nInputLayers if use_day_embed else 1
+
+    model = build_model(
+        model_family,
         neural_dim=args["nInputFeatures"],
         n_classes=args["nClasses"],
         hidden_dim=args["nUnits"],
         layer_dim=args["nLayers"],
-        nDays=nInputLayers,
+        nDays=effective_n_input_layers,
         dropout=args["dropout"],
         device=device,
         strideLen=args["strideLen"],
         kernelLen=args["kernelLen"],
         gaussianSmoothWidth=args["gaussianSmoothWidth"],
         bidirectional=args["bidirectional"],
+        input_proj_dim=input_proj_dim,
+        use_day_embed=use_day_embed,
+        tcn_layers=tcn_layers,
+        tcn_kernel_size=tcn_kernel_size,
+        transformer_heads=transformer_heads,
+        transformer_layers=transformer_layers,
+        transformer_ff_mult=transformer_ff_mult,
+        selected_channel_indices=selected_channel_indices,
+        enable_spatial_aug=enable_spatial_aug,
     ).to(device)
 
     model.load_state_dict(torch.load(modelWeightPath, map_location=device))

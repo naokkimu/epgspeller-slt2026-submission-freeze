@@ -1,0 +1,13 @@
+protocol,group,variant,n,cer_m,cer_s,rtf_m,rtf_s,variant_id
+P3MS,subj23to1,vector,4,0.4735,0.0136,0.000121,0.000017,uni_gru
+P3MS,subj23to1,rowcol,4,0.4759,0.0138,0.000237,0.000007,rowcol_uni_gru
+P3MS,subj23to1,spatial2d,4,0.6020,0.0765,0.000389,0.000002,spatial2d_uni_gru_aug0
+P3MS,subj23to1,spatial2d_aug,4,0.6911,0.1646,0.000386,0.000007,spatial2d_uni_gru_aug1
+P3MS,subj13to2,vector,4,0.5203,0.0029,0.000116,0.000002,uni_gru
+P3MS,subj13to2,rowcol,4,0.5042,0.0117,0.000297,0.000024,rowcol_uni_gru
+P3MS,subj13to2,spatial2d,4,0.5106,0.0474,0.000435,0.000005,spatial2d_uni_gru_aug0
+P3MS,subj13to2,spatial2d_aug,4,0.5114,0.0164,0.000433,0.000006,spatial2d_uni_gru_aug1
+P3MS,subj12to3,vector,4,0.8381,0.0336,0.000096,0.000002,uni_gru
+P3MS,subj12to3,rowcol,4,0.7903,0.0328,0.000203,0.000004,rowcol_uni_gru
+P3MS,subj12to3,spatial2d,4,0.7362,0.0182,0.000343,0.000012,spatial2d_uni_gru_aug0
+P3MS,subj12to3,spatial2d_aug,4,0.7561,0.0197,0.000346,0.000009,spatial2d_uni_gru_aug1

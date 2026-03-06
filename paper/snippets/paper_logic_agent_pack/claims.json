@@ -1,0 +1,384 @@
+{
+  "claims": [
+    {
+      "block_id": "cl_table_main_has_header",
+      "citations": [],
+      "claim_id": "C1",
+      "falsification": {
+        "assertion_ids": [
+          "a_table_main_header"
+        ],
+        "status": "declared_by_assertions"
+      },
+      "kind": "paragraph",
+      "positioning": {
+        "citations": [
+          "denby2010silent",
+          "kimura2022silentspeller"
+        ],
+        "closest_prior": [
+          {
+            "bib_key": "kimura2022silentspeller",
+            "note": "Open-vocabulary EPG silent spelling system used as a task framing reference."
+          }
+        ],
+        "known": [
+          "Silent speech interface surveys emphasize that evaluation comparisons are protocol-dependent."
+        ],
+        "new": [
+          "This work exposes protocol tables as deterministic artifacts pinned by checksum."
+        ],
+        "research_evidence_id": "ev_related_work_survey_epgspeller_2026-02-17_report_md",
+        "status": "declared",
+        "unverified": [
+          "External baseline systems are not evaluated in these tables."
+        ]
+      },
+      "scope": {
+        "config_snapshot_evidence_ids": [
+          "ev_config_outline_yaml"
+        ],
+        "protocol_block_ids": [],
+        "status": "see_protocol_json"
+      },
+      "section_id": "logic_checks",
+      "section_title": "Logic Checks",
+      "statements": [
+        {
+          "citations": [],
+          "statement_id": "st_cl_table_main_has_header_01",
+          "supports": {
+            "evidence_ids": [
+              "ev_config_outline_yaml",
+              "ev_paper_layout_2026_03_03_table_main_compact_csv"
+            ],
+            "need_ids": [],
+            "slice_ids": [],
+            "statement_ids": []
+          },
+          "text": "The baseline table includes protocol and aggregate metrics fields."
+        }
+      ],
+      "status": "supported",
+      "supports": {
+        "dependent_statement_ids": [],
+        "dependent_statement_ids_omitted": [],
+        "evidence_ids": [
+          "ev_config_outline_yaml",
+          "ev_paper_layout_2026_03_03_table_main_compact_csv"
+        ],
+        "need_ids": [],
+        "slice_ids": []
+      },
+      "type_guess": "empirical",
+      "verification_queries": [
+        {
+          "cast": null,
+          "id": "a_table_main_header",
+          "left": {
+            "evidence_id": "ev_paper_layout_2026_03_03_table_main_compact_csv",
+            "group": 1,
+            "kind": "regex",
+            "pattern": "(protocol,n,cer,lex)"
+          },
+          "left_raw": "protocol,n,cer,lex",
+          "ok": true,
+          "op": "==",
+          "right": "protocol,n,cer,lex",
+          "right_raw": "protocol,n,cer,lex",
+          "trace": [
+            {
+              "evidence_id": "ev_paper_layout_2026_03_03_table_main_compact_csv",
+              "kind": "regex",
+              "path": "results/paper_layout_2026-03-03/table_main_compact.csv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "block_id": "cl_dataset_summary_has_header",
+      "citations": [],
+      "claim_id": "C2",
+      "falsification": {
+        "assertion_ids": [
+          "a_dataset_summary_header"
+        ],
+        "status": "declared_by_assertions"
+      },
+      "kind": "paragraph",
+      "positioning": {
+        "citations": [
+          "denby2010silent",
+          "kimura2022silentspeller"
+        ],
+        "closest_prior": [
+          {
+            "bib_key": "kimura2022silentspeller",
+            "note": "Open-vocabulary EPG silent spelling system used as a task framing reference."
+          }
+        ],
+        "known": [
+          "Silent speech interface surveys emphasize that evaluation comparisons are protocol-dependent."
+        ],
+        "new": [
+          "This work exposes protocol tables as deterministic artifacts pinned by checksum."
+        ],
+        "research_evidence_id": "ev_related_work_survey_epgspeller_2026-02-17_report_md",
+        "status": "declared",
+        "unverified": [
+          "External baseline systems are not evaluated in these tables."
+        ]
+      },
+      "scope": {
+        "config_snapshot_evidence_ids": [
+          "ev_config_outline_yaml"
+        ],
+        "protocol_block_ids": [],
+        "status": "see_protocol_json"
+      },
+      "section_id": "logic_checks",
+      "section_title": "Logic Checks",
+      "statements": [
+        {
+          "citations": [],
+          "statement_id": "st_cl_dataset_summary_has_header_01",
+          "supports": {
+            "evidence_ids": [
+              "ev_paper_layout_2026_03_03_table_dataset_summary_csv"
+            ],
+            "need_ids": [],
+            "slice_ids": [],
+            "statement_ids": []
+          },
+          "text": "The dataset summary table includes id, N, V, Tmed, contact, and zero fields."
+        }
+      ],
+      "status": "supported",
+      "supports": {
+        "dependent_statement_ids": [],
+        "dependent_statement_ids_omitted": [],
+        "evidence_ids": [
+          "ev_paper_layout_2026_03_03_table_dataset_summary_csv"
+        ],
+        "need_ids": [],
+        "slice_ids": []
+      },
+      "type_guess": "empirical",
+      "verification_queries": [
+        {
+          "cast": null,
+          "id": "a_dataset_summary_header",
+          "left": {
+            "evidence_id": "ev_paper_layout_2026_03_03_table_dataset_summary_csv",
+            "group": 1,
+            "kind": "regex",
+            "pattern": "(id,N,V,Tmed,contact,zero)"
+          },
+          "left_raw": "id,N,V,Tmed,contact,zero",
+          "ok": true,
+          "op": "==",
+          "right": "id,N,V,Tmed,contact,zero",
+          "right_raw": "id,N,V,Tmed,contact,zero",
+          "trace": [
+            {
+              "evidence_id": "ev_paper_layout_2026_03_03_table_dataset_summary_csv",
+              "kind": "regex",
+              "path": "results/paper_layout_2026-03-03/table_dataset_summary.csv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "block_id": "cl_spatial_table_has_header",
+      "citations": [],
+      "claim_id": "C3",
+      "falsification": {
+        "assertion_ids": [
+          "a_spatial_table_header"
+        ],
+        "status": "declared_by_assertions"
+      },
+      "kind": "paragraph",
+      "positioning": {
+        "citations": [
+          "denby2010silent",
+          "kimura2022silentspeller"
+        ],
+        "closest_prior": [
+          {
+            "bib_key": "kimura2022silentspeller",
+            "note": "Open-vocabulary EPG silent spelling system used as a task framing reference."
+          }
+        ],
+        "known": [
+          "Silent speech interface surveys emphasize that evaluation comparisons are protocol-dependent."
+        ],
+        "new": [
+          "This work exposes protocol tables as deterministic artifacts pinned by checksum."
+        ],
+        "research_evidence_id": "ev_related_work_survey_epgspeller_2026-02-17_report_md",
+        "status": "declared",
+        "unverified": [
+          "External baseline systems are not evaluated in these tables."
+        ]
+      },
+      "scope": {
+        "config_snapshot_evidence_ids": [
+          "ev_config_outline_yaml"
+        ],
+        "protocol_block_ids": [],
+        "status": "see_protocol_json"
+      },
+      "section_id": "logic_checks",
+      "section_title": "Logic Checks",
+      "statements": [
+        {
+          "citations": [],
+          "statement_id": "st_cl_spatial_table_has_header_01",
+          "supports": {
+            "evidence_ids": [
+              "ev_paper_layout_2026_03_03_table_spatial_all_csv"
+            ],
+            "need_ids": [],
+            "slice_ids": [],
+            "statement_ids": []
+          },
+          "text": "The spatial modeling table includes protocol, variant, CER, and RTF fields."
+        }
+      ],
+      "status": "supported",
+      "supports": {
+        "dependent_statement_ids": [],
+        "dependent_statement_ids_omitted": [],
+        "evidence_ids": [
+          "ev_paper_layout_2026_03_03_table_spatial_all_csv"
+        ],
+        "need_ids": [],
+        "slice_ids": []
+      },
+      "type_guess": "empirical",
+      "verification_queries": [
+        {
+          "cast": null,
+          "id": "a_spatial_table_header",
+          "left": {
+            "evidence_id": "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+            "group": 1,
+            "kind": "regex",
+            "pattern": "(protocol,variant,cer,rtf)"
+          },
+          "left_raw": "protocol,variant,cer,rtf",
+          "ok": true,
+          "op": "==",
+          "right": "protocol,variant,cer,rtf",
+          "right_raw": "protocol,variant,cer,rtf",
+          "trace": [
+            {
+              "evidence_id": "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+              "kind": "regex",
+              "path": "results/paper_layout_2026-03-03/table_spatial_all.csv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "block_id": "cl_k64_table_has_header",
+      "citations": [],
+      "claim_id": "C4",
+      "falsification": {
+        "assertion_ids": [
+          "a_k64_table_header"
+        ],
+        "status": "declared_by_assertions"
+      },
+      "kind": "paragraph",
+      "positioning": {
+        "citations": [
+          "denby2010silent",
+          "kimura2022silentspeller"
+        ],
+        "closest_prior": [
+          {
+            "bib_key": "kimura2022silentspeller",
+            "note": "Open-vocabulary EPG silent spelling system used as a task framing reference."
+          }
+        ],
+        "known": [
+          "Silent speech interface surveys emphasize that evaluation comparisons are protocol-dependent."
+        ],
+        "new": [
+          "This work exposes protocol tables as deterministic artifacts pinned by checksum."
+        ],
+        "research_evidence_id": "ev_related_work_survey_epgspeller_2026-02-17_report_md",
+        "status": "declared",
+        "unverified": [
+          "External baseline systems are not evaluated in these tables."
+        ]
+      },
+      "scope": {
+        "config_snapshot_evidence_ids": [
+          "ev_config_outline_yaml"
+        ],
+        "protocol_block_ids": [],
+        "status": "see_protocol_json"
+      },
+      "section_id": "logic_checks",
+      "section_title": "Logic Checks",
+      "statements": [
+        {
+          "citations": [],
+          "statement_id": "st_cl_k64_table_has_header_01",
+          "supports": {
+            "evidence_ids": [
+              "ev_paper_layout_2026_03_03_table_k64_all_csv"
+            ],
+            "need_ids": [],
+            "slice_ids": [],
+            "statement_ids": []
+          },
+          "text": "The electrode reduction table includes protocol, method, CER, and RTF fields."
+        }
+      ],
+      "status": "supported",
+      "supports": {
+        "dependent_statement_ids": [],
+        "dependent_statement_ids_omitted": [],
+        "evidence_ids": [
+          "ev_paper_layout_2026_03_03_table_k64_all_csv"
+        ],
+        "need_ids": [],
+        "slice_ids": []
+      },
+      "type_guess": "empirical",
+      "verification_queries": [
+        {
+          "cast": null,
+          "id": "a_k64_table_header",
+          "left": {
+            "evidence_id": "ev_paper_layout_2026_03_03_table_k64_all_csv",
+            "group": 1,
+            "kind": "regex",
+            "pattern": "(protocol,method,cer,rtf)"
+          },
+          "left_raw": "protocol,method,cer,rtf",
+          "ok": true,
+          "op": "==",
+          "right": "protocol,method,cer,rtf",
+          "right_raw": "protocol,method,cer,rtf",
+          "trace": [
+            {
+              "evidence_id": "ev_paper_layout_2026_03_03_table_k64_all_csv",
+              "kind": "regex",
+              "path": "results/paper_layout_2026-03-03/table_k64_all.csv"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generated_utc": "2026-03-04T11:22:19+00:00",
+  "protocol_json": "protocol.json"
+}

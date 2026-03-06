@@ -1,0 +1,28 @@
+{
+  "id": "cl_positioning_analysis_epgspeller_2026-02-18_completed",
+  "statement": "A multi-lens positioning analysis of EPGSpeller in the SSI/EPG literature space, with a dedicated spatial-modeling assessment grounded in H11–H13 evidence, was compiled into report.md.",
+  "status": "supported",
+  "tags": [
+    "positioning",
+    "spatial",
+    "epgspeller",
+    "ssi",
+    "epg",
+    "ed20260217",
+    "H11",
+    "H12",
+    "H13"
+  ],
+  "evidence_ids": [
+    "ev_positioning_analysis_epgspeller_2026_02_18_report_md",
+    "ev_positioning_analysis_epgspeller_2026_02_18_prior_work_raw_csv",
+    "ev_positioning_analysis_epgspeller_2026_02_18_prior_work_taxonomy_csv",
+    "ev_positioning_analysis_epgspeller_2026_02_18_ours_spatial_findings_csv",
+    "ev_positioning_analysis_epgspeller_2026_02_18_taxonomy_rubric_md",
+    "ev_positioning_analysis_epgspeller_2026_02_18_taxonomy_rules_json",
+    "ev_positioning_analysis_epgspeller_2026_02_18_inputs_manifest_md",
+    "ev_positioning_analysis_epgspeller_2026_02_18_fig_positioning_space_systems_png",
+    "ev_positioning_analysis_epgspeller_2026_02_18_fig_positioning_space_representation_png",
+    "ev_positioning_analysis_epgspeller_2026_02_18_fig_w_matrix_evidence_map_png"
+  ]
+}

@@ -1,0 +1,925 @@
+{
+  "format": {
+    "name": "interspeech-aesthetic-audit",
+    "version": "0.1.0"
+  },
+  "inputs": {
+    "pdf": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/paper/submission/interspeech2026_review.pdf",
+    "paper_kit_zip": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/Interspeech2026-Paper-Kit.zip"
+  },
+  "expected": {
+    "textwidth_mm": 170.0,
+    "textheight_mm": 235.0,
+    "columnsep_mm": 10.0,
+    "column_width_mm": 80.0,
+    "page_size_mm": {
+      "width": 210.0,
+      "height": 297.0
+    }
+  },
+  "summary": {
+    "errors": 0,
+    "warnings": 4
+  },
+  "pages": [
+    {
+      "page": 1,
+      "metrics": {
+        "page_size_pt": {
+          "width": 595.276,
+          "height": 841.89
+        },
+        "page_size_mm": {
+          "width": 210.0001444444444,
+          "height": 297.0000833333333
+        },
+        "text_bbox": {
+          "x0": 42.0969685,
+          "x1": 559.4181248000001,
+          "top": 82.49215579999998,
+          "bottom": 742.0717423999997
+        },
+        "text_bbox_mm": {
+          "x0": 14.850874998611111,
+          "x1": 197.35028291555557,
+          "top": 29.101399407222214,
+          "bottom": 261.78642023555545,
+          "width": 182.49940791694448,
+          "height": 232.68502082833322
+        },
+        "margins_mm": {
+          "left": 14.850874998611111,
+          "right": 12.649861528888836,
+          "top": 29.101399407222214,
+          "bottom": 35.21366309777787
+        },
+        "text_bbox_area_ratio": 0.680853573973844,
+        "ink_area_ratio": 0.3153971427047017,
+        "line_lefts_pt": {
+          "count": 128,
+          "mean": 118.69860746171874,
+          "median": 57.599999999999994,
+          "std": 121.53739041134753
+        },
+        "line_rights_pt": {
+          "count": 128,
+          "mean": 364.262842759375,
+          "median": 532.6327096,
+          "std": 225.10240835898156
+        },
+        "line_widths_pt": {
+          "count": 128,
+          "mean": 245.5642352976563,
+          "median": 226.76922240000005,
+          "std": 208.15925929703778
+        },
+        "line_spacings_pt": {
+          "count": 127,
+          "mean": 5.147413866929134,
+          "median": 3.109374500000058,
+          "std": 7.912762051388218
+        },
+        "column_line_widths_pt": {
+          "count": 31,
+          "mean": 221.98772118709684,
+          "median": 226.76922240000005,
+          "std": 19.705649378454087
+        },
+        "left_column_lefts_pt": {
+          "count": 7,
+          "mean": 57.6,
+          "median": 57.599999999999994,
+          "std": 5.371198213442017e-15
+        },
+        "right_column_rights_pt": {
+          "count": 22,
+          "mean": 537.0701506181819,
+          "median": 539.4872224000001,
+          "std": 8.692909197997794
+        },
+        "font_sizes_pt": {
+          "count": 479,
+          "mean": 8.400248016701456,
+          "median": 8.966399999999993,
+          "std": 1.712598624364313
+        },
+        "fontname_counts": {
+          "SQSEMD+NimbusRomNo9L-Medi": 14,
+          "ILNCXN+NimbusRomNo9L-ReguItal": 23,
+          "NBAIUF+NimbusSanL-Regu": 82,
+          "FLXDPK+NimbusRomNo9L-Regu": 360
+        },
+        "column_gap_mm": 10.000818764444366,
+        "column_bounds_pt": {
+          "left_col_left": 57.599999999999994,
+          "left_col_right": 284.36922240000007,
+          "right_col_left": 312.71799999999996,
+          "right_col_right": 539.4872224000001
+        },
+        "overflow_pt": {
+          "left_over_count": 9,
+          "right_over_count": 6,
+          "max_left_over_pt": 15.462287199999935,
+          "max_right_over_pt": 13.799718799999937
+        },
+        "overflow_mm": {
+          "left_over_count": 9,
+          "right_over_count": 6,
+          "max_left_over_mm": 5.454751317777754,
+          "max_right_over_mm": 4.8682341322222
+        },
+        "small_text_overall": {
+          "count": 4431,
+          "small_count": 68,
+          "min_size_pt": 4.9813000000000045,
+          "p10_size_pt": 8.966399999999908
+        },
+        "body_median_font_pt": 8.966400000000021,
+        "figure_small_text": []
+      },
+      "checks": [
+        {
+          "id": "page_size_match",
+          "severity": "info",
+          "ok": true,
+          "message": "page_size_mm=(210.00,297.00) expected=(210.00,297.00) tol=\u00b11.0mm"
+        },
+        {
+          "id": "column_width_match",
+          "severity": "info",
+          "ok": true,
+          "message": "median_column_width_mm=80.00 expected=80.00 tol=\u00b12.0mm"
+        },
+        {
+          "id": "columnsep_match",
+          "severity": "info",
+          "ok": true,
+          "message": "column_gap_mm=10.00 expected=10.00 tol=\u00b12.0mm"
+        },
+        {
+          "id": "column_overflow",
+          "severity": "warn",
+          "ok": false,
+          "message": "overflow_count=15 max_overflow_mm=5.45"
+        },
+        {
+          "id": "small_text_overall",
+          "severity": "info",
+          "ok": true,
+          "message": "small_count=68 total=4431 min_size_pt=4.9813000000000045"
+        },
+        {
+          "id": "left_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "left_alignment_std_pt=121.54"
+        },
+        {
+          "id": "right_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "right_alignment_std_pt=225.10"
+        },
+        {
+          "id": "line_spacing_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "line_spacing_std_pt=7.91"
+        },
+        {
+          "id": "font_size_median_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "font_size_median_pt=8.97"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "metrics": {
+        "page_size_pt": {
+          "width": 595.276,
+          "height": 841.89
+        },
+        "page_size_mm": {
+          "width": 210.0001444444444,
+          "height": 297.0000833333333
+        },
+        "text_bbox": {
+          "x0": 39.32650799999999,
+          "x1": 559.4178263,
+          "top": 74.04511519999892,
+          "bottom": 742.0717424
+        },
+        "text_bbox_mm": {
+          "x0": 13.873518099999995,
+          "x1": 197.35017761138886,
+          "top": 26.121471195555173,
+          "bottom": 261.7864202355555,
+          "width": 183.4766595113889,
+          "height": 235.66494904000035
+        },
+        "margins_mm": {
+          "left": 13.873518099999995,
+          "right": 12.649966833055537,
+          "top": 26.121471195555173,
+          "bottom": 35.21366309777779
+        },
+        "text_bbox_area_ratio": 0.6932656043054372,
+        "ink_area_ratio": 0.4014143438628814,
+        "line_lefts_pt": {
+          "count": 162,
+          "mean": 116.6128695882716,
+          "median": 57.6,
+          "std": 124.5101364981297
+        },
+        "line_rights_pt": {
+          "count": 162,
+          "mean": 396.74750671666675,
+          "median": 539.4872224000001,
+          "std": 211.67744244442264
+        },
+        "line_widths_pt": {
+          "count": 162,
+          "mean": 280.1346371283951,
+          "median": 226.76922240000013,
+          "std": 204.76219348331878
+        },
+        "line_spacings_pt": {
+          "count": 161,
+          "mean": 4.112854668944099,
+          "median": 3.1093745000000013,
+          "std": 1.7181975927735684
+        },
+        "column_line_widths_pt": {
+          "count": 45,
+          "mean": 223.41951342222234,
+          "median": 226.76922240000007,
+          "std": 17.69864455249485
+        },
+        "left_column_lefts_pt": {
+          "count": 14,
+          "mean": 57.6,
+          "median": 57.6,
+          "std": 0.0
+        },
+        "right_column_rights_pt": {
+          "count": 30,
+          "mean": 534.7052495466668,
+          "median": 539.4872224000001,
+          "std": 16.583740982702565
+        },
+        "font_sizes_pt": {
+          "count": 519,
+          "mean": 8.129452023121383,
+          "median": 8.966400000000021,
+          "std": 1.6719700127272767
+        },
+        "fontname_counts": {
+          "FLXDPK+NimbusRomNo9L-Regu": 381,
+          "NBAIUF+NimbusSanL-Regu": 112,
+          "SQSEMD+NimbusRomNo9L-Medi": 4,
+          "ILNCXN+NimbusRomNo9L-ReguItal": 22
+        },
+        "column_gap_mm": 10.000818764444386,
+        "column_bounds_pt": {
+          "left_col_left": 57.6,
+          "left_col_right": 284.36922240000007,
+          "right_col_left": 312.718,
+          "right_col_right": 539.4872224000001
+        },
+        "overflow_pt": {
+          "left_over_count": 0,
+          "right_over_count": 0,
+          "max_left_over_pt": 0.0,
+          "max_right_over_pt": 0.0
+        },
+        "overflow_mm": {
+          "left_over_count": 0,
+          "right_over_count": 0,
+          "max_left_over_mm": 0.0,
+          "max_right_over_mm": 0.0
+        },
+        "small_text_overall": {
+          "count": 5884,
+          "small_count": 150,
+          "min_size_pt": 4.981299999999976,
+          "p10_size_pt": 8.966399999999908
+        },
+        "body_median_font_pt": 8.966400000000021,
+        "figure_small_text": [
+          {
+            "region": {
+              "x0": 57.6,
+              "x1": 284.36922240000007,
+              "top": 0.0,
+              "bottom": 181.03534239999954
+            },
+            "stats": {
+              "count": 542,
+              "small_count": 0,
+              "min_size_pt": 8.966399999999908,
+              "p10_size_pt": 8.966399999999908
+            },
+            "p10_size_pt": 8.966399999999908,
+            "p10_ratio_to_body": 0.9999999999999873
+          },
+          {
+            "region": {
+              "x0": 57.6,
+              "x1": 284.36922240000007,
+              "top": 0.0,
+              "bottom": 275.11334239999906
+            },
+            "stats": {
+              "count": 1007,
+              "small_count": 0,
+              "min_size_pt": 8.966399999999908,
+              "p10_size_pt": 8.966399999999908
+            },
+            "p10_size_pt": 8.966399999999908,
+            "p10_ratio_to_body": 0.9999999999999873
+          }
+        ]
+      },
+      "checks": [
+        {
+          "id": "page_size_match",
+          "severity": "info",
+          "ok": true,
+          "message": "page_size_mm=(210.00,297.00) expected=(210.00,297.00) tol=\u00b11.0mm"
+        },
+        {
+          "id": "column_width_match",
+          "severity": "info",
+          "ok": true,
+          "message": "median_column_width_mm=80.00 expected=80.00 tol=\u00b12.0mm"
+        },
+        {
+          "id": "columnsep_match",
+          "severity": "info",
+          "ok": true,
+          "message": "column_gap_mm=10.00 expected=10.00 tol=\u00b12.0mm"
+        },
+        {
+          "id": "column_overflow",
+          "severity": "info",
+          "ok": true,
+          "message": "overflow_count=0 max_overflow_mm=0.00"
+        },
+        {
+          "id": "small_text_overall",
+          "severity": "info",
+          "ok": true,
+          "message": "small_count=150 total=5884 min_size_pt=4.981299999999976"
+        },
+        {
+          "id": "figure_text_small",
+          "severity": "info",
+          "ok": true,
+          "message": "figure_regions=2 flagged=False"
+        },
+        {
+          "id": "left_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "left_alignment_std_pt=124.51"
+        },
+        {
+          "id": "right_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "right_alignment_std_pt=211.68"
+        },
+        {
+          "id": "line_spacing_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "line_spacing_std_pt=1.72"
+        },
+        {
+          "id": "font_size_median_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "font_size_median_pt=8.97"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "metrics": {
+        "page_size_pt": {
+          "width": 595.276,
+          "height": 841.89
+        },
+        "page_size_mm": {
+          "width": 210.0001444444444,
+          "height": 297.0000833333333
+        },
+        "text_bbox": {
+          "x0": 39.32751720000003,
+          "x1": 559.4174037000002,
+          "top": 74.04411519999996,
+          "bottom": 742.0717424
+        },
+        "text_bbox_mm": {
+          "x0": 13.873874123333344,
+          "x1": 197.35002852750006,
+          "top": 26.121118417777765,
+          "bottom": 261.7864202355555,
+          "width": 183.47615440416675,
+          "height": 235.66530181777776
+        },
+        "margins_mm": {
+          "left": 13.873874123333344,
+          "right": 12.650115916944339,
+          "top": 26.121118417777765,
+          "bottom": 35.21366309777779
+        },
+        "text_bbox_area_ratio": 0.6932647335389596,
+        "ink_area_ratio": 0.31968767456028285,
+        "line_lefts_pt": {
+          "count": 107,
+          "mean": 141.80307131121495,
+          "median": 57.60000000000001,
+          "std": 158.66691591038378
+        },
+        "line_rights_pt": {
+          "count": 107,
+          "mean": 456.912801257944,
+          "median": 535.5068368000001,
+          "std": 136.15729086560185
+        },
+        "line_widths_pt": {
+          "count": 107,
+          "mean": 315.1097299467291,
+          "median": 226.76922240000013,
+          "std": 170.38895008298422
+        },
+        "line_spacings_pt": {
+          "count": 106,
+          "mean": 6.246892468867925,
+          "median": 5.4430000000000405,
+          "std": 2.9301599309786357
+        },
+        "column_line_widths_pt": {
+          "count": 44,
+          "mean": 221.36559000000014,
+          "median": 222.78814080000024,
+          "std": 20.351656652609183
+        },
+        "left_column_lefts_pt": {
+          "count": 24,
+          "mean": 58.22266666666667,
+          "median": 57.6,
+          "std": 2.9862044285160523
+        },
+        "right_column_rights_pt": {
+          "count": 18,
+          "mean": 530.7655719111112,
+          "median": 535.5061408000003,
+          "std": 16.38272871907083
+        },
+        "font_sizes_pt": {
+          "count": 488,
+          "mean": 8.60708770491802,
+          "median": 8.966400000000021,
+          "std": 1.1413983098524625
+        },
+        "fontname_counts": {
+          "FLXDPK+NimbusRomNo9L-Regu": 374,
+          "ILNCXN+NimbusRomNo9L-ReguItal": 70,
+          "NBAIUF+NimbusSanL-Regu": 44
+        },
+        "column_gap_mm": 9.998709999999924,
+        "column_bounds_pt": {
+          "left_col_left": 57.6,
+          "left_col_right": 280.3881408000002,
+          "right_col_left": 312.718,
+          "right_col_right": 535.5061408000003
+        },
+        "overflow_pt": {
+          "left_over_count": 23,
+          "right_over_count": 0,
+          "max_left_over_pt": 3.987059199999976,
+          "max_right_over_pt": 0.0
+        },
+        "overflow_mm": {
+          "left_over_count": 23,
+          "right_over_count": 0,
+          "max_left_over_mm": 1.406545884444436,
+          "max_right_over_mm": 0.0
+        },
+        "small_text_overall": {
+          "count": 4524,
+          "small_count": 69,
+          "min_size_pt": 4.9813000000000045,
+          "p10_size_pt": 8.966399999999908
+        },
+        "body_median_font_pt": 8.966400000000021,
+        "figure_small_text": []
+      },
+      "checks": [
+        {
+          "id": "page_size_match",
+          "severity": "info",
+          "ok": true,
+          "message": "page_size_mm=(210.00,297.00) expected=(210.00,297.00) tol=\u00b11.0mm"
+        },
+        {
+          "id": "column_width_match",
+          "severity": "info",
+          "ok": true,
+          "message": "median_column_width_mm=78.59 expected=80.00 tol=\u00b12.0mm"
+        },
+        {
+          "id": "columnsep_match",
+          "severity": "info",
+          "ok": true,
+          "message": "column_gap_mm=10.00 expected=10.00 tol=\u00b12.0mm"
+        },
+        {
+          "id": "column_overflow",
+          "severity": "info",
+          "ok": true,
+          "message": "overflow_count=23 max_overflow_mm=1.41"
+        },
+        {
+          "id": "small_text_overall",
+          "severity": "info",
+          "ok": true,
+          "message": "small_count=69 total=4524 min_size_pt=4.9813000000000045"
+        },
+        {
+          "id": "left_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "left_alignment_std_pt=158.67"
+        },
+        {
+          "id": "right_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "right_alignment_std_pt=136.16"
+        },
+        {
+          "id": "line_spacing_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "line_spacing_std_pt=2.93"
+        },
+        {
+          "id": "font_size_median_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "font_size_median_pt=8.97"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "metrics": {
+        "page_size_pt": {
+          "width": 595.276,
+          "height": 841.89
+        },
+        "page_size_mm": {
+          "width": 210.0001444444444,
+          "height": 297.0000833333333
+        },
+        "text_bbox": {
+          "x0": 39.32899999999999,
+          "x1": 559.4177483,
+          "top": 74.04511519999994,
+          "bottom": 742.0717424
+        },
+        "text_bbox_mm": {
+          "x0": 13.87439722222222,
+          "x1": 197.35015009472218,
+          "top": 26.121471195555532,
+          "bottom": 261.7864202355555,
+          "width": 183.4757528725,
+          "height": 235.66494904
+        },
+        "margins_mm": {
+          "left": 13.87439722222222,
+          "right": 12.649994349722215,
+          "top": 26.121471195555532,
+          "bottom": 35.21366309777779
+        },
+        "text_bbox_area_ratio": 0.693262178575107,
+        "ink_area_ratio": 0.2847024597288947,
+        "line_lefts_pt": {
+          "count": 141,
+          "mean": 199.40882867146252,
+          "median": 65.76070966875,
+          "std": 191.17013781888423
+        },
+        "line_rights_pt": {
+          "count": 141,
+          "mean": 414.1847464085924,
+          "median": 535.5091648,
+          "std": 184.85959529373105
+        },
+        "line_widths_pt": {
+          "count": 141,
+          "mean": 214.77591773712987,
+          "median": 226.76922240000002,
+          "std": 184.29417653873526
+        },
+        "line_spacings_pt": {
+          "count": 140,
+          "mean": 4.729782869285714,
+          "median": 3.543289340406176,
+          "std": 2.833462381890325
+        },
+        "column_line_widths_pt": {
+          "count": 50,
+          "mean": 221.97124882885367,
+          "median": 226.76922240000007,
+          "std": 14.080815559108482
+        },
+        "left_column_lefts_pt": {
+          "count": 21,
+          "mean": 61.172037372813705,
+          "median": 57.599999999999994,
+          "std": 11.635481844224355
+        },
+        "right_column_rights_pt": {
+          "count": 28,
+          "mean": 536.8530282821429,
+          "median": 539.4872224000001,
+          "std": 9.238258653824586
+        },
+        "font_sizes_pt": {
+          "count": 490,
+          "mean": 8.105707374693878,
+          "median": 8.966400000000021,
+          "std": 1.6531874148627428
+        },
+        "fontname_counts": {
+          "BMQQDV+DejaVuSans": 37,
+          "FLXDPK+NimbusRomNo9L-Regu": 317,
+          "ILNCXN+NimbusRomNo9L-ReguItal": 58,
+          "SQSEMD+NimbusRomNo9L-Medi": 10,
+          "NBAIUF+NimbusSanL-Regu": 68
+        },
+        "column_gap_mm": 10.000818764444366,
+        "column_bounds_pt": {
+          "left_col_left": 57.599999999999994,
+          "left_col_right": 284.36922240000007,
+          "right_col_left": 312.71799999999996,
+          "right_col_right": 539.4872224000001
+        },
+        "overflow_pt": {
+          "left_over_count": 0,
+          "right_over_count": 0,
+          "max_left_over_pt": 0.0,
+          "max_right_over_pt": 0.0
+        },
+        "overflow_mm": {
+          "left_over_count": 0,
+          "right_over_count": 0,
+          "max_left_over_mm": 0.0,
+          "max_right_over_mm": 0.0
+        },
+        "small_text_overall": {
+          "count": 4316,
+          "small_count": 206,
+          "min_size_pt": 2.020615199999952,
+          "p10_size_pt": 7.970100000000002
+        },
+        "body_median_font_pt": 8.966400000000021,
+        "figure_small_text": [
+          {
+            "region": {
+              "x0": 57.599999999999994,
+              "x1": 284.36922240000007,
+              "top": 0.0,
+              "bottom": 327.1351152
+            },
+            "stats": {
+              "count": 113,
+              "small_count": 92,
+              "min_size_pt": 2.020615199999952,
+              "p10_size_pt": 4.702654800000051
+            },
+            "p10_size_pt": 4.702654800000051,
+            "p10_ratio_to_body": 0.524475240899362
+          }
+        ]
+      },
+      "checks": [
+        {
+          "id": "page_size_match",
+          "severity": "info",
+          "ok": true,
+          "message": "page_size_mm=(210.00,297.00) expected=(210.00,297.00) tol=\u00b11.0mm"
+        },
+        {
+          "id": "column_width_match",
+          "severity": "info",
+          "ok": true,
+          "message": "median_column_width_mm=80.00 expected=80.00 tol=\u00b12.0mm"
+        },
+        {
+          "id": "columnsep_match",
+          "severity": "info",
+          "ok": true,
+          "message": "column_gap_mm=10.00 expected=10.00 tol=\u00b12.0mm"
+        },
+        {
+          "id": "column_overflow",
+          "severity": "info",
+          "ok": true,
+          "message": "overflow_count=0 max_overflow_mm=0.00"
+        },
+        {
+          "id": "small_text_overall",
+          "severity": "warn",
+          "ok": false,
+          "message": "small_count=206 total=4316 min_size_pt=2.020615199999952"
+        },
+        {
+          "id": "figure_text_small",
+          "severity": "warn",
+          "ok": false,
+          "message": "figure_regions=1 flagged=True"
+        },
+        {
+          "id": "left_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "left_alignment_std_pt=191.17"
+        },
+        {
+          "id": "right_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "right_alignment_std_pt=184.86"
+        },
+        {
+          "id": "line_spacing_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "line_spacing_std_pt=2.83"
+        },
+        {
+          "id": "font_size_median_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "font_size_median_pt=8.97"
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "metrics": {
+        "page_size_pt": {
+          "width": 595.276,
+          "height": 841.89
+        },
+        "page_size_mm": {
+          "width": 210.0001444444444,
+          "height": 297.0000833333333
+        },
+        "text_bbox": {
+          "x0": 39.32719079999998,
+          "x1": 284.3737562000002,
+          "top": 75.9694416000001,
+          "bottom": 377.28254159999966
+        },
+        "text_bbox_mm": {
+          "x0": 13.87375897666666,
+          "x1": 100.32074177055561,
+          "top": 26.8003307866667,
+          "bottom": 133.09689661999988,
+          "width": 86.44698279388895,
+          "height": 106.29656583333318
+        },
+        "margins_mm": {
+          "left": 13.87375897666666,
+          "right": 109.6794026738888,
+          "top": 26.8003307866667,
+          "bottom": 163.90318671333344
+        },
+        "text_bbox_area_ratio": 0.14733058359587328,
+        "ink_area_ratio": 0.0774967817414095,
+        "line_lefts_pt": {
+          "count": 58,
+          "mean": 54.20007711034479,
+          "median": 48.46571914999999,
+          "std": 16.09681756111305
+        },
+        "line_rights_pt": {
+          "count": 58,
+          "mean": 148.37203632413795,
+          "median": 70.71648585000001,
+          "std": 108.79142239743297
+        },
+        "line_widths_pt": {
+          "count": 58,
+          "mean": 94.17195921379314,
+          "median": 13.120766700000004,
+          "std": 96.620130900365
+        },
+        "line_spacings_pt": {
+          "count": 57,
+          "mean": 5.187215356140343,
+          "median": 4.065275299999939,
+          "std": 3.1535412128035616
+        },
+        "column_line_widths_pt": {
+          "count": 22,
+          "mean": 211.5868162681819,
+          "median": 215.59120500000017,
+          "std": 21.320262598120113
+        },
+        "left_column_lefts_pt": {
+          "count": 22,
+          "mean": 66.91113636363633,
+          "median": 68.72249999999998,
+          "std": 8.985453134197492
+        },
+        "right_column_rights_pt": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "std": null
+        },
+        "font_sizes_pt": {
+          "count": 97,
+          "mean": 7.076541237113413,
+          "median": 7.970100000000002,
+          "std": 1.3682913314729426
+        },
+        "fontname_counts": {
+          "FLXDPK+NimbusRomNo9L-Regu": 68,
+          "NBAIUF+NimbusSanL-Regu": 29
+        },
+        "column_gap_mm": null,
+        "column_bounds_pt": null,
+        "overflow_pt": null,
+        "overflow_mm": null,
+        "small_text_overall": {
+          "count": 1366,
+          "small_count": 0,
+          "min_size_pt": 7.970100000000002,
+          "p10_size_pt": 7.970100000000002
+        },
+        "body_median_font_pt": 7.970100000000002,
+        "figure_small_text": []
+      },
+      "checks": [
+        {
+          "id": "page_size_match",
+          "severity": "info",
+          "ok": true,
+          "message": "page_size_mm=(210.00,297.00) expected=(210.00,297.00) tol=\u00b11.0mm"
+        },
+        {
+          "id": "column_width_match",
+          "severity": "warn",
+          "ok": false,
+          "message": "median_column_width_mm=76.06 expected=80.00 tol=\u00b12.0mm"
+        },
+        {
+          "id": "columnsep_match",
+          "severity": "info",
+          "ok": false,
+          "message": "column gap could not be estimated (insufficient two-column evidence)"
+        },
+        {
+          "id": "small_text_overall",
+          "severity": "info",
+          "ok": true,
+          "message": "small_count=0 total=1366 min_size_pt=7.970100000000002"
+        },
+        {
+          "id": "left_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "left_alignment_std_pt=16.10"
+        },
+        {
+          "id": "right_alignment_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "right_alignment_std_pt=108.79"
+        },
+        {
+          "id": "line_spacing_std_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "line_spacing_std_pt=3.15"
+        },
+        {
+          "id": "font_size_median_pt",
+          "severity": "info",
+          "ok": true,
+          "message": "font_size_median_pt=7.97"
+        }
+      ]
+    }
+  ]
+}

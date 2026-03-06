@@ -1,0 +1,131 @@
+{
+  "format": {
+    "name": "interspeech-submission-audit",
+    "version": "0.1.0"
+  },
+  "inputs": {
+    "pdf": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/paper/submission/interspeech2026_review.pdf",
+    "tex": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/paper/submission/interspeech2026_review.tex",
+    "paper_kit": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/Interspeech2026-Paper-Kit.zip",
+    "stage": "review",
+    "paper_type": "regular",
+    "ai_tools_used": "true"
+  },
+  "static_review": {
+    "json_path": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/reviews/curated/INTSP2026_STATIC_057feb0c_71f0bee1__static_checks.json",
+    "summary": {
+      "ai_tools_used": "true",
+      "paper_type": "regular",
+      "pdf": {
+        "extracted_chars": 24528,
+        "max_chars": 120000,
+        "media_boxes": [
+          {
+            "height_pt": 841.89,
+            "page": 1,
+            "width_pt": 595.276
+          },
+          {
+            "height_pt": 841.89,
+            "page": 2,
+            "width_pt": 595.276
+          },
+          {
+            "height_pt": 841.89,
+            "page": 3,
+            "width_pt": 595.276
+          },
+          {
+            "height_pt": 841.89,
+            "page": 4,
+            "width_pt": 595.276
+          },
+          {
+            "height_pt": 841.89,
+            "page": 5,
+            "width_pt": 595.276
+          }
+        ],
+        "page_count": 5,
+        "path": "paper/submission/interspeech2026_review.pdf",
+        "sha256": "057feb0c99aa882679725454141035c4e04d2ef70f016f43716122c1bd745c47",
+        "sha8": "057feb0c",
+        "truncated": false
+      },
+      "rules": "/Users/naokkimu/.codex/skills/interspeech-manuscript-review/references/interspeech2026_rules.yaml",
+      "rules_meta": {
+        "source": {
+          "kind": "overleaf_template",
+          "notes": "Rules extracted from the template instructions embedded in the Overleaf source and abstract comments.",
+          "retrieved_local_date": "2026-02-24",
+          "title": "Interspeech Paper Kit",
+          "url": "https://www.overleaf.com/latex/templates/interspeech-paper-kit/svqkgcpdbxfg"
+        },
+        "venue": "Interspeech",
+        "year": 2026
+      },
+      "stage": "review",
+      "tex": {
+        "abstract": {
+          "found": true,
+          "plain_characters": 990
+        },
+        "documentclass": {
+          "class": "Interspeech",
+          "found": true,
+          "has_cameraready": false,
+          "is_interspeech": true,
+          "options": [],
+          "options_raw": ""
+        },
+        "path": "paper/submission/interspeech2026_review.tex",
+        "sha256": "71f0bee1baf8eb12f36a3bfaf2bb30e1e32faf33b216dd4a4f43d340dde6b384",
+        "sha8": "71f0bee1"
+      }
+    },
+    "failures": [
+      {
+        "id": "ai_disclosure_required",
+        "severity": "warn",
+        "message": "ai_tools_used=true but disclosure section not found"
+      }
+    ]
+  },
+  "aesthetic_review": {
+    "json_path": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/reviews/curated/interspeech2026_review_057feb0c_aesthetic.json",
+    "summary": {
+      "errors": 0,
+      "warnings": 4
+    },
+    "failures": [
+      {
+        "id": "column_overflow",
+        "severity": "warn",
+        "message": "overflow_count=15 max_overflow_mm=5.45",
+        "page": 1
+      },
+      {
+        "id": "small_text_overall",
+        "severity": "warn",
+        "message": "small_count=206 total=4316 min_size_pt=2.020615199999952",
+        "page": 4
+      },
+      {
+        "id": "figure_text_small",
+        "severity": "warn",
+        "message": "figure_regions=1 flagged=True",
+        "page": 4
+      },
+      {
+        "id": "column_width_match",
+        "severity": "warn",
+        "message": "median_column_width_mm=76.06 expected=80.00 tol=\u00b12.0mm",
+        "page": 5
+      }
+    ]
+  },
+  "decision": {
+    "submission_ready": false,
+    "failure_count": 5
+  }
+}

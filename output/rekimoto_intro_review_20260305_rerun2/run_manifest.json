@@ -1,0 +1,24 @@
+{
+  "config": {
+    "emit_snippets": false,
+    "glob": null,
+    "max_snippet_words": 25
+  },
+  "generated_at_utc": "2026-03-05T08:10:00+00:00",
+  "inputs": {
+    "abstract_path": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/output/rekimoto_intro_review_20260305_rerun2/abstract.txt",
+    "count": 1,
+    "paths": [
+      "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/output/rekimoto_intro_review_20260305_rerun2/introduction.txt"
+    ]
+  },
+  "platform": {
+    "os": "macOS-26.2-arm64-arm-64bit",
+    "python": "3.10.15"
+  },
+  "versions": {
+    "spacy": "3.8.7",
+    "spacy_model_requested": "en_core_web_sm",
+    "spacy_model_used": "en_core_web_sm"
+  }
+}

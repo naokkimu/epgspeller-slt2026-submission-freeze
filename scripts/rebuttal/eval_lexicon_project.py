@@ -210,11 +210,13 @@ def main():
             "seed": pred_payload.get("seed"),
             "split_seed": pred_payload.get("split_seed"),
             "model_path": pred_payload.get("model_path"),
+            "streaming_metrics": pred_payload.get("streaming_metrics"),
         }
     else:
         preds, targets, meta = greedy_preds_targets(args.model_path, args.partition, args.device)
         dataset_path = Path(meta["dataset_path"])
         meta["model_path"] = str(args.model_path)
+        meta["streaming_metrics"] = None
 
     lexicon = build_lexicon(dataset_path, args.lexicon_source, args.lexicon_path)
     projected_preds = project_predictions(preds, lexicon)
@@ -235,6 +237,7 @@ def main():
         "param_count": meta.get("param_count"),
         "seed": meta.get("seed"),
         "split_seed": meta.get("split_seed"),
+        "streaming_metrics": meta.get("streaming_metrics"),
     }
 
     if args.out_json:

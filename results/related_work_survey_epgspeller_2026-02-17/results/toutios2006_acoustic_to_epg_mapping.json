@@ -1,0 +1,75 @@
+{
+  "paper_id": "toutios2006_acoustic_to_epg_mapping",
+  "title": "On the Acoustic-to-Electropalatographic Mapping",
+  "authors": [
+    "Asterios Toutios",
+    "Konstantinos Margaritis"
+  ],
+  "year": 2006,
+  "venue": "Lecture Notes in Computer Science (book chapter)",
+  "doi": "10.1007/11613107_16",
+  "primary_url": "https://link.springer.com/chapter/10.1007/11613107_16",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "toutios2006acoustic2epg",
+
+  "modality": "Speech acoustics + Electropalatography (EPG)",
+  "device": "Audio recording + EPG palate-contact sensing (as reported)",
+  "task": "Acoustic-to-EPG mapping (predicting electropalatograms from acoustic signals)",
+  "output_unit": "EPG contact patterns (electropalatograms)",
+  "vocabulary_setting": "N/A (mapping task; not a lexicon-decoding benchmark)",
+  "datasets": "Paired acoustic+EPG data as reported in the chapter",
+  "evaluation_protocol": "Mapping evaluation protocol as reported (see chapter for details)",
+  "metrics_reported": "Mapping/reconstruction performance metrics as reported in the chapter",
+
+  "decoder": "Supervised acoustic-to-EPG mapping model",
+  "model_architecture": "Machine learning approach for acoustic-to-EPG mapping (chapter-specific)",
+  "spatial_frontend": "EPG contact patterns treated as structured high-dimensional targets; representation choices are central to mapping",
+  "augmentation": "N/A / not central",
+
+  "key_contributions": [
+    "Discusses the acoustic-to-electropalatographic mapping problem and proposes/analyses approaches for predicting EPG patterns from acoustics.",
+    "Provides historical context for modeling EPG as a structured spatial signal, supporting modern spatial front-end motivations.",
+    "Relevant to discussions of representation/compression baselines for EPG contact patterns."
+  ],
+  "limitations": [
+    "Not an EPG-to-text decoding paper; relevance is via representation/modeling context.",
+    "Chapter-level details (dataset, evaluation setup) must be consulted for precise reproduction."
+  ],
+  "reported_results_summary": "Book chapter; reports mapping performance under its protocol and discusses the mapping formulation (see Springer/DOI sources).",
+
+  "relevance_to_epgspeller": "Provides relevant background on representing and modeling EPG contact patterns as structured spatial objects, supporting Related Work sections on spatial modeling and representation choices.",
+  "takeaways_for_related_work_section": "A 2006 LNCS chapter on acoustic-to-EPG mapping; useful for articulatory modeling context and for motivating explicit spatial representations of EPG contact patterns.",
+
+  "sources": [
+    {
+      "url": "https://link.springer.com/chapter/10.1007/11613107_16",
+      "title": "SpringerLink: On the Acoustic-to-Electropalatographic Mapping",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.1007/11613107_16",
+      "year": 2006,
+      "venue": "Lecture Notes in Computer Science"
+    },
+    {
+      "url": "https://doi.org/10.1007/11613107_16",
+      "title": "DOI: 10.1007/11613107_16",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.1007/11613107_16",
+      "year": 2006,
+      "venue": "Lecture Notes in Computer Science"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1007/11613107_16",
+      "title": "Crossref API: 10.1007/11613107_16",
+      "retrieved_at": "2026-02-17",
+      "source_type": "web",
+      "doi": "10.1007/11613107_16"
+    }
+  ],
+
+  "uncertain": [
+    "This JSON does not enumerate the exact mapping model details and datasets; consult the Springer chapter for full technical details."
+  ]
+}

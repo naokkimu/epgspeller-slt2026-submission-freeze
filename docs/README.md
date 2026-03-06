@@ -2,6 +2,10 @@
 
 Use these steps to reproduce rebuttal numbers (one command at a time).
 
+## Recent maintenance
+- `paper/submission/interspeech2026_review_manual.tex` now imports `float` (`\usepackage{float}`).
+- Reason: tables using `[H]` require the `float` package; without it, LaTeX reports `Unknown float option 'H'`.
+
 ## 0) Sanity after prepare
 - After dataset pickle is created, ensure target IDs are within A–Z: built-in assertion (`max_id <= 26`) will stop if violated.
 

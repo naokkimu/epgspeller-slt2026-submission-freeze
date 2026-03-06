@@ -1,0 +1,9 @@
+protocol,level,group,variant,n,cer_m,cer_s,lex_all_m,lex_all_s,rtf_m,rtf_s
+P3,direction,subj1to4,vector,4,0.6660,0.0237,0.6508,0.0261,0.000192,0.000088
+P3,direction,subj2to4,vector,4,0.8091,0.0207,0.7359,0.0216,0.000145,0.000010
+P3,direction,subj3to4,vector,4,0.5840,0.0180,0.5911,0.0287,0.000140,0.000007
+P3,across_directions,ALL_to4,vector,3,0.6863,0.1139,0.6593,0.0728,0.000159,0.000029
+P3MS,direction,subj12to4,vector,4,0.6546,0.0161,0.5932,0.0162,0.000138,0.000011
+P3MS,direction,subj13to4,vector,4,0.5363,0.0089,0.5327,0.0084,0.000148,0.000010
+P3MS,direction,subj23to4,vector,4,0.5547,0.0046,0.5366,0.0111,0.000144,0.000007
+P3MS,across_directions,ALL_to4,vector,3,0.5819,0.0637,0.5541,0.0339,0.000143,0.000005

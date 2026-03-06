@@ -1,0 +1,207 @@
+version: 1
+
+outputs:
+  facts_tex: paper/generated/facts.tex
+  tables_dir: paper/generated/tables
+  provenance_tex: paper/generated/provenance.tex
+  manifest_json: results/manuscript_review_loop_interspeech_2026-02-18/facts_manifest.json
+
+numeric_zones:
+  - start_marker: "%NUMFACTS_BEGIN"
+    end_marker: "%NUMFACTS_END"
+
+provenance_macros:
+  - latex_cmd: EvSmartpalateDistribution
+    sha_cmd: ShaSmartpalateDistribution
+    sha_prefix_len: 12
+    evidence_id: ev_scripts_smartpalate_distribution_csv
+
+  - latex_cmd: EvSpatialCompare
+    sha_cmd: ShaSpatialCompare
+    sha_prefix_len: 12
+    evidence_id: ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17
+
+  - latex_cmd: EvRowcolCompare
+    sha_cmd: ShaRowcolCompare
+    sha_prefix_len: 12
+    evidence_id: ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17
+
+  - latex_cmd: EvSpatialDropout
+    sha_cmd: ShaSpatialDropout
+    sha_prefix_len: 12
+    evidence_id: ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17
+
+facts:
+  - id: grid_rows
+    latex_cmd: GridRows
+    extract:
+      type: smartpalate_grid_rows
+      evidence_id: ev_scripts_smartpalate_distribution_csv
+
+  - id: grid_cols
+    latex_cmd: GridCols
+    extract:
+      type: smartpalate_grid_cols
+      evidence_id: ev_scripts_smartpalate_distribution_csv
+
+  - id: n_channels_total
+    latex_cmd: TotalChannels
+    extract:
+      type: smartpalate_total_channels
+      evidence_id: ev_scripts_smartpalate_distribution_csv
+
+  - id: n_channels_mapped
+    latex_cmd: MappedChannels
+    extract:
+      type: smartpalate_mapped_channels
+      evidence_id: ev_scripts_smartpalate_distribution_csv
+
+  - id: n_channels_unmapped
+    latex_cmd: UnmappedChannels
+    extract:
+      type: smartpalate_unmapped_channels
+      evidence_id: ev_scripts_smartpalate_distribution_csv
+
+  - id: n_channels_duplicated
+    latex_cmd: DuplicatedChannels
+    extract:
+      type: smartpalate_duplicated_channels
+      evidence_id: ev_scripts_smartpalate_distribution_csv
+
+  - id: n_seeds_p1
+    latex_cmd: NSeedsPone
+    extract:
+      type: csv_unique_count
+      evidence_id: ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17
+      column: split_id
+      regex: "^seed[0-9]+$"
+
+  - id: seed_list_p1
+    latex_cmd: SeedListPone
+    extract:
+      type: csv_unique_sorted_join
+      evidence_id: ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17
+      column: split_id
+      regex: "^seed[0-9]+$"
+      join: ", "
+
+  - id: model_family_vector
+    latex_cmd: ModelFamilyVector
+    extract:
+      type: csv_unique_value
+      evidence_id: ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv
+      column: model_family
+
+  - id: model_units
+    latex_cmd: ModelUnits
+    extract:
+      type: csv_unique_value
+      evidence_id: ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv
+      column: n_units
+
+  - id: model_layers
+    latex_cmd: ModelLayers
+    extract:
+      type: csv_unique_value
+      evidence_id: ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv
+      column: n_layers
+
+  - id: model_stride
+    latex_cmd: StrideLen
+    extract:
+      type: csv_unique_value
+      evidence_id: ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv
+      column: stride_len
+
+  - id: model_kernel
+    latex_cmd: KernelLen
+    extract:
+      type: csv_unique_value
+      evidence_id: ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv
+      column: kernel_len
+
+  - id: model_proj_dim
+    latex_cmd: InputProjDim
+    extract:
+      type: csv_unique_value
+      evidence_id: ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv
+      column: input_proj_dim
+
+  - id: training_frame_ms
+    latex_cmd: FrameMs
+    extract:
+      type: csv_unique_value
+      evidence_id: ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv
+      column: frame_ms
+      format: "{:.1f}"
+
+  - id: training_n_batch
+    latex_cmd: TrainBatches
+    extract:
+      type: csv_unique_value
+      evidence_id: ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv
+      column: n_batch
+
+  - id: training_specaug
+    latex_cmd: SpecAugOn
+    extract:
+      type: csv_unique_value
+      evidence_id: ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv
+      column: specaug_on
+
+tables:
+  - name: h11_spatial2d_vs_vector
+    out_tex: paper/generated/tables/h11_spatial2d_vs_vector.tex
+    source:
+      evidence_id: ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17
+    protocol: P1
+    row_order:
+      - {section: TopK}
+      - {subset_method: topk, subset_K: 32}
+      - {subset_method: topk, subset_K: 64}
+      - {subset_method: topk, subset_K: 96}
+      - {subset_method: all, subset_K: 124}
+      - {section: FPS2K}
+      - {subset_method: fps2k, subset_K: 32}
+      - {subset_method: fps2k, subset_K: 64}
+      - {subset_method: fps2k, subset_K: 96}
+      - {subset_method: all, subset_K: 124}
+    frontends:
+      - {frontend: vector, label: Vector}
+      - {frontend: spatial2d, label: Spatial2D}
+    metrics:
+      - {key: greedy_cer, label: Greedy CER, fmt: "{:.4f}", plusminus: true}
+      - {key: greedy_rtf, label: Stream RTF, fmt: "{:.6f}", plusminus: true}
+
+  - name: h13_rowcol_vs_vector
+    out_tex: paper/generated/tables/h13_rowcol_vs_vector.tex
+    source:
+      evidence_id: ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17
+    protocol: P1
+    row_order:
+      - {section: TopK}
+      - {subset_method: topk, subset_K: 32}
+      - {subset_method: topk, subset_K: 64}
+      - {section: FPS2K}
+      - {subset_method: fps2k, subset_K: 32}
+      - {subset_method: fps2k, subset_K: 64}
+    frontends:
+      - {frontend: vector, label: Vector}
+      - {frontend: rowcol, label: RowCol}
+    metrics:
+      - {key: greedy_cer, label: Greedy CER, fmt: "{:.4f}", plusminus: true}
+      - {key: greedy_rtf, label: Stream RTF, fmt: "{:.6f}", plusminus: true}
+
+  - name: h12_spatial_aug_dropout
+    out_tex: paper/generated/tables/h12_spatial_aug_dropout.tex
+    source:
+      evidence_id: ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17
+    protocol: P1
+    model_family: spatial2d_uni_gru
+    subset_method: topk
+    subset_K: 64
+    drop_rates: [0.0, 0.1, 0.2, 0.3]
+    column_enable_aug: enable_spatial_aug
+    metric_mean: delta_cer_mean
+    metric_std: delta_cer_std
+    fmt: "{:.4f}"

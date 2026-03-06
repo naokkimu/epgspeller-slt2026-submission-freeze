@@ -1,0 +1,35 @@
+{
+  "paper_json": "paper/paper.json",
+  "root": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo",
+  "format": {
+    "name": "paper-json",
+    "version": "1.0.0"
+  },
+  "manuscript_first": true,
+  "narrative_paths": [
+    "paper/paper.json"
+  ],
+  "scope_paths": [
+    "results/related_work_survey_epgspeller_2026-02-17/fields.yaml",
+    "results/related_work_survey_epgspeller_2026-02-17/outline.yaml"
+  ],
+  "result_paths": [
+    "results/paper_layout_2026-03-03/table_dataset_summary.csv",
+    "results/paper_layout_2026-03-03/table_k64_p3.csv",
+    "results/paper_layout_2026-03-03/table_spatial_p1.csv",
+    "results/paper_layout_2026-03-03/table_spatial_p2.csv",
+    "results/paper_layout_2026-03-03/table_spatial_p3.csv",
+    "results/paper_layout_2026-03-03/table_k64_p1p2.csv",
+    "results/paper_layout_2026-03-03/table_k64_all.csv",
+    "results/paper_layout_2026-03-03/table_p3ms_compact.csv"
+  ],
+  "missing_evidence_paths": [],
+  "selection_notes": {
+    "narrative": [
+      "manuscript.sections[*].blocks が存在するため paper.json を本文として読む"
+    ],
+    "results": [
+      "claims が無いため evidence notes/size に基づき結果ファイルを選定"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+
+Silent speech interfaces infer linguistic intent from non acoustic signals, spanning articulatory sensing and other biosignals, and surveys emphasize variability, limited data, and evaluation protocol mismatches across systems. Electropalatography provides a practical binary representation of tongue palate contact, but its discrete sensor layout and device specific geometry raise questions about inductive bias and cross participant generalization.~\cite{denby2010silent,freitas2017an,gonzalez2020silent,hardcastle1989new,hardcastle1990electropalatography,lee2021biosignal,verhoeven2019visualisation,woo2021design}
+
+We focus on silent spelling, an SSI interaction that decodes character strings rather than continuous speech recognition or reconstruction. Character level decoding with CTC supports lexicon scale spelling and evaluation on unseen words, while other SSI pipelines rely on constrained recognition or reconstruction formulations. Within our surveyed set, SilentSpeller and ReHEarSSE are the closest anchors for lexicon scale silent spelling.~\cite{denby2010silent,dong2024rehearsse,gilbert2010isolated,graves2006connectionist,hueber2010development,kimura2022silentspeller}
+
+EPG contact patterns are spatially structured, and prior EPG studies examine dimensionality reduction and structured representations, motivating explicit evaluation of representation choices in learned decoders. We test layout aware front ends under protocols that distinguish generalization to held-out word identities, held-out instances of seen words, and cross participant transfer. We present an evidence tracked study of EPG silent spelling, define deterministic split protocols, compare a vector baseline to two layout aware front ends, and analyze electrode reduction and low shot adaptation under the same audit rules.~\cite{carreira1998dimensionality,hardcastle1991epg,shadle1993depth,toutios2006learning,toutios2006on}
+
+Claim: Audited protocols enable comparable evaluation of EPG silent spelling and show that layout-aware front ends do not consistently beat a vector baseline.
+
+\begin{itemize}
+\item We define protocols to evaluate word identity generalization and participant transfer, and we provide split archives with checksums.
+\item We run multi-participant experiments with character-level decoding and lexicon projection, tracked by a strict evidence registry.
+\item We compare a vector baseline with two layout aware front ends, and we report both accuracy and streaming speed metrics.
+\item We provide deterministic scripts that export compact tables and manifests used by this manuscript.
+\end{itemize}
+

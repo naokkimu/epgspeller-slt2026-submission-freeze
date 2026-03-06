@@ -1,0 +1,111 @@
+{
+  "checks": {
+    "abstract": {
+      "can_be_used_to_count": 0,
+      "can_count": 0,
+      "claim_marker": true,
+      "problem_markers": 0,
+      "stats": {
+        "char_count": 1039,
+        "sentence_count": 6,
+        "word_count": 146
+      }
+    },
+    "acronyms": {
+      "all": [
+        {
+          "acronym": "SSI",
+          "first_sent_index": 2
+        },
+        {
+          "acronym": "CTC",
+          "first_sent_index": 3
+        },
+        {
+          "acronym": "EPG",
+          "first_sent_index": 4
+        }
+      ],
+      "defined": [],
+      "undefined_common": [],
+      "undefined_other": [
+        "SSI",
+        "CTC",
+        "EPG"
+      ]
+    },
+    "claim_first": {
+      "label": "claim",
+      "sent_index": 6,
+      "snippet": "We present an evidence tracked study of EPG silent spelling define deterministic split protocols compare a vector baseline to two layout aware front ends and …"
+    },
+    "contribution_first": null,
+    "evaluation_first": {
+      "label": "evaluation",
+      "sent_index": 1,
+      "snippet": "Silent speech interfaces infer linguistic intent from non acoustic signals spanning articulatory sensing and other biosignals and surveys emphasize variability limited data and evaluation protocol …"
+    },
+    "good_adjectives": {
+      "hits": [],
+      "total": 0
+    },
+    "investigate_only": {
+      "count": 0,
+      "hits": []
+    },
+    "logic_jump_candidates": {
+      "candidates": [
+        {
+          "jaccard": 0.0,
+          "sent_index_a": 4,
+          "sent_index_b": 5,
+          "snippet_a": "Within our surveyed set SilentSpeller and ReHEarSSE are the closest anchors for lexicon scale silent spelling cite denby2010silent dong2024rehearsse gilbert2010isolated graves2006connectionist hueber2010development kimura2022silentspeller EPG contact …",
+          "snippet_b": "We test layout aware front ends under protocols that distinguish generalization to held out word identities held out instances of seen words and cross participant …"
+        },
+        {
+          "jaccard": 0.038,
+          "sent_index_a": 7,
+          "sent_index_b": 8,
+          "snippet_a": "\\begin{itemize} \\item We define protocols to evaluate word identity generalization and participant transfer, and we provide split archives with checksums.",
+          "snippet_b": "\\item We run multi-participant experiments with character-level decoding and lexicon projection, tracked by a strict evidence registry."
+        },
+        {
+          "jaccard": 0.038,
+          "sent_index_a": 8,
+          "sent_index_b": 9,
+          "snippet_a": "\\item We run multi-participant experiments with character-level decoding and lexicon projection, tracked by a strict evidence registry.",
+          "snippet_b": "\\item We compare a vector baseline with two layout aware front ends, and we report both accuracy and streaming speed metrics."
+        },
+        {
+          "jaccard": 0.043,
+          "sent_index_a": 9,
+          "sent_index_b": 10,
+          "snippet_a": "\\item We compare a vector baseline with two layout aware front ends, and we report both accuracy and streaming speed metrics.",
+          "snippet_b": "\\item We provide deterministic scripts that export compact tables and manifests used by this manuscript."
+        }
+      ],
+      "count": 4
+    },
+    "naming_first": {
+      "label": "naming",
+      "sent_index": 6,
+      "snippet": "We present an evidence tracked study of EPG silent spelling define deterministic split protocols compare a vector baseline to two layout aware front ends and …"
+    },
+    "recently_however_claim_windows": [],
+    "tradeoff_first": {
+      "label": "tradeoff",
+      "sent_index": 2,
+      "snippet": "Electropalatography provides a practical binary representation of tongue palate contact but its discrete sensor layout and device specific geometry raise questions about inductive bias and …"
+    }
+  },
+  "input": {
+    "input_bytes": 2620,
+    "input_path": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/output/rekimoto_intro_review_20260305/introduction.txt",
+    "input_sha256": "d020ce505f4acdf5bc548d76d8b04ef09bf24acea86f8cd987dec20e42ce0c09"
+  },
+  "stats": {
+    "char_count": 2620,
+    "sentence_count": 11,
+    "word_count": 328
+  }
+}

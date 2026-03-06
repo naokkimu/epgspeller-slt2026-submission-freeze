@@ -1,0 +1,93 @@
+[
+  {
+    "id": "ev_scripts_train_py",
+    "kind": "data",
+    "notes": "Training entrypoint used by sweep cmdlists.",
+    "path": "scripts/train.py",
+    "sha256": "8497baa998572fbdf29de5763fed6572b118d741fcbbf8bcc3c8ec5d36d1220e"
+  },
+  {
+    "id": "ev_scripts_prepare_silentspeller_dataset_py",
+    "kind": "data",
+    "notes": "Dataset preparation from split NPZ to unified pickle format.",
+    "path": "scripts/prepare_silentspeller_dataset.py",
+    "sha256": "0c13a2f8d7bb7f470851d1928acd1bf51633b42d532c4dc1cbd746f4fb9d69aa"
+  },
+  {
+    "id": "ev_scripts_rebuttal_gc_make_cmdlists_py",
+    "kind": "data",
+    "notes": "Cmdlist generator mapping matrix rows to prep/train/eval commands.",
+    "path": "scripts/rebuttal/gc_make_cmdlists.py",
+    "sha256": "b7f5786fc095cdb40def676d32c0ba08e52b5654dee446494ba48581192a459f"
+  },
+  {
+    "id": "ev_scripts_rebuttal_gc_collect_metrics_py",
+    "kind": "data",
+    "notes": "Metrics collector (missing=0 gate) aggregating eval JSON into a single CSV.",
+    "path": "scripts/rebuttal/gc_collect_metrics.py",
+    "sha256": "13570f95d81749e176dfb80fdca6f90fa67f7aef83af032e7a57480883e19307"
+  },
+  {
+    "id": "ev_scripts_rebuttal_eval_greedy_clean_py",
+    "kind": "data",
+    "notes": "Greedy decoding evaluation defining CER/WER and streaming RTF metrics.",
+    "path": "scripts/rebuttal/eval_greedy_clean.py",
+    "sha256": "a341ada9fb1e2b0d0a0754edf3e1c122bb9d253c627511256abf39441bfeb0fb"
+  },
+  {
+    "id": "ev_scripts_rebuttal_eval_lexicon_project_py",
+    "kind": "data",
+    "notes": "Lexicon projection evaluation for open-vocabulary decoding.",
+    "path": "scripts/rebuttal/eval_lexicon_project.py",
+    "sha256": "76a8175cc2c814489b44b082613b9a62983cab7e384d9cc4d68f352142c98cb4"
+  },
+  {
+    "id": "ev_scripts_rebuttal_make_word_holdout_split_py",
+    "kind": "data",
+    "notes": "Split generator: word-holdout protocol.",
+    "path": "scripts/rebuttal/make_word_holdout_split.py",
+    "sha256": "29765a348234ddafcd7c0bb3aeedc3dad1813fa863da921039dcf2b5e4be5065"
+  },
+  {
+    "id": "ev_scripts_rebuttal_make_instance_holdout_split_py",
+    "kind": "data",
+    "notes": "Split generator: instance-holdout protocol.",
+    "path": "scripts/rebuttal/make_instance_holdout_split.py",
+    "sha256": "07041c24ac0120a854ca55921017f9e628510b7e0b783e8bf74b55f3b6c783e2"
+  },
+  {
+    "id": "ev_scripts_rebuttal_make_cross_subject_instance_holdout_split_py",
+    "kind": "data",
+    "notes": "Split generator: cross-subject instance-holdout protocol.",
+    "path": "scripts/rebuttal/make_cross_subject_instance_holdout_split.py",
+    "sha256": "525062a6667f61f249528f0c8404ded6c6c10d68996bb54fd5ab188b858ab1a7"
+  },
+  {
+    "id": "ev_scripts_rebuttal_make_multi_source_cross_subject_instance_holdout_split_py",
+    "kind": "data",
+    "notes": "Split generator: multi-source cross-subject protocol.",
+    "path": "scripts/rebuttal/make_multi_source_cross_subject_instance_holdout_split.py",
+    "sha256": "007cb8c885dfff850f3a27cab98d727f7dba71479ea4447984906fe403e93e32"
+  },
+  {
+    "id": "ev_scripts_rebuttal_make_kshot_instance_holdout_split_py",
+    "kind": "data",
+    "notes": "Split generator: k-shot adaptation protocol.",
+    "path": "scripts/rebuttal/make_kshot_instance_holdout_split.py",
+    "sha256": "246e41e934eb225d74fc6a738d880c2f16336112b7f8ccb4450bc4c09ff1c763"
+  },
+  {
+    "id": "ev_scripts_rebuttal_msx_generate_matrices_py",
+    "kind": "data",
+    "notes": "Matrix generator for msx sweep variants.",
+    "path": "scripts/rebuttal/msx_generate_matrices.py",
+    "sha256": "94383707c945f04f54d69f5b98403ee9e5a53b2f53c08d8020399e43ecaee437"
+  },
+  {
+    "id": "ev_scripts_rebuttal_msx_write_report_py",
+    "kind": "data",
+    "notes": "Evidence-only report writer for msx sweep results.",
+    "path": "scripts/rebuttal/msx_write_report.py",
+    "sha256": "f277e1179d3a0324fae92bd42426e894ede92e3c38c4ff83d1449235e0746619"
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "paper_id": "hardcastle1990_epg_phonetic_research",
+  "title": "Electropalatography in phonetic research and in speech training",
+  "authors": [
+    "William J. Hardcastle"
+  ],
+  "year": 1990,
+  "venue": "ICSLP 1990 (ISCA Archive)",
+  "doi": "10.21437/icslp.1990-305",
+  "primary_url": "https://www.isca-archive.org/icslp_1990/hardcastle90b_icslp.html",
+  "pdf_url": "https://www.isca-archive.org/icslp_1990/hardcastle90b_icslp.pdf",
+  "code_or_data_release": null,
+  "citation_key_suggestion": "hardcastle1990epg",
+
+  "modality": "Electropalatography (EPG)",
+  "device": "EPG pseudopalate (electrode palate contact sensing)",
+  "task": "Phonetic research and speech training using EPG (visual feedback)",
+  "output_unit": "N/A (methodology paper)",
+  "vocabulary_setting": "N/A",
+  "datasets": "Pilot experiment described in the paper (pronunciation teaching example)",
+  "evaluation_protocol": "Pilot pronunciation teaching experiment and discussion of EPG applications",
+  "metrics_reported": "Qualitative discussion; focuses on EPG utility rather than a single standardized metric",
+
+  "decoder": "N/A",
+  "model_architecture": "N/A",
+  "spatial_frontend": "EPG provides spatio-temporal tongue-palate contact patterns (palate electrode grid)",
+  "augmentation": "N/A",
+
+  "key_contributions": [
+    "Explains EPG as an instrumental technique to record spatio-temporal tongue-palate contact patterns.",
+    "Discusses EPG applications in phonetic research, speech pathology, and pronunciation teaching via visual feedback.",
+    "Provides foundational context for EPG as a sensing modality and its constraints (contact-only, palate-limited)."
+  ],
+  "limitations": [
+    "Not a machine learning decoding paper; focuses on EPG instrumentation and applications.",
+    "Primarily qualitative; does not establish decoding benchmarks or cross-speaker generalization results."
+  ],
+  "reported_results_summary": "Descriptive/pilot paper on EPG usage for phonetic research and training; consult ISCA page for details.",
+
+  "relevance_to_epgspeller": "Provides foundational EPG background for the Related Work (Section on EPG sensing), helping clarify what EPG measures and why spatial structure matters when designing decoders/front-ends.",
+  "takeaways_for_related_work_section": "Use as a foundational EPG reference describing the sensing principle and clinical/training applications; motivates treating EPG as spatio-temporal contact patterns and sets context for learning-based decoding.",
+
+  "sources": [
+    {
+      "url": "https://www.isca-archive.org/icslp_1990/hardcastle90b_icslp.html",
+      "title": "ISCA Archive: Electropalatography in phonetic research and in speech training (Hardcastle, 1990)",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.21437/icslp.1990-305",
+      "year": 1990,
+      "venue": "ICSLP",
+      "pdf_url": "https://www.isca-archive.org/icslp_1990/hardcastle90b_icslp.pdf"
+    },
+    {
+      "url": "https://doi.org/10.21437/icslp.1990-305",
+      "title": "DOI: 10.21437/icslp.1990-305",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.21437/icslp.1990-305",
+      "year": 1990,
+      "venue": "ICSLP"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.21437/icslp.1990-305",
+      "title": "Crossref API: 10.21437/icslp.1990-305",
+      "retrieved_at": "2026-02-17",
+      "source_type": "web",
+      "doi": "10.21437/icslp.1990-305"
+    }
+  ],
+
+  "uncertain": [
+    "Proceedings pagination and publisher metadata are not captured here; cite via DOI/ISCA Archive for camera-ready."
+  ]
+}

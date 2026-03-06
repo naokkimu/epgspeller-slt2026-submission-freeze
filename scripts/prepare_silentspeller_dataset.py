@@ -224,6 +224,7 @@ def prepare_silentspeller_dataset(
     n_components: int = 16,
     train_data_ratio: float = 1.0,
     random_seed: int = 42,
+    downsample_factor: int = 1,
     apply_lowpass: bool = False,
     lowpass_window_size: int = 5,
     apply_spec_augment: bool = False,
@@ -242,6 +243,7 @@ def prepare_silentspeller_dataset(
         n_components: Number of PCA components
         train_data_ratio: Ratio of training data to use (0.0 to 1.0)
         random_seed: Random seed for reproducibility
+        downsample_factor: Temporal downsampling factor (keep every k-th frame). 1 disables downsampling.
         apply_lowpass: Whether to apply lowpass filtering
         lowpass_window_size: Window size for lowpass filter
         apply_spec_augment: Whether to apply SpecAugment
@@ -308,6 +310,17 @@ def prepare_silentspeller_dataset(
     test_label = split_data['test_label']
     competition_data = select_electrodes(split_data['competition_data'])
     competition_label = split_data['competition_label']
+
+    # Temporal downsampling (applied before filtering/PCA for consistency)
+    if downsample_factor < 1:
+        raise ValueError(f"downsample_factor must be >= 1, got {downsample_factor}")
+    if downsample_factor > 1:
+        print(f"Applying temporal downsampling (factor={downsample_factor})...")
+        def _downsample(arr_list):
+            return [sample[::downsample_factor] for sample in arr_list]
+        train_data = _downsample(train_data)
+        test_data = _downsample(test_data)
+        competition_data = _downsample(competition_data)
 
     # Adjust training data size if ratio is less than 1.0
     if train_data_ratio < 1.0:
@@ -459,6 +472,7 @@ def prepare_silentspeller_dataset(
         'train_data_ratio': train_data_ratio,
         'n_components': n_components,
         'random_seed': random_seed,
+        'downsample_factor': downsample_factor,
         'apply_lowpass': apply_lowpass,
         'lowpass_window_size': lowpass_window_size if apply_lowpass else None,
         'apply_spec_augment': apply_spec_augment,
@@ -479,6 +493,8 @@ def prepare_silentspeller_dataset(
             output_name.append(f"train{int(train_data_ratio*100)}p")
         if n_components != -1:
             output_name.append(f"pca{n_components}")
+        if downsample_factor > 1:
+            output_name.append(f"ds{downsample_factor}")
         if 'all' not in electrode_regions:
             output_name.append('_'.join(sorted(electrode_regions)))  # 領域名をソートして一貫性を保つ
         if apply_lowpass:
@@ -504,6 +520,8 @@ if __name__ == '__main__':
                       help='Ratio of training data to use (0.0 to 1.0)')
     parser.add_argument('--random_seed', type=int, default=42,
                       help='Random seed for reproducibility')
+    parser.add_argument('--downsample_factor', type=int, default=1,
+                      help='Temporal downsampling factor (keep every k-th frame). 1 disables downsampling.')
     parser.add_argument('--apply_lowpass', action='store_true',
                       help='Apply lowpass filter')
     parser.add_argument('--lowpass_window_size', type=int, default=5,
@@ -556,6 +574,7 @@ if __name__ == '__main__':
         n_components=args.n_components,
         train_data_ratio=args.train_data_ratio,
         random_seed=args.random_seed,
+        downsample_factor=args.downsample_factor,
         apply_lowpass=args.apply_lowpass,
         lowpass_window_size=args.lowpass_window_size,
         apply_spec_augment=args.apply_spec_augment,

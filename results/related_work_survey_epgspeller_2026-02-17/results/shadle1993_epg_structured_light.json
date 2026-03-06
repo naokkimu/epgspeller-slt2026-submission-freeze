@@ -1,0 +1,78 @@
+{
+  "paper_id": "shadle1993_epg_structured_light",
+  "title": "Depth measurement of face and palate by structured light",
+  "authors": [
+    "Christine H. Shadle",
+    "J. N. Carter",
+    "T. P. Monks",
+    "J. Field"
+  ],
+  "year": 1993,
+  "venue": "Eurospeech 1993 (ISCA Archive)",
+  "doi": "10.21437/eurospeech.1993-403",
+  "primary_url": "https://www.isca-archive.org/eurospeech_1993/shadle93_eurospeech.html",
+  "pdf_url": "https://www.isca-archive.org/eurospeech_1993/shadle93_eurospeech.pdf",
+  "code_or_data_release": null,
+  "citation_key_suggestion": "shadle1993structured",
+
+  "modality": "Electropalatography-related instrumentation (palate geometry measurement)",
+  "device": "Structured-light depth measurement system for face/palate and EPG palate",
+  "task": "Measuring palate/face geometry to enhance EPG visualization and derive parameters",
+  "output_unit": "3D/2D depth maps and derived geometric parameters",
+  "vocabulary_setting": "N/A",
+  "datasets": "Instrument measurement examples described in the paper",
+  "evaluation_protocol": "Instrumentation calibration and preliminary measurement results",
+  "metrics_reported": "System resolution and measurement considerations (paper-specific)",
+
+  "decoder": "N/A",
+  "model_architecture": "N/A",
+  "spatial_frontend": "Provides geometric context for EPG patterns (enhanced visualization / distance measures)",
+  "augmentation": "N/A",
+
+  "key_contributions": [
+    "Describes structured-light depth measurement applied to EPG palates and lower face.",
+    "Motivates enhancing EPG images with geometric information and enabling automatic distance measurements.",
+    "Connects EPG sensing to geometry-aware visualization/parameterization, relevant to spatial modeling discussions."
+  ],
+  "limitations": [
+    "Not a decoding/recognition paper; focuses on measurement and visualization infrastructure.",
+    "Preliminary results; not a standardized evaluation of decoding accuracy."
+  ],
+  "reported_results_summary": "Instrumentation paper describing structured-light depth measurement for palate/face and its use for EPG visualization; see ISCA Archive for details.",
+
+  "relevance_to_epgspeller": "Relevant to spatial modeling motivation: EPG is inherently spatial, and geometry-aware representations can potentially improve model inductive bias (ties to H11 2D reconstruction concept).",
+  "takeaways_for_related_work_section": "Use as an early reference connecting EPG to geometry-aware visualization/parameterization; supports the argument that spatial structure is meaningful and motivates explicit spatial front-ends.",
+
+  "sources": [
+    {
+      "url": "https://www.isca-archive.org/eurospeech_1993/shadle93_eurospeech.html",
+      "title": "ISCA Archive: Depth measurement of face and palate by structured light (Shadle et al., 1993)",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.21437/eurospeech.1993-403",
+      "year": 1993,
+      "venue": "Eurospeech",
+      "pdf_url": "https://www.isca-archive.org/eurospeech_1993/shadle93_eurospeech.pdf"
+    },
+    {
+      "url": "https://doi.org/10.21437/eurospeech.1993-403",
+      "title": "DOI: 10.21437/eurospeech.1993-403",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.21437/eurospeech.1993-403",
+      "year": 1993,
+      "venue": "Eurospeech"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.21437/eurospeech.1993-403",
+      "title": "Crossref API: 10.21437/eurospeech.1993-403",
+      "retrieved_at": "2026-02-17",
+      "source_type": "web",
+      "doi": "10.21437/eurospeech.1993-403"
+    }
+  ],
+
+  "uncertain": [
+    "This entry uses ISCA Archive as primary; full bibliographic details (pages, proceedings publisher) should be verified if needed."
+  ]
+}

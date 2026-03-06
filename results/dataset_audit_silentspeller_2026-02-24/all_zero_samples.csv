@@ -1,0 +1,5 @@
+dataset_id,idx,label,label_raw,T,word_count_before,word_count_after_excl,excluded_flag
+john_2328,1631,INDEX,index,97,2,1,1
+john_2328,1941,SPACE,space,91,2,1,1
+john_2328,509,WINNERS,winners,96,4,3,1
+john_2328,674,PERIOD,period,95,2,1,1

@@ -1,0 +1,24 @@
+{
+  "root": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo",
+  "paper_json_path": "paper/paper.json",
+  "rekimoto_yaml_path": null,
+  "narrative_candidates": [
+    "paper/submission.pdf"
+  ],
+  "chosen_narrative": "paper/submission.pdf",
+  "notes": [
+    "pdfplumber import failed: No module named 'pdfplumber'"
+  ],
+  "evidence_paths": [
+    "results/paper_layout_2026-03-03/table_main_compact.csv",
+    "results/paper_layout_2026-03-03/table_dataset_summary.csv",
+    "results/msx20260224/paper_tables/table_main.csv",
+    "results/dataset_audit_silentspeller_2026-02-24/pairwise_comparison.csv",
+    "results/ed20260217/paperjson/h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17.csv",
+    "results/dataset_audit_silentspeller_2026-02-24/dataset_summary.csv",
+    "results/dataset_audit_silentspeller_2026-02-24/protocol_split_summary.csv",
+    "results/dataset_audit_silentspeller_2026-02-24/protocol_split_all_zero_samples.csv"
+  ],
+  "evidence_missing": [],
+  "narrative_text_path": null
+}

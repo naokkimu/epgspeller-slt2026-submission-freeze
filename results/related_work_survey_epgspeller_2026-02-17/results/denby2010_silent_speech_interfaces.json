@@ -1,0 +1,81 @@
+{
+  "paper_id": "denby2010_silent_speech_interfaces",
+  "title": "Silent speech interfaces",
+  "authors": [
+    "Bruce Denby",
+    "Tanja Schultz",
+    "Kiyoshi Honda",
+    "Thomas Hueber",
+    "Jim M. Gilbert",
+    "Jonathan S. Brumberg"
+  ],
+  "year": 2010,
+  "venue": "Speech Communication 52(4):270-287",
+  "doi": "10.1016/j.specom.2009.08.002",
+  "primary_url": "https://www.sciencedirect.com/science/article/pii/S0167639309001307",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "denby2010ssi",
+
+  "modality": "Survey / overview (multiple SSI modalities)",
+  "device": "N/A",
+  "task": "Silent Speech Interface (SSI) overview: technologies, applications, and challenges",
+  "output_unit": "N/A (survey)",
+  "vocabulary_setting": "N/A (survey)",
+  "datasets": "N/A (survey)",
+  "evaluation_protocol": "N/A (survey)",
+  "metrics_reported": "N/A (survey)",
+
+  "decoder": "N/A (survey)",
+  "model_architecture": "N/A (survey)",
+  "spatial_frontend": "N/A (survey)",
+  "augmentation": "N/A (survey)",
+
+  "key_contributions": [
+    "Defines the SSI concept and surveys SSI technologies spanning multiple sensing modalities.",
+    "Summarizes common challenges in SSI (data, sensing variability, decoding, usability) and outlines future directions.",
+    "Serves as a canonical SSI reference for positioning EPG-based silent spelling within broader SSI research."
+  ],
+  "limitations": [
+    "As a 2010 survey, it predates many recent deep-learning-based SSI advances.",
+    "Survey scope emphasizes representative systems rather than exhaustive coverage of every subcommunity."
+  ],
+  "reported_results_summary": "Survey paper; it reviews representative SSI systems and challenges rather than reporting a single benchmark.",
+
+  "relevance_to_epgspeller": "Provides a standard SSI definition and taxonomy to support clearer positioning/related work (W1/W6). Also motivates why comparing open-vocabulary vs constrained decoding must be protocol-aware (W2).",
+  "takeaways_for_related_work_section": "A canonical SSI survey defining problem scope and modality taxonomy; can be cited to contextualize EPGSpeller as an articulatory-sensing SSI focused on open-vocabulary silent spelling.",
+
+  "sources": [
+    {
+      "url": "https://www.sciencedirect.com/science/article/pii/S0167639309001307",
+      "title": "ScienceDirect: Silent speech interfaces (Speech Communication, 2010)",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.1016/j.specom.2009.08.002",
+      "year": 2010,
+      "venue": "Speech Communication"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.specom.2009.08.002",
+      "title": "DOI: 10.1016/j.specom.2009.08.002",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.1016/j.specom.2009.08.002",
+      "year": 2010,
+      "venue": "Speech Communication"
+    },
+    {
+      "url": "https://publikationen.bibliothek.kit.edu/1000026320",
+      "title": "KITopen: Silent Speech Interfaces (Denby et al., Speech Communication 2010)",
+      "retrieved_at": "2026-02-17",
+      "source_type": "web",
+      "doi": "10.1016/j.specom.2009.08.002",
+      "year": 2010,
+      "venue": "Speech Communication"
+    }
+  ],
+
+  "uncertain": [
+    "This JSON does not enumerate the full list of modality-specific systems reviewed; consult the paper for details."
+  ]
+}

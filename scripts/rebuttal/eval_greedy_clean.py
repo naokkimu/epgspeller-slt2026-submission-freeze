@@ -6,8 +6,9 @@ Greedy CTC evaluation for rebuttal numbers (open-vocab, no LM).
 import argparse
 import json
 import pickle
+import time
 from pathlib import Path
-from typing import List, Tuple
+from typing import List
 
 import numpy as np
 import torch
@@ -82,7 +83,7 @@ def padding_collate(batch):
     )
 
 
-def evaluate(model_path: Path, partition: str, device: str, out_json: Path = None):
+def evaluate(model_path: Path, partition: str, device: str, out_json: Path = None, frame_ms: float = 10.0):
     # Load args and dataset
     with open(model_path / "args", "rb") as f:
         args = pickle.load(f)
@@ -109,6 +110,9 @@ def evaluate(model_path: Path, partition: str, device: str, out_json: Path = Non
     total_edits = 0
     total_words = 0
     total_word_errors = 0
+    total_input_frames = 0
+    total_output_chunks = 0
+    total_infer_seconds = 0.0
 
     with torch.no_grad():
         for X, y, X_len, y_len, days in loader:
@@ -118,9 +122,17 @@ def evaluate(model_path: Path, partition: str, device: str, out_json: Path = Non
             y_len = y_len.to(device)
             days = days.to(device)
 
+            if str(device).startswith("cuda"):
+                torch.cuda.synchronize()
+            t0 = time.perf_counter()
             logits = model(X, days)
+            if str(device).startswith("cuda"):
+                torch.cuda.synchronize()
+            total_infer_seconds += max(0.0, time.perf_counter() - t0)
             adjusted_lens = ((X_len - model.kernelLen) / model.strideLen).to(torch.int32)
             preds = greedy_decode(logits, adjusted_lens)
+            total_input_frames += int(X_len.sum().item())
+            total_output_chunks += int(adjusted_lens.sum().item())
 
             for i in range(len(preds)):
                 pred_str = numeric_to_string(preds[i])
@@ -138,6 +150,28 @@ def evaluate(model_path: Path, partition: str, device: str, out_json: Path = Non
 
     cer = total_edits / total_chars if total_chars > 0 else 0.0
     wer = total_word_errors / total_words if total_words > 0 else 0.0
+    total_input_seconds = (total_input_frames * frame_ms) / 1000.0
+    rtf = (total_infer_seconds / total_input_seconds) if total_input_seconds > 0 else None
+    chunk_latency_ms = (
+        (total_infer_seconds * 1000.0 / total_output_chunks)
+        if total_output_chunks > 0
+        else None
+    )
+    avg_utt_infer_ms = (
+        (total_infer_seconds * 1000.0 / len(all_preds)) if len(all_preds) > 0 else 0.0
+    )
+    first_output_latency_ms = max(0, model.kernelLen - model.strideLen) * frame_ms
+    end_to_end_latency_ms = avg_utt_infer_ms + first_output_latency_ms
+    model_cfg = args.get("model", {}) if isinstance(args.get("model", {}), dict) else {}
+    model_family = model_cfg.get("model_family", "gru")
+    # `args["bidirectional"]` isn't reliable for uni-directional families (e.g., uni_gru).
+    streaming_ready = model_family in {
+        "uni_gru",
+        "causal_tcn",
+        "mini_transformer",
+        "spatial2d_uni_gru",
+        "rowcol_uni_gru",
+    }
 
     result = {
         "partition": partition,
@@ -153,6 +187,19 @@ def evaluate(model_path: Path, partition: str, device: str, out_json: Path = Non
         "param_count": args.get("param_count"),
         "seed": args.get("seed"),
         "split_seed": args.get("split_seed"),  # optional if added upstream
+        "streaming_metrics": {
+            "frame_ms": frame_ms,
+            "total_input_frames": total_input_frames,
+            "total_input_seconds": total_input_seconds,
+            "total_output_chunks": total_output_chunks,
+            "total_infer_seconds": total_infer_seconds,
+            "rtf": rtf,
+            "chunk_latency_ms": chunk_latency_ms,
+            "end_to_end_latency_ms": end_to_end_latency_ms,
+            "first_output_latency_ms": first_output_latency_ms,
+            "model_family": model_family,
+            "streaming_ready": streaming_ready,
+        },
         "predictions": all_preds,
         "targets": all_targets,
     }
@@ -173,6 +220,7 @@ def parse_args():
     parser.add_argument("--partition", type=str, choices=["test", "competition"], default="test")
     parser.add_argument("--device", type=str, default="cpu")
     parser.add_argument("--out_json", type=Path, default=None)
+    parser.add_argument("--frame_ms", type=float, default=10.0)
     return parser.parse_args()
 
 
@@ -183,5 +231,5 @@ if __name__ == "__main__":
         partition=cli_args.partition,
         device=cli_args.device,
         out_json=cli_args.out_json,
+        frame_ms=cli_args.frame_ms,
     )
-

@@ -1,0 +1,254 @@
+% Auto-generated from paper/paper.json (paper-json v1.0.0). Do not edit by hand.
+% Target: INTERSPEECH 2026 Paper Kit (Interspeech.cls).
+\documentclass{Interspeech}
+
+\title{EPGSpeller: Evidence-Only Protocols and Multi-Participant Evaluation for Open-Vocabulary Silent Spelling}
+\keywords{silent speech interface, electropalatography, open vocabulary, text entry, auditability}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+Silent speech text entry with electropalatography requires models that generalize across word identities and participants while remaining auditable. We present an evidence-only study of open-vocabulary silent spelling from binary palate contact patterns, with protocols for word holdout, instance holdout, and cross participant transfer. Using four participants and deterministic artifact tracking, we evaluate a vector baseline and two layout aware front ends, and we analyze electrode reduction and low shot adaptation. Across our audited runs, the row and column front end tracks the vector baseline more closely than a convolutional grid front end, while the grid front end increases streaming latency. We release split manifests, checksums, and compact result tables as pinned repository artifacts.
+
+\end{abstract}
+
+\section{Introduction}
+
+Silent speech interfaces aim to enable communication without audible acoustics, using sensor measurements of articulation or physiology. Electropalatography provides a practical binary contact representation of tongue and palate interaction, but its discrete layout and device variability raise questions about inductive bias, robustness, and generalization.~\cite{denby2010silent,freitas2017an,gonzalez2020silent,lee2021biosignal}
+
+Recent work on silent spelling has emphasized open-vocabulary text entry, where character level decoding can compose words beyond a fixed closed set. We study open-vocabulary spelling with a CTC style decoder and lexicon projection, and we compare vector and layout aware front ends under multiple generalization protocols.~\cite{dong2024rehearsse,graves2006connectionist,kimura2022silentspeller}
+
+\begin{itemize}
+\item We define evaluation protocols that separate word identity generalization and participant transfer, and we provide split archives with checksums.
+\item We run multi-participant experiments with open-vocabulary decoding and lexicon projection, tracked by a strict evidence registry.
+\item We compare a vector baseline with two layout aware front ends, and we report both accuracy and streaming speed metrics.
+\item We provide deterministic scripts that export compact tables and manifests used by this manuscript.
+\end{itemize}
+
+\section{Related Work}
+
+Within our surveyed set, open-vocabulary silent spelling systems are represented by SilentSpeller and ReHEarSSE, while broader silent speech systems span constrained recognition and reconstruction settings. In the electropalatography literature, the spatial layout has been used for visualization, device characterization, and representation reduction, motivating tests of layout aware inductive bias in learned decoders.~\cite{carreira1998dimensionality,denby2010silent,dong2024rehearsse,gonzalez2020silent,hardcastle1989new,hardcastle1990electropalatography,hardcastle1991epg,hueber2010development,kimura2022silentspeller,shadle1993depth,toutios2006learning,toutios2006on,verhoeven2019visualisation,woo2021design}
+
+We summarize the positioning of prior work using survey tags that map systems by representation and system scope, describing where open vocabulary silent spelling and electropalatography studies sit in the space.
+
+Prior electropalatography studies emphasize that contact patterns are structured by the palate layout, motivating proxy grid representations and spatially structured modeling in learned decoders. Our work situates these ideas within open vocabulary silent spelling by making protocol definitions and artifact traceability explicit.
+
+\section{Data and Protocols}
+
+We use four participant electropalatography datasets with word labels. Each sample is a variable length binary contact matrix, and the raw exports are treated as immutable evidence. We audit dataset statistics, label counts, and anomalies before constructing any train and test splits, and a small set of all-zero samples is excluded via a pinned index list.
+
+The audit pipeline records raw file checksums, validates schema consistency, and aggregates label distributions, sequence length summaries, and per channel activity statistics before any split construction. The raw exports remain unchanged, and any exclusions are applied only through pinned index lists that are included in the audit artifacts.
+
+The dataset summary table reports id, sample count, vocabulary size, median sequence length, mean contact rate, and the count of all-zero samples for each participant dataset.
+
+\begin{table}[t]
+\centering
+\caption{Raw dataset summary for each participant dataset; id is the participant identifier, N is sample count, V is vocabulary size, Tmed is median sequence length, contact is mean contact rate, and zero is the count of all zero samples.}
+\label{tab:dataset}
+\begin{tabular}{llllll}
+\hline
+id & N & V & Tmed & contact & zero \\
+\hline
+p1 & 2328 & 1164 & 234 & 0.19 & 0 \\
+p2 & 2328 & 1164 & 196 & 0.20 & 0 \\
+p3 & 2797 & 1164 & 283 & 0.12 & 4 \\
+p4 & 1167 & 1162 & 229 & 0.19 & 0 \\
+\hline
+\end{tabular}
+\end{table}
+
+We evaluate three primary protocols. The word holdout protocol uses disjoint vocabularies across train, test, and a competition partition. The instance holdout protocol evaluates held out instances of seen words by separating train and competition vocabularies while keeping the test vocabulary within their union. The cross participant protocol trains on a source participant and evaluates on a target participant under a shared vocabulary constraint. When a target participant has limited within word repetition, we configure the cross participant split generators to allow single instance target words while keeping source side constraints unchanged. All split archives used in this study are enumerated with sizes and checksums in manifest artifacts.
+
+All split archives are generated deterministically from audited exports with fixed seeds, and each train, test, and competition partition is stored as an immutable archive with a checksum in the manifests to enable reuse and verification; the manifests show the word-holdout protocol uses all four participant datasets, the instance-holdout protocol uses three participant datasets, and the fourth participant appears only as a target in the cross-participant splits.
+
+Labels are normalized by uppercasing and filtering to alphabet characters, then represented as a space separated character sequence for CTC training and greedy decoding. This normalization is applied consistently during split construction and dataset preparation to avoid vocabulary drift.
+
+We maintain a consistent label normalization pipeline across all splits and dataset preparation steps so that the decoder vocabulary is aligned with the audited labels, reducing drift between training and evaluation artifacts.
+
+We report character error rate from greedy decoding and streaming speed using real time factor, defined as total inference time divided by total input duration. For open-vocabulary decoding we also report lexicon projection error rates using a training lexicon and a full lexicon.
+
+Greedy decoding reports unconstrained character sequences, while lexicon projection maps outputs to finite word sets derived from the training vocabulary or the full audited lexicon, allowing us to separate decoding quality from lexicon constraints. We compute real time factor by dividing inference time by input duration under the same evaluation harness.
+
+\section{Models}
+
+Our baseline model encodes each frame as a vector of palate channels and applies a uni-directional recurrent decoder trained with a CTC objective. We compare two layout aware front ends: a row and column pooling front end that aggregates a proxy grid into one dimensional summaries, and a grid reconstruction front end that applies a convolutional spatial encoder. For the grid model we optionally enable a spatial augmentation that drops and shifts contiguous electrode blocks.~\cite{graves2006connectionist,park2019specaugment}
+
+The proxy grid is constructed from the palate channel layout and supports either row and column pooling or convolutional feature extraction, while spatial augmentation perturbs contiguous electrode blocks to emulate missing contacts and minor spatial shifts.
+
+We fix core training hyperparameters across runs and record the shared configuration in the metrics registry for auditability.
+
+\section{Results}
+
+The baseline recap table summarizes baseline performance under word holdout, instance holdout, and cross participant transfer, and n counts the split aggregates used per protocol in the metrics registry. Lexicon projection reduces error rates relative to greedy decoding across protocols, highlighting the importance of open-vocabulary post processing for spelling.
+
+\begin{table}[t]
+\centering
+\caption{Baseline recap across three evaluation protocols; the protocol column denotes word holdout, instance holdout, and cross participant transfer, CER is character error rate, and lex is lexicon projected error rate.}
+\label{tab:main}
+\begin{tabular}{llll}
+\hline
+protocol & n & cer & lex \\
+\hline
+P1 & 4 & 0.180±0.084 & 0.102±0.068 \\
+P2 & 3 & 0.145±0.063 & 0.075±0.048 \\
+P3 & 6 & 0.691±0.133 & 0.644±0.060 \\
+\hline
+\end{tabular}
+\end{table}
+
+We additionally evaluate cross participant generalization targeting participant four under both single source and multi source transfer. The table uses lvl labels dir for single directions and all for the across direction aggregation, and the corresponding split archives are pinned by checksum in a dedicated manifest artifact. Group labels use p with source identifiers and an arrow to the target, and paired sources concatenate. In our audited splits, the multi source aggregation reduces CER relative to the single source aggregation for the same target.
+
+\begin{table}[t]
+\centering
+\caption{Cross participant generalization targeting participant four; proto distinguishes single source and multi source cross participant protocols, lvl marks direction level or across direction aggregate, group encodes source to target participant identifiers, and lex is lexicon projected error rate.}
+\label{tab:tofour}
+\begin{tabular}{lllll}
+\hline
+proto & lvl & group & cer & lex \\
+\hline
+P3 & dir & p1->p4 & 0.666±0.024 & 0.651±0.026 \\
+P3 & dir & p2->p4 & 0.809±0.021 & 0.736±0.022 \\
+P3 & dir & p3->p4 & 0.584±0.018 & 0.591±0.029 \\
+P3 & all & all->p4 & 0.686±0.114 & 0.659±0.073 \\
+P3MS & dir & p12->p4 & 0.655±0.016 & 0.593±0.016 \\
+P3MS & dir & p13->p4 & 0.536±0.009 & 0.533±0.008 \\
+P3MS & dir & p23->p4 & 0.555±0.005 & 0.537±0.011 \\
+P3MS & all & all->p4 & 0.582±0.064 & 0.554±0.034 \\
+\hline
+\end{tabular}
+\end{table}
+
+The cross participant results for the fourth participant include both single source and paired source settings, which provide a direct comparison of transfer with and without source aggregation under the same audited protocol constraints.
+
+The spatial modeling table compares spatial inductive bias variants at full channels across protocols, including a patchpool grid encoder as a minimal implementation rescue. The variant labels are vec, rowcol, grid, grid\_aug, patch, and patch\_aug. The row and column front end tracks the vector baseline more closely than the convolutional grid front end under within participant protocols, while patchpool reduces the gap under cross participant transfer. Across protocols, grid variants tend to increase real time factor relative to the vector baseline, and we do not observe a consistent accuracy gain over the vector baseline in any protocol.
+
+\begin{table}[t]
+\centering
+\caption{Spatial modeling at full channels across protocols; vec, rowcol, grid, grid aug, patch, and patch aug denote vector baseline, row and column pooling, convolutional grid encoder, grid with spatial augmentation, patchpool grid encoder, and patchpool with augmentation; CER is character error rate and RTF is real time factor.}
+\label{tab:spatial_all}
+\begin{tabular}{llll}
+\hline
+protocol & variant & cer & rtf \\
+\hline
+P1 & vec & 0.18±0.08 & 0.0006±0.0002 \\
+P1 & rowcol & 0.20±0.09 & 0.0024±0.0011 \\
+P1 & grid & 0.31±0.15 & 0.0036±0.0015 \\
+P1 & grid\_aug & 0.31±0.14 & 0.0034±0.0011 \\
+P1 & patch & 0.30±0.07 & 0.0038±0.0017 \\
+P1 & patch\_aug & 0.30±0.09 & 0.0039±0.0017 \\
+P2 & vec & 0.15±0.06 & 0.0001±0.0000 \\
+P2 & rowcol & 0.16±0.08 & 0.0002±0.0000 \\
+P2 & grid & 0.29±0.21 & 0.0004±0.0000 \\
+P2 & grid\_aug & 0.31±0.24 & 0.0004±0.0000 \\
+P2 & patch & 0.34±0.23 & 0.0007±0.0001 \\
+P2 & patch\_aug & 0.30±0.16 & 0.0006±0.0000 \\
+P3 & vec & 0.69±0.13 & 0.0001±0.0000 \\
+P3 & rowcol & 0.68±0.15 & 0.0002±0.0000 \\
+P3 & grid & 0.75±0.09 & 0.0004±0.0000 \\
+P3 & grid\_aug & 0.76±0.09 & 0.0004±0.0000 \\
+P3 & patch & 0.69±0.11 & 0.0006±0.0001 \\
+P3 & patch\_aug & 0.70±0.13 & 0.0005±0.0001 \\
+\hline
+\end{tabular}
+\end{table}
+
+The electrode reduction table evaluates a reduced channel budget using several selection strategies. The method labels are topk, fps two k, xfer, and rand. Across protocols, within participant selection and simple transfer selection yield similar performance, suggesting that a compact subset can preserve a large fraction of the vector baseline performance. Random selection and simple transfer remain slightly worse than within participant selection in the audited results.
+
+\begin{table}[t]
+\centering
+\caption{Electrode reduction methods across protocols; topk, fps two k, xfer, and rand denote within top ranked selection, farthest point sampling, transfer selection, and random selection; CER is character error rate and RTF is real time factor.}
+\label{tab:k64_all}
+\begin{tabular}{llll}
+\hline
+protocol & method & cer & rtf \\
+\hline
+P1 & topk & 0.195±0.083 & 0.0007±0.0002 \\
+P1 & fps2k & 0.191±0.078 & 0.0006±0.0002 \\
+P1 & xfer & 0.205±0.095 & 0.0006±0.0002 \\
+P1 & rand & 0.198±0.079 & 0.0007±0.0003 \\
+P2 & topk & 0.154±0.059 & 0.0001±0.0000 \\
+P2 & fps2k & 0.154±0.062 & 0.0001±0.0000 \\
+P2 & xfer & 0.158±0.071 & 0.0001±0.0000 \\
+P2 & rand & 0.157±0.067 & 0.0001±0.0000 \\
+P3 & topk & 0.647±0.130 & 0.0001±0.0000 \\
+P3 & fps2k & 0.656±0.146 & 0.0001±0.0000 \\
+P3 & xfer & 0.657±0.144 & 0.0001±0.0000 \\
+P3 & rand & 0.644±0.133 & 0.0001±0.0000 \\
+\hline
+\end{tabular}
+\end{table}
+
+The reduction results complement the protocol tables by showing that compact selections preserve much of the vector baseline under within participant evaluation, while cross participant transfer remains more challenging and motivates paired source and low shot analyses reported in the subsequent tables.
+
+We evaluate multi source cross participant transfer using paired source participants. The group labels concatenate the two source identifiers and use an arrow to the target identifier. The multi source table reports direction level results for vector and layout aware front ends.
+
+\begin{table}[t]
+\centering
+\caption{Multi source cross participant results by source pair; group concatenates source identifiers with an arrow to the target, and vec, rowcol, grid, and grid aug denote vector baseline, row and column pooling, and grid encoder with or without spatial augmentation; CER is character error rate and RTF is real time factor.}
+\label{tab:p3ms}
+\begin{tabular}{llll}
+\hline
+group & variant & cer & rtf \\
+\hline
+p23->p1 & vec & 0.473±0.014 & 0.0001±0.0000 \\
+p23->p1 & rowcol & 0.476±0.014 & 0.0002±0.0000 \\
+p23->p1 & grid & 0.602±0.076 & 0.0004±0.0000 \\
+p23->p1 & grid\_aug & 0.691±0.165 & 0.0004±0.0000 \\
+p13->p2 & vec & 0.520±0.003 & 0.0001±0.0000 \\
+p13->p2 & rowcol & 0.504±0.012 & 0.0003±0.0000 \\
+p13->p2 & grid & 0.511±0.047 & 0.0004±0.0000 \\
+p13->p2 & grid\_aug & 0.511±0.016 & 0.0004±0.0000 \\
+p12->p3 & vec & 0.838±0.034 & 0.0001±0.0000 \\
+p12->p3 & rowcol & 0.790±0.033 & 0.0002±0.0000 \\
+p12->p3 & grid & 0.736±0.018 & 0.0003±0.0000 \\
+p12->p3 & grid\_aug & 0.756±0.020 & 0.0003±0.0000 \\
+\hline
+\end{tabular}
+\end{table}
+
+We further analyze multi source transfer deltas against simple similarity measures; delta\_cer is negative for all audited groups, and corr\_src\_tgt\_mean varies within a narrow range across groups.
+
+We evaluate low shot adaptation for a new participant by varying the number of training instances per word; for the vector baseline, two shot improves over one shot, and the table reports layout aware variants.
+
+\begin{table}[t]
+\centering
+\caption{Low shot adaptation results for a new participant; group uses the participant identifier and k one or k two for the number of training instances per word, and vec, rowcol, grid, and grid aug denote vector baseline, row and column pooling, and grid encoder with or without spatial augmentation; CER is character error rate and RTF is real time factor.}
+\label{tab:kshot}
+\begin{tabular}{llll}
+\hline
+group & variant & cer & rtf \\
+\hline
+p3\_k1 & vec & 0.350±0.060 & 0.0002±0.0000 \\
+p3\_k1 & rowcol & 0.334±0.039 & 0.0005±0.0000 \\
+p3\_k1 & grid & 0.515±0.050 & 0.0007±0.0000 \\
+p3\_k1 & grid\_aug & 0.611±0.157 & 0.0011±0.0006 \\
+p3\_k2 & vec & 0.246±0.009 & 0.0002±0.0000 \\
+p3\_k2 & rowcol & 0.278±0.022 & 0.0005±0.0000 \\
+p3\_k2 & grid & 0.616±0.132 & 0.0008±0.0001 \\
+p3\_k2 & grid\_aug & 0.689±0.218 & 0.0007±0.0000 \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+
+Our results suggest that an explicit convolutional grid encoder is not automatically beneficial for electropalatography under within participant evaluation, despite its intuitive spatial structure. A patchpool grid variant reduces the underperformance of the grid encoder under cross participant transfer, indicating that spatial encoder design choices can materially affect outcomes, but it does not yield consistent gains over the vector baseline across protocols. Spatial augmentation can improve robustness to synthetic electrode dropout, but it does not close the accuracy gap for the convolutional grid variants in our multi participant results. Additional analyses on multi source cross participant transfer and low shot adaptation are provided as artifact tables, and they highlight that cross participant performance remains challenging. We also provide a conditions analysis of multi source transfer deltas versus simple dataset similarity measures, which shows that the effect is conditional and does not present a single dominant monotonic trend within our evaluated group set. These observations are limited to our audited multi participant dataset collection and protocols.
+
+Across the audited protocols, within participant performance remains stronger than cross participant transfer, emphasizing the difficulty of generalization under limited participant coverage. We report these trends as artifact grounded observations rather than broad claims, and we expect additional participant data to be necessary for stronger transfer conclusions.
+
+\section{Artifacts and Auditability}
+
+This repository uses a strict paper registry that pins every evidence file by checksum and rejects unsupported manuscript blocks. The split manifests, aggregated metrics, compact tables, and analysis summaries referenced in this paper are stored as deterministic artifacts, enabling audit and reproduction within our repository environment.
+
+\section{Ethics and Disclosure}
+
+We report results only for audited artifacts and do not claim broader demographic coverage. The datasets and splits used in this study are derived from participant recordings, and we focus on methodological clarity and artifact traceability rather than deployment claims.
+
+\section{Logic Checks}
+
+The baseline table includes protocol and aggregate metrics fields.
+
+
+\end{document}

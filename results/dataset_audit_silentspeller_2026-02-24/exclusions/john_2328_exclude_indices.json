@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-02-24",
+  "dataset_id": "john_2328",
+  "exclude_indices": [
+    509,
+    674,
+    1631,
+    1941
+  ],
+  "reason": "all-zero samples detected in local audit; verify via da_audit_raw_npz.py"
+}

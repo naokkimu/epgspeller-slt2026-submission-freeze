@@ -1,0 +1,301 @@
+{
+  "generated_at": "2026-02-18",
+  "version": 1,
+  "papers": {
+    "carreira_perpinan1998_dimred_epg": {
+      "task_class": "instrumentation_visualization",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "linear_compression",
+      "layout_assumption": "implicit_or_none",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "representation_reduction",
+      "protocol_class": "n_a",
+      "uncertain": [],
+      "notes": "Unsupervised dimensionality reduction / latent-variable representations of EPG frames (analysis/reduction, not a decoding system)."
+    },
+    "chen2022_epg2s": {
+      "task_class": "speech_reconstruction_generation",
+      "output_unit_class": "acoustics_waveform",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "vector_no_layout",
+      "layout_assumption": "implicit_or_none",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "n_a",
+      "uncertain": [
+        "The survey extraction does not specify whether the EPG stream is processed with an explicit 2D layout; classified as vector_no_layout by default."
+      ],
+      "notes": "EPG+audio multimodal learning for speech generation/enhancement; not a text-decoding benchmark."
+    },
+    "denby2010_silent_speech_interfaces": {
+      "task_class": "survey_method",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "not_applicable",
+      "layout_assumption": "not_applicable",
+      "augmentation_class": "varies",
+      "robustness_eval": "qualitative_only",
+      "sensor_design_focus": "none",
+      "protocol_class": "mixed_or_review",
+      "uncertain": [],
+      "notes": "Canonical SSI survey used for positioning and challenges."
+    },
+    "gilbert2010_magnetic_implants_silent_speech": {
+      "task_class": "silent_speech_recognition_closed_vocab",
+      "output_unit_class": "words",
+      "vocab_constraint": "closed_vocab",
+      "decoding_form": "dtw_template",
+      "spatial_representation": "vector_no_layout",
+      "layout_assumption": "implicit_or_none",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "within_subject",
+      "uncertain": [
+        "Subject/generalization protocol details are not fully extracted; within_subject is a conservative default for this type of sensor-based SSI system."
+      ],
+      "notes": "Minimal non-EPG SSI comparison: closed-vocabulary, DTW-based recognition." 
+    },
+    "gonzalezlopez2020_ssi_restoration_review": {
+      "task_class": "survey_method",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "not_applicable",
+      "layout_assumption": "not_applicable",
+      "augmentation_class": "varies",
+      "robustness_eval": "qualitative_only",
+      "sensor_design_focus": "none",
+      "protocol_class": "mixed_or_review",
+      "uncertain": [],
+      "notes": "SSI review focused on speech restoration; used for positioning and robustness themes."
+    },
+    "graves2006_ctc": {
+      "task_class": "survey_method",
+      "output_unit_class": "phonemes_or_labels",
+      "vocab_constraint": "n_a",
+      "decoding_form": "ctc_like",
+      "spatial_representation": "not_applicable",
+      "layout_assumption": "not_applicable",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "n_a",
+      "uncertain": [],
+      "notes": "Foundational CTC objective for alignment-free sequence decoding." 
+    },
+    "hardcastle1989_state_of_art_epg": {
+      "task_class": "instrumentation_visualization",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "geometry_aware_nonimage",
+      "layout_assumption": "explicit_layout_used",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "layout_device_design",
+      "protocol_class": "n_a",
+      "uncertain": [],
+      "notes": "EPG instrumentation/representation overview; motivates spatial structure and layout/device considerations."
+    },
+    "hardcastle1990_epg_phonetic_research": {
+      "task_class": "instrumentation_visualization",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "geometry_aware_nonimage",
+      "layout_assumption": "explicit_layout_used",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "n_a",
+      "uncertain": [],
+      "notes": "Foundational background on what EPG measures and how palatograms are represented/used in phonetic research and training."
+    },
+    "hardcastle1991_epg_data_reduction_coarticulation": {
+      "task_class": "instrumentation_visualization",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "linear_compression",
+      "layout_assumption": "implicit_or_none",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "representation_reduction",
+      "protocol_class": "n_a",
+      "uncertain": [],
+      "notes": "EPG data reduction / representation methods; historical context for reduction and design trade-offs."
+    },
+    "hueber2010_ultrasound_optical_ssi": {
+      "task_class": "speech_reconstruction_generation",
+      "output_unit_class": "acoustics_waveform",
+      "vocab_constraint": "lexicon_or_dictionary_constrained",
+      "decoding_form": "hmm_pipeline",
+      "spatial_representation": "explicit_2d_image",
+      "layout_assumption": "explicit_layout_used",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "within_subject",
+      "uncertain": [
+        "The extracted summary indicates dictionary-driven unit selection; classified as lexicon_or_dictionary_constrained.",
+        "Subject/generalization protocol details are not fully extracted; within_subject is used as a conservative default."
+      ],
+      "notes": "Imaging-based SSI reconstruction pipeline with PCA-based spatial coding and HMM/dictionary stages." 
+    },
+    "lee2021_biosignal_speechrec_review": {
+      "task_class": "survey_method",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "not_applicable",
+      "layout_assumption": "not_applicable",
+      "augmentation_class": "varies",
+      "robustness_eval": "qualitative_only",
+      "sensor_design_focus": "none",
+      "protocol_class": "mixed_or_review",
+      "uncertain": [],
+      "notes": "Biosignal+DL review used for robustness/variability positioning context."
+    },
+    "park2019_specaugment": {
+      "task_class": "survey_method",
+      "output_unit_class": "phonemes_or_labels",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "not_applicable",
+      "layout_assumption": "not_applicable",
+      "augmentation_class": "specaug_like",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "n_a",
+      "uncertain": [],
+      "notes": "Feature-masking augmentation baseline concept (SpecAugment)."
+    },
+    "rehearsse_chi2024": {
+      "task_class": "silent_spelling_text_entry",
+      "output_unit_class": "characters",
+      "vocab_constraint": "open_vocab",
+      "decoding_form": "ctc_like",
+      "spatial_representation": "vector_no_layout",
+      "layout_assumption": "implicit_or_none",
+      "augmentation_class": "other",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "n_a",
+      "uncertain": [
+        "Protocol details (within/multi-subject) are not fully extracted in the frozen survey JSON." 
+      ],
+      "notes": "Modern non-EPG silent spelling reference used for minimal task/framing comparison." 
+    },
+    "shadle1993_epg_structured_light": {
+      "task_class": "instrumentation_visualization",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "geometry_aware_nonimage",
+      "layout_assumption": "explicit_layout_used",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "layout_device_design",
+      "protocol_class": "n_a",
+      "uncertain": [],
+      "notes": "Geometry measurement supporting spatial interpretation/visualization of EPG patterns." 
+    },
+    "silentspeller_chi2022": {
+      "task_class": "silent_spelling_text_entry",
+      "output_unit_class": "characters",
+      "vocab_constraint": "open_vocab",
+      "decoding_form": "ctc_like",
+      "spatial_representation": "vector_no_layout",
+      "layout_assumption": "implicit_or_none",
+      "augmentation_class": "other",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "n_a",
+      "uncertain": [
+        "The frozen survey JSON does not fully extract the exact subject split protocol; protocol_class left as n_a." 
+      ],
+      "notes": "Primary EPG-based silent spelling/text entry system used for open-vocabulary framing." 
+    },
+    "ssi_book_springer2017": {
+      "task_class": "survey_method",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "not_applicable",
+      "layout_assumption": "not_applicable",
+      "augmentation_class": "varies",
+      "robustness_eval": "qualitative_only",
+      "sensor_design_focus": "none",
+      "protocol_class": "mixed_or_review",
+      "uncertain": [],
+      "notes": "SSI book (taxonomy/definitions) used for broad positioning."
+    },
+    "toutios2006_acoustic_to_epg_mapping": {
+      "task_class": "mapping_prediction",
+      "output_unit_class": "epg_patterns",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "geometry_aware_nonimage",
+      "layout_assumption": "explicit_layout_used",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "n_a",
+      "uncertain": [
+        "The frozen survey JSON indicates structured EPG targets; explicit layout usage is assumed but not verified in detail."
+      ],
+      "notes": "Acoustic→EPG mapping context; supports structured EPG modeling motivation." 
+    },
+    "toutios2006_learning_epg_from_acoustics": {
+      "task_class": "mapping_prediction",
+      "output_unit_class": "epg_patterns",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "geometry_aware_nonimage",
+      "layout_assumption": "explicit_layout_used",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "n_a",
+      "uncertain": [
+        "Explicit layout usage is not fully extracted; classified as explicit_layout_used based on palatogram-style representation." 
+      ],
+      "notes": "Acoustic→EPG mapping context; EPG as structured output." 
+    },
+    "verhoeven2019_visualisation_analysis_epg": {
+      "task_class": "instrumentation_visualization",
+      "output_unit_class": "n_a",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "geometry_aware_nonimage",
+      "layout_assumption": "explicit_layout_used",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "none",
+      "protocol_class": "n_a",
+      "uncertain": [],
+      "notes": "EPG visualization/analysis; reinforces spatial/palatogram framing."
+    },
+    "woo2021_kepg_design": {
+      "task_class": "instrumentation_visualization",
+      "output_unit_class": "epg_patterns",
+      "vocab_constraint": "n_a",
+      "decoding_form": "not_a_decoder",
+      "spatial_representation": "geometry_aware_nonimage",
+      "layout_assumption": "explicit_layout_used",
+      "augmentation_class": "none",
+      "robustness_eval": "none_reported",
+      "sensor_design_focus": "layout_device_design",
+      "protocol_class": "n_a",
+      "uncertain": [],
+      "notes": "EPG device/layout design; supports sensor-design discussion." 
+    }
+  }
+}

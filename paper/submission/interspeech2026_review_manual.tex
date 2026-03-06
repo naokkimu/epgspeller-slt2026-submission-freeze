@@ -1,0 +1,254 @@
+% Manual snapshot copied from interspeech2026_review.tex. Safe to edit directly.
+% Target: INTERSPEECH 2026 Paper Kit (Interspeech.cls).
+\documentclass{Interspeech}
+\usepackage{float}
+\usepackage{placeins}
+
+\title{EPGSpeller: Evidence-Only Protocols and Multi-Participant Evaluation for Character-Level Silent Spelling}
+\keywords{silent speech interface, electropalatography, character-level decoding, text entry, auditability}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+Silent spelling with electropalatography is a promising route to hands-free text entry, but many evaluations still mix word-identity generalization, instance-level memorization, and participant transfer, which blurs what actually improves. We present EPGSpeller, an evidence-only evaluation framework for character-level silent spelling from binary palate-contact sequences. EPGSpeller fixes deterministic protocols for word holdout, instance holdout, and cross-participant transfer, and it pins split and metric artifacts so each reported result is reproducible. Under this shared harness, we compare a vector baseline with row-column and grid-based spatial front ends, and we also evaluate electrode reduction and low-shot adaptation. Across audited runs, row-column pooling tracks the vector baseline more consistently than grid-based variants, while cross-participant transfer remains the dominant bottleneck. These results show that protocol auditability is a first-order requirement for defensible progress in EPG silent spelling.
+
+\end{abstract}
+
+\section{Introduction}
+
+Silent speech interfaces (SSI) infer linguistic intent from non-acoustic signals, including articulatory sensing and other biosignals.~\cite{denby2010silent,freitas2017an,gonzalez2020silent,hardcastle1989new,hardcastle1990electropalatography,lee2021biosignal,verhoeven2019visualisation,woo2021design} For silent spelling with electropalatography (EPG), a practical failure remains: many evaluations mix word-identity holdout, repeated-instance holdout, and cross-participant transfer, so reported gains can reflect protocol differences rather than decoder differences.
+
+Recent systems such as SilentSpeller and ReHEarSSE show lexicon-scale character-level spelling beyond small command sets.~\cite{denby2010silent,dong2024rehearsse,gilbert2010isolated,graves2006connectionist,hueber2010development,kimura2022silentspeller} However, these lines of work do not provide a unified, auditable protocol stack that isolates each generalization regime under a shared artifact trace. In parallel, prior EPG studies motivate structured representations and spatial inductive bias, but their evaluation settings are heterogeneous across datasets and tasks.~\cite{carreira1998dimensionality,hardcastle1991epg,shadle1993depth,toutios2006learning,toutios2006on}
+
+To address this gap, we introduce EPGSpeller, an evidence-tracked evaluation framework for EPG silent spelling. EPGSpeller fixes deterministic split generation, pinned split manifests, and a common metric harness for greedy decoding, lexicon projection, and streaming cost. It explicitly separates word holdout, instance holdout, and cross-participant transfer so model comparisons remain protocol-specific and reproducible.
+
+We validate EPGSpeller with four participant datasets and compare a vector baseline with row-column and grid-based front ends under matched settings. We also evaluate electrode reduction and low-shot adaptation under the same audit rules. Across our audited runs, row-column pooling tracks the vector baseline more consistently than grid variants, while cross-participant transfer remains the dominant bottleneck.
+
+Claim: protocol-level auditability is a first-order requirement for defensible progress in EPG silent spelling.
+
+\begin{itemize}
+\item We define deterministic protocol families that isolate word-identity, instance-level, and cross-participant generalization.
+\item We provide checksum-pinned split archives and manifests so each reported result is reproducible from audited artifacts.
+\item We benchmark vector, row-column, and grid front ends under a shared evaluation harness with accuracy and streaming metrics.
+\item We report electrode-reduction and low-shot analyses under the same protocol constraints.
+\end{itemize}
+
+\section{Data and Protocols}
+
+We use four participant electropalatography datasets with word labels. Each sample is a variable length binary contact matrix, and the raw exports are treated as immutable evidence. We refer to participants with anonymous labels in all tables and split archives. We audit dataset statistics, label counts, and anomalies before we construct any train and test splits. We exclude a small set of all-zero samples via a pinned index list. The audit pipeline records raw file checksums. It validates schema consistency. It summarizes label counts, sequence length summaries, and per channel activity statistics before any split construction. The raw exports remain unchanged. We apply any exclusions only through pinned index lists that are included in the audit artifacts.
+
+We evaluate three primary protocols. The word holdout protocol uses disjoint vocabularies across train, test, and a competition partition. The instance holdout protocol tests held out instances of seen words. It separates train and competition vocabularies while keeping the test vocabulary within their union. The cross participant protocol trains on a source participant and tests on a target participant under a shared vocabulary constraint. We also define a paired source cross participant variant and a low shot adaptation variant to isolate source aggregation and limited supervision effects under the same audit rules. When a target participant has limited within word repetition, we configure the cross participant split generators to allow single instance target words. We keep the source side constraints unchanged. All split archives used in this study are enumerated with sizes and checksums in manifest artifacts.
+
+All split archives are generated deterministically from audited exports with fixed seeds. Each train, test, and competition partition is stored as an immutable archive with a checksum in the manifests to enable reuse and later verification. The manifests show the word-holdout protocol uses all four participant datasets. They show the instance-holdout protocol uses three participant datasets. They also show the fourth participant is target-only (not used as a source) in the cross-participant splits. The audited label histogram for the fourth participant is dominated by single-instance labels, so we restrict that participant to target-only use in cross-participant evaluation. This separation explains why the dataset summary includes all participant datasets even when a protocol uses only a subset.
+
+We normalize labels by uppercasing and filtering to alphabet characters, then represent each label as a space separated character sequence for CTC training and greedy decoding. We apply this step consistently during split construction and dataset preparation to avoid vocabulary drift.
+We keep the label normalization step consistent across all splits and dataset preparation steps. This aligns the decoder vocabulary with the audited labels and reduces drift between training and artifacts used to evaluate.
+We report character error rate from greedy decoding and streaming speed using real time factor. We define real time factor as total inference time divided by total input duration. For character-level decoding we also report lexicon projection error rates using a training lexicon and a full lexicon.
+
+Greedy decoding reports unconstrained character sequences. Lexicon projection maps outputs to finite word sets derived from the training vocabulary or the full audited lexicon. This allows us to separate decoding quality from lexicon constraints. We compute real time factor by dividing inference time by input duration under the same test harness. Tables summarize results over four split seeds as mean and standard deviation. We compute two sided t distribution confidence intervals for the primary accuracy metric and paired t tests with Holm correction; the compact statistical summary table is provided in the supplementary archive.
+
+\section{Models}
+
+Our baseline model encodes each frame as a vector of palate channels and applies a uni-directional recurrent decoder trained with a CTC objective. We compare two layout aware front ends. One is a row and column pooling front end that aggregates a proxy grid into one dimensional summaries. The other is a grid front end that reconstructs a proxy grid and applies a convolutional spatial encoder. For the grid model we optionally enable a spatial augmentation that drops and shifts contiguous electrode blocks.~\cite{graves2006connectionist,park2019specaugment}
+The proxy grid is constructed from the palate channel layout. It supports row and column pooling or convolutional feature extraction. We use a fixed layout file for the mapping so that row and column indices are consistent across splits. We augment spatially by perturbing contiguous electrode blocks to emulate missing contacts and minor spatial shifts.
+We fix core training hyperparameters across runs and record how we configure them in the metrics registry for auditability.
+
+\section{Results}
+
+We report greedy decoding error, lexicon-projected error, and streaming cost under a shared evaluation harness for all protocols. The fourth participant is target-only in cross-participant evaluation due to single-instance label dominance. All metrics are derived from the same audited registry.
+We summarize baseline performance across the three evaluation protocols in Table~\ref{tab:main}.
+\begin{table}[H]
+% Table block begins.
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Baseline recap across evaluation protocols; the protocol column denotes word holdout, instance holdout, and cross participant transfer and n counts split aggregates.}
+\label{tab:main}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}llll}
+\hline
+protocol & n & cer & lex \\
+\hline
+P1 & 4 & 0.180±0.084 & 0.102±0.068 \\
+P2 & 3 & 0.145±0.063 & 0.075±0.048 \\
+P3 & 6 & 0.691±0.133 & 0.644±0.060 \\
+\hline
+\end{tabular*}
+% Table block ends.
+\end{table}
+Baseline error is lowest for word and instance holdout and highest for cross participant transfer, consistent with the protocol difficulty ordering.
+We compare vector, row/col, and grid-based front ends at full channels across protocols in Table~\ref{tab:spatial_all}.
+
+\begin{table}[H]
+% Table block begins.
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Spatial modeling at full channels across protocols (protocol one word holdout, protocol two instance holdout, protocol three cross participant).}
+\label{tab:spatial_all}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}llll}
+\hline
+protocol & variant & cer & rtf \\
+\hline
+P1 & vec & 0.18±0.08 & 0.0006±0.0002 \\
+P1 & rowcol & 0.20±0.09 & 0.0024±0.0011 \\
+P1 & grid & 0.31±0.15 & 0.0036±0.0015 \\
+P1 & grid\_aug & 0.31±0.14 & 0.0034±0.0011 \\
+P1 & patch & 0.30±0.07 & 0.0038±0.0017 \\
+P1 & patch\_aug & 0.30±0.09 & 0.0039±0.0017 \\
+P2 & vec & 0.15±0.06 & 0.0001±0.0000 \\
+P2 & rowcol & 0.16±0.08 & 0.0002±0.0000 \\
+P2 & grid & 0.29±0.21 & 0.0004±0.0000 \\
+P2 & grid\_aug & 0.31±0.24 & 0.0004±0.0000 \\
+P2 & patch & 0.34±0.23 & 0.0007±0.0001 \\
+P2 & patch\_aug & 0.30±0.16 & 0.0006±0.0000 \\
+P3 & vec & 0.69±0.13 & 0.0001±0.0000 \\
+P3 & rowcol & 0.68±0.15 & 0.0002±0.0000 \\
+P3 & grid & 0.75±0.09 & 0.0004±0.0000 \\
+P3 & grid\_aug & 0.76±0.09 & 0.0004±0.0000 \\
+P3 & patch & 0.69±0.11 & 0.0006±0.0001 \\
+P3 & patch\_aug & 0.70±0.13 & 0.0005±0.0001 \\
+\hline
+\end{tabular*}
+% Table block ends.
+\end{table}
+
+Row and column pooling tends to track the vector baseline more closely, while grid variants increase error and streaming cost across protocols. We evaluate cross-participant transfer with the fourth participant as target under single-source and paired-source settings in Table~\ref{tab:tofour}.
+\begin{table}[H]
+    % Table block begins.
+    \centering
+    \small
+    \setlength{\tabcolsep}{4pt}
+    \caption{Cross participant generalization targeting the fourth participant; proto distinguishes single source cross participant transfer and multi source transfer, lvl marks direction level rows versus an across direction aggregate, group encodes source to target participant labels, CER is character error rate, and lex is lexicon projected error rate.}
+    \label{tab:tofour}
+    \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lllll}
+    \hline
+    proto & lvl & group & cer & lex \\
+    \hline
+    P3 & dir & p1->p4 & 0.666±0.024 & 0.651±0.026 \\
+    P3 & dir & p2->p4 & 0.809±0.021 & 0.736±0.022 \\
+    P3 & dir & p3->p4 & 0.584±0.018 & 0.591±0.029 \\
+    P3 & all & all->p4 & 0.686±0.114 & 0.659±0.073 \\
+    P3MS & dir & p12->p4 & 0.655±0.016 & 0.593±0.016 \\
+    P3MS & dir & p13->p4 & 0.536±0.009 & 0.533±0.008 \\
+    P3MS & dir & p23->p4 & 0.555±0.005 & 0.537±0.011 \\
+    P3MS & all & all->p4 & 0.582±0.064 & 0.554±0.034 \\
+    \hline
+    \end{tabular*}
+    % Table block ends.
+    \end{table}
+Paired-source transfer is often lower error than single-source transfer, but direction-level outcomes are mixed.
+We evaluate low-shot adaptation by varying the number of training instances per word for a new participant in Table~\ref{tab:kshot}.
+\begin{table}[H]
+    % Table block begins.
+    \centering
+    \small
+    \setlength{\tabcolsep}{4pt}
+    \caption{Low shot adaptation results for a new participant; group uses the participant label and k one or k two for the number of training instances per word, vec is vector baseline, rowcol is row and column pooling, grid is convolutional grid encoder, grid aug is grid with spatial augmentation, CER is character error rate, and RTF is real time factor.}
+    \label{tab:kshot}
+    \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}llll}
+    \hline
+    group & variant & cer & rtf \\
+    \hline
+    p3\_k1 & vec & 0.350±0.060 & 0.0002±0.0000 \\
+    p3\_k1 & rowcol & 0.334±0.039 & 0.0005±0.0000 \\
+    p3\_k1 & grid & 0.515±0.050 & 0.0007±0.0000 \\
+    p3\_k1 & grid\_aug & 0.611±0.157 & 0.0011±0.0006 \\
+    p3\_k2 & vec & 0.246±0.009 & 0.0002±0.0000 \\
+    p3\_k2 & rowcol & 0.278±0.022 & 0.0005±0.0000 \\
+    p3\_k2 & grid & 0.616±0.132 & 0.0008±0.0001 \\
+    p3\_k2 & grid\_aug & 0.689±0.218 & 0.0007±0.0000 \\
+    \hline
+    \end{tabular*}
+    % Table block ends.
+    \end{table}
+Two-shot generally improves over one-shot, while layout-aware variants remain mixed relative to the vector baseline.
+We evaluate reduced-channel subsets across protocols using within-participant, transfer, and random selection strategies in Table~\ref{tab:k64_all}.
+\begin{table}[H]
+    % Table block begins.
+    \centering
+    \small
+    \setlength{\tabcolsep}{4pt}
+    \caption{Electrode reduction methods across protocols (protocol one word holdout, protocol two instance holdout, protocol three cross participant).}
+    \label{tab:k64_all}
+    \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}llll}
+    \hline
+    protocol & method & cer & rtf \\
+    \hline
+    P1 & topk & 0.195±0.083 & 0.0007±0.0002 \\
+    P1 & fps2k & 0.191±0.078 & 0.0006±0.0002 \\
+    P1 & xfer & 0.205±0.095 & 0.0006±0.0002 \\
+    P1 & rand & 0.198±0.079 & 0.0007±0.0003 \\
+    P2 & topk & 0.154±0.059 & 0.0001±0.0000 \\
+    P2 & fps2k & 0.154±0.062 & 0.0001±0.0000 \\
+    P2 & xfer & 0.158±0.071 & 0.0001±0.0000 \\
+    P2 & rand & 0.157±0.067 & 0.0001±0.0000 \\
+    P3 & topk & 0.647±0.130 & 0.0001±0.0000 \\
+    P3 & fps2k & 0.656±0.146 & 0.0001±0.0000 \\
+    P3 & xfer & 0.657±0.144 & 0.0001±0.0000 \\
+    P3 & rand & 0.644±0.133 & 0.0001±0.0000 \\
+    \hline
+    \end{tabular*}
+    % Table block ends.
+    \end{table}
+Within-participant selection tends to track the full-channel baseline more closely than transfer or random subsets, though patterns remain mixed across protocols.
+We visualize how accuracy and streaming cost vary with electrode budget for the word holdout protocol in Figure~\ref{fig:kcurve}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{\detokenize{../../docs/report/figures/ed20260217/cer_rtf_vs_k.pdf}}
+    \caption{Electrode budget trends for word holdout comparing topk, diversity, and random selection, showing accuracy and streaming cost.}
+    \label{fig:kcurve}
+\end{figure}
+
+Accuracy improves as electrode budget increases, random selection remains weaker than within participant selection, and streaming cost varies less than error.
+We evaluate paired-source cross-participant transfer under the same target and protocol constraints in Table~\ref{tab:p3ms}.
+Paired-source transfer is mixed across targets and front ends.
+\begin{table}[H]
+% Table block begins.
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Multi source cross participant results by source pair; group concatenates source participant labels with an arrow to the target, vec is vector baseline, rowcol is row and column pooling, grid is convolutional grid encoder, grid aug is grid with spatial augmentation, CER is character error rate, and RTF is real time factor.}
+\label{tab:p3ms}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}llll}
+\hline
+group & variant & cer & rtf \\
+\hline
+p23->p1 & vec & 0.473±0.014 & 0.0001±0.0000 \\
+p23->p1 & rowcol & 0.476±0.014 & 0.0002±0.0000 \\
+p23->p1 & grid & 0.602±0.076 & 0.0004±0.0000 \\
+p23->p1 & grid\_aug & 0.691±0.165 & 0.0004±0.0000 \\
+p13->p2 & vec & 0.520±0.003 & 0.0001±0.0000 \\
+p13->p2 & rowcol & 0.504±0.012 & 0.0003±0.0000 \\
+p13->p2 & grid & 0.511±0.047 & 0.0004±0.0000 \\
+p13->p2 & grid\_aug & 0.511±0.016 & 0.0004±0.0000 \\
+p12->p3 & vec & 0.838±0.034 & 0.0001±0.0000 \\
+p12->p3 & rowcol & 0.790±0.033 & 0.0002±0.0000 \\
+p12->p3 & grid & 0.736±0.018 & 0.0003±0.0000 \\
+p12->p3 & grid\_aug & 0.756±0.020 & 0.0003±0.0000 \\
+\hline
+\end{tabular*}
+% Table block ends.
+\end{table}
+
+
+\FloatBarrier
+\section{Discussion}
+
+Across protocols, layout-aware front ends do not consistently outperform the vector baseline and often increase streaming cost; the patchpool grid reduces but does not eliminate the gap. The pattern suggests spatial structure alone is insufficient without careful capacity and regularization choices. Row and column pooling offers the most stable compromise within our audited runs.  Cross-participant transfer remains the main bottleneck. Source aggregation and low-shot adaptation help in some settings, but outcomes are mixed, and simple similarity indicators do not yield a single rule for when multi-source helps. This variability argues for protocol-specific validation rather than assuming transfer will generalize. As a result, cross-participant evaluation remains the most conservative stress test for new participants.  Design implication: when low latency is the priority, the vector or row/col front ends are safer choices; when robustness to electrode dropout or spatial priors is desired, grid-based options require careful tuning and validation. In practice, the safest workflow is to benchmark both families under the audited split definitions before committing to a deployment path. If deployment constraints allow, a small validation sweep across the audited protocols provides a more reliable basis than selecting by architecture alone.  These takeaways depend on the audited datasets, split protocols, and evaluation pipeline, and they may not transfer to other sensors, labeling schemes, or participant populations. Broader participant coverage and longer-term recording stability remain outside the current evidence envelope. We do not claim transfer beyond the audited protocol definitions.
+
+\section{Artifacts and Auditability}
+
+This repository uses a strict paper registry that pins every evidence file by checksum and rejects unsupported manuscript blocks. The split manifests, aggregated metrics, compact tables, statistical summaries, and analysis reports referenced in this paper are stored as deterministic artifacts, enabling audit and reproduction within our repository environment. A supplementary archive includes the compact statistical summary table for reviewers.
+
+\section{Ethics and Disclosure}
+
+We report results only for audited artifacts and do not claim broader demographic coverage. The datasets and splits used in this study are derived from participant recordings, and we focus on methodological clarity and artifact traceability rather than deployment claims. We used generative AI tools for language polishing and verified technical claims against audited artifacts.
+
+\clearpage
+\bibliographystyle{IEEEtran}
+\bibliography{../bibliography/references_sanitized_ascii_cited}
+
+\end{document}

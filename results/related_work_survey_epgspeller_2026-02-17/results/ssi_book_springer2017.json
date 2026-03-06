@@ -1,0 +1,77 @@
+{
+  "paper_id": "ssi_book_springer2017",
+  "title": "An Introduction to Silent Speech Interfaces",
+  "authors": [
+    "Jo\u00e3o Freitas",
+    "Ant\u00f3nio Teixeira",
+    "Miguel Sales Dias",
+    "Samuel Silva"
+  ],
+  "year": 2016,
+  "venue": "SpringerBriefs in Speech Technology (Springer)",
+  "doi": "10.1007/978-3-319-40174-4",
+  "primary_url": "https://link.springer.com/book/10.1007/978-3-319-40174-4",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "freitas2016ssi",
+
+  "modality": "Survey / book",
+  "device": "N/A",
+  "task": "Silent Speech Interfaces (SSI) overview and taxonomy",
+  "output_unit": "N/A",
+  "vocabulary_setting": "N/A",
+  "datasets": "N/A",
+  "evaluation_protocol": "N/A",
+  "metrics_reported": "N/A",
+
+  "decoder": "N/A",
+  "model_architecture": "N/A",
+  "spatial_frontend": "N/A",
+  "augmentation": "N/A",
+
+  "key_contributions": [
+    "Provides a taxonomy and overview of SSI modalities and system components.",
+    "Summarizes challenges and design trade-offs across SSI approaches.",
+    "Useful positioning reference for articulatory sensing (including EPG) in SSI."
+  ],
+  "limitations": [
+    "Publication-time snapshot (2016/2017 era); may not cover later deep-learning SSI advances.",
+    "Depth varies across modalities depending on literature maturity at publication time."
+  ],
+  "reported_results_summary": "Book-style survey; it synthesizes prior results rather than presenting a single benchmark.",
+
+  "relevance_to_epgspeller": "Used for Related Work positioning and SSI taxonomy; supports clearer related-work structure and motivation for choosing EPG as an articulatory sensing modality.",
+  "takeaways_for_related_work_section": "A compact SSI overview that can be cited to define SSI modalities and motivate where EPG-based silent spelling sits within SSI, clarifying scope and terminology.",
+
+  "sources": [
+    {
+      "url": "https://link.springer.com/book/10.1007/978-3-319-40174-4",
+      "title": "SpringerLink: An Introduction to Silent Speech Interfaces",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.1007/978-3-319-40174-4",
+      "year": 2016,
+      "venue": "SpringerBriefs in Speech Technology"
+    },
+    {
+      "url": "https://doi.org/10.1007/978-3-319-40174-4",
+      "title": "DOI: 10.1007/978-3-319-40174-4",
+      "retrieved_at": "2026-02-17",
+      "source_type": "academic",
+      "doi": "10.1007/978-3-319-40174-4",
+      "year": 2016,
+      "venue": "SpringerBriefs in Speech Technology"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1007/978-3-319-40174-4",
+      "title": "Crossref API: 10.1007/978-3-319-40174-4",
+      "retrieved_at": "2026-02-17",
+      "source_type": "web",
+      "doi": "10.1007/978-3-319-40174-4"
+    }
+  ],
+
+  "uncertain": [
+    "SpringerLink lists an eBook publication date in 2016 and copyright year 2017; year is set to 2016 (publication) here."
+  ]
+}

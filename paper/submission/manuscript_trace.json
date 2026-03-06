@@ -1,0 +1,810 @@
+{
+  "bibliography": {
+    "bib_keys": [
+      "carreira1998dimensionality",
+      "denby2010silent",
+      "dong2024rehearsse",
+      "freitas2017an",
+      "gilbert2010isolated",
+      "gonzalez2020silent",
+      "graves2006connectionist",
+      "hardcastle1989new",
+      "hardcastle1990electropalatography",
+      "hardcastle1991epg",
+      "hueber2010development",
+      "kimura2022silentspeller",
+      "lee2021biosignal",
+      "park2019specaugment",
+      "shadle1993depth",
+      "toutios2006learning",
+      "toutios2006on",
+      "verhoeven2019visualisation",
+      "woo2021design"
+    ],
+    "bibtex_path": "paper/bibliography/references_sanitized_ascii_cited.bib"
+  },
+  "blocks": [
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_dataset_audit_silentspeller_2026_02_24_report_md",
+        "ev_msx20260224_metrics_csv",
+        "ev_msx20260224_split_npz_manifest_csv",
+        "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+        "ev_paper_layout_2026_03_03_table_to4_compact_csv",
+        "ev_uc20260226_to4_metrics_csv"
+      ],
+      "filled": "We show that lexicon-free electropalatography (EPG) silent spelling can reach low error in audited within-participant settings (CER 0.180+/-0.084 in P1 and 0.145+/-0.063 in P2). Protocol mixing still obscures progress when word holdout, instance holdout, and cross-participant transfer are reported together. We present EPGSpeller, an auditable benchmark with deterministic splits, checksum-pinned artifacts, and a shared CER/LEX/RTF harness for protocol-matched comparison. In 652 audited runs, P3 remains much harder (CER 0.691+/-0.133), marking transfer mismatch as the main bottleneck. Rowcol stays closest to vec, while grid variants are usually higher in CER and RTF. For p4 target transfer, paired-source aggregation improves the all-direction aggregate (CER 0.686+/-0.114 to 0.582+/-0.064; LEX 0.659+/-0.073 to 0.554+/-0.034), but effects remain mixed by direction. We therefore treat deployment claims as protocol-specific and limit conclusions to audited datasets and definitions.",
+      "id": "b_abs",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "We show that lexicon-free electropalatography (EPG) silent spelling can reach low error in audited within-participant settings (CER 0.180+/-0.084 in P1 and 0.145+/-0.063 in P2). Protocol mixing still obscures progress when word holdout, instance holdout, and cross-participant transfer are reported together. We present EPGSpeller, an auditable benchmark with deterministic splits, checksum-pinned artifacts, and a shared CER/LEX/RTF harness for protocol-matched comparison. In 652 audited runs, P3 remains much harder (CER 0.691+/-0.133), marking transfer mismatch as the main bottleneck. Rowcol stays closest to vec, while grid variants are usually higher in CER and RTF. For p4 target transfer, paired-source aggregation improves the all-direction aggregate (CER 0.686+/-0.114 to 0.582+/-0.064; LEX 0.659+/-0.073 to 0.554+/-0.034), but effects remain mixed by direction. We therefore treat deployment claims as protocol-specific and limit conclusions to audited datasets and definitions."
+    },
+    {
+      "citations": [
+        "denby2010silent",
+        "freitas2017an",
+        "gonzalez2020silent",
+        "lee2021biosignal",
+        "hardcastle1989new",
+        "hardcastle1990electropalatography",
+        "verhoeven2019visualisation",
+        "woo2021design"
+      ],
+      "evidence_ids": [
+        "ev_related_work_survey_epgspeller_2026-02-17_report_md"
+      ],
+      "filled": "Silent speech interfaces (SSI) infer linguistic intent from non-acoustic signals, including articulatory sensing and other biosignals. For silent spelling with electropalatography (EPG), a practical failure remains: many evaluations mix word-identity holdout, repeated-instance holdout, and cross-participant transfer, so reported gains can reflect protocol differences rather than decoder differences.",
+      "id": "b_intro_1",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Silent speech interfaces (SSI) infer linguistic intent from non-acoustic signals, including articulatory sensing and other biosignals. For silent spelling with electropalatography (EPG), a practical failure remains: many evaluations mix word-identity holdout, repeated-instance holdout, and cross-participant transfer, so reported gains can reflect protocol differences rather than decoder differences."
+    },
+    {
+      "citations": [
+        "denby2010silent",
+        "dong2024rehearsse",
+        "gilbert2010isolated",
+        "graves2006connectionist",
+        "kimura2022silentspeller",
+        "hueber2010development",
+        "hardcastle1991epg",
+        "carreira1998dimensionality",
+        "shadle1993depth",
+        "toutios2006learning",
+        "toutios2006on"
+      ],
+      "evidence_ids": [
+        "ev_positioning_analysis_epgspeller_2026_02_18_report_md",
+        "ev_related_work_survey_epgspeller_2026-02-17_report_md"
+      ],
+      "filled": "Recent systems such as SilentSpeller and ReHEarSSE show lexicon-scale character-level spelling beyond small command sets. However, these lines of work do not provide a unified, auditable protocol stack that isolates each generalization regime under a shared artifact trace. In parallel, prior EPG studies motivate structured representations and spatial inductive bias, but their evaluation settings are heterogeneous across datasets and tasks.",
+      "id": "b_intro_2",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Recent systems such as SilentSpeller and ReHEarSSE show lexicon-scale character-level spelling beyond small command sets. However, these lines of work do not provide a unified, auditable protocol stack that isolates each generalization regime under a shared artifact trace. In parallel, prior EPG studies motivate structured representations and spatial inductive bias, but their evaluation settings are heterogeneous across datasets and tasks."
+    },
+    {
+      "citations": [
+        "hardcastle1991epg",
+        "carreira1998dimensionality",
+        "shadle1993depth",
+        "toutios2006learning",
+        "toutios2006on"
+      ],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_msx20260224_split_npz_manifest_csv",
+        "ev_positioning_analysis_epgspeller_2026_02_18_report_md",
+        "ev_related_work_survey_epgspeller_2026-02-17_report_md"
+      ],
+      "filled": "To address this gap, we introduce EPGSpeller, an evidence-tracked evaluation framework for EPG silent spelling. EPGSpeller fixes deterministic split generation, pinned split manifests, and a common metric harness for greedy decoding, lexicon projection, and streaming cost. It explicitly separates word holdout, instance holdout, and cross-participant transfer so model comparisons remain protocol-specific and reproducible. We validate EPGSpeller with four participant datasets and compare a vector baseline with row-column and grid-based front ends under matched settings. We also evaluate electrode reduction and low-shot adaptation under the same audit rules. Across our audited runs, row-column pooling tracks the vector baseline more consistently than grid variants, while cross-participant transfer remains the dominant bottleneck.",
+      "id": "b_intro_3",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "To address this gap, we introduce EPGSpeller, an evidence-tracked evaluation framework for EPG silent spelling. EPGSpeller fixes deterministic split generation, pinned split manifests, and a common metric harness for greedy decoding, lexicon projection, and streaming cost. It explicitly separates word holdout, instance holdout, and cross-participant transfer so model comparisons remain protocol-specific and reproducible. We validate EPGSpeller with four participant datasets and compare a vector baseline with row-column and grid-based front ends under matched settings. We also evaluate electrode reduction and low-shot adaptation under the same audit rules. Across our audited runs, row-column pooling tracks the vector baseline more consistently than grid variants, while cross-participant transfer remains the dominant bottleneck."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_msx20260224_split_npz_manifest_csv"
+      ],
+      "filled": "Within these audited datasets and protocol definitions, protocol-level auditability is necessary for interpretable benchmarking.",
+      "id": "b_intro_claim",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Within these audited datasets and protocol definitions, protocol-level auditability is necessary for interpretable benchmarking."
+    },
+    {
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_msx20260224_split_npz_manifest_csv",
+        "ev_msx20260224_table_k64_methods_csv",
+        "ev_msx20260224_table_spatial_k124_csv",
+        "ev_scripts_rebuttal_gc_collect_metrics_py",
+        "ev_scripts_rebuttal_gc_make_cmdlists_py"
+      ],
+      "id": "b_contrib",
+      "items": [
+        {
+          "citations": [],
+          "filled": "We define deterministic protocol families that isolate word-identity, instance-level, and cross-participant generalization.",
+          "slots": {},
+          "template": "We define deterministic protocol families that isolate word-identity, instance-level, and cross-participant generalization."
+        },
+        {
+          "citations": [],
+          "filled": "We provide checksum-pinned split archives and manifests so each reported result is reproducible from audited artifacts.",
+          "slots": {},
+          "template": "We provide checksum-pinned split archives and manifests so each reported result is reproducible from audited artifacts."
+        },
+        {
+          "citations": [],
+          "filled": "We benchmark vector, row-column, and grid front ends under a shared evaluation harness with accuracy and streaming metrics.",
+          "slots": {},
+          "template": "We benchmark vector, row-column, and grid front ends under a shared evaluation harness with accuracy and streaming metrics."
+        },
+        {
+          "citations": [],
+          "filled": "We report electrode-reduction and low-shot analyses under the same protocol constraints.",
+          "slots": {},
+          "template": "We report electrode-reduction and low-shot analyses under the same protocol constraints."
+        }
+      ],
+      "kind": "bullets"
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_dataset_audit_silentspeller_2026_02_24_exclusions_json",
+        "ev_dataset_audit_silentspeller_2026_02_24_inputs_manifest_md",
+        "ev_dataset_audit_silentspeller_2026_02_24_report_md"
+      ],
+      "filled": "We use four participant electropalatography datasets with word labels. Each sample is a variable length binary contact matrix, and the raw exports are treated as immutable evidence. We refer to participants with anonymous labels in all tables and split archives. We audit dataset statistics, label counts, and anomalies before we construct any train and test splits. We exclude a small set of all-zero samples via a pinned index list.",
+      "id": "b_data_1",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "We use four participant electropalatography datasets with word labels. Each sample is a variable length binary contact matrix, and the raw exports are treated as immutable evidence. We refer to participants with anonymous labels in all tables and split archives. We audit dataset statistics, label counts, and anomalies before we construct any train and test splits. We exclude a small set of all-zero samples via a pinned index list."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_dataset_audit_silentspeller_2026_02_24_exclusions_json",
+        "ev_dataset_audit_silentspeller_2026_02_24_inputs_manifest_md",
+        "ev_dataset_audit_silentspeller_2026_02_24_report_md"
+      ],
+      "filled": "The audit pipeline records raw file checksums. It validates schema consistency. It summarizes label counts, sequence length summaries, and per channel activity statistics before any split construction. The raw exports remain unchanged. We apply any exclusions only through pinned index lists that are included in the audit artifacts.",
+      "id": "b_data_audit_2",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "The audit pipeline records raw file checksums. It validates schema consistency. It summarizes label counts, sequence length summaries, and per channel activity statistics before any split construction. The raw exports remain unchanged. We apply any exclusions only through pinned index lists that are included in the audit artifacts."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_dataset_audit_silentspeller_2026_02_24_report_md",
+        "ev_paper_layout_2026_03_03_table_dataset_summary_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "filled": "Table~\\ref{tab:dataset} reports sample count, vocabulary size, median sequence length, mean contact rate, and all-zero count for each participant dataset. The id labels are anonymous participant codes used throughout the protocol manifests.",
+      "id": "b_data_summary",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:dataset} reports sample count, vocabulary size, median sequence length, mean contact rate, and all-zero count for each participant dataset. The id labels are anonymous participant codes used throughout the protocol manifests."
+    },
+    {
+      "caption_filled": "Raw dataset summary for each participant dataset; id is an anonymous participant label, N is sample count, V is vocabulary size, Tmed is median sequence length in frames, contact is mean contact rate, and zero is the count of all-zero samples.",
+      "caption_template": "Raw dataset summary for each participant dataset; id is an anonymous participant label, N is sample count, V is vocabulary size, Tmed is median sequence length in frames, contact is mean contact rate, and zero is the count of all-zero samples.",
+      "citations": [],
+      "evidence_ids": [
+        "ev_paper_layout_2026_03_03_table_dataset_summary_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "id": "tbl_dataset_summary",
+      "kind": "table",
+      "label": "tab:dataset",
+      "slots": {},
+      "source": {
+        "evidence_id": "ev_paper_layout_2026_03_03_table_dataset_summary_csv",
+        "format": "csv",
+        "path": "results/paper_layout_2026-03-03/table_dataset_summary.csv"
+      }
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_split_npz_manifest_csv",
+        "ev_scripts_rebuttal_make_cross_subject_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_kshot_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_multi_source_cross_subject_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_word_holdout_split_py",
+        "ev_uc20260226_split_npz_manifest_to4_csv"
+      ],
+      "filled": "We evaluate three primary protocols. The word holdout protocol uses disjoint vocabularies across train, test, and a competition partition. The instance holdout protocol tests held out instances of seen words. It separates train and competition vocabularies while keeping the test vocabulary within their union. The cross participant protocol trains on a source participant and tests on a target participant under a shared vocabulary constraint. We also define a paired source cross participant variant and a low shot adaptation variant to isolate source aggregation and limited supervision effects under the same audit rules. When a target participant has limited within word repetition, we configure the cross participant split generators to allow single instance target words. We keep the source side constraints unchanged. All split archives used in this study are enumerated with sizes and checksums in manifest artifacts.",
+      "id": "b_protocols_1",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "We evaluate three primary protocols. The word holdout protocol uses disjoint vocabularies across train, test, and a competition partition. The instance holdout protocol tests held out instances of seen words. It separates train and competition vocabularies while keeping the test vocabulary within their union. The cross participant protocol trains on a source participant and tests on a target participant under a shared vocabulary constraint. We also define a paired source cross participant variant and a low shot adaptation variant to isolate source aggregation and limited supervision effects under the same audit rules. When a target participant has limited within word repetition, we configure the cross participant split generators to allow single instance target words. We keep the source side constraints unchanged. All split archives used in this study are enumerated with sizes and checksums in manifest artifacts."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_dataset_audit_silentspeller_2026_02_24_report_md",
+        "ev_msx20260224_split_npz_manifest_csv",
+        "ev_scripts_rebuttal_make_cross_subject_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_kshot_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_multi_source_cross_subject_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_word_holdout_split_py",
+        "ev_uc20260226_split_npz_manifest_to4_csv"
+      ],
+      "filled": "All split archives are generated deterministically from audited exports with fixed seeds. Each train, test, and competition partition is stored as an immutable archive with a checksum in the manifests to enable reuse and later verification. The manifests show the word-holdout protocol uses all four participant datasets. They show the instance-holdout protocol uses three participant datasets. They also show the fourth participant is target-only (not used as a source) in the cross-participant splits. The audited label histogram for the fourth participant is dominated by single-instance labels, so we restrict that participant to target-only use in cross-participant evaluation. This separation explains why the dataset summary includes all participant datasets even when a protocol uses only a subset.",
+      "id": "b_protocols_2",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "All split archives are generated deterministically from audited exports with fixed seeds. Each train, test, and competition partition is stored as an immutable archive with a checksum in the manifests to enable reuse and later verification. The manifests show the word-holdout protocol uses all four participant datasets. They show the instance-holdout protocol uses three participant datasets. They also show the fourth participant is target-only (not used as a source) in the cross-participant splits. The audited label histogram for the fourth participant is dominated by single-instance labels, so we restrict that participant to target-only use in cross-participant evaluation. This separation explains why the dataset summary includes all participant datasets even when a protocol uses only a subset."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_scripts_prepare_silentspeller_dataset_py",
+        "ev_scripts_rebuttal_make_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_word_holdout_split_py"
+      ],
+      "filled": "We normalize labels by uppercasing and filtering to alphabet characters, then represent each label as a space separated character sequence for CTC training and greedy decoding. We apply this step consistently during split construction and dataset preparation to avoid vocabulary drift.",
+      "id": "b_labels_1",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "We normalize labels by uppercasing and filtering to alphabet characters, then represent each label as a space separated character sequence for CTC training and greedy decoding. We apply this step consistently during split construction and dataset preparation to avoid vocabulary drift."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_scripts_prepare_silentspeller_dataset_py",
+        "ev_scripts_rebuttal_make_instance_holdout_split_py",
+        "ev_scripts_rebuttal_make_word_holdout_split_py"
+      ],
+      "filled": "We keep the label normalization step consistent across all splits and dataset preparation steps. This aligns the decoder vocabulary with the audited labels and reduces drift between training and artifacts used to evaluate.",
+      "id": "b_labels_2",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "We keep the label normalization step consistent across all splits and dataset preparation steps. This aligns the decoder vocabulary with the audited labels and reduces drift between training and artifacts used to evaluate."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_scripts_rebuttal_eval_greedy_clean_py",
+        "ev_scripts_rebuttal_gc_collect_metrics_py"
+      ],
+      "filled": "We report character error rate from greedy decoding and streaming speed using real time factor. We define real time factor as total inference time divided by total input duration. For character-level decoding we also report lexicon projection error rates using a training lexicon and a full lexicon.",
+      "id": "b_metrics_1",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "We report character error rate from greedy decoding and streaming speed using real time factor. We define real time factor as total inference time divided by total input duration. For character-level decoding we also report lexicon projection error rates using a training lexicon and a full lexicon."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py",
+        "ev_scripts_rebuttal_eval_greedy_clean_py",
+        "ev_scripts_rebuttal_gc_collect_metrics_py",
+        "ev_supplementary_table_stats_compact_csv"
+      ],
+      "filled": "Greedy decoding reports unconstrained character sequences. Lexicon projection maps outputs to finite word sets derived from the training vocabulary or the full audited lexicon. This allows us to separate decoding quality from lexicon constraints. We compute real time factor by dividing inference time by input duration under the same test harness. Tables summarize results over four split seeds as mean and standard deviation. We compute two sided t distribution confidence intervals for the primary accuracy metric and paired t tests with Holm correction; the compact statistical summary table is provided in the supplementary archive.",
+      "id": "b_metrics_2",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Greedy decoding reports unconstrained character sequences. Lexicon projection maps outputs to finite word sets derived from the training vocabulary or the full audited lexicon. This allows us to separate decoding quality from lexicon constraints. We compute real time factor by dividing inference time by input duration under the same test harness. Tables summarize results over four split seeds as mean and standard deviation. We compute two sided t distribution confidence intervals for the primary accuracy metric and paired t tests with Holm correction; the compact statistical summary table is provided in the supplementary archive."
+    },
+    {
+      "citations": [
+        "graves2006connectionist",
+        "park2019specaugment"
+      ],
+      "evidence_ids": [
+        "ev_scripts_prepare_silentspeller_dataset_py",
+        "ev_scripts_train_py",
+        "ev_src_neural_decoder_model_py"
+      ],
+      "filled": "Our baseline model encodes each frame as a vector of palate channels and applies a uni-directional recurrent decoder trained with a CTC objective. We compare two layout aware front ends. One is a row and column pooling front end that aggregates a proxy grid into one dimensional summaries. The other is a grid front end that reconstructs a proxy grid and applies a convolutional spatial encoder. For the grid model we optionally enable a spatial augmentation that drops and shifts contiguous electrode blocks.",
+      "id": "b_models_1",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Our baseline model encodes each frame as a vector of palate channels and applies a uni-directional recurrent decoder trained with a CTC objective. We compare two layout aware front ends. One is a row and column pooling front end that aggregates a proxy grid into one dimensional summaries. The other is a grid front end that reconstructs a proxy grid and applies a convolutional spatial encoder. For the grid model we optionally enable a spatial augmentation that drops and shifts contiguous electrode blocks."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_scripts_prepare_silentspeller_dataset_py",
+        "ev_scripts_smartpalate_distribution_csv",
+        "ev_scripts_train_py",
+        "ev_src_neural_decoder_model_py"
+      ],
+      "filled": "The proxy grid is constructed from the palate channel layout. It supports row and column pooling or convolutional feature extraction. We use a fixed layout file for the mapping so that row and column indices are consistent across splits. We augment spatially by perturbing contiguous electrode blocks to emulate missing contacts and minor spatial shifts.",
+      "id": "b_models_2",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "The proxy grid is constructed from the palate channel layout. It supports row and column pooling or convolutional feature extraction. We use a fixed layout file for the mapping so that row and column indices are consistent across splits. We augment spatially by perturbing contiguous electrode blocks to emulate missing contacts and minor spatial shifts."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv"
+      ],
+      "filled": "We fix core training hyperparameters across runs and record how we configure them in the metrics registry for auditability.",
+      "id": "b_training_1",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "We fix core training hyperparameters across runs and record how we configure them in the metrics registry for auditability."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_dataset_audit_silentspeller_2026_02_24_report_md",
+        "ev_msx20260224_metrics_csv",
+        "ev_msx20260224_split_npz_manifest_csv",
+        "ev_paper_layout_2026_03_03_table_k64_all_csv",
+        "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+        "ev_scripts_rebuttal_eval_greedy_clean_py"
+      ],
+      "filled": "We report greedy decoding error, lexicon-projected error, and streaming cost under a shared evaluation harness for all protocols. The fourth participant is target-only in cross-participant evaluation due to single-instance label dominance. All metrics are derived from the same audited registry of 652 runs (P1=176, P2=132, P3=264, P3MS=48, P2K=32).",
+      "id": "b_results_1",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "We report greedy decoding error, lexicon-projected error, and streaming cost under a shared evaluation harness for all protocols. The fourth participant is target-only in cross-participant evaluation due to single-instance label dominance. All metrics are derived from the same audited registry of 652 runs (P1=176, P2=132, P3=264, P3MS=48, P2K=32)."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_main_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "filled": "Table~\\ref{tab:main} summarizes baseline performance across the three evaluation protocols.",
+      "id": "b_results_main",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:main} summarizes baseline performance across the three evaluation protocols."
+    },
+    {
+      "caption_filled": "Baseline recap across protocols; P1 means word holdout, P2 means instance holdout, and P3 means cross-participant transfer. n is the number of split-seed aggregates. CER is character error rate and LEX is lexicon-projected error rate.",
+      "caption_template": "Baseline recap across protocols; P1 means word holdout, P2 means instance holdout, and P3 means cross-participant transfer. n is the number of split-seed aggregates. CER is character error rate and LEX is lexicon-projected error rate.",
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_main_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "id": "tbl_main",
+      "kind": "table",
+      "label": "tab:main",
+      "slots": {},
+      "source": {
+        "evidence_id": "ev_paper_layout_2026_03_03_table_main_compact_csv",
+        "format": "csv",
+        "path": "results/paper_layout_2026-03-03/table_main_compact.csv"
+      }
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_main_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "filled": "Table~\\ref{tab:main} shows a clear protocol ordering: CER is 0.145 to 0.180 for within-participant protocols (P2 and P1) and 0.691 for cross-participant P3, while LEX rises from 0.075 to 0.102 up to 0.644. Transfer difficulty, not within-participant decoding, drives the largest residual error.",
+      "id": "b_results_main_post",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:main} shows a clear protocol ordering: CER is 0.145 to 0.180 for within-participant protocols (P2 and P1) and 0.691 for cross-participant P3, while LEX rises from 0.075 to 0.102 up to 0.644. Transfer difficulty, not within-participant decoding, drives the largest residual error."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_main_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "filled": "Table~\\ref{tab:main} also shows that lexicon projection helps more in within-participant settings than in transfer: CER to LEX changes are 0.180 to 0.102 for P1 and 0.145 to 0.075 for P2, versus 0.691 to 0.644 for P3. Lexicon constraints reduce local decoding variance, but they do not remove cross-participant mismatch.",
+      "id": "b_results_main_lexgap",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:main} also shows that lexicon projection helps more in within-participant settings than in transfer: CER to LEX changes are 0.180 to 0.102 for P1 and 0.145 to 0.075 for P2, versus 0.691 to 0.644 for P3. Lexicon constraints reduce local decoding variance, but they do not remove cross-participant mismatch."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py",
+        "ev_uc20260226_spatial2d_patchpool_metrics_csv"
+      ],
+      "filled": "Table~\\ref{tab:spatial_all} compares vector, row/col, and grid-based front ends at full channels across protocols.",
+      "id": "b_results_spatial",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:spatial_all} compares vector, row/col, and grid-based front ends at full channels across protocols."
+    },
+    {
+      "caption_filled": "Spatial modeling at full channels across P1, P2, and P3; P1 means word holdout, P2 means instance holdout, and P3 means cross-participant transfer. CER is character error rate and RTF is real time factor.",
+      "caption_template": "Spatial modeling at full channels across P1, P2, and P3; P1 means word holdout, P2 means instance holdout, and P3 means cross-participant transfer. CER is character error rate and RTF is real time factor.",
+      "citations": [],
+      "evidence_ids": [
+        "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py",
+        "ev_uc20260226_spatial2d_patchpool_metrics_csv"
+      ],
+      "id": "tbl_spatial_k124",
+      "kind": "table",
+      "label": "tab:spatial_all",
+      "slots": {},
+      "source": {
+        "evidence_id": "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+        "format": "csv",
+        "path": "results/paper_layout_2026-03-03/table_spatial_all.csv"
+      }
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py",
+        "ev_uc20260226_spatial2d_patchpool_metrics_csv"
+      ],
+      "filled": "From Table~\\ref{tab:spatial_all}, rowcol tracks vec across protocols (P1: 0.20 vs 0.18, P2: 0.16 vs 0.15, P3: 0.68 vs 0.69 CER). Grid and grid_aug are usually higher in CER and RTF, and patch variants only partially close this gap. The compact statistical summary in supplementary material shows broad interval overlap, so we treat these as directional trends rather than universal winners.",
+      "id": "b_results_spatial_p1_post",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "From Table~\\ref{tab:spatial_all}, rowcol tracks vec across protocols (P1: 0.20 vs 0.18, P2: 0.16 vs 0.15, P3: 0.68 vs 0.69 CER). Grid and grid_aug are usually higher in CER and RTF, and patch variants only partially close this gap. The compact statistical summary in supplementary material shows broad interval overlap, so we treat these as directional trends rather than universal winners."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py",
+        "ev_uc20260226_spatial2d_patchpool_metrics_csv"
+      ],
+      "filled": "Latency shows a similarly stable tradeoff. In P1, vec runs at RTF 0.0006 while rowcol is 0.0024 and grid-family variants are 0.0034 to 0.0039; in P3, all variants remain below 0.001 but grid-family models are still slower than vec and rowcol. Under this audit setting, the expensive spatial front ends do not produce a consistent accuracy return.",
+      "id": "b_results_spatial_latency",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Latency shows a similarly stable tradeoff. In P1, vec runs at RTF 0.0006 while rowcol is 0.0024 and grid-family variants are 0.0034 to 0.0039; in P3, all variants remain below 0.001 but grid-family models are still slower than vec and rowcol. Under this audit setting, the expensive spatial front ends do not produce a consistent accuracy return."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_paper_layout_2026_03_03_table_to4_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py",
+        "ev_uc20260226_split_npz_manifest_to4_csv",
+        "ev_uc20260226_to4_metrics_csv"
+      ],
+      "filled": "Table~\\ref{tab:tofour} evaluates cross-participant transfer with participant p4 as target under single-source and paired-source settings.",
+      "id": "b_results_to4",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:tofour} evaluates cross-participant transfer with participant p4 as target under single-source and paired-source settings."
+    },
+    {
+      "caption_filled": "Cross-participant transfer targeting participant p4. Proto marks P3 single-source transfer or P3MS paired-source transfer. Lvl marks direction rows or all-direction aggregates. Group encodes source-to-target participant IDs p1 to p4. CER is character error rate and LEX is lexicon-projected error rate.",
+      "caption_template": "Cross-participant transfer targeting participant p4. Proto marks P3 single-source transfer or P3MS paired-source transfer. Lvl marks direction rows or all-direction aggregates. Group encodes source-to-target participant IDs p1 to p4. CER is character error rate and LEX is lexicon-projected error rate.",
+      "citations": [],
+      "evidence_ids": [
+        "ev_paper_layout_2026_03_03_table_to4_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py",
+        "ev_uc20260226_to4_metrics_csv"
+      ],
+      "id": "tbl_to4_generalization",
+      "kind": "table",
+      "label": "tab:tofour",
+      "slots": {},
+      "source": {
+        "evidence_id": "ev_paper_layout_2026_03_03_table_to4_compact_csv",
+        "format": "csv",
+        "path": "results/paper_layout_2026-03-03/table_to4_compact.csv"
+      }
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_paper_layout_2026_03_03_table_to4_compact_csv",
+        "ev_uc20260226_to4_metrics_csv"
+      ],
+      "filled": "Table~\\ref{tab:tofour} shows an aggregate gain: CER drops from 0.686±0.114 in P3 all->p4 to 0.582±0.064 in P3MS all->p4, and LEX drops from 0.659±0.073 to 0.554±0.034. Direction rows remain heterogeneous, so source-pair selection stays condition dependent.",
+      "id": "b_results_to4_2",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:tofour} shows an aggregate gain: CER drops from 0.686±0.114 in P3 all->p4 to 0.582±0.064 in P3MS all->p4, and LEX drops from 0.659±0.073 to 0.554±0.034. Direction rows remain heterogeneous, so source-pair selection stays condition dependent."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_paper_layout_2026_03_03_table_to4_compact_csv",
+        "ev_uc20260226_to4_metrics_csv"
+      ],
+      "filled": "Direction rows in Table~\\ref{tab:tofour} show where the aggregate gain comes from: p13->p4 reaches 0.536±0.009 CER versus 0.809±0.021 for p2->p4, and p23->p4 reaches 0.555±0.005 versus 0.666±0.024 for p1->p4. The remaining direction goes the other way (p12->p4 0.655±0.016 versus p3->p4 0.584±0.018), so source aggregation helps on average but not for every source-target match.",
+      "id": "b_results_to4_3",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Direction rows in Table~\\ref{tab:tofour} show where the aggregate gain comes from: p13->p4 reaches 0.536±0.009 CER versus 0.809±0.021 for p2->p4, and p23->p4 reaches 0.555±0.005 versus 0.666±0.024 for p1->p4. The remaining direction goes the other way (p12->p4 0.655±0.016 versus p3->p4 0.584±0.018), so source aggregation helps on average but not for every source-target match."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_kshot_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "filled": "Table~\\ref{tab:kshot} evaluates low-shot adaptation by varying the number of training instances per word for a new participant.",
+      "id": "b_results_kshot",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:kshot} evaluates low-shot adaptation by varying the number of training instances per word for a new participant."
+    },
+    {
+      "caption_filled": "Low-shot adaptation for participant p3 with k1 or k2 training instances per word. vec is vector baseline, rowcol is row-column pooling, grid is a convolutional grid encoder, and grid_aug adds spatial augmentation. CER is character error rate and RTF is real time factor.",
+      "caption_template": "Low-shot adaptation for participant p3 with k1 or k2 training instances per word. vec is vector baseline, rowcol is row-column pooling, grid is a convolutional grid encoder, and grid_aug adds spatial augmentation. CER is character error rate and RTF is real time factor.",
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_kshot_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "id": "tbl_kshot_compact",
+      "kind": "table",
+      "label": "tab:kshot",
+      "slots": {},
+      "source": {
+        "evidence_id": "ev_paper_layout_2026_03_03_table_kshot_compact_csv",
+        "format": "csv",
+        "path": "results/paper_layout_2026-03-03/table_kshot_compact.csv"
+      }
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_kshot_compact_csv"
+      ],
+      "filled": "From Table~\\ref{tab:kshot}, increasing from k1 to k2 improves vec (0.350->0.246) and rowcol (0.334->0.278), but worsens grid (0.515->0.616) and grid_aug (0.611->0.689). Low-shot gain is architecture dependent, not automatic.",
+      "id": "b_results_kshot_post",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "From Table~\\ref{tab:kshot}, increasing from k1 to k2 improves vec (0.350->0.246) and rowcol (0.334->0.278), but worsens grid (0.515->0.616) and grid_aug (0.611->0.689). Low-shot gain is architecture dependent, not automatic."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_k64_all_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "filled": "Table~\\ref{tab:k64_all} evaluates reduced-channel subsets across protocols using within-participant, transfer, and random selection strategies.",
+      "id": "b_results_k64",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:k64_all} evaluates reduced-channel subsets across protocols using within-participant, transfer, and random selection strategies."
+    },
+    {
+      "caption_filled": "Electrode-reduction methods at K=64 across P1, P2, and P3; P1 means word holdout, P2 means instance holdout, and P3 means cross-participant transfer. topk and fps2k are within-participant selections, xfer transfers a source ranking, and rand is a fixed random subset. CER is character error rate and RTF is real time factor.",
+      "caption_template": "Electrode-reduction methods at K=64 across P1, P2, and P3; P1 means word holdout, P2 means instance holdout, and P3 means cross-participant transfer. topk and fps2k are within-participant selections, xfer transfers a source ranking, and rand is a fixed random subset. CER is character error rate and RTF is real time factor.",
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_k64_all_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "id": "tbl_k64_methods",
+      "kind": "table",
+      "label": "tab:k64_all",
+      "slots": {},
+      "source": {
+        "evidence_id": "ev_paper_layout_2026_03_03_table_k64_all_csv",
+        "format": "csv",
+        "path": "results/paper_layout_2026-03-03/table_k64_all.csv"
+      }
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_k64_all_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "filled": "Table~\\ref{tab:k64_all} shows small method deltas at K=64: P1 CER ranges 0.191-0.205, P2 ranges 0.154-0.158, and P3 ranges 0.644-0.657. Because these ranges overlap strongly, we avoid a universal ranking among topk, fps2k, xfer, and rand.",
+      "id": "b_results_k64_p12_post",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:k64_all} shows small method deltas at K=64: P1 CER ranges 0.191-0.205, P2 ranges 0.154-0.158, and P3 ranges 0.644-0.657. Because these ranges overlap strongly, we avoid a universal ranking among topk, fps2k, xfer, and rand."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_docs_report_figures_ed20260217_cer_rtf_vs_k_pdf",
+        "ev_sweeps_ed20260217_results_ed20260217_vector_full_with_random_csv"
+      ],
+      "filled": "Fig.~\\ref{fig:kcurve} visualizes how accuracy and streaming cost vary with electrode budget for the word holdout protocol.",
+      "id": "b_results_kcurve",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Fig.~\\ref{fig:kcurve} visualizes how accuracy and streaming cost vary with electrode budget for the word holdout protocol."
+    },
+    {
+      "caption_filled": "Electrode-budget trends for P1 word holdout; topk uses within-participant importance ranking, diversity corresponds to fps2k, and random is a fixed random subset. CER is character error rate and RTF is real time factor.",
+      "caption_template": "Electrode-budget trends for P1 word holdout; topk uses within-participant importance ranking, diversity corresponds to fps2k, and random is a fixed random subset. CER is character error rate and RTF is real time factor.",
+      "citations": [],
+      "evidence_ids": [
+        "ev_docs_report_figures_ed20260217_cer_rtf_vs_k_pdf",
+        "ev_sweeps_ed20260217_results_ed20260217_vector_full_with_random_csv"
+      ],
+      "id": "fig_kcurve",
+      "kind": "figure",
+      "label": "fig:kcurve",
+      "slots": {},
+      "source": {
+        "evidence_id": "ev_docs_report_figures_ed20260217_cer_rtf_vs_k_pdf",
+        "path": "docs/report/figures/ed20260217/cer_rtf_vs_k.pdf",
+        "tex_path": "../../docs/report/figures/ed20260217/cer_rtf_vs_k.pdf"
+      }
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_docs_report_figures_ed20260217_cer_rtf_vs_k_pdf",
+        "ev_sweeps_ed20260217_results_ed20260217_vector_full_with_random_csv"
+      ],
+      "filled": "Fig.~\\ref{fig:kcurve} shows CER improving as K increases toward full channels, while RTF changes less steeply. Random subsets are generally above within-participant selections in CER, although the gap narrows at larger budgets.",
+      "id": "b_results_k64_2",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Fig.~\\ref{fig:kcurve} shows CER improving as K increases toward full channels, while RTF changes less steeply. Random subsets are generally above within-participant selections in CER, although the gap narrows at larger budgets."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_docs_report_figures_ed20260217_cer_rtf_vs_k_pdf",
+        "ev_sweeps_ed20260217_results_ed20260217_vector_full_with_random_csv"
+      ],
+      "filled": "Fig.~\\ref{fig:kcurve} also shows where electrode-budget sensitivity is concentrated. At K=16, CER is 0.210 for random versus 0.192 for topk and 0.166 for fps2k; by K=64, these values narrow to 0.130, 0.129, and 0.119. Around K=80, all three are near 0.121, indicating a practical regime where selection strategy matters less than at sparse budgets.",
+      "id": "b_results_kcurve_budget",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Fig.~\\ref{fig:kcurve} also shows where electrode-budget sensitivity is concentrated. At K=16, CER is 0.210 for random versus 0.192 for topk and 0.166 for fps2k; by K=64, these values narrow to 0.130, 0.129, and 0.119. Around K=80, all three are near 0.121, indicating a practical regime where selection strategy matters less than at sparse budgets."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_p3ms_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "filled": "Table~\\ref{tab:p3ms} evaluates paired-source cross-participant transfer under the same target and protocol constraints.",
+      "id": "b_results_p3ms",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:p3ms} evaluates paired-source cross-participant transfer under the same target and protocol constraints."
+    },
+    {
+      "caption_filled": "Paired-source cross-participant results by source pair; group denotes source participants to target participant with participant IDs p1 to p4. vec is vector baseline, rowcol is row-column pooling, grid is a convolutional grid encoder, and grid_aug adds spatial augmentation. CER is character error rate and RTF is real time factor.",
+      "caption_template": "Paired-source cross-participant results by source pair; group denotes source participants to target participant with participant IDs p1 to p4. vec is vector baseline, rowcol is row-column pooling, grid is a convolutional grid encoder, and grid_aug adds spatial augmentation. CER is character error rate and RTF is real time factor.",
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_p3ms_compact_csv",
+        "ev_scripts_paper_export_layout_tables_for_paperjson_py"
+      ],
+      "id": "tbl_p3ms_compact",
+      "kind": "table",
+      "label": "tab:p3ms",
+      "slots": {},
+      "source": {
+        "evidence_id": "ev_paper_layout_2026_03_03_table_p3ms_compact_csv",
+        "format": "csv",
+        "path": "results/paper_layout_2026-03-03/table_p3ms_compact.csv"
+      }
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_p3ms_compact_csv"
+      ],
+      "filled": "Table~\\ref{tab:p3ms} is target dependent: for p23->p1, vec 0.473 and rowcol 0.476 outperform grid 0.602 and grid_aug 0.691, while for p12->p3, grid 0.736 outperforms vec 0.838 and rowcol 0.790. Multi-source benefit is therefore conditional rather than universal.",
+      "id": "b_results_p3ms_post",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:p3ms} is target dependent: for p23->p1, vec 0.473 and rowcol 0.476 outperform grid 0.602 and grid_aug 0.691, while for p12->p3, grid 0.736 outperforms vec 0.838 and rowcol 0.790. Multi-source benefit is therefore conditional rather than universal."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_p3ms_compact_csv"
+      ],
+      "filled": "Table~\\ref{tab:p3ms} also contains an intermediate regime where methods are close: for p13->p2, CER is 0.520 for vec, 0.504 for rowcol, and 0.511 for both grid variants. This narrow band contrasts with p23->p1 and p12->p3, reinforcing that source-target compatibility, not model family alone, governs paired-source behavior.",
+      "id": "b_results_p3ms_post_2",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "Table~\\ref{tab:p3ms} also contains an intermediate regime where methods are close: for p13->p2, CER is 0.520 for vec, 0.504 for rowcol, and 0.511 for both grid variants. This narrow band contrasts with p23->p1 and p12->p3, reinforcing that source-target compatibility, not model family alone, governs paired-source behavior."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17",
+        "ev_msx20260224_metrics_csv",
+        "ev_paper_layout_2026_03_03_table_k64_all_csv",
+        "ev_paper_layout_2026_03_03_table_kshot_compact_csv",
+        "ev_paper_layout_2026_03_03_table_p3ms_compact_csv",
+        "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+        "ev_paper_layout_2026_03_03_table_to4_compact_csv",
+        "ev_uc20260226_p3ms_conditions_csv",
+        "ev_uc20260226_p3ms_conditions_md",
+        "ev_uc20260226_spatial2d_patchpool_metrics_csv"
+      ],
+      "filled": "The dominant and most stable signal is the protocol gap: P3 CER is 0.691±0.133, versus 0.180±0.084 for P1 and 0.145±0.063 for P2. This ordering persists under front-end swaps, channel reduction, and low-shot settings, so cross-participant mismatch remains the primary error source in this audited setup.\n\nLayout-aware bias alone is insufficient. Rowcol remains close to vec across P1-P3, while grid variants often increase CER and RTF; patch pooling narrows some gaps but does not create a consistent winner. Spatial encoders therefore need protocol-specific validation against explicit latency constraints.\n\nSource aggregation helps at the p4 aggregate level (CER 0.686 to 0.582), but direction-level outcomes remain heterogeneous. Together with k-shot behavior (vec and rowcol improve from k1 to k2 while grid variants worsen), this indicates that transfer benefit depends on source-target compatibility and model family.\n\nOur practical rule is protocol-specific selection under matched audited splits and manifests. We limit all claims to these datasets, this normalization pipeline, and these protocol definitions, and we do not extrapolate to unaudited populations or sensing setups.",
+      "id": "b_discussion",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "The dominant and most stable signal is the protocol gap: P3 CER is 0.691±0.133, versus 0.180±0.084 for P1 and 0.145±0.063 for P2. This ordering persists under front-end swaps, channel reduction, and low-shot settings, so cross-participant mismatch remains the primary error source in this audited setup.\n\nLayout-aware bias alone is insufficient. Rowcol remains close to vec across P1-P3, while grid variants often increase CER and RTF; patch pooling narrows some gaps but does not create a consistent winner. Spatial encoders therefore need protocol-specific validation against explicit latency constraints.\n\nSource aggregation helps at the p4 aggregate level (CER 0.686 to 0.582), but direction-level outcomes remain heterogeneous. Together with k-shot behavior (vec and rowcol improve from k1 to k2 while grid variants worsen), this indicates that transfer benefit depends on source-target compatibility and model family.\n\nOur practical rule is protocol-specific selection under matched audited splits and manifests. We limit all claims to these datasets, this normalization pipeline, and these protocol definitions, and we do not extrapolate to unaudited populations or sensing setups."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_msx20260224_split_npz_manifest_csv",
+        "ev_paper_layout_2026_03_03_table_main_compact_csv",
+        "ev_paper_layout_2026_03_03_table_to4_compact_csv"
+      ],
+      "filled": "EPGSpeller provides a reproducible benchmark for lexicon-free silent spelling under deterministic audited protocols. Within this audited setting, cross-participant transfer remains the hardest regime (P3 CER 0.691±0.133), and paired-source aggregation can reduce aggregate p4 error (0.686 to 0.582) without removing direction dependence. Deployment claims should therefore be validated per protocol, per target, and per latency constraint.",
+      "id": "b_conclusion",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "EPGSpeller provides a reproducible benchmark for lexicon-free silent spelling under deterministic audited protocols. Within this audited setting, cross-participant transfer remains the hardest regime (P3 CER 0.691±0.133), and paired-source aggregation can reduce aggregate p4 error (0.686 to 0.582) without removing direction dependence. Deployment claims should therefore be validated per protocol, per target, and per latency constraint."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_msx20260224_metrics_csv",
+        "ev_msx20260224_split_npz_manifest_csv",
+        "ev_paper_layout_2026_03_03_table_k64_all_csv",
+        "ev_paper_layout_2026_03_03_table_spatial_all_csv",
+        "ev_paper_layout_2026_03_03_table_stats_compact_csv",
+        "ev_paper_layout_2026_03_03_table_to4_compact_csv",
+        "ev_scripts_paper_export_stats_table_for_paperjson_py",
+        "ev_supplementary_table_stats_compact_csv",
+        "ev_uc20260226_p3ms_conditions_csv",
+        "ev_uc20260226_split_npz_manifest_to4_csv"
+      ],
+      "filled": "This repository uses a strict paper registry that pins every evidence file by checksum and rejects unsupported manuscript blocks. The split manifests, aggregated metrics, compact tables, statistical summaries, and analysis reports referenced in this paper are stored as deterministic artifacts, enabling audit and reproduction within our repository environment. A supplementary archive includes the compact statistical summary table for reviewers.",
+      "id": "b_artifacts",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "This repository uses a strict paper registry that pins every evidence file by checksum and rejects unsupported manuscript blocks. The split manifests, aggregated metrics, compact tables, statistical summaries, and analysis reports referenced in this paper are stored as deterministic artifacts, enabling audit and reproduction within our repository environment. A supplementary archive includes the compact statistical summary table for reviewers."
+    },
+    {
+      "citations": [],
+      "evidence_ids": [
+        "ev_ai_disclosure_2026_03_04_md",
+        "ev_dataset_audit_silentspeller_2026_02_24_report_md",
+        "ev_msx20260224_metrics_csv"
+      ],
+      "filled": "We report results only for audited artifacts and do not claim broader demographic coverage. The datasets and splits used in this study are derived from participant recordings, and we focus on methodological clarity and artifact traceability rather than deployment claims. We used generative AI tools for language polishing and verified technical claims against audited artifacts.",
+      "id": "b_ethics",
+      "kind": "paragraph",
+      "slots": {},
+      "template": "We report results only for audited artifacts and do not claim broader demographic coverage. The datasets and splits used in this study are derived from participant recordings, and we focus on methodological clarity and artifact traceability rather than deployment claims. We used generative AI tools for language polishing and verified technical claims against audited artifacts."
+    }
+  ],
+  "format": {
+    "name": "paperjson-manuscript-trace",
+    "version": "0.1.0"
+  },
+  "outputs": {
+    "generated_main_tex": "paper/submission/body_generated_main.tex"
+  },
+  "paper_json": {
+    "path": "paper/paper.json",
+    "sha256": "325dc24abd4f2ac0c8515a9408dd36568bae6d0e4d9a272d5ec7ebd3cd9b2b6a"
+  }
+}

@@ -1,0 +1,4 @@
+snapshot_date,dataset_a,view_a,dataset_b,view_b,mean_pattern_corr,mean_contact_a,mean_contact_b,mean_contact_ratio_a_over_b
+2026-02-24,john_2328,raw,p1_2328_old,raw,0.90410696,0.12205473,0.18755506,0.65076749
+2026-02-24,john_2328,raw,su_1167_old,raw,0.95295294,0.12205473,0.18549292,0.65800211
+2026-02-24,su_1167_old,raw,p1_2328_old,raw,0.94074860,0.18549292,0.18755506,0.98900517

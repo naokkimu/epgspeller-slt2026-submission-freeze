@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ev_dataset_audit_silentspeller_2026_02_24_report_md",
+    "kind": "document",
+    "notes": "Dataset audit report for raw datasets and protocol splits.",
+    "path": "results/dataset_audit_silentspeller_2026-02-24/report.md",
+    "sha256": "143c09b739b8ee6dbfc81c41232cb5aca29d2cd1af52a9d2afb06eb823e8fb55"
+  },
+  {
+    "id": "ev_dataset_audit_silentspeller_2026_02_24_inputs_manifest_md",
+    "kind": "document",
+    "notes": "Inputs manifest for dataset audit, including sha256 of raw and split artifacts.",
+    "path": "results/dataset_audit_silentspeller_2026-02-24/inputs_manifest.md",
+    "sha256": "32a33544de5bb7965809adfa4c62f7699d51e811d688f74e043feee0283169f5"
+  },
+  {
+    "id": "ev_dataset_audit_silentspeller_2026_02_24_exclusions_json",
+    "kind": "data",
+    "notes": "Pinned exclusion indices for all-zero samples in the new participant dataset.",
+    "path": "results/dataset_audit_silentspeller_2026-02-24/exclusions/john_2328_exclude_indices.json",
+    "sha256": "8d7a0fcfb0107b812c88df69e66647af4c69f6a85b197783f5c07eff77a41188"
+  }
+]

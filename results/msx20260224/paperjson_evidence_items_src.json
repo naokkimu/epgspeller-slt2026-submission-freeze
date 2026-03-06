@@ -1,0 +1,9 @@
+[
+  {
+    "id": "ev_src_neural_decoder_model_py",
+    "kind": "data",
+    "notes": "Model family definitions including vector, rowcol, and spatial front ends.",
+    "path": "src/neural_decoder/model.py",
+    "sha256": "e315ae2f3c459ee202c966f3521a759ac3eb72ba4aa2b1ed89d2d9ad618c6de2"
+  }
+]

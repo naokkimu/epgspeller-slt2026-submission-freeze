@@ -1,0 +1,30 @@
+{
+  "freeze_tag": "freeze-20260306-submission",
+  "timestamp_utc": "2026-03-06T05:12:53.358405+00:00",
+  "repo_root": "/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo",
+  "branch": "codex/freeze-20260306",
+  "commit": "feacc641cdedee34efbc6feb127fc57bc5dcf062",
+  "dirty": false,
+  "remote_origin": "git@github.com:supernaiter/paperlogic_full_repo.git",
+  "checks_executed": [
+    "make paper",
+    "make exp_report",
+    "make manuscript_check",
+    "make verify_interspeech",
+    "make exp_report_check"
+  ],
+  "hashes": [
+    {
+      "path": "paper/main.pdf",
+      "sha256": "057feb0c99aa882679725454141035c4e04d2ef70f016f43716122c1bd745c47"
+    },
+    {
+      "path": "reports/interspeech/exp_report/SHA256SUMS.txt",
+      "sha256": "fa77748b403d2fa24b1e91197910385556236b31bb2613e68dd86c2976bc6947"
+    },
+    {
+      "path": "reports/interspeech/exp_report/exp_report_msx20260224.tar.gz",
+      "sha256": "a9fe6b123f85742b44c3d0107e6e99020583215e7e1aad44c6d0a5ea22a316ae"
+    }
+  ]
+}

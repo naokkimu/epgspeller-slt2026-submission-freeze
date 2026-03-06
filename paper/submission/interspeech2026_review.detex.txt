@@ -1,0 +1,140 @@
+
+
+
+EPGSpeller: Lexicon-Free Silent Spelling Recognition with Electropalatography
+silent speech interface, electropalatography, character-level decoding, text entry, auditability
+
+
+
+
+We show that lexicon-free electropalatography (EPG) silent spelling can reach low error in audited within-participant settings (CER 0.180+/-0.084 in P1 and 0.145+/-0.063 in P2). Protocol mixing still obscures progress when word holdout, instance holdout, and cross-participant transfer are reported together. We present EPGSpeller, an auditable benchmark with deterministic splits, checksum-pinned artifacts, and a shared CER/LEX/RTF harness for protocol-matched comparison. In 652 audited runs, P3 remains much harder (CER 0.691+/-0.133), marking transfer mismatch as the main bottleneck. Rowcol stays closest to vec, while grid variants are usually higher in CER and RTF. For p4 target transfer, paired-source aggregation improves the all-direction aggregate (CER 0.686+/-0.114 to 0.582+/-0.064; LEX 0.659+/-0.073 to 0.554+/-0.034), but effects remain mixed by direction. We therefore treat deployment claims as protocol-specific and limit conclusions to audited datasets and definitions.
+
+
+Introduction
+
+Silent speech interfaces (SSI) infer linguistic intent from non-acoustic signals, including articulatory sensing and other biosignals. For silent spelling with electropalatography (EPG), a practical failure remains: many evaluations mix word-identity holdout, repeated-instance holdout, and cross-participant transfer, so reported gains can reflect protocol differences rather than decoder differences. 
+Recent systems such as SilentSpeller and ReHEarSSE show lexicon-scale character-level spelling beyond small command sets. However, these lines of work do not provide a unified, auditable protocol stack that isolates each generalization regime under a shared artifact trace. In parallel, prior EPG studies motivate structured representations and spatial inductive bias, but their evaluation settings are heterogeneous across datasets and tasks. 
+To address this gap, we introduce EPGSpeller, an evidence-tracked evaluation framework for EPG silent spelling. EPGSpeller fixes deterministic split generation, pinned split manifests, and a common metric harness for greedy decoding, lexicon projection, and streaming cost. It explicitly separates word holdout, instance holdout, and cross-participant transfer so model comparisons remain protocol-specific and reproducible. We validate EPGSpeller with four participant datasets and compare a vector baseline with row-column and grid-based front ends under matched settings. We also evaluate electrode reduction and low-shot adaptation under the same audit rules. Across our audited runs, row-column pooling tracks the vector baseline more consistently than grid variants, while cross-participant transfer remains the dominant bottleneck. 
+Within our audited datasets and protocol definitions, protocol-level auditability is required for comparable benchmarking.
+
+
+We define deterministic protocol families that isolate word-identity, instance-level, and cross-participant generalization.
+We provide checksum-pinned split archives and manifests so each reported result is reproducible from audited artifacts.
+We benchmark vector, row-column, and grid front ends under a shared evaluation harness with accuracy and streaming metrics.
+We report electrode-reduction and low-shot analyses under the same protocol constraints.
+
+Data and Protocols
+
+We use four participant electropalatography datasets with word labels. Each sample is a variable length binary contact matrix, and the raw exports are treated as immutable evidence. We refer to participants with anonymous labels in all tables and split archives. We audit dataset statistics, label counts, and anomalies before we construct any train and test splits. We exclude a small set of all-zero samples via a pinned index list.
+
+The audit pipeline records raw file checksums. It validates schema consistency. It summarizes label counts, sequence length summaries, and per channel activity statistics before any split construction. The raw exports remain unchanged. We apply any exclusions only through pinned index lists that are included in the audit artifacts.
+
+We evaluate three primary protocols. The word holdout protocol uses disjoint vocabularies across train, test, and a competition partition. The instance holdout protocol tests held out instances of seen words. It separates train and competition vocabularies while keeping the test vocabulary within their union. The cross participant protocol trains on a source participant and tests on a target participant under a shared vocabulary constraint. We also define a paired source cross participant variant and a low shot adaptation variant to isolate source aggregation and limited supervision effects under the same audit rules. When a target participant has limited within word repetition, we configure the cross participant split generators to allow single instance target words. We keep the source side constraints unchanged. All split archives used in this study are enumerated with sizes and checksums in manifest artifacts.
+
+All split archives are generated deterministically from audited exports with fixed seeds. Each train, test, and competition partition is stored as an immutable archive with a checksum in the manifests to enable reuse and later verification. The manifests show the word-holdout protocol uses all four participant datasets. They show the instance-holdout protocol uses three participant datasets. They also show the fourth participant is target-only (not used as a source) in the cross-participant splits. The audited label histogram for the fourth participant is dominated by single-instance labels, so we restrict that participant to target-only use in cross-participant evaluation. This separation explains why the dataset summary includes all participant datasets even when a protocol uses only a subset.
+
+We normalize labels by uppercasing and filtering to alphabet characters, then represent each label as a space separated character sequence for CTC training and greedy decoding. We apply this step consistently during split construction and dataset preparation to avoid vocabulary drift.
+
+We keep the label normalization step consistent across all splits and dataset preparation steps. This aligns the decoder vocabulary with the audited labels and reduces drift between training and artifacts used to evaluate.
+
+We report character error rate from greedy decoding and streaming speed using real time factor. We define real time factor as total inference time divided by total input duration. For character-level decoding we also report lexicon projection error rates using a training lexicon and a full lexicon.
+
+Greedy decoding reports unconstrained character sequences. Lexicon projection maps outputs to finite word sets derived from the training vocabulary or the full audited lexicon. This allows us to separate decoding quality from lexicon constraints. We compute real time factor by dividing inference time by input duration under the same test harness. Tables summarize results over four split seeds as mean and standard deviation. We compute two sided t distribution confidence intervals for the primary accuracy metric and paired t tests with Holm correction; the compact statistical summary table is provided in the supplementary archive.
+
+Models
+
+Our baseline model encodes each frame as a vector of palate channels and applies a uni-directional recurrent decoder trained with a CTC objective. We compare two layout aware front ends. One is a row and column pooling front end that aggregates a proxy grid into one dimensional summaries. The other is a grid front end that reconstructs a proxy grid and applies a convolutional spatial encoder. For the grid model we optionally enable a spatial augmentation that drops and shifts contiguous electrode blocks. 
+The proxy grid is constructed from the palate channel layout. It supports row and column pooling or convolutional feature extraction. We use a fixed layout file for the mapping so that row and column indices are consistent across splits. We augment spatially by perturbing contiguous electrode blocks to emulate missing contacts and minor spatial shifts.
+
+We fix core training hyperparameters across runs and record how we configure them in the metrics registry for auditability.
+
+Results
+
+We report greedy decoding error, lexicon-projected error, and streaming cost under a shared evaluation harness for all protocols. The fourth participant is target-only in cross-participant evaluation due to single-instance label dominance. All metrics are derived from the same audited registry.
+
+The baseline summary table reports performance across the three evaluation protocols.
+
+
+
+Baseline recap across protocols; P1 means word holdout, P2 means instance holdout, and P3 means cross-participant transfer. n is the number of split-seed aggregates. CER is character error rate and LEX is lexicon-projected error rate.
+*
+
+
+The baseline summary shows a clear protocol ordering: CER is 0.145 to 0.180 for within-participant protocols (P2 and P1) and 0.691 for cross-participant P3, while LEX rises from 0.075 to 0.102 up to 0.644. Transfer difficulty, not within-participant decoding, drives the largest residual error.
+
+The spatial comparison table evaluates vector, row/col, and grid-based front ends at full channels across protocols.
+
+
+
+Spatial modeling at full channels across P1, P2, and P3; P1 means word holdout, P2 means instance holdout, and P3 means cross-participant transfer. CER is character error rate and RTF is real time factor.
+*
+
+
+In the spatial comparison, rowcol tracks vec across protocols (P1: 0.20 vs 0.18, P2: 0.16 vs 0.15, P3: 0.68 vs 0.69 CER). Grid and gridaug are usually higher in CER and RTF, and patch variants only partially close this gap. The compact statistical summary in supplementary material shows broad interval overlap, so we treat these as directional trends rather than universal winners.
+
+The cross-participant transfer summary table evaluates participant p4 as target under single-source and paired-source settings.
+
+
+
+Cross-participant transfer targeting participant p4. Proto marks P3 single-source transfer or P3MS paired-source transfer. Lvl marks direction rows or all-direction aggregates. Group encodes source-to-target participant IDs p1 to p4. CER is character error rate and LEX is lexicon-projected error rate.
+*
+
+
+The p4 transfer summary shows an aggregate gain: CER drops from 0.686±0.114 in P3 all->p4 to 0.582±0.064 in P3MS all->p4, and LEX drops from 0.659±0.073 to 0.554±0.034. Direction rows remain heterogeneous, so source-pair selection stays condition dependent.
+
+The low-shot summary table evaluates adaptation by varying the number of training instances per word for a new participant.
+
+
+
+Low-shot adaptation for participant p3 with k1 or k2 training instances per word. vec is vector baseline, rowcol is row-column pooling, grid is a convolutional grid encoder, and gridaug adds spatial augmentation. CER is character error rate and RTF is real time factor.
+*
+
+
+Increasing from k1 to k2 improves vec (0.350->0.246) and rowcol (0.334->0.278), but worsens grid (0.515->0.616) and gridaug (0.611->0.689). Low-shot gain is architecture dependent, not automatic.
+
+The reduced-channel summary table evaluates within-participant, transfer, and random subset strategies across protocols.
+
+
+
+Electrode-reduction methods at K=64 across P1, P2, and P3; P1 means word holdout, P2 means instance holdout, and P3 means cross-participant transfer. topk and fps2k are within-participant selections, xfer transfers a source ranking, and rand is a fixed random subset. CER is character error rate and RTF is real time factor.
+*
+
+
+At K=64, method deltas are small: P1 CER ranges 0.191-0.205, P2 ranges 0.154-0.158, and P3 ranges 0.644-0.657. Because these ranges overlap strongly, we avoid a universal ranking among topk, fps2k, xfer, and rand.
+
+The electrode-budget trend figure visualizes how accuracy and streaming cost vary for the word holdout protocol.
+
+
+
+Electrode-budget trends for P1 word holdout; topk uses within-participant importance ranking, diversity corresponds to fps2k, and random is a fixed random subset. CER is character error rate and RTF is real time factor.
+
+The electrode-budget trend figure shows CER improving as K increases toward full channels, while RTF changes less steeply. Random subsets remain below within-participant selections across most K, although the absolute gap narrows at larger budgets.
+
+The paired-source transfer table evaluates cross-participant transfer under the same target and protocol constraints.
+
+
+
+Paired-source cross-participant results by source pair; group denotes source participants to target participant with participant IDs p1 to p4. vec is vector baseline, rowcol is row-column pooling, grid is a convolutional grid encoder, and gridaug adds spatial augmentation. CER is character error rate and RTF is real time factor.
+*
+
+
+Paired-source outcomes are target dependent: for p23->p1, vec 0.473 and rowcol 0.476 outperform grid 0.602 and gridaug 0.691, while for p12->p3, grid 0.736 outperforms vec 0.838 and rowcol 0.790. Multi-source benefit is therefore conditional rather than universal.
+
+Discussion
+
+The dominant and most stable signal is the protocol gap: P3 CER is 0.691±0.133, versus 0.180±0.084 for P1 and 0.145±0.063 for P2. This ordering persists under front-end swaps, channel reduction, and low-shot settings, so cross-participant mismatch remains the primary error source in this audited setup.  Layout-aware bias alone is insufficient. Rowcol remains close to vec across P1-P3, while grid variants often increase CER and RTF; patch pooling narrows some gaps but does not create a consistent winner. Spatial encoders therefore need protocol-specific validation against explicit latency constraints.  Source aggregation helps at the p4 aggregate level (CER 0.686 to 0.582), but direction-level outcomes remain heterogeneous. Together with k-shot behavior (vec and rowcol improve from k1 to k2 while grid variants worsen), this indicates that transfer benefit depends on source-target compatibility and model family.  Our practical rule is protocol-specific selection under matched audited splits and manifests. We limit all claims to these datasets, this normalization pipeline, and these protocol definitions, and we do not extrapolate to unaudited populations or sensing setups.
+
+Conclusion
+
+EPGSpeller provides a reproducible benchmark for lexicon-free silent spelling under deterministic audited protocols. Within this audited setting, cross-participant transfer remains the hardest regime (P3 CER 0.691±0.133), and paired-source aggregation can reduce aggregate p4 error (0.686 to 0.582) without removing direction dependence. Deployment claims should therefore be validated per protocol, per target, and per latency constraint.
+
+Artifacts and Auditability
+
+This repository uses a strict paper registry that pins every evidence file by checksum and rejects unsupported manuscript blocks. The split manifests, aggregated metrics, compact tables, statistical summaries, and analysis reports referenced in this paper are stored as deterministic artifacts, enabling audit and reproduction within our repository environment. A supplementary archive includes the compact statistical summary table for reviewers.
+
+Ethics and Disclosure
+
+We report results only for audited artifacts and do not claim broader demographic coverage. The datasets and splits used in this study are derived from participant recordings, and we focus on methodological clarity and artifact traceability rather than deployment claims. We used generative AI tools for language polishing and verified technical claims against audited artifacts.
+
+IEEEtran
+

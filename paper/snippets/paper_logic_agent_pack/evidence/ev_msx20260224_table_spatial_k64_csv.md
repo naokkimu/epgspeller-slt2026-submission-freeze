@@ -1,0 +1,26 @@
+# ev_msx20260224_table_spatial_k64_csv
+
+- kind: `table`
+- path: `results/msx20260224/paper_tables/table_spatial_k64.csv`
+- sha256: `48c274f9ec2043d91f695560bf1833471f8495862469beb39bccc061d99159cf`
+- size_bytes: 1000
+- root_guess: `/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo`
+- abs_path_guess: `/Users/naokkimu/lyworks_ssd/epgspeller_local_workspace/paperlogic_full_repo/results/msx20260224/paper_tables/table_spatial_k64.csv`
+
+## Excerpt
+
+```csv
+protocol,variant,n,cer_m,cer_s,rtf_m,rtf_s,variant_id
+P1,vector,4,0.1952,0.0827,0.000657,0.000210,uni_gru_within_topk64
+P1,rowcol,4,0.2005,0.0847,0.002487,0.001145,rowcol_uni_gru_within_topk64
+P1,spatial2d,4,0.3796,0.2416,0.003103,0.001343,spatial2d_uni_gru_aug0_within_topk64
+P1,spatial2d_aug,4,0.3657,0.2070,0.003117,0.001337,spatial2d_uni_gru_aug1_within_topk64
+P2,vector,3,0.1544,0.0591,0.000110,0.000011,uni_gru_within_topk64
+P2,rowcol,3,0.1617,0.0702,0.000242,0.000038,rowcol_uni_gru_within_topk64
+P2,spatial2d,3,0.3882,0.3314,0.000389,0.000051,spatial2d_uni_gru_aug0_within_topk64
+P2,spatial2d_aug,3,0.3810,0.3208,0.000391,0.000052,spatial2d_uni_gru_aug1_within_topk64
+P3,vector,6,0.6473,0.1301,0.000108,0.000009,uni_gru_within_topk64
+P3,rowcol,6,0.6611,0.1486,0.000256,0.000027,rowcol_uni_gru_within_topk64
+P3,spatial2d,6,0.7470,0.1306,0.000405,0.000037,spatial2d_uni_gru_aug0_within_topk64
+P3,spatial2d_aug,6,0.7535,0.1244,0.000392,0.000048,spatial2d_uni_gru_aug1_within_topk64
+```

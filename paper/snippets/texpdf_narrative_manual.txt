@@ -1,0 +1,295 @@
+EPGSpeller: Evidence-Only Protocols and Multi-Participant Evaluation for
+Character-Level Silent Spelling
+AnonymoussubmissiontoInterspeech2026
+Abstract Table 1: Raw dataset summary for each participant dataset;
+1
+idisananonymousparticipantlabel, Nissamplecount, Vis
+2 Claim:Auditedprotocoldesignenablescomparableevalu- vocabulary size, Tmed is median sequence length in frames,
+3 ationofEPGsilentspellingandshowsthatlayout-awarefront contactismeancontactrate, andzeroisthecountofall-zero
+4 endsdonotconsistentlyoutperformavectorbaselineunderthe samples.
+testedprotocols.Silentspeechtextentrywithelectropalatogra-
+5
+6 phyrequiresmodelsthatgeneralizeacrosswordidentitiesand id N V Tmed contact zero
+7 participantswhileremainingauditable.Wepresentanevidence- p1 2328 1164 234 0.19 0
+8 only study of silent spelling from binary palate contact pat- p2 2328 1164 196 0.20 0
+9 ternsusingcharacter-leveldecodingandlexicon-projectedeval- p3 2797 1164 283 0.12 4
+10 uation.Wedefineprotocolsforwordholdout,instanceholdout, p4 1167 1162 229 0.19 0
+andcrossparticipanttransfer.Usingparticipantlabeleddatasets
+11
+anddeterministicartifacttracking,weevaluateavectorbaseline
+12
+andtwolayoutawarefrontends,andanalyzeelectrodereduc-
+13 endsdonotconsistentlyoutperformavectorbaselineunderthe
+tionandlowshotadaptation. Acrossourauditedruns,therow 49
+14 testedprotocols.
+and column front end tracks the vector baseline more closely 50
+15
+16 thanaconvolutionalgridfrontend. • Wedefineprotocolstoevaluatewordidentitygeneralization 51
+17 Index Terms: silent speech interface, electropalatography, and participant transfer, and we provide split archives with 52
+18 character-leveldecoding,textentry,auditability checksums. 53
+• We run multi-participant experiments with character-level
+54
+1. Introduction decodingandlexiconprojection,trackedbyastrictevidence
+19 55
+registry.
+56
+Silentspeechinterfacesinferlinguisticintentfromnonacous-
+20 • We compare a vector baseline with two layout aware front
+ticsignals,spanningarticulatorysensingandotherbiosignals, 57
+21 ends,andwereportbothaccuracyandstreamingspeedmet-
+andsurveysemphasizevariability,limiteddata,andevaluation 58
+22 rics.
+protocolmismatchesacrosssystems. Electropalatographypro- 59
+23
+• We provide deterministic scripts that export compact tables
+videsapracticalbinaryrepresentationoftonguepalatecontact, 60
+24
+andmanifestsusedbythismanuscript.
+butitsdiscretesensorlayoutanddevicespecificgeometryraise 61
+25
+questionsaboutinductivebiasandcrossparticipantgeneraliza-
+26
+tion.[1,2,3,4,5,6,7,8] 2. DataandProtocols
+27 62
+Wefocusonsilentspelling,anSSIinteractionthatdecodes
+28
+Weusefourparticipantelectropalatographydatasetswithword
+character strings rather than continuous speech recognition or 63
+29
+labels. Eachsampleisavariablelengthbinarycontactmatrix,
+reconstruction. Character level decoding with CTC supports 64
+30
+andtherawexportsaretreatedasimmutableevidence. Were-
+lexicon scale spelling and evaluation on unseen words, while 65
+31
+fertoparticipantswithanonymouslabelsinalltablesandsplit
+other SSI pipelines rely on constrained recognition or recon- 66
+32
+archives. Weauditdatasetstatistics,labelcounts,andanoma-
+structionformulations. Withinoursurveyedset, SilentSpeller 67
+33
+liesbeforeweconstructanytrainandtestsplits. Weexcludea
+andReHEarSSEaretheclosestanchorsforlexiconscalesilent 68
+34
+smallsetofall-zerosamplesviaapinnedindexlist.
+spelling.[1,9,10,11,12,13] 69
+35
+36 EPGcontactpatternsarespatiallystructured,andpriorEPG The audit pipeline records raw file checksums. It vali- 70
+37 studies examine dimensionality reduction and structured rep- datesschemaconsistency.Itsummarizeslabelcounts,sequence 71
+38 resentations, motivating explicit evaluation of representation lengthsummaries,andperchannelactivitystatisticsbeforeany 72
+39 choices in learned decoders. We test layout aware front ends splitconstruction. Therawexportsremainunchanged. Weap- 73
+40 underprotocolsthatdistinguishgeneralizationtoheld-outword plyanyexclusionsonlythroughpinnedindexliststhatarein- 74
+41 identities, held-out instances of seen words, and cross partic- cludedintheauditartifacts. 75
+42 ipant transfer. We present an evidence tracked study of EPG The dataset summary table reports id, sample count, vo- 76
+43 silent spelling, define deterministic split protocols, compare a cabularysize,mediansequencelength,meancontactrate,and 77
+44 vectorbaselinetotwolayoutawarefrontends,andanalyzeelec- thecountofall-zerosamplesforeachparticipantdataset. The 78
+45 trode reduction and low shot adaptation under the same audit idlabelsareanonymousparticipantcodesusedthroughoutthe 79
+46 rules.[14,15,16,17,18] protocolmanifests. 80
+Claim:Auditedprotocoldesignenablescomparableevalu- We evaluate three primary protocols. The word holdout
+47 81
+ationofEPGsilentspellingandshowsthatlayout-awarefront protocolusesdisjointvocabulariesacrosstrain,test,andacom-
+48 82
+
+petitionpartition. Theinstanceholdoutprotocoltestsheldout Table 2: Cross participant generalization targeting the fourth
+83
+instancesofseenwords. Itseparatestrainandcompetitionvo- participant;protodistinguishessinglesourcecrossparticipant
+84
+cabularieswhilekeepingthetestvocabularywithintheirunion. transferandmultisourcetransfer,lvlmarksdirectionlevelrows
+85
+The cross participant protocol trains on a source participant versusanacrossdirectionaggregate,groupencodessourceto
+86
+andtestsonatargetparticipantunderasharedvocabularycon- targetparticipantlabels,CERischaractererrorrate,andlexis
+87
+straint. We also define a paired source cross participant vari- lexiconprojectederrorrate.
+88
+antandalowshotadaptationvarianttoisolatesourceaggrega-
+89
+tionandlimitedsupervisioneffectsunderthesameauditrules. proto lvl group cer lex
+90
+When a target participant has limited within word repetition, P3 dir p1-¿p4 0.666±0.024 0.651±0.026
+91
+weconfigurethecrossparticipantsplitgeneratorstoallowsin- P3 dir p2-¿p4 0.809±0.021 0.736±0.022
+92
+gleinstancetargetwords. Wekeepthesourcesideconstraints P3 dir p3-¿p4 0.584±0.018 0.591±0.029
+93
+unchanged.Allsplitarchivesusedinthisstudyareenumerated P3 all all-¿p4 0.686±0.114 0.659±0.073
+94
+withsizesandchecksumsinmanifestartifacts. P3MS dir p12-¿p4 0.655±0.016 0.593±0.016
+95
+Allsplitarchivesaregenerateddeterministicallyfromau- P3MS dir p13-¿p4 0.536±0.009 0.533±0.008
+96
+ditedexportswithfixedseeds.Eachtrain,test,andcompetition P3MS dir p23-¿p4 0.555±0.005 0.537±0.011
+97
+partitionisstoredasanimmutablearchivewithachecksumin P3MS all all-¿p4 0.582±0.064 0.554±0.034
+98
+themanifeststoenablereuseandlaterverification. Theman-
+99
+ifestsshowtheword-holdoutprotocolusesallfourparticipant
+100
+101 datasets. They show the instance-holdout protocol uses three howweconfiguretheminthemetricsregistryforauditability. 145
+participant datasets. They also show the fourth participant is
+102
+103 target-only(notusedasasource)inthecross-participantsplits. 4. Results
+146
+Thisseparationexplainswhythedatasetsummaryincludesall
+104
+105 participantdatasetsevenwhenaprotocolusesonlyasubset. We report greedy decoding error, lexicon-projected error, and 147
+106 Wenormalizelabelsbyuppercasingandfilteringtoalpha- streamingcostunderasharedevaluationharnessforallproto- 148
+107 bet characters, then represent each label as a space separated cols.Allmetricsarederivedfromthesameauditedregistry. 149
+108 charactersequenceforCTCtrainingandgreedydecoding. We Weevaluatecross-participanttransferwiththefourthpar- 150
+109 applythisstepconsistentlyduringsplitconstructionanddataset ticipantastargetundersingle-sourceandpaired-sourcesettings. 151
+110 preparationtoavoidvocabularydrift. Paired-source transfer is often lower error than single- 152
+111 Wekeepthelabelnormalizationstepconsistentacrossall sourcetransfer,butdirection-leveloutcomesaremixed. 153
+112 splits and dataset preparation steps. This aligns the decoder We compare vector, row/col, and grid-based front ends at 154
+113 vocabulary with the audited labels and reduces drift between fullchannelsacrossprotocols. 155
+114 trainingandartifactsusedtoevaluate. Row/coltracksthevectorbaselinemorecloselythangrid 156
+115 We report character error rate from greedy decoding and variants. Grid variants tend to worsen accuracy and increase 157
+116 streamingspeedusingrealtimefactor.Wedefinerealtimefac- latency,andpatchpoolreducesbutdoesnotremovethisgap. 158
+117 torastotalinferencetimedividedbytotalinputduration. For We evaluate reduced-channel subsets using within- 159
+118 character-leveldecodingwealsoreportlexiconprojectionerror participant,transfer,andrandomselectionstrategies. 160
+119 ratesusingatraininglexiconandafulllexicon. Within-participant selection is similar to the vector base- 161
+120 Greedy decoding reports unconstrained character se- line,whiletransferandrandomsubsetsaregenerallylowerand 162
+121 quences. Lexicon projection maps outputs to finite word sets mixedacrossprotocols. 163
+122 derivedfromthetrainingvocabularyorthefullauditedlexicon. Weevaluatepaired-sourcecross-participanttransferunder 164
+123 Thisallowsustoseparatedecodingqualityfromlexiconcon- thesametargetandprotocolconstraints. 165
+124 straints.Wecomputerealtimefactorbydividinginferencetime Paired-source transfer is mixed across targets and front 166
+125 byinputdurationunderthesametestharness. Tablessumma- ends. 167
+126 rizeresultsoverfoursplitseedsasmeanandstandarddeviation; Weevaluatelow-shotadaptationbyvaryingthenumberof 168
+127 confidenceintervalsarenotreportedinthismanuscript. traininginstancesperwordforanewparticipant. 169
+Two-shotgenerallyimprovesoverone-shot, whilelayout-
+170
+128 3. Models awarevariantsremainmixedrelativetothevectorbaseline. 171
+Our baseline model encodes each frame as a vector of palate
+129 5. Discussion
+channelsandappliesauni-directionalrecurrentdecodertrained 172
+130
+131 withaCTCobjective.Wecomparetwolayoutawarefrontends. Across protocols, layout-aware front ends do not consistently 173
+132 One is a row and column pooling front end that aggregates a outperform the vector baseline and often increase streaming 174
+133 proxygridintoonedimensionalsummaries.Theotherisagrid cost;thepatchpoolgridreducesbutdoesnoteliminatethegap. 175
+134 frontendthatreconstructsaproxygridandappliesaconvolu- Cross-participanttransferremainsthemainbottleneck. Source 176
+135 tionalspatialencoder.Forthegridmodelweoptionallyenablea aggregationandlow-shotadaptationhelpinsomesettings,but 177
+136 spatialaugmentationthatdropsandshiftscontiguouselectrode outcomes are mixed, and simple similarity indicators do not 178
+137 blocks.[11,19] yieldasingleruleforwhenmulti-sourcehelps.Designimplica- 179
+138 Theproxygridisconstructedfromthepalatechannellay- tion:whenlowlatencyisthepriority,thevectororrow/colfront 180
+139 out. Itsupportsrowandcolumnpoolingorconvolutionalfea- ends are safer choices; when robustness to electrode dropout 181
+140 tureextraction. Weuseafixedlayoutfileforthemappingso or spatial priors is desired, grid-based options require careful 182
+141 that row and column indices are consistent across splits. We tuningandvalidation. Thesetakeawaysdependontheaudited 183
+142 augmentspatiallybyperturbingcontiguouselectrodeblocksto datasets,splitprotocols,andevaluationpipeline,andtheymay 184
+143 emulatemissingcontactsandminorspatialshifts. not transfer to other sensors, labeling schemes, or participant 185
+Wefixcoretraininghyperparametersacrossrunsandrecord populations.
+144 186
+
+Table 3: Spatial modeling at full channels across protocols; Table4: Electrodereductionmethodsacrossprotocols;proto-
+protocol labels denote word holdout, instance holdout, and collabelsdenotewordholdout,instanceholdout,andcrosspar-
+crossparticipanttransfer,vecisvectorbaseline,rowcolisrow ticipanttransfer,topkiswithinparticipanttoprankedselection,
+and column pooling, grid is convolutional grid encoder, grid fps two k is farthest point sampling, xfer is transferselection,
+augisgridwithspatialaugmentation,patchispatchpoolgrid randisrandomselection,CERischaractererrorrate,andRTF
+encoder, patch aug is patchpool with augmentation, CER is isrealtimefactor.
+charactererrorrate,andRTFisrealtimefactor.
+protocol method cer rtf
+protocol variant cer rtf P1 topk 0.195±0.083 0.0007±0.0002
+P1 vec 0.18±0.08 0.0006±0.0002 P1 fps2k 0.191±0.078 0.0006±0.0002
+P1 rowcol 0.20±0.09 0.0024±0.0011 P1 xfer 0.205±0.095 0.0006±0.0002
+P1 grid 0.31±0.15 0.0036±0.0015 P1 rand 0.198±0.079 0.0007±0.0003
+P1 grid aug 0.31±0.14 0.0034±0.0011 P2 topk 0.154±0.059 0.0001±0.0000
+P1 patch 0.30±0.07 0.0038±0.0017 P2 fps2k 0.154±0.062 0.0001±0.0000
+P1 patch aug 0.30±0.09 0.0039±0.0017 P2 xfer 0.158±0.071 0.0001±0.0000
+P2 vec 0.15±0.06 0.0001±0.0000 P2 rand 0.157±0.067 0.0001±0.0000
+P2 rowcol 0.16±0.08 0.0002±0.0000 P3 topk 0.647±0.130 0.0001±0.0000
+P2 grid 0.29±0.21 0.0004±0.0000 P3 fps2k 0.656±0.146 0.0001±0.0000
+P2 grid aug 0.31±0.24 0.0004±0.0000 P3 xfer 0.657±0.144 0.0001±0.0000
+P2 patch 0.34±0.23 0.0007±0.0001 P3 rand 0.644±0.133 0.0001±0.0000
+P2 patch aug 0.30±0.16 0.0006±0.0000
+P3 vec 0.69±0.13 0.0001±0.0000 Table5: Multisourcecrossparticipantresultsbysourcepair;
+P3 rowcol 0.68±0.15 0.0002±0.0000 groupconcatenatessourceparticipantlabelswithanarrowto
+P3 grid 0.75±0.09 0.0004±0.0000 the target, vec is vector baseline, rowcol is row and column
+P3 grid aug 0.76±0.09 0.0004±0.0000 pooling,gridisconvolutionalgridencoder,gridaugisgridwith
+P3 patch 0.69±0.11 0.0006±0.0001 spatialaugmentation,CERischaractererrorrate,andRTFis
+P3 patch aug 0.70±0.13 0.0005±0.0001 realtimefactor.
+group variant cer rtf
+6. ArtifactsandAuditability p23-¿p1 vec 0.473±0.014 0.0001±0.0000
+187
+p23-¿p1 rowcol 0.476±0.014 0.0002±0.0000
+This repository uses a strict paper registry that pins every ev-
+188 p23-¿p1 grid 0.602±0.076 0.0004±0.0000
+idence file by checksum and rejects unsupported manuscript
+189 p23-¿p1 grid aug 0.691±0.165 0.0004±0.0000
+blocks.Thesplitmanifests,aggregatedmetrics,compacttables,
+190 p13-¿p2 vec 0.520±0.003 0.0001±0.0000
+and analysis summaries referenced in this paper are stored as
+191 p13-¿p2 rowcol 0.504±0.012 0.0003±0.0000
+deterministic artifacts, enabling audit and reproduction within
+192 p13-¿p2 grid 0.511±0.047 0.0004±0.0000
+our repository environment. The same artifacts are reused to
+193 p13-¿p2 grid aug 0.511±0.016 0.0004±0.0000
+build the manuscript tables and to support verification in the
+194 p12-¿p3 vec 0.838±0.034 0.0001±0.0000
+auditviews.
+195 p12-¿p3 rowcol 0.790±0.033 0.0002±0.0000
+p12-¿p3 grid 0.736±0.018 0.0003±0.0000
+7. EthicsandDisclosure
+196 p12-¿p3 grid aug 0.756±0.020 0.0003±0.0000
+We report results only for audited artifacts and do not claim
+197
+broaderdemographiccoverage. Thedatasetsandsplitsusedin
+198
+199 thisstudyarederivedfromparticipantrecordings,andwefocus “Newdevelopmentsinelectropalatography:Astate-of-the-artre- 216
+on methodological clarity and artifact traceability rather than port,”1989. 217
+200
+201 deploymentclaims. [5] W.J.Hardcastle,“Electropalatographyinphoneticresearchand 218
+inspeechtraining,”1990. 219
+8. GenerativeAIUseDisclosure [6] W.Lee,J.J.Seong,B.Ozlu,B.S.Shim,A.Marakhimov,and 220
+202
+S.Lee,“Biosignalsensorsanddeeplearning-basedspeechrecog- 221
+203 WeusedgenerativeAItoolsforlanguagepolishingandformat- nition:Areview,”2021. 222
+204 ting support, and we verified technical claims against audited [7] J.Verhoeven,N.R.Miller,L.Daems,andC.C.Reyes-Aldasoro, 223
+205 artifacts. “Visualisation and analysis of speech production with elec- 224
+tropalatography,”2019. 225
+206 9. References [8] S.-T.Woo,J.-W.Ha,S.Na,H.Choi,andS.-B.Pyun,“Designand 226
+evaluationofkoreanelectropalatography(k-epg),”2021. 227
+207 [1] B. Denby, T. Schultz, K. Honda, T. Hueber, J. Gilbert, and
+208 J.Brumberg,“Silentspeechinterfaces,”2010. [9] X.Dong,Y.Chen,Y.Nishiyama,K.Sezaki,Y.Wang,K.Christof- 228
+ferson,andA.Mariakakis,“Rehearsse: Recognizinghidden-in- 229
+209 [2] J.Freitas,A.Teixeira,M.S.Dias,andS.Silva,AnIntroduction the-earsilentlyspelledexpressions,”2024. 230
+2 2 1 1 0 1 t C o o S m il p e u n t t er Sp E e n e g c i h ne I e n r t i e n r g fa . ce S s, pr s i e n r g . e S r p , r 2 i 0 n 1 g 7 e . rBriefsinElectricaland [10] J a . nd Gil P b . er G t, r S ee . n R , yb “ c I h so e l n a k te o d ,R w . o H r o d fe r , e S co . g E n ll i , tio M n .F o a f ga s n il , e R nt .M sp o e o e r c e h , 2 2 3 3 1 2
+212 [3] J. A. Gonzalez-Lopez, A. Gomez-Alanis, J. M. Martin Donas, usingmagneticimplantsandsensors,”2010.[Online].Available: 233
+213 J.L.Perez-Cordoba,andA.M.Gomez,“Silentspeechinterfaces https://pubmed.ncbi.nlm.nih.gov/20863739/ 234
+214 forspeechrestoration:Areview,”2020. [11] A.Graves,S.Ferna´ndez,F.Gomez,andJ.Schmidhuber,“Con- 235
+215 [4] W.Hardcastle,W.Jones,C.Knight,A.Trudgeon,andG.Calder, nectionisttemporalclassification,”2006. 236
+
+Table 6: Low shot adaptation results for a new participant;
+groupusestheparticipantlabelandkoneorktwoforthenum-
+beroftraininginstancesperword,vecisvectorbaseline,row-
+col is row and column pooling, grid is convolutional grid en-
+coder,gridaugisgridwithspatialaugmentation,CERischar-
+actererrorrate,andRTFisrealtimefactor.
+group variant cer rtf
+p3 k1 vec 0.350±0.060 0.0002±0.0000
+p3 k1 rowcol 0.334±0.039 0.0005±0.0000
+p3 k1 grid 0.515±0.050 0.0007±0.0000
+p3 k1 grid aug 0.611±0.157 0.0011±0.0006
+p3 k2 vec 0.246±0.009 0.0002±0.0000
+p3 k2 rowcol 0.278±0.022 0.0005±0.0000
+p3 k2 grid 0.616±0.132 0.0008±0.0001
+p3 k2 grid aug 0.689±0.218 0.0007±0.0000
+237 [12] T.Hueber,E.-L.Benaroya,G.Chollet,B.Denby,G.Dreyfus,and
+238 M. Stone, “Development of a silent speech interface driven by
+239 ultrasoundandopticalimagesofthetongueandlips,”2010.
+240 [13] N.Kimura,T.Gemicioglu,J.Womack,R.Li,Y.Zhao,A.Bedri,
+241 Z.Su,A.Olwal,J.Rekimoto,andT.Starner,“Silentspeller: To-
+242 wards mobile, hands-free, silent speech text entry using elec-
+243 tropalatography,”2022.
+244 [14] M.A´.Carreira-Perpin˜a´nandS.Renals, “Dimensionalityreduc-
+245 tion of electropalatographic data using latent variable models,”
+246 1998.
+247 [15] W.Hardcastle,F.Gibbon,andK.Nicolaidis,“Epgdatareduction
+248 methodsandtheirimplicationsforstudiesoflingualcoarticula-
+249 tion,”1991.
+250 [16] C.H.Shadle,J.N.Carter,T.P.Monks,andJ.Field,“Depthmea-
+251 surementoffaceandpalatebystructuredlight,”1993.
+252 [17] A.ToutiosandK.Margaritis,“Learningelectropalatogramsfrom
+253 acoustics,”2006.
+254 [18] ——,“Ontheacoustic-to-electropalatographicmapping,”2006.
+255 [19] D.S.Park,W.Chan,Y.Zhang,C.-C.Chiu,B.Zoph,E.D.Cubuk,
+256 andQ.V.Le,“Specaugment:Asimpledataaugmentationmethod
+257 forautomaticspeechrecognition,”2019.

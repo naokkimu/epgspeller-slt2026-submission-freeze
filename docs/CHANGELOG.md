@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-03-05
+- Fix LaTeX float placement error in `paper/submission/interspeech2026_review_manual.tex` by adding `\usepackage{float}` so table blocks using `[H]` compile correctly.
+
 ## 2025-12-19
 - Normalize lexicon words to uppercase in `scripts/rebuttal/eval_lexicon_project.py` so projections align with greedy outputs (fixes false CER/WER=1.0 when vocab casing differed).
 - Fix `scripts/rebuttal/aggregate_rebuttal_numbers.py` selection:

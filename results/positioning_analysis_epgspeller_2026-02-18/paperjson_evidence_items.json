@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_report_md",
+    "kind": "document",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/report.md",
+    "sha256": "94f8a086cc48489bf7b1377903b996aca2e7617b25b933cd41c6af8c75ccf356",
+    "notes": "Positioning analysis report (paper-ready English; evidence-only)."
+  },
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_prior_work_raw_csv",
+    "kind": "table",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/prior_work_raw.csv",
+    "sha256": "30a76a988106ec2ae87705eea459f65efad9ae9085582912da3e45047890d898",
+    "notes": "Flat export of frozen related-work survey JSON (required fields + provenance)."
+  },
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_prior_work_taxonomy_csv",
+    "kind": "table",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/prior_work_taxonomy.csv",
+    "sha256": "6a1966058db4f179961a16020396557443f2d9aab448a03ce755a275a507d8f2",
+    "notes": "Prior-work survey export with explicit taxonomy labels applied (no heuristic inference)."
+  },
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_ours_spatial_findings_csv",
+    "kind": "table",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/ours_spatial_findings.csv",
+    "sha256": "428b07fee4f1f66d11d614a61d06f79cd6dcfe23a1f108a4642a93f118f523dc",
+    "notes": "Tidy extraction of H11\u2013H13 spatial findings (aggregated from evidence snapshots)."
+  },
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_taxonomy_rubric_md",
+    "kind": "document",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rubric.md",
+    "sha256": "345b10ff46cfb66647341e1c25c119259bfaa63a9dc32948f667ccb7fd42c0f5",
+    "notes": "Taxonomy rubric defining the multi-lens positioning space."
+  },
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_taxonomy_rules_json",
+    "kind": "data",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/taxonomy_rules.json",
+    "sha256": "f0415e9db00489a6087cc0db09c265fa27e1fa5fc4a0f5b915bc7b001f2771e9",
+    "notes": "Explicit per-paper taxonomy assignments (frozen survey set)."
+  },
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_inputs_manifest_md",
+    "kind": "document",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/inputs_manifest.md",
+    "sha256": "32ac47d795afc3567d79a025c479689514a1a68d0446c53c652642edecba1b9f",
+    "notes": "List of input artifacts used to generate this positioning analysis."
+  },
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_fig_positioning_space_systems_png",
+    "kind": "figure",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/figures/positioning_space_systems.png",
+    "sha256": "0d75061bf4bbd7661df6c39f6c9c3fe307b9ec30f8907e9a844b5f447dcd9fc1",
+    "notes": "2D positioning plot for system-like papers + EPGSpeller variants."
+  },
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_fig_positioning_space_representation_png",
+    "kind": "figure",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/figures/positioning_space_representation.png",
+    "sha256": "406d5e9e392436ebad07f75cff3bbe724717f966c999c03222fe117886040c3a",
+    "notes": "2D positioning plot for EPG-related prior work + EPGSpeller variants."
+  },
+  {
+    "id": "ev_positioning_analysis_epgspeller_2026_02_18_fig_w_matrix_evidence_map_png",
+    "kind": "figure",
+    "path": "results/positioning_analysis_epgspeller_2026-02-18/figures/w_matrix_evidence_map.png",
+    "sha256": "11a54c8f8c5b168b2b132f9c11d6e0aa0bbb7505985d3e2f8cd40100510650b7",
+    "notes": "Binary map from review weaknesses (W1\u2013W9) to evidence bundles."
+  }
+]

@@ -1,0 +1,74 @@
+field_categories:
+  - category: "Basic Info"
+    fields:
+      - name: paper_id
+        required: true
+      - name: title
+        required: true
+      - name: authors
+        required: true
+      - name: year
+        required: true
+      - name: venue
+        required: true
+      - name: doi
+        required: true
+      - name: primary_url
+        required: true
+      - name: pdf_url
+        required: true
+      - name: code_or_data_release
+        required: false
+      - name: citation_key_suggestion
+        required: false
+
+  - category: "Task & Data"
+    fields:
+      - name: modality
+        required: true
+      - name: device
+        required: true
+      - name: task
+        required: true
+      - name: output_unit
+        required: true
+      - name: vocabulary_setting
+        required: true
+      - name: datasets
+        required: true
+      - name: evaluation_protocol
+        required: true
+      - name: metrics_reported
+        required: true
+
+  - category: "Methods"
+    fields:
+      - name: decoder
+        required: true
+      - name: model_architecture
+        required: true
+      - name: spatial_frontend
+        required: true
+      - name: augmentation
+        required: true
+
+  - category: "Claims"
+    fields:
+      - name: key_contributions
+        required: true
+      - name: limitations
+        required: true
+      - name: reported_results_summary
+        required: false
+
+  - category: "Relevance"
+    fields:
+      - name: relevance_to_epgspeller
+        required: true
+      - name: takeaways_for_related_work_section
+        required: true
+
+  - category: "Provenance"
+    fields:
+      - name: sources
+        required: true
