@@ -1,0 +1,17 @@
+{
+  "manuscript": "paper/SLT_draft_clean.md",
+  "current_iteration": 0,
+  "status": "running",
+  "satisfaction_criteria": {
+    "composite_writing": {
+      "readiness": "Pass",
+      "max_critical_issues": 0
+    },
+    "slt_simulation": {
+      "min_median_overall": 4,
+      "min_final_verdict": "Weak Accept",
+      "allow_fatal_blockers": false
+    }
+  },
+  "iterations": []
+}
