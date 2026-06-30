@@ -1,7 +1,7 @@
 {
   "manuscript": "paper/SLT_draft_clean.md",
-  "current_iteration": 0,
-  "status": "running",
+  "current_iteration": 3,
+  "status": "completed",
   "satisfaction_criteria": {
     "composite_writing": {
       "readiness": "Pass",
@@ -13,5 +13,33 @@
       "allow_fatal_blockers": false
     }
   },
-  "iterations": []
+  "iterations": [
+    {
+      "iter": 1,
+      "composite": "Borderline",
+      "slt_median": 3,
+      "slt_verdict": "Weak Reject",
+      "commit": "eed5c2e"
+    },
+    {
+      "iter": 2,
+      "composite": "Borderline",
+      "slt_median": 4,
+      "slt_verdict": "Weak Accept",
+      "commit": "b55ed72"
+    },
+    {
+      "iter": 3,
+      "composite": "Pass",
+      "slt_median": 4,
+      "slt_verdict": "Accept",
+      "commit": "pending"
+    }
+  ],
+  "completed_at": "2026-06-30",
+  "open_empirical_gaps": [
+    "missing_strong_baselines",
+    "end_to_end_aac_evaluation",
+    "larger_participant_cohort"
+  ]
 }
