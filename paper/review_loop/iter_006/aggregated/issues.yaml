@@ -1,0 +1,53 @@
+iteration: 6
+issues:
+  - id: W-M1
+    source_review: writing/academic_argument
+    severity: Major
+    status: fixed
+    location: Abstract
+    problem: Abstract overly dense
+    requested_response: Prioritize takeaway vs secondary numbers
+  - id: W-M2
+    source_review: writing/plain_expression
+    severity: Major
+    status: fixed
+    location: §2.5, §4.1, §6.2–6.6, §7
+    problem: Scope-defense repetition
+  - id: W-M3
+    source_review: writing/audit_gate
+    severity: Major
+    status: fixed
+    location: §5.4, Abstract
+    problem: k-shot defensive framing
+  - id: W-M4
+    source_review: writing/plain_expression
+    severity: Major
+    status: fixed
+    location: §5.2
+    problem: Missing CER interpretability bridge
+  - id: B1
+    source_review: writing/book_structure
+    severity: Major
+    status: fixed
+    location: §2.5, §4.1, §4.8
+    problem: Scope-defense repetition in prose
+  - id: C1
+    source_review: writing/academic_argument
+    severity: Major
+    status: fixed
+    location: §1 vs §7
+    problem: Intro three contributions vs Conclusion two
+  - id: V-M1
+    source_review: slt/methodology-skeptic
+    severity: Major
+    status: deferred
+    location: §4.6
+    problem: Missing baselines
+    deferred_issue_id: D-BASE-1
+  - id: V-M2
+    source_review: slt/methodology-skeptic
+    severity: Major
+    status: open
+    location: tab:main_protocols
+    problem: n label aggregation semantics
+    requested_response: Clarify per-subject vs seed in supplement

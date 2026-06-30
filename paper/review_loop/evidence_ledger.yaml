@@ -1,0 +1,24 @@
+version: "1.0"
+updated: "2026-06-30"
+question_ledgers:
+  - path: paper/source/questions.yaml
+  - path: qpaper.yaml
+result_dirs:
+  - results/msx20260224/paper_tables/
+  - results/slt_p2_20260626/paper_tables/
+  - results/preproc20260626/paper_tables/
+  - results/paper_layout_2026-03-03/
+manuscript_trace:
+  - paper/generated/trace.md
+  - paper/snippets/manuscript_trace.json
+known_artifacts:
+  - id: A-main-protocols
+    path: results/msx20260224/paper_tables/table_main.csv
+    hash: "sha256:pending"
+    columns: [protocol, variant, n, cer_m, cer_s, lex_all_m, lex_all_s, rtf_m, rtf_s]
+  - id: A-kshot-curve
+    path: results/slt_p2_20260626/paper_tables/table_kshot_curve.csv
+  - id: A-silentspeller-lite
+    path: results/slt_p2_20260626/paper_tables/table_silentspeller_lite.csv
+  - id: A-preproc-protocol
+    path: results/preproc20260626/paper_tables/table_preproc_protocol_condition.csv

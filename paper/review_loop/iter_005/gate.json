@@ -1,0 +1,14 @@
+{
+  "iteration": 5,
+  "gates": {
+    "writing_gate": {"pass": false, "critical": 0, "major": 4},
+    "reviewer_satisfaction_gate": {"pass": true, "full_rerun": true, "venue_scores": [3, 4, 5], "median": 4, "floor": 3},
+    "positioning_gate": {"pass": true, "advisory": true},
+    "scientific_gate": {"pass": true, "open_major_methodology": 0, "deferred": ["D-BASE-1", "D-N-1"]},
+    "evidence_gate": {"pass": true, "orphan_claims": 0},
+    "compile_gate": {"pass": null, "skipped": true},
+    "deferred_issue_gate": {"pass": true, "deferred_count": 4},
+    "loop_pass": false
+  },
+  "next_action": "writing_revision_or_format_loop"
+}

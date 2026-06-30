@@ -1,0 +1,54 @@
+version: "1.1"
+manuscript: paper/SLT_draft_clean.md
+venue: slt
+writing_skill: composite-writing-reviewer
+venue_skill: slt-review-simulation
+reviewer_model: gpt-5.5-medium
+editor_model: claude-4.6-sonnet-medium-thinking
+max_iterations: 6
+loop:
+  required: true
+  mode: dynamic
+  sentinel_prefix: AGENT_LOOP_WAKE_AUDITABLE_REVIEW
+  stop_condition: "all required gates pass or user explicitly stops"
+  armed_iteration: 6
+  stop_reason: "loop_pass true at iter_006"
+commit_each_revision: true
+gates_required:
+  - writing_gate
+  - reviewer_satisfaction_gate
+  - positioning_gate
+  - scientific_gate
+  - evidence_gate
+  - deferred_issue_gate
+optional_positioning_reviewers:
+  - rekimoto-agent-reviewer
+positioning_gate:
+  enabled: true
+  blocking: false
+  blocking_conditions:
+    - title_misrepresents_claim
+    - abstract_overclaims
+    - first_page_missing_takeaway
+compile_gate:
+  enabled: false
+  command: "latexmk -pdf -interaction=nonstopmode paper/final/slt2026.tex"
+venue_thresholds:
+  median_overall_min: 4
+  reviewer_floor: 3
+  require_full_rerun_on_final: true
+evidence_sources:
+  question_ledgers: [paper/source/questions.yaml, qpaper.yaml]
+  result_dirs: [results/, paper/generated/]
+allowed_additional_work:
+  - organize_existing_data
+  - extract_values_from_existing_artifacts
+  - lightweight_analysis_existing_data
+  - add_missing_description_or_caveat
+  - add_traceable_evidence_to_text_or_tables
+  - compile_and_format_checks
+forbidden_work:
+  - new_model_training
+  - new_benchmark_sweeps
+  - new_data_collection
+  - new_baseline_experiments

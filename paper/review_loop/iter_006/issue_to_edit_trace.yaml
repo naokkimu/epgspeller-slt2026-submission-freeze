@@ -1,0 +1,26 @@
+iteration: 6
+edits:
+  - issue_id: W-M1
+    action: edit_text
+    status: fixed
+    target_file: paper/SLT_draft_clean.md
+    edit_class: medium
+    edit_summary: Abstract compressed; secondary metrics deferred to table
+  - issue_id: W-M4
+    action: edit_text
+    status: fixed
+    target_file: paper/SLT_draft_clean.md
+    edit_class: medium
+    edit_summary: CER-to-edits anchors in §5.2
+  - issue_id: B1
+    action: edit_text
+    status: fixed
+    target_file: paper/SLT_draft_clean.md
+    edit_class: medium
+    edit_summary: Deduped scope-defense in §2.5/§4.1/§4.8
+  - issue_id: C1
+    action: edit_text
+    status: fixed
+    target_file: paper/SLT_draft_clean.md
+    edit_class: medium
+    edit_summary: §7 three contributions aligned with §1

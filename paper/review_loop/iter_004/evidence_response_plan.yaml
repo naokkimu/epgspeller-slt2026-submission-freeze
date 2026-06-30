@@ -1,0 +1,36 @@
+iteration: 4
+responses:
+  - issue_id: V-C1
+    action: defer_experiment
+    rationale: No baseline CER artifacts in ledger for SilentSpeller-era or LM/beam decoders
+    required_artifact: baseline comparison table
+    status: deferred
+    deferred_issue_id: D-BASE-1
+  - issue_id: D-M1
+    action: defer_experiment
+    rationale: Requires new training/evaluation runs
+    status: deferred
+    deferred_issue_id: D-BASE-1
+  - issue_id: V-M1
+    action: edit_text
+    rationale: Participant count in dataset table; add to abstract and limitations
+    status: fixed
+  - issue_id: V-M2
+    action: add_existing_evidence
+    rationale: RTF in msx table_main.csv
+    ledger:
+      path: paper/source/questions.yaml
+      item_id: Q.setup.metrics
+    artifact:
+      path: results/msx20260224/paper_tables/table_main.csv
+      hash: "sha256:dff6b3436c265008bc53754745b6fd44b0cd6fcca7bd92a34fcf7d1f13ae9570"
+    manuscript_target: "Section 5.2, tab:main_protocols, Abstract"
+    status: fixed
+  - issue_id: V-M3
+    action: edit_text
+    rationale: Clarify k-shot as held-word calibration
+    status: fixed
+  - issue_id: W-C1
+    action: reject
+    rationale: Internal Japanese clean draft; English conversion is separate format loop
+    status: not_actionable

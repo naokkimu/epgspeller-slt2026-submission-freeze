@@ -1,0 +1,27 @@
+updated_iteration: 4
+issues:
+  - id: D-BASE-1
+    source_issue: V-C1
+    severity: Major
+    title: Missing strong baselines
+    reason: Requires new experiments (SilentSpeller-era recognizer, beam/LM, encoder-decoder)
+    suggested_next_action: Run deferred baseline sweep post-submission prep
+    blocking_submission: true
+  - id: D-AAC-1
+    source_issue: prior_loop
+    severity: Major
+    title: End-to-end AAC evaluation
+    reason: Requires user study with interactive input
+    suggested_next_action: Future work
+    blocking_submission: false
+  - id: D-N-1
+    source_issue: prior_loop
+    severity: Major
+    title: Larger participant cohort
+    reason: Requires new data collection
+    suggested_next_action: Expand dataset
+    blocking_submission: true
+  - id: D-FORMAT-1
+    title: Run format/compression loop after evidence-strengthening pass
+    reason: Strengthening loop prioritizes evidence over page budget
+    blocking_submission: false

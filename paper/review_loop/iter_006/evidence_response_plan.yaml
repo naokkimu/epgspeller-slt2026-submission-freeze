@@ -1,0 +1,35 @@
+iteration: 6
+responses:
+  - issue_id: W-M1
+    action: edit_text
+    rationale: Compress abstract; move RTF/n detail to table ref
+    status: fixed
+  - issue_id: W-M2
+    action: edit_text
+    rationale: Trim duplicate scope-defense in §6 and §7
+    status: fixed
+  - issue_id: W-M3
+    action: edit_text
+    rationale: Cross-ref §4.4 in §5.4; shorten abstract k-shot
+    status: fixed
+  - issue_id: W-M4
+    action: edit_text
+    rationale: Add CER-to-edits anchor in §5.2
+    status: fixed
+  - issue_id: B1
+    action: edit_text
+    rationale: Remove duplicate 総合スコア sentences §2.5/§4.1/§4.8
+    status: fixed
+  - issue_id: C1
+    action: edit_text
+    rationale: Align §7 to three contributions matching §1
+    status: fixed
+  - issue_id: V-M1
+    action: defer_experiment
+    rationale: No baseline artifact in ledger
+    deferred_issue_id: D-BASE-1
+    status: deferred
+  - issue_id: V-M2
+    action: defer
+    rationale: Requires split-spec supplement; out of strengthening scope
+    status: deferred

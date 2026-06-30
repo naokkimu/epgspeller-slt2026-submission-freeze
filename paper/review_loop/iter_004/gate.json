@@ -1,0 +1,14 @@
+{
+  "iteration": 4,
+  "gates": {
+    "writing_gate": {"pass": false, "critical": 0, "major": 1, "note": "W-C1 rejected as internal JA draft; W-M1 abstract density open"},
+    "reviewer_satisfaction_gate": {"pass": false, "full_rerun": true, "venue_scores": [3, 3, 4], "median": 3, "floor": 3},
+    "positioning_gate": {"pass": true, "advisory": true},
+    "scientific_gate": {"pass": false, "open_major_methodology": 1, "deferred": ["D-BASE-1", "D-N-1"]},
+    "evidence_gate": {"pass": true, "orphan_claims": 0, "new_claims_traced": 3},
+    "compile_gate": {"pass": null, "skipped": true},
+    "deferred_issue_gate": {"pass": true, "deferred_count": 4},
+    "loop_pass": false
+  },
+  "next_action": "iter_005_rerun_reviewers_after_revision"
+}

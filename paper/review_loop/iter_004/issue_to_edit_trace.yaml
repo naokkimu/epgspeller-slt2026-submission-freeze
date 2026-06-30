@@ -1,0 +1,26 @@
+iteration: 4
+edits:
+  - issue_id: V-M2
+    action: add_existing_evidence
+    status: fixed
+    target_file: paper/SLT_draft_clean.md
+    edit_class: risky
+    edit_summary: "Added RTF mean±std to abstract, 5.2, tab:main_protocols"
+    evidence:
+      ledger_path: paper/source/questions.yaml
+      item_id: Q.setup.metrics
+      artifact_path: results/msx20260224/paper_tables/table_main.csv
+      command: "Read CSV columns protocol,rtf_m,rtf_s for P1,P2,P3 vector"
+      hash: "sha256:dff6b3436c265008bc53754745b6fd44b0cd6fcca7bd92a34fcf7d1f13ae9570"
+  - issue_id: V-M1
+    action: edit_text
+    status: fixed
+    target_file: paper/SLT_draft_clean.md
+    edit_class: medium
+    edit_summary: "4 participants in abstract; healthy cohort in 6.8"
+  - issue_id: V-M3
+    action: edit_text
+    status: fixed
+    target_file: paper/SLT_draft_clean.md
+    edit_class: medium
+    edit_summary: "k-shot held-word calibration clarified"

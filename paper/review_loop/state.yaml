@@ -1,0 +1,17 @@
+manuscript: paper/SLT_draft_clean.md
+manuscript_hash: f1d187b0c2a3ef5cb53549c1d812a8270dfe847288a0751618a07286b986efd1
+current_iteration: 6
+status: complete_pending_commit
+loop_pass: false
+iterations:
+  - iter: 5
+    composite: Borderline
+    slt_median: 4
+    slt_verdict: Weak Accept
+    gate_pass: false
+    note: writing_gate fail
+  - iter: 6
+    composite: Pass
+    slt_median: 4
+    slt_verdict: Weak Accept
+    gate_pass: true

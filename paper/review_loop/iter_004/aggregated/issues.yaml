@@ -1,0 +1,58 @@
+iteration: 4
+issues:
+  - id: V-C1
+    source_review: slt/methodology-skeptic
+    severity: Critical
+    status: deferred
+    location: Section 4.6, 5
+    problem: Missing strong baselines vs alternative decoders/classifiers
+    requested_response: Add baseline table or justify scope
+    evidence_need: baseline_results
+  - id: V-M1
+    source_review: slt/methodology-skeptic
+    severity: Major
+    status: fixed
+    location: Abstract, 6.8
+    problem: Small N (4 participants) under-emphasized
+    requested_response: State cohort size and generalization limits early
+    evidence_need: dataset_summary
+  - id: V-M2
+    source_review: slt/systems-pragmatist
+    severity: Major
+    status: fixed
+    location: Section 5.2, tab:main_protocols
+    problem: RTF defined but not reported in main results
+    requested_response: Add RTF from existing metrics
+    evidence_need: rtf_table
+  - id: V-M3
+    source_review: slt/methodology-skeptic
+    severity: Major
+    status: fixed
+    location: Abstract, 5.4, 4.4
+    problem: k-shot conflated with unseen-word generalization
+    requested_response: Clarify held-word calibration vs P1
+    evidence_need: none
+  - id: W-C1
+    source_review: writing/audit_gate_reviewer
+    severity: Critical
+    status: not_actionable
+    location: Full manuscript
+    problem: Japanese body vs English SLT submission
+    requested_response: Language/format decision
+    evidence_need: none
+  - id: W-M1
+    source_review: writing/academic_argument_reviewer
+    severity: Major
+    status: open
+    location: Abstract
+    problem: Abstract overly dense
+    requested_response: Prioritize takeaway vs secondary numbers
+    evidence_need: none
+  - id: D-M1
+    source_review: slt/methodology-skeptic
+    severity: Major
+    status: needs_experiment
+    location: Section 4.6
+    problem: No modern decoder/LM/beam baselines
+    requested_response: Run comparison experiments
+    evidence_need: new_baselines
