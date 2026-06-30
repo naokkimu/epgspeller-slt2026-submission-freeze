@@ -33,7 +33,7 @@
       "composite": "Pass",
       "slt_median": 4,
       "slt_verdict": "Accept",
-      "commit": "pending"
+      "commit": "118772a"
     }
   ],
   "completed_at": "2026-06-30",
