@@ -1,0 +1,45 @@
+# Experiments explicitly NOT included in this submission.
+# Purpose: preempt "missing experiment" reviews with honest scope, not hidden deferral.
+# Source: paper/review_loop/deferred_issues.yaml (iter_009 boundary)
+
+deferred:
+  - id: D-BASE-1
+    title: External decoder baselines
+    reviewer_question: "Why no SilentSpeller-era recognizer / beam+LM / attention baseline?"
+    paper_stance: >
+      In-task architectural baselines (vector vs spatial, electrode subsets) bound
+      representation choices within the same CTC decoder. External historical baselines
+      require new benchmark runs not completed for this submission.
+    what_we_did_instead:
+      - "Table: spatial/electrode ablations in main paper"
+      - "SilentSpeller-compatible-lite word holdout (not full system reproduction)"
+    status: deferred_post_submission
+    blocking_score_5: true
+
+  - id: D-N-1
+    title: Larger or clinical participant cohort
+    reviewer_question: "Why only four healthy participants?"
+    paper_stance: >
+      Evaluation uses the public SilentSpeller-style EPG release (four participants).
+      Clinical AAC user studies require new data collection beyond this dataset.
+    what_we_did_instead:
+      - "Dataset summary and split audits in supplement"
+      - "Explicit limitation paragraph in Discussion"
+    status: deferred_requires_new_data
+    blocking_score_5: true
+
+  - id: D-AAC-1
+    title: Interactive AAC deployment study
+    reviewer_question: "Where is WPM, correction UI, fatigue, or user study?"
+    paper_stance: >
+      This paper reports offline greedy CER and RTF on recorded trials, not interactive
+      spelling speed or usability. Deployment claims are explicitly bounded.
+    what_we_did_instead:
+      - "RTF as supplementary diagnostic in main paper"
+      - "Discussion: offline feasibility vs interactive readiness"
+    status: future_work
+    blocking_score_5: true
+
+notes:
+  - "Deferred items are limitations, not hidden results."
+  - "Rebuttal phase cannot cite this supplement per SLT rules; address in text if asked."

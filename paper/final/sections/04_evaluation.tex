@@ -1,0 +1,79 @@
+\section{Evaluation Setup and Decoding Conditions}
+\label{sec:evaluation}
+
+This section fixes how EPGSpeller is compared across evaluation conditions and which metrics support the central claims.
+The core evaluation of EPGSpeller is character-string decoding without lexicon projection.
+Within-user recognition, unseen-word recognition, cross-user transfer, and low-shot calibration each answer a distinct question.
+
+\subsection{Evaluation Conditions}
+
+EPGSpeller evaluation separates recognition questions relevant to future AAC systems.
+Within-user conditions measure how accurately character strings can be decoded when the recognizer is trained on data from the target user.
+Word-holdout conditions measure whether spelling recognition generalizes to word labels not seen during training.
+Cross-user transfer conditions measure whether a recognizer trained on other users can be reused without target-user calibration data.
+Low-shot calibration conditions measure how much performance recovers when a few calibration examples are obtained from a new user.
+
+P1 (word holdout, within user) is the primary evidence for lexicon-free spelling with personalized calibration.
+P2 (instance holdout, within user) is treated as a near-upper-bound within-user condition.
+P3 (cross-user transfer) is the primary evidence for the calibration bottleneck.
+Multi-source transfer, low-shot calibration, and the SilentSpeller bridge condition are auxiliary.
+Multi-source transfer (Multi-src; P3MS when multiple sources train before cross-user evaluation) trains on combinations of source participants before evaluating on a held-out target user.
+The SilentSpeller bridge (SS bridge) is a controlled unseen-word diagnostic on participant p1; it does not reproduce the original interactive SilentSpeller system.
+Direct comparison with the SilentSpeller-era recognizer and modern alternative decoders (beam search, language-model integration, attention-based encoder--decoder, and others) is outside the scope of this paper and is left for future work.
+
+\subsection{Metrics and Decoding Conditions}
+
+The primary metric is character error rate (CER) from greedy character-string decoding without lexicon projection.
+Lexicon-projected error (LEX) and real-time factor (RTF) are auxiliary diagnostics for closed-vocabulary conditions and inference cost; actual entry speed also depends on articulation rate, correction, feedback, and fatigue.
+Table~\ref{tab:protocol_map} maps each condition to the practical question it answers; the rows are ordered from within-user evidence (P1/P2) through transfer (P3/P3MS) to calibration and the SilentSpeller bridge.
+
+\begin{table}[!b]
+\centering
+\caption{Evaluation condition map. Each condition corresponds to a different practical question.}
+\label{tab:protocol_map}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}p{0.11\columnwidth}p{0.40\columnwidth}p{0.35\columnwidth}@{}}
+\toprule
+Cond. & Question & Split / role \\
+\midrule
+P1 & Can unseen words be spelled? & Word label; within-user \\
+P2 & Can another repetition be recognized? & Trial repetition; optimistic \\
+P3 & Can the model transfer as is? & Participant; bottleneck \\
+P3MS & Do multiple sources help? & Multi-src transfer \\
+Multi-src & Source combination label & Same as P3MS \\
+k-shot & Does performance recover? & Cal.\ examples per word \\
+SS bridge & Unseen-word layer strength? & 100 held words on p1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Low-Shot Calibration and Controls}
+
+In low-shot calibration evaluation, k-shot calibration obtains k examples per word label from the target user for words that appeared during training; it is distinct from generalization to unseen words not present during training (P1).
+Feasibility is constrained by per-word repetition density, not only by total trial count.
+We evaluate low-shot calibration within the range supported by the current data: k=1 and k=2 on p3; k=4 is limited to 14 words; k=8 is infeasible.
+These counts follow directly from per-word repetition in the public release and explain why higher-k curves cannot yet be reported as standard benchmarks.
+
+The SilentSpeller bridge performs controlled unseen-word diagnosis under the same input modality (Section~\ref{sec:evaluation}).
+Spatial front ends, electrode reduction, preprocessing controls, and lexicon projection support interpretation but do not replace P1--P3.
+P1 tests unseen-word generalization within a calibrated user; P2 tests repetition recognition under optimistic within-user conditions; P3 tests transfer without target-user calibration.
+We do not report a pooled average across these conditions because each answers a different deployment question.
+Counts follow per-word repetition in the public SilentSpeller release (Table~\ref{tab:calibration_setup}).
+
+\begin{table}[t]
+\centering
+\caption{Low-shot calibration feasibility on p3 (Req.: required repetitions per word; Feas.: feasible vocabulary size).}
+\label{tab:calibration_setup}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}llll@{}}
+\toprule
+k & Req.\ rep./word & Feas.\ vocab & 50-word eval \\
+\midrule
+0 & 1 & 1164 & Yes \\
+1 & 2 & 1164 & Yes \\
+2 & 3 & 363 & Yes \\
+4 & 5 & 14 & No \\
+8 & 9 & 0 & No \\
+\bottomrule
+\end{tabular}
+\end{table}

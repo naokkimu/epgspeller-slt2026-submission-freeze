@@ -1,0 +1,26 @@
+version: "1.1"
+entrypoint: paper/final/slt2026.tex
+pdf: paper/final/slt2026.pdf
+audit_report: paper/final/SLT_FORMAT_AUDIT.md
+aesthetic_report: paper/final/slt_audit_artifacts/lane_d/AESTHETIC_AUDIT.md
+track: double-blind
+compile_command: "latexmk -pdf -interaction=nonstopmode slt2026.tex"
+loop:
+  required: true
+  mode: dynamic
+  sentinel_prefix: AGENT_LOOP_WAKE_SLT_VISUAL
+  stop_condition: "SLT audit PASS AND aesthetic P2 == 0 AND page7 references-only"
+  status: running
+  iteration: iter_vis2
+last_visual_polish:
+  timestamp: "2026-07-01"
+  changes:
+    - removed tab:decoding_metrics
+    - merged tab:spatial_electrode
+    - condensed discussion/conclusion
+    - fixed page-7 orphan
+    - float spacing tune
+  slt_audit: PASS
+  blockers: 0
+  advisories: 1
+  aesthetic_p2_open: 0
