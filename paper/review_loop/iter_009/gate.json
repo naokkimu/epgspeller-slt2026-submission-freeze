@@ -1,0 +1,22 @@
+{
+  "iteration": 9,
+  "gates": {
+    "writing_gate": {"pass": true, "note": "not rerun composite ensemble this iter"},
+    "reviewer_satisfaction_gate": {
+      "pass": false,
+      "full_rerun": true,
+      "venue_scores": [4, 4, 4],
+      "target_scores": [5, 5, 5],
+      "median": 4,
+      "floor": 4
+    },
+    "scientific_gate": {"pass": true, "open_major_methodology": 0, "score5_blocked_by_deferred": 3},
+    "evidence_gate": {"pass": true, "new_tables_traced": 3},
+    "compile_gate": {"pass": true, "content_pages": 6, "total_pages": 7},
+    "format_gate": {"pass": true, "slt_audit_fail": 0},
+    "deferred_issue_gate": {"pass": true, "blocking_score5": ["D-BASE-1", "D-N-1", "D-AAC-1"]},
+    "loop_control_gate": {"pass": true, "armed": true, "stop_reason": "score_5_blocked_by_deferred_experiments"},
+    "loop_pass": false
+  },
+  "next_action": "post_submission_experiments_for_score5_or_accept_median4"
+}

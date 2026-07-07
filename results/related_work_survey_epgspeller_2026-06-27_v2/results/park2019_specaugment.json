@@ -1,0 +1,96 @@
+{
+  "paper_id": "park2019_specaugment",
+  "title": "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition",
+  "authors": [
+    "Daniel S. Park",
+    "William Chan",
+    "Yu Zhang",
+    "Chung-Cheng Chiu",
+    "Barret Zoph",
+    "Ekin D. Cubuk",
+    "Quoc V. Le"
+  ],
+  "year": 2019,
+  "venue": "Interspeech 2019 (ISCA Archive); also available on arXiv (1904.08779)",
+  "doi": "10.21437/interspeech.2019-2680",
+  "primary_url": "https://www.isca-archive.org/interspeech_2019/park19_interspeech.html",
+  "pdf_url": "https://www.isca-archive.org/interspeech_2019/park19_interspeech.pdf",
+  "code_or_data_release": null,
+  "citation_key_suggestion": "park2019specaugment",
+  "modality": "Method paper (data augmentation for speech recognition features)",
+  "device": "N/A",
+  "task": "Data augmentation for end-to-end ASR",
+  "output_unit": "speech recognition labels (e.g., characters/words)",
+  "vocabulary_setting": "ASR settings in the paper (task-dependent)",
+  "datasets": "LibriSpeech and Switchboard (as reported)",
+  "evaluation_protocol": "ASR evaluation on standard benchmarks (as reported)",
+  "metrics_reported": "WER on LibriSpeech/Switchboard under reported settings",
+  "decoder": "Not the focus; augmentation is applied at feature level and can be used with various decoders",
+  "model_architecture": "Applied to end-to-end ASR architectures (e.g., Listen, Attend and Spell) as reported",
+  "spatial_frontend": "N/A",
+  "augmentation": "SpecAugment (time/frequency masking, optional warping) applied to input features",
+  "key_contributions": [
+    "Introduces SpecAugment as a simple, effective augmentation method applied directly on input features for ASR.",
+    "Demonstrates improved ASR performance on standard benchmarks without requiring additional labeled data.",
+    "Provides a general augmentation idea that can be adapted to other time-series modalities (e.g., EPG frames)."
+  ],
+  "limitations": [
+    "Designed for spectrogram-like acoustic features; adaptation to other modalities requires careful interpretation.",
+    "Augmentation policy interacts with model architecture and data regime; not universally optimal."
+  ],
+  "reported_results_summary": "The arXiv paper reports WER improvements on LibriSpeech and Switchboard using SpecAugment; see the paper for exact settings and numbers.",
+  "relevance_to_epgspeller": "Relevant as the conceptual basis for frame-level masking augmentations (Axis F / robustness). Helps justify using SpecAugment-like masking on EPG time-series and motivates evaluating robustness under sensor dropout.",
+  "takeaways_for_related_work_section": "SpecAugment is a widely used feature-level masking augmentation for ASR; it motivates analogous time/channel masking augmentations for EPG decoding to improve robustness and generalization.",
+  "sources": [
+    {
+      "url": "https://www.isca-archive.org/interspeech_2019/park19_interspeech.html",
+      "title": "ISCA Archive: SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition (Interspeech 2019)",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.21437/interspeech.2019-2680",
+      "year": 2019,
+      "venue": "Interspeech 2019",
+      "pdf_url": "https://www.isca-archive.org/interspeech_2019/park19_interspeech.pdf"
+    },
+    {
+      "url": "https://doi.org/10.21437/interspeech.2019-2680",
+      "title": "DOI: 10.21437/interspeech.2019-2680",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.21437/interspeech.2019-2680",
+      "year": 2019,
+      "venue": "Interspeech 2019"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.21437/interspeech.2019-2680",
+      "title": "Crossref API: 10.21437/interspeech.2019-2680",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.21437/interspeech.2019-2680",
+      "year": 2019,
+      "venue": "Interspeech 2019"
+    },
+    {
+      "url": "https://arxiv.org/abs/1904.08779",
+      "title": "arXiv: SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "year": 2019,
+      "venue": "arXiv"
+    }
+  ],
+  "uncertain": [
+    "This entry does not commit to a specific SpecAugment policy for EPG; policy choice should be experimentally validated."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Protocol is paper-specific; v2 report treats it as contextual unless split/metric definitions align with EPGSpeller.",
+  "participant_generalization": "Not a participant-generalization benchmark; use for modality, method, or representation context.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "Augmentation method context; no lexical decoding constraint.",
+  "transfer_or_adaptation_method": "Relevant as non-EPG SSI or method context; transfer/adaptation evidence should not be extrapolated to EPG without matched data.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Seeded from the frozen 2026-02-17 survey; v2 uses this item to preserve the original EPG-centered baseline while adding protocol/audit/transfer lenses for the current manuscript."
+}

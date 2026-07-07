@@ -1,0 +1,42 @@
+\section{Introduction}
+
+For users and usage scenarios that cannot rely on speech or hand movement, hands-free character entry pathways are important.
+Silent speech interfaces are a promising direction for this requirement, and research has progressed on inferring linguistic intent from articulatory movements without vocalization, biosignals, and intraoral signals~\cite{denby2010silent,freitas2017an,gonzalez2020silent}.
+However, character entry for augmentative and alternative communication (AAC) requires more than recognizing a small set of predefined commands: users need to compose names, medication labels, idiosyncratic expressions, and short messages on the spot.
+This paper tests recognition-layer feasibility on a public healthy-participant release; interactive AAC deployment is out of scope (Section~\ref{sec:discussion}).
+Accordingly, bringing silent input closer to AAC requires spelling recognition---decoding character strings---rather than recognition confined to a closed vocabulary.
+
+Existing silent speech interfaces have already demonstrated important capabilities.
+Studies report recognizing silent or low-volume speech intent using biosignals, perioral motion, tongue and lip imagery, in-ear sensing, and near-whisper input~\cite{hueber2010development,dong2024rehearsse}.
+These results show that silent signals can serve as practical input interfaces, but achieving high accuracy under constrained recognition is not the same as enabling users to spell unseen or context-dependent messages on the spot.
+AAC-oriented character entry requires not only high accuracy within a fixed vocabulary, but also character-level decoding that extends beyond that vocabulary.
+
+Electropalatography (EPG) records tongue--palate contact during articulation as a multichannel time series~\cite{hardcastle1989new,hardcastle1990electropalatography,verhoeven2019visualisation} and is a natural signal for silent spelling (Section~II, Table~\ref{tab:signal_summary}).
+Each trial pairs a variable-length contact sequence with the word label the participant attempted to spell.
+SilentSpeller showed that SmartPalate-style EPG silent spelling can function as a portable, hands-free character entry modality~\cite{kimura2022silentspeller}; we address the recognition layer that supports that modality---greedy string decoding before lexicon projection and the calibration bottleneck it entails.
+Silent command recognition, language-model-assisted character entry, and in-ear silent spelling with ReHEarSSE~\cite{dong2024rehearsse} are related, but the question here is how far spelling sequences can be decoded from EPG contact sequences without a fixed output lexicon.
+
+Fixed-vocabulary constraints are especially important for AAC-oriented silent input.
+In fixed-vocabulary recognition, the words a system can output depend on a candidate set defined at training or evaluation time; dictionary constraints or language-model assistance can reduce errors but simultaneously restrict spellable words.
+Character-level silent spelling shifts the input problem from selecting a candidate word to composing a character string, so users are not limited to words that appeared as output classes during training.
+In this respect, character-level silent spelling recognition is an important pathway from fixed-command recognition toward an AAC-oriented character entry layer.
+
+We present EPGSpeller, a recognizer that decodes character strings from EPG contact time series, to address this recognition problem.
+EPGSpeller is a sequence recognizer that maps contact frame sequences directly to character strings.
+To align variable-length contact sequences with string labels of differing length, we use connectionist temporal classification (CTC), which can learn variable-length inputs and string labels without frame-level character boundaries~\cite{graves2006connectionist}.
+The primary evaluation uses greedy decoding without vocabulary lists, language models, or lexicon projection (Table~\ref{tab:task_definition}); lexicon-projected metrics are auxiliary.
+
+The central claim is that, with per-user calibration, EPG silent spelling can support greedy string decoding on the SilentSpeller word inventory---word holdout within that set for P1, not open-vocabulary proper-name entry.
+When the same recognizer is transferred directly to a new user, performance degrades substantially, indicating that cross-user differences in contact patterns, articulatory style, and sensor placement strongly govern recognition performance.
+Accordingly, the central remaining challenge is neither the feasibility of the input modality nor inference speed, but how much calibration data is sufficient per new user---calibration-efficient personalized recognition.
+
+Experiments compare within-user decoding, an auxiliary SilentSpeller bridge diagnostic (not a direct era-to-era decoder comparison; Section~\ref{sec:evaluation}), cross-user transfer, and low-shot calibration (Table~\ref{tab:protocol_map}).
+Within-user protocols P1 and P2 test word-holdout and instance-holdout decoding when training data from the target user are available; P2 is an optimistic repetition upper bound.
+P3 tests zero-shot reuse on a new participant; multi-source transfer (P3MS) and preprocessing sweeps test whether simple normalization explains the cross-user gap.
+Low-shot calibration on p3 quantifies recovery when one or two held-word examples per label are available from the target user.
+
+This paper makes three contributions.
+First, we formulate SmartPalate-style EPG silent spelling as a greedy string-decoding problem rather than fixed-command recognition, and present an evaluation protocol suite (P1, P2, P3, and k-shot) that compares within-user, unseen-word, cross-user transfer, and low-shot calibration conditions within a single task.
+Second, under this framework, we conduct a calibration feasibility study and quantify both the viability of the recognition layer under within-user conditions (P1, P2; Table~\ref{tab:main_protocols}) and the calibration bottleneck under low-shot target-user adaptation (k-shot; Table~\ref{tab:kshot_curve}).
+Third, we show that cross-user transfer (P3; Table~\ref{tab:main_protocols}) does not reach within-user performance even with multi-source transfer or preprocessing controls, and report that user dependence remains an essential calibration problem.
+The novelty of this paper lies not in the CTC recognizer architecture, but in this task and protocol formulation together with the calibration feasibility study.

@@ -1,0 +1,46 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Findings and Calibration Bottleneck}
+
+Cross-user failure likely reflects contact-rate mismatch, articulatory differences, and sensor placement rather than decoder architecture alone (Table~\ref{tab:spatial_electrode}).
+Multi-source training (P3MS) and preprocessing controls shift cross-user CER only marginally relative to the within-user gap in Table~\ref{tab:main_protocols}.
+Within-user CER near 0.15--0.18 indicates offline recognizer feasibility, not interactive usability; the binding bottleneck is calibration quantity, not inference speed (Tables~\ref{tab:main_protocols} and~\ref{tab:kshot_curve}).
+
+\subsection{Limitations and Threats to Validity}
+
+\paragraph{Scope and interactive AAC.}
+This paper reports an offline recognition-layer study on a corpus-bounded spelling task, not end-to-end AAC deployment (Section~\ref{sec:evaluation}).
+Entry speed, correction interfaces, and user learning burden remain untested.
+
+\paragraph{Participant cohort.}
+Four healthy participants limit generalization and clinical claims (Table~\ref{tab:dataset_summary}).
+Larger or clinical cohorts require new data collection beyond the public release.
+
+\paragraph{Offline evaluation protocol.}
+Metrics use stored trials with greedy decoding, not live articulation with feedback.
+RTF in Table~\ref{tab:main_protocols} bounds inference cost only; interactive latency, fatigue, and correction cycles are out of scope.
+
+\paragraph{SilentSpeller bridge fidelity.}
+The SS-bridge differs from the original interactive SilentSpeller setup (Section~\ref{sec:evaluation}).
+It confirms unseen-word decoding on p1 within the release inventory but not that system's interface or decoder stack.
+
+\paragraph{Cross-user calibration bottleneck.}
+P3 without target-user calibration remains far above within-user P1/P2 despite P3MS and preprocessing sweeps (Tables~\ref{tab:main_protocols} and~\ref{tab:spatial_electrode}).
+User-independent deployment is unsupported; calibration quantity, not representation choice alone, binds performance.
+
+\paragraph{External decoder baselines.}
+Comparisons to SilentSpeller-era recognizers, beam search, language-model integration, and attention encoder--decoders are deferred (Section~\ref{sec:evaluation}).
+Spatial-front-end and electrode-reduction analyses bound in-task representation choices under the same CTC/greedy protocol instead.
+
+\paragraph{Low-shot and high-$k$ evaluability.}
+Per-word repetition density limits higher-$k$ curves (Table~\ref{tab:calibration_setup}); k=4 covers 14 words and k=8 is infeasible on p3.
+Reported k=1 and k=2 points still show large recovery from small target-user samples (Table~\ref{tab:kshot_curve}).
+
+\paragraph{Lexicon-free claim scope.}
+LEX can be lower than greedy CER under closed-vocabulary conditions (Table~\ref{tab:main_protocols}).
+Primary claims use CER before lexicon projection; open-vocabulary spelling beyond the release inventory is not evaluated.
+
+\paragraph{Ethics and reproducibility.}
+Evaluation follows the public release consent conditions; EPGSpeller is offline analysis only.
+An anonymized supplementary zip (\texttt{put\_this\_zip\_to\_your\_agent\_or\_llm\_chat.zip}; upload the entire archive to a coding agent or LLM session) maps headline results to splits and tabulated artifacts; the main text remains self-contained without it.

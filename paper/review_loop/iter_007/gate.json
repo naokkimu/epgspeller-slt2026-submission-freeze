@@ -1,0 +1,16 @@
+{
+  "iteration": 7,
+  "gates": {
+    "writing_gate": {"pass": true, "critical": 0, "major": 0, "note": "compression preserved claim calibration"},
+    "reviewer_satisfaction_gate": {"pass": true, "full_rerun": true, "venue_scores": [4, 4, 4], "median": 4, "floor": 4},
+    "positioning_gate": {"pass": true, "advisory": true},
+    "scientific_gate": {"pass": true, "open_major_methodology": 0, "deferred": ["D-BASE-1", "D-N-1"]},
+    "evidence_gate": {"pass": true, "orphan_claims": 0, "new_claims_traced": 0},
+    "compile_gate": {"pass": true, "pages": 4, "content_pages": 3},
+    "format_gate": {"pass": true, "slt_audit_fail": 0, "report": "paper/final/SLT_FORMAT_AUDIT.md"},
+    "deferred_issue_gate": {"pass": true, "deferred_count": 4},
+    "loop_control_gate": {"pass": true, "armed": true, "mode": "dynamic"},
+    "loop_pass": true
+  },
+  "next_action": "submission_prep"
+}

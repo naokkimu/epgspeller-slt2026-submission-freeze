@@ -1,0 +1,84 @@
+{
+  "paper_id": "hueber2010_ultrasound_optical_ssi",
+  "title": "Development of a silent speech interface driven by ultrasound and optical images of the tongue and lips",
+  "authors": [
+    "Thomas Hueber",
+    "Elie-Laurent Benaroya",
+    "Bruce Denby",
+    "Gérard Chollet"
+  ],
+  "year": 2010,
+  "venue": "Speech Communication 52(4):288-300",
+  "doi": "10.1016/j.specom.2009.11.004",
+  "primary_url": "https://www.sciencedirect.com/science/article/pii/S0167639309001733",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "hueber2010ultrasound",
+  "modality": "Ultrasound tongue imaging + optical lip video (silent speech interface)",
+  "device": "Ultrasound imaging of tongue + CCD camera for lips",
+  "task": "Silent speech interface: articulatory-to-speech reconstruction",
+  "output_unit": "speech waveform (via segmental vocoder / concatenative synthesis)",
+  "vocabulary_setting": "phonetic target sequence prediction; vocabulary setting depends on decoder constraints (paper evaluates constraints)",
+  "datasets": "Audiovisual database with ultrasound + lip video + audio (1 hour per speaker; 2 speakers) as reported in the paper",
+  "evaluation_protocol": "Experiments reported on recorded uttered speech; intended for silent-speech use (paper notes need for silent evaluation)",
+  "metrics_reported": "Phone recognition performance and speech reconstruction quality metrics reported in the paper.",
+  "decoder": "HMM-based visual phone recognition + dictionary-driven unit selection + waveform generation (HNM-based prosody adaptation)",
+  "model_architecture": "Statistical models (continuous HMMs) for visual observations; segmental synthesis pipeline",
+  "spatial_frontend": "PCA-based image coding for ultrasound tongue and lip video features",
+  "augmentation": "Not central; paper focuses on feature extraction and decoding/synthesis pipeline",
+  "key_contributions": [
+    "Early SSI system combining ultrasound tongue imaging and lip video to reconstruct speech.",
+    "Uses PCA-based visual feature coding and HMM-based phone recognition to constrain unit selection for synthesis.",
+    "Provides a concrete articulatory-to-speech pipeline and discusses constraints needed for intelligible reconstruction."
+  ],
+  "limitations": [
+    "Experiments are performed on uttered speech recordings; silent-speech evaluation may differ (explicitly noted by authors).",
+    "Imaging-based sensing can be bulky compared to wearable intra-oral devices.",
+    "System complexity (multi-stage recognizer + unit selection + synthesis) may limit real-time deployment."
+  ],
+  "reported_results_summary": "The paper reports phone recognition and reconstruction results under different constraints; consult the official paper for exact metrics.",
+  "relevance_to_epgspeller": "Provides SSI context and a contrasting articulatory sensing modality (ultrasound/video) with a PCA-based spatial feature approach, relevant to discussing representation alternatives (W7) and decoding constraints (W2).",
+  "takeaways_for_related_work_section": "A representative SSI using ultrasound+video with PCA-coded spatial features and HMM-based decoding; useful to contrast imaging-based articulatory sensing with EPG and to motivate why simple compressions (e.g., PCA) are common in low-data articulatory interfaces.",
+  "sources": [
+    {
+      "url": "https://www.sciencedirect.com/science/article/pii/S0167639309001733",
+      "title": "ScienceDirect: Development of a silent speech interface driven by ultrasound and optical images of the tongue and lips",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1016/j.specom.2009.11.004",
+      "year": 2010,
+      "venue": "Speech Communication"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.specom.2009.11.004",
+      "title": "DOI: 10.1016/j.specom.2009.11.004",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1016/j.specom.2009.11.004",
+      "year": 2010,
+      "venue": "Speech Communication"
+    },
+    {
+      "url": "https://www.sciencedirect.com/journal/speech-communication/vol/52/issue/4",
+      "title": "ScienceDirect: Speech Communication special issue Silent Speech Interfaces (Volume 52, Issue 4)",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "year": 2010,
+      "venue": "Speech Communication"
+    }
+  ],
+  "uncertain": [
+    "Exact silent-speech evaluation protocols are future work in the paper; this entry summarizes the method-level contribution."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Protocol is paper-specific; v2 report treats it as contextual unless split/metric definitions align with EPGSpeller.",
+  "participant_generalization": "Primarily source-specific; use only as a task anchor unless the paper explicitly reports cross-user/user-independent evaluation.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "No v2-specific language-model or postprocessing mechanism was added beyond the original survey extraction.",
+  "transfer_or_adaptation_method": "Relevant as non-EPG SSI or method context; transfer/adaptation evidence should not be extrapolated to EPG without matched data.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Seeded from the frozen 2026-02-17 survey; v2 uses this item to preserve the original EPG-centered baseline while adding protocol/audit/transfer lenses for the current manuscript."
+}

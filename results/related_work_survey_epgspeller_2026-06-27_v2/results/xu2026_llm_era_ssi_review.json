@@ -1,0 +1,94 @@
+{
+  "paper_id": "xu2026_llm_era_ssi_review",
+  "title": "Silent Speech Interfaces in the Era of Large Language Models: A Comprehensive Taxonomy and Systematic Review",
+  "authors": [
+    "Kele Xu",
+    "Yifan Wang",
+    "Ming Feng",
+    "Qisheng Xu",
+    "Wuyang Chen",
+    "Yutao Dou",
+    "Cheng Yang",
+    "Huaimin Wang"
+  ],
+  "year": 2026,
+  "venue": "arXiv preprint arXiv:2603.11877",
+  "doi": "arXiv:2603.11877",
+  "primary_url": "https://arxiv.org/abs/2603.11877",
+  "pdf_url": "https://arxiv.org/pdf/2603.11877",
+  "code_or_data_release": null,
+  "citation_key_suggestion": "xu2026llmerassi",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement",
+  "modality": "Systematic review across silent speech interface modalities with an LLM-era taxonomy.",
+  "device": "Multiple SSI devices/sensing technologies reviewed.",
+  "task": "Comprehensive taxonomy and systematic review of SSI in the LLM era.",
+  "output_unit": "Review/taxonomy, not a decoder benchmark.",
+  "vocabulary_setting": "Not applicable; review article.",
+  "datasets": "Multiple SSI datasets/systems surveyed.",
+  "evaluation_protocol": "Review-level synthesis.",
+  "protocol_generalization": "Useful for current LLM-era framing and taxonomy; not numeric benchmark evidence.",
+  "participant_generalization": "Varies across reviewed systems.",
+  "metrics_reported": "Review dimensions rather than one shared metric.",
+  "benchmark_or_audit_status": "Preprint review; use as contemporary taxonomy with caution.",
+  "leakage_or_constraint_notes": "Review helps identify LLM/decoder layers but does not define leakage-safe EPG evaluation by itself.",
+  "decoder": "Review item; discusses multiple decoders.",
+  "model_architecture": "Review item; discusses multiple architectures.",
+  "spatial_frontend": "Varies by reviewed modality.",
+  "augmentation": "Varies by reviewed system.",
+  "language_model_or_postprocessing": "Central theme: LLM-era SSI taxonomy.",
+  "transfer_or_adaptation_method": "Varies by reviewed system.",
+  "source_quality_notes": "arXiv primary record plus arXiv API/PDF sources; preprint status should be stated.",
+  "reproducibility_artifacts": "Review article; no single dataset artifact.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Provides a current taxonomy for SSI in the LLM era.",
+    "Highlights shift from transducer-centric views toward intent-to-execution systems.",
+    "Useful for framing LM/LLM assistance separately from sensing."
+  ],
+  "limitations": [
+    "Preprint status in v2 evidence.",
+    "Not an EPG-specific benchmark source."
+  ],
+  "reported_results_summary": "Review item; no normalized numeric results used in v2.",
+  "relevance_to_epgspeller": "Helps update the survey backbone beyond older SSI reviews and motivates explicit treatment of LLM-assisted decoding as out-of-scope for current audited EPG results.",
+  "takeaways_for_related_work_section": "Related work should acknowledge LLM-era SSI while preserving EPGSpeller’s stricter sensor-decoding evidence boundaries.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Supports a short future-work/positioning note: EPGSpeller could later add LM-assisted decoding, but current claims remain lexicon-free and audit-bound.",
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2603.11877",
+      "title": "arXiv: Silent Speech Interfaces in the Era of Large Language Models",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "year": 2026,
+      "venue": "arXiv",
+      "pdf_url": "https://arxiv.org/pdf/2603.11877",
+      "authors": [
+        "Kele Xu",
+        "Yifan Wang",
+        "Ming Feng",
+        "Qisheng Xu",
+        "Wuyang Chen",
+        "Yutao Dou",
+        "Cheng Yang",
+        "Huaimin Wang"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/pdf/2603.11877",
+      "title": "PDF: Silent Speech Interfaces in the Era of Large Language Models",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "year": 2026,
+      "venue": "arXiv"
+    },
+    {
+      "url": "http://export.arxiv.org/api/query?id_list=2603.11877",
+      "title": "arXiv API: 2603.11877",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "year": 2026,
+      "venue": "arXiv"
+    }
+  ],
+  "uncertain": []
+}

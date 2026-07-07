@@ -1,0 +1,89 @@
+{
+  "paper_id": "benster2024_mona_llm_enhanced_ssr",
+  "title": "A Cross-Modal Approach to Silent Speech with LLM-Enhanced Recognition",
+  "authors": [
+    "Tyler Benster",
+    "Guy Wilson",
+    "Reshef Elisha",
+    "Francis R. Willett",
+    "Shaul Druckmann"
+  ],
+  "year": 2024,
+  "venue": "arXiv preprint arXiv:2403.05583",
+  "doi": "arXiv:2403.05583",
+  "primary_url": "https://arxiv.org/abs/2403.05583",
+  "pdf_url": "https://arxiv.org/pdf/2403.05583",
+  "code_or_data_release": null,
+  "citation_key_suggestion": "benster2024mona",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement",
+  "modality": "Multimodal Orofacial Neural Audio (MONA); cross-modal silent speech recognition using noninvasive orofacial signals and audio-only data alignment.",
+  "device": "MONA setup described in the arXiv paper.",
+  "task": "Silent speech recognition with cross-modal training and LLM-enhanced recognition.",
+  "output_unit": "Text/speech recognition output as defined by the paper.",
+  "vocabulary_setting": "LLM-enhanced recognition; not pure lexicon-free character decoding.",
+  "datasets": "Paper uses silent-speech data and audio-only resources such as LibriSpeech according to the arXiv abstract.",
+  "evaluation_protocol": "Paper-specific cross-modal silent speech evaluation.",
+  "protocol_generalization": "Important for cross-modal transfer framing: audio-only data can support silent recognition, but protocol constraints differ from EPGSpeller.",
+  "participant_generalization": "Participant generalization should be read from the paper; v2 uses this for cross-modal and LLM-assisted framing.",
+  "metrics_reported": "Recognition metrics reported by the arXiv paper.",
+  "benchmark_or_audit_status": "Preprint; no v2-confirmed deterministic public split stack comparable to EPGSpeller.",
+  "leakage_or_constraint_notes": "LLM scoring adjustment changes the decoding regime; compare separately from sensor-only greedy decoding.",
+  "decoder": "Cross-modal model with LLM Integrated Scoring Adjustment according to the arXiv abstract.",
+  "model_architecture": "Shared latent multimodal model with cross-modal training losses described by the authors.",
+  "spatial_frontend": "Orofacial signal representation, not EPG palatogram layout.",
+  "augmentation": "Cross-modal use of audio-only resources rather than simple sensor augmentation.",
+  "language_model_or_postprocessing": "Central: LLM Integrated Scoring Adjustment is part of the reported approach.",
+  "transfer_or_adaptation_method": "Cross-modal alignment from audio-only resources to silent speech recognition.",
+  "source_quality_notes": "arXiv primary record plus arXiv API/PDF sources; preprint status should be stated.",
+  "reproducibility_artifacts": "No v2-confirmed code/data release.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Introduces MONA, a cross-modal silent speech approach using audio-only data to help silent recognition.",
+    "Adds LLM-enhanced scoring to silent speech recognition.",
+    "Useful for contemporary transfer and language-model framing."
+  ],
+  "limitations": [
+    "Preprint status in v2 evidence.",
+    "LLM-assisted results should not be merged with lexicon-free sensor-only metrics.",
+    "Non-EPG modality."
+  ],
+  "reported_results_summary": "See arXiv:2403.05583; v2 uses the item for cross-modal/LLM framing.",
+  "relevance_to_epgspeller": "Shows why EPGSpeller should explicitly separate sensor-only benchmark claims from LM/LLM-assisted decoding variants.",
+  "takeaways_for_related_work_section": "LLM-enhanced SSI is emerging, but language-model assistance creates a different evaluation layer from EPGSpeller greedy CER.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Supports adding language about future LM-assisted decoding while keeping current claims limited to audited lexicon-free/lexicon-projected protocols.",
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2403.05583",
+      "title": "arXiv: A Cross-Modal Approach to Silent Speech with LLM-Enhanced Recognition",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "year": 2024,
+      "venue": "arXiv",
+      "pdf_url": "https://arxiv.org/pdf/2403.05583",
+      "authors": [
+        "Tyler Benster",
+        "Guy Wilson",
+        "Reshef Elisha",
+        "Francis R. Willett",
+        "Shaul Druckmann"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/pdf/2403.05583",
+      "title": "PDF: A Cross-Modal Approach to Silent Speech with LLM-Enhanced Recognition",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "url": "http://export.arxiv.org/api/query?id_list=2403.05583",
+      "title": "arXiv API: 2403.05583",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "year": 2024,
+      "venue": "arXiv"
+    }
+  ],
+  "uncertain": []
+}

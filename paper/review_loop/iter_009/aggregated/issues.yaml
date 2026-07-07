@@ -1,0 +1,34 @@
+iteration: 9
+issues:
+  - id: V-S5-1
+    source_review: slt/methodology-skeptic
+    severity: Major
+    status: needs_experiment
+    location: "Evaluation scope"
+    problem: "Score 5 requires external decoder baselines"
+    requested_response: "SilentSpeller-era / beam / LM / attention comparison"
+    evidence_need: baseline_results
+  - id: V-S5-2
+    source_review: slt/systems-pragmatist
+    severity: Major
+    status: needs_experiment
+    location: "Deployment evidence"
+    problem: "Score 5 requires interactive AAC evaluation"
+    requested_response: "End-to-end input speed, correction, fatigue study"
+    evidence_need: user_study
+  - id: V-S5-3
+    source_review: slt/methodology-skeptic
+    severity: Major
+    status: needs_experiment
+    location: "Participant cohort"
+    problem: "Score 5 requires larger/diverse cohort"
+    requested_response: "Expand beyond four healthy participants"
+    evidence_need: new_data
+  - id: F-FILL-1
+    source_review: user
+    severity: Moderate
+    status: fixed
+    location: "Page budget"
+    problem: "Use full 6 content pages"
+    requested_response: "Fill page 6 with evidence-backed content"
+    evidence_need: none

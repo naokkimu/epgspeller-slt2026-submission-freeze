@@ -1,0 +1,134 @@
+field_categories:
+  - category: "Basic Info"
+    fields:
+      - name: paper_id
+        required: true
+        description: "paper id"
+      - name: title
+        required: true
+        description: "title"
+      - name: authors
+        required: true
+        description: "authors"
+      - name: year
+        required: true
+        description: "year"
+      - name: venue
+        required: true
+        description: "venue"
+      - name: doi
+        required: true
+        description: "doi"
+      - name: primary_url
+        required: true
+        description: "primary url"
+      - name: pdf_url
+        required: true
+        description: "pdf url"
+      - name: code_or_data_release
+        required: true
+        description: "code or data release"
+      - name: citation_key_suggestion
+        required: true
+        description: "citation key suggestion"
+      - name: coverage_origin
+        required: true
+        description: "Whether this item was seeded from the frozen 2026-02-17 survey or added in the 2026-06-27 v2 update."
+  - category: "Task & Data"
+    fields:
+      - name: modality
+        required: true
+        description: "modality"
+      - name: device
+        required: true
+        description: "device"
+      - name: task
+        required: true
+        description: "task"
+      - name: output_unit
+        required: true
+        description: "output unit"
+      - name: vocabulary_setting
+        required: true
+        description: "vocabulary setting"
+      - name: datasets
+        required: true
+        description: "datasets"
+  - category: "Protocol & Evaluation"
+    fields:
+      - name: evaluation_protocol
+        required: true
+        description: "evaluation protocol"
+      - name: protocol_generalization
+        required: true
+        description: "How the work separates or mixes word, instance, session, participant, or modality generalization."
+      - name: participant_generalization
+        required: true
+        description: "Whether within-user, multi-user, cross-user, or user-independent behavior is evaluated."
+      - name: metrics_reported
+        required: true
+        description: "metrics reported"
+      - name: benchmark_or_audit_status
+        required: true
+        description: "Whether artifacts, deterministic splits, shared metrics, or benchmark resources are provided."
+      - name: leakage_or_constraint_notes
+        required: true
+        description: "Notes about lexicon/LM constraints, oracle vocabularies, train-only resources, and possible leakage risks."
+  - category: "Methods"
+    fields:
+      - name: decoder
+        required: true
+        description: "decoder"
+      - name: model_architecture
+        required: true
+        description: "model architecture"
+      - name: spatial_frontend
+        required: true
+        description: "spatial frontend"
+      - name: augmentation
+        required: true
+        description: "augmentation"
+      - name: language_model_or_postprocessing
+        required: true
+        description: "Use of lexicons, language models, LLMs, word predictions, or post hoc correction."
+      - name: transfer_or_adaptation_method
+        required: true
+        description: "Cross-user, cross-modal, low-shot, meta-learning, or adaptation method if present."
+  - category: "Auditability"
+    fields:
+      - name: source_quality_notes
+        required: true
+        description: "Quality and role of sources used for this item."
+      - name: reproducibility_artifacts
+        required: true
+        description: "Code, dataset, split, or artifact availability reported by sources."
+      - name: evidence_retrieved_at
+        required: true
+        description: "Date this v2 evidence entry was processed."
+  - category: "Claims"
+    fields:
+      - name: key_contributions
+        required: true
+        description: "key contributions"
+      - name: limitations
+        required: true
+        description: "limitations"
+      - name: reported_results_summary
+        required: true
+        description: "reported results summary"
+  - category: "Relevance to EPGSpeller"
+    fields:
+      - name: relevance_to_epgspeller
+        required: true
+        description: "relevance to epgspeller"
+      - name: takeaways_for_related_work_section
+        required: true
+        description: "takeaways for related work section"
+      - name: gap_or_relevance_to_current_epgspeller_manuscript
+        required: true
+        description: "How the item changes or supports the current EPGSpeller manuscript framing."
+  - category: "Provenance"
+    fields:
+      - name: sources
+        required: true
+        description: "sources"

@@ -1,0 +1,21 @@
+{
+  "input_bib": "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/results/related_work_survey_epgspeller_2026-06-27_v2/references.bib",
+  "output_clean_bib": "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/results/related_work_survey_epgspeller_2026-06-27_v2/references_clean.bib",
+  "total_entries_input": 36,
+  "total_entries_clean": 36,
+  "deduplicate": true,
+  "sort": "key",
+  "descending": false,
+  "fixes": [],
+  "removed_entries": [],
+  "key_changes": [],
+  "errors": [],
+  "warnings": [],
+  "doi_verification": {
+    "doi_total": 27,
+    "doi_verified_ok": 27,
+    "doi_verified_fail": 0,
+    "doi_verified_skipped": 0,
+    "failed_dois": []
+  }
+}

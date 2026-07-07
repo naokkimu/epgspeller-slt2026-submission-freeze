@@ -1,0 +1,742 @@
+EPGSpeller: Lexicon-Free Silent Spelling
+Recognition with Electropalatography
+Anonymous Submission
+Abstract—Hands-free character entry motivates decoding be-
+yond fixed command vocabularies; this paper reports an of-
+fline recognition-layer study on a corpus-bounded SilentSpeller
+spelling task, not interactive augmentative and alternative com-
+munication (AAC) deployment. We present EPGSpeller, which
+decodes character strings from SmartPalate-style electropalato-
+graphic contact time series using connectionist temporal classi-
+fication and greedy decoding before lexicon projection. On four
+healthy participants, word-holdout (P1) and instance-holdout
+(P2) character error rate (CER) stay near 0.18, cross-user
+transfer (P3) exceeds 0.69, and one held-word example per label
+on p3 (k = 1) partially recovers error to about 0.35 CER. Results
+are limited to offline recognition-layer evaluation; interactive
+AAC input is future work.
+Index
+Terms—electropalatography,
+silent
+spelling,
+AAC,
+lexicon-free recognition, character-level decoding, calibration,
+silent speech interface
+I. INTRODUCTION
+For users and usage scenarios that cannot rely on speech
+or hand movement, hands-free character entry pathways are
+important. Silent speech interfaces are a promising direction
+for this requirement, and research has progressed on inferring
+linguistic intent from articulatory movements without vocal-
+ization, biosignals, and intraoral signals [1]–[3]. However,
+character entry for augmentative and alternative communica-
+tion (AAC) requires more than recognizing a small set of
+predefined commands: users need to compose names, med-
+ication labels, idiosyncratic expressions, and short messages
+on the spot. This paper tests recognition-layer feasibility on
+a public healthy-participant release; interactive AAC deploy-
+ment is out of scope (Section VI). Accordingly, bringing silent
+input closer to AAC requires spelling recognition—decoding
+character strings—rather than recognition confined to a closed
+vocabulary.
+Existing silent speech interfaces have already demonstrated
+important capabilities. Studies report recognizing silent or low-
+volume speech intent using biosignals, perioral motion, tongue
+and lip imagery, in-ear sensing, and near-whisper input [4],
+[5]. These results show that silent signals can serve as practical
+input interfaces, but achieving high accuracy under constrained
+recognition is not the same as enabling users to spell unseen
+or context-dependent messages on the spot. AAC-oriented
+character entry requires not only high accuracy within a
+fixed vocabulary, but also character-level decoding that extends
+beyond that vocabulary.
+Electropalatography (EPG) records tongue–palate contact
+during articulation as a multichannel time series [6]–[8] and is
+a natural signal for silent spelling (Section II, Table I). Each
+trial pairs a variable-length contact sequence with the word
+label the participant attempted to spell. SilentSpeller showed
+that SmartPalate-style EPG silent spelling can function as a
+portable, hands-free character entry modality [9]; we address
+the recognition layer that supports that modality—greedy
+string decoding before lexicon projection and the calibration
+bottleneck it entails. Silent command recognition, language-
+model-assisted character entry, and in-ear silent spelling with
+ReHEarSSE [5] are related, but the question here is how
+far spelling sequences can be decoded from EPG contact
+sequences without a fixed output lexicon.
+Fixed-vocabulary constraints are especially important for
+AAC-oriented silent input. In fixed-vocabulary recognition, the
+words a system can output depend on a candidate set defined at
+training or evaluation time; dictionary constraints or language-
+model assistance can reduce errors but simultaneously restrict
+spellable words. Character-level silent spelling shifts the input
+problem from selecting a candidate word to composing a
+character string, so users are not limited to words that appeared
+as output classes during training. In this respect, character-
+level silent spelling recognition is an important pathway from
+fixed-command recognition toward an AAC-oriented character
+entry layer.
+We present EPGSpeller, a recognizer that decodes char-
+acter strings from EPG contact time series, to address this
+recognition problem. EPGSpeller is a sequence recognizer that
+maps contact frame sequences directly to character strings. To
+align variable-length contact sequences with string labels of
+differing length, we use connectionist temporal classification
+(CTC), which can learn variable-length inputs and string labels
+without frame-level character boundaries [10]. The primary
+evaluation uses greedy decoding without vocabulary lists,
+language models, or lexicon projection (Table III); lexicon-
+projected metrics are auxiliary.
+The central claim is that, with per-user calibration, EPG
+silent spelling can support greedy string decoding on the
+SilentSpeller word inventory—word holdout within that set for
+P1, not open-vocabulary proper-name entry. When the same
+recognizer is transferred directly to a new user, performance
+degrades substantially, indicating that cross-user differences
+in contact patterns, articulatory style, and sensor placement
+
+
+strongly govern recognition performance. Accordingly, the
+central remaining challenge is neither the feasibility of the
+input modality nor inference speed, but how much calibration
+data is sufficient per new user—calibration-efficient personal-
+ized recognition.
+Experiments compare within-user decoding, an auxiliary
+SilentSpeller bridge diagnostic (not a direct era-to-era decoder
+comparison; Section IV), cross-user transfer, and low-shot
+calibration (Table V). Within-user protocols P1 and P2 test
+word-holdout and instance-holdout decoding when training
+data from the target user are available; P2 is an optimistic
+repetition upper bound. P3 tests zero-shot reuse on a new
+participant; multi-source transfer (P3MS) and preprocessing
+sweeps test whether simple normalization explains the cross-
+user gap. Low-shot calibration on p3 quantifies recovery when
+one or two held-word examples per label are available from
+the target user.
+This paper makes three contributions. First, we formulate
+SmartPalate-style EPG silent spelling as a greedy string-
+decoding problem rather than fixed-command recognition, and
+present an evaluation protocol suite (P1, P2, P3, and k-shot)
+that compares within-user, unseen-word, cross-user transfer,
+and low-shot calibration conditions within a single task. Sec-
+ond, under this framework, we conduct a calibration feasibility
+study and quantify both the viability of the recognition layer
+under within-user conditions (P1, P2; Table VII) and the
+calibration bottleneck under low-shot target-user adaptation
+(k-shot; Table VIII). Third, we show that cross-user transfer
+(P3; Table VII) does not reach within-user performance even
+with multi-source transfer or preprocessing controls, and report
+that user dependence remains an essential calibration problem.
+The novelty of this paper lies not in the CTC recognizer
+architecture, but in this task and protocol formulation together
+with the calibration feasibility study.
+II. SIGNAL, DATA, AND TASK DEFINITION
+The recognizer receives not an acoustic waveform or video,
+but a multichannel time series representing tongue–palate
+contact, and outputs not a closed set of word classes but a
+character string.
+A. EPG Contact Time Series
+EPG records tongue–palate contact during articulation as a
+multichannel time series and has been used in speech produc-
+tion research, speech training, and articulatory analysis [6]–
+[8]. In the SmartPalate-style recordings considered here, each
+time-step frame represents a contact pattern indicating where
+on the palate contact occurs. Each trial is treated as a variable-
+length sequence of EPG contact frames, and the input received
+by EPGSpeller is this frame sequence.
+In the experimental representation used in this paper, Smart-
+Palate contact channels are mapped to a grid aligned with
+palate layout (a surrogate grid), and aligned contact channels
+TABLE I
+SUMMARY OF SMARTPALATE-STYLE EPG SIGNALS (EXPERIMENTAL
+REPRESENTATION).
+Item
+Value
+Role
+Input
+Contact frames
+Articulatory signal
+Grid
+16 × 16 surrogate Spatial front ends
+Channels
+120 aligned
+Multichannel patterns
+Layout
+4 missing, 5 dup.
+Export mismatch
+Output
+Character string
+Spelling, not classes
+Decode
+Greedy string
+Lexicon-free eval.
+are used. A surrogate grid assigns each channel to row–column
+coordinates on the palate, supporting both treating channels
+as independent scalar features and comparing front ends that
+exploit spatial layout on the palate. The physical SmartPalate
+device specification and the post-export experimental repre-
+sentation used in this paper are not identical. Table I specifies
+the number of aligned channels, the surrogate grid, missing
+placements, and duplicate placements.
+B. Samples and Labels
+Each sample consists of a variable-length EPG contact
+sequence and the word label that the participant attempted
+to spell. Labels are treated as character strings, not as word
+classes. For example, when the target word of a trial is a par-
+ticular English word, the model learns the character sequence
+rather than treating the word as a single class identifier. This
+design makes EPGSpeller a silent spelling recognizer rather
+than a finite word classifier.
+In a word classifier, the output space is restricted to a
+vocabulary defined at training or evaluation time. In a string
+decoder, the recognizer can output character sequences and can
+therefore, in principle, compose words that never appeared as
+a single word class during training. The evaluation target is
+how accurately the character string corresponding to the target
+word can be decoded from the EPG contact time series.
+For the primary evaluation, we use character-string output
+before lexicon projection; lexicon-projected metrics are auxil-
+iary (Table III).
+C. Dataset
+This
+paper
+uses
+EPG
+recordings
+derived
+from
+SilentSpeller
+[9].
+The
+data
+consist
+of
+silent
+spelling
+trials recorded with a SmartPalate-style intraoral sensor. The
+number of trials, word labels, sequence length, and mean
+contact rate differ across participants. These differences are
+important for interpreting later results. Within-user recognition
+measures performance when sufficient calibration data are
+available; cross-user transfer may manifest differences in
+contact rate, articulatory style, sensor placement, and oral
+anatomy as errors.
+Table II summarizes the dataset for each participant. p1
+and p2 each contain 2328 trials and 1164 word labels. p3
+
+
+TABLE II
+OVERVIEW OF THE SILENTSPELLER-DERIVED DATASET (PART.:
+PARTICIPANT; TRI.: TRIALS; LAB.: WORD LABELS; FR.: MEAN SEQUENCE
+LENGTH IN FRAMES; CR.: MEAN CONTACT RATE).
+Part.
+Tri. Lab. Fr.
+Cr.
+p1
+2328 1164 234 0.19
+p2
+2328 1164 196 0.20
+p3
+2797 1164 283 0.12
+p4
+1167 1162 229 0.19
+contains 2797 trials and 1164 word labels, with a lower mean
+contact rate than the other participants; p4 contains 1167 trials
+and 1162 word labels with lower repetition density. Protocol
+labels P1–P3 denote evaluation splits; participant ids p1–p4
+denote SilentSpeller recordings (Table II). These participant-
+level differences motivate treating protocols P1/P2 as within-
+user upper-bound conditions and P3 as the primary transfer
+bottleneck rather than pooling participants. Because of p4’s
+lower repetition density, the same calibration conditions as
+the other participants cannot be set for some within-user
+evaluations.
+p1/p2 support within-user and calibration evaluation; p3 is
+the primary transfer and k-shot target; p4 is mainly a transfer
+target (lower repetition density).
+For p1 and p2, repetitions per word are relatively balanced,
+making it easier to construct within-user unseen-word evalu-
+ation and low-shot calibration evaluation. By contrast, p4 has
+fewer trials relative to the number of word labels and cannot
+provide sufficient conditions with multiple repetitions of the
+same word. Therefore, p4 is treated mainly as a cross-user
+transfer target and is not mechanically included in all within-
+user and calibration conditions.
+D. Task Definition and Metrics
+The primary task in this paper is to decode a character
+string from an EPG contact time series. The input is a contact
+frame sequence of varying length. The output is a normalized
+alphabetic character string. The model is not given frame-level
+character boundaries and learns the correspondence between
+the contact sequence of an entire trial and the word label.
+Accordingly, the recognizer described in later sections uses the
+connectionist temporal classification (CTC) framework [10].
+The primary metric is character error rate (CER) computed
+from greedy string decoding based on edit distance between
+the output string and the reference string before lexicon
+projection. Lexicon-projected error (LEX) and real-time factor
+(RTF) are supplementary diagnostics (Table III).
+Evaluation conditions are divided into within-user calibra-
+tion, unseen-word generalization, and cross-user transfer with-
+out target calibration; detailed definitions appear in Section IV
+(Table V).
+TABLE III
+TASK DEFINITION AND PRIMARY EVALUATION.
+Item
+Definition
+Role
+Input
+EPG contact frame sequence Not an acoustic waveform
+Target
+Normalized character string
+Not a word class
+Primary decode Greedy string decoding
+No vocabulary list
+Primary metric CER
+Before lexicon projection
+LEX / RTF
+Projection / inference cost
+Supplementary diagnostics
+III. EPGSPELLER RECOGNITION SYSTEM
+This section defines the EPGSpeller recognition system.
+EPGSpeller provides a recognition layer for greedy character-
+string decoding on top of the input modality demonstrated by
+SilentSpeller [9].
+A. Overview and CTC Decoding
+EPGSpeller is a sequence recognizer that takes elec-
+tropalatographic contact frame sequences and outputs the
+corresponding character strings. Each trial is a variable-length
+contact sequence; character boundaries and phoneme bound-
+aries are not provided. The primary output path is lexicon-free
+greedy character-string decoding defined in Section II-D.
+In silent-spelling EPG sequences, the correspondence be-
+tween each frame and a character is not explicit. Participants
+articulate continuously, and tongue–palate contact is not seg-
+mented at the character level. EPGSpeller uses connectionist
+temporal classification (CTC) for this alignment [10]. CTC
+learns sequence outputs without frame-level labels by col-
+lapsing frame-level outputs that include blank symbols and
+repetitions into the final character string.
+B. Main Recognizer: Vector/GRU Path
+In the main recognizer, each electropalatographic frame is
+treated as a flat contact vector. The temporal recognizer is a
+GRU-based recurrent CTC decoder. We treat this vector/GRU
+CTC path as the main recognizer throughout the paper. The
+central claim that electropalatographic silent spelling can
+support greedy character-string decoding when personalized
+calibration is available is evaluated on this main recognizer
+and greedy decoding.
+Multichannel contact frames are mapped through an input
+projection into a representation that the sequence recognizer
+can process efficiently. Along the time axis, compression
+reduces sequence length while preserving local context. Dur-
+ing training, we apply dropout, noise injection, smoothing,
+and SpecAugment-style temporal and channel regularization
+to improve robustness to contact-position variability, missing
+channels, and participant-specific differences [11].
+C. Spatial Front Ends and Electrode Reduction
+SmartPalate contact channels have a layout on the palate.
+We compare row-column, grid, and patch front ends to test
+
+
+TABLE IV
+BOUNDARY BETWEEN MAIN RECOGNIZER AND DESIGN ANALYSES.
+Element
+Used for claims? Role
+vector/GRU CTC + greedy decode Yes
+Primary lexicon-free result
+LEX projection
+No
+Closed-vocabulary diagnostic
+Spatial / electrode variants
+No
+Engineering analyses
+Preprocessing controls
+No
+Transfer-gap interpretation
+whether spatial structure helps electropalatographic silent-
+spelling recognition. The row-column front end summarizes
+contact patterns on the surrogate palatal grid into row-wise and
+column-wise activity. Grid and patch front ends use local spa-
+tial structure more explicitly, but electropalatographic contact
+is sparse and strongly participant-dependent, so a strong two-
+dimensional spatial assumption is not always advantageous.
+Results in Section V show that the flat vector/GRU path
+remains competitive on P1.
+We also compare contact-frequency-based selection, spa-
+tially dispersed selection, ranking transfer from other partic-
+ipants, and random subsets to examine whether recognition
+performance can be preserved with fewer channels. Electrode
+reduction and missing-channel robustness are engineering
+analyses; they are not primary means of solving cross-user
+transfer. Later analyses indicate that K = 64 channels retain
+near-main P1/P2 performance for the selection methods tested.
+D. Implementation Details
+The main recognizer connects a CTC output layer to a
+bidirectional GRU (nunits = 1024, nlayers = 5); input projec-
+tion maps contact-channel representations to 256 dimensions.
+Along time, compression with kernel length 32 and stride 4
+reduces sequence length. The output has 40 classes (26 al-
+phabet letters, blank, CTC blank, and other special symbols).
+Training uses batch size 64, fixed learning rate 0.02, L2
+regularization coefficient 10−5, dropout rate 0.4, and 10,000
+training steps. Data augmentation applies SpecAugment-style
+temporal masking (T
+= 12, rate 0.4), electrode masking
+(F = 6, rate 0.4), and time warping (W = 0.05, rate 0.2), plus
+noise and smoothing. Results are averaged over four trials with
+random seeds 0–3; mean and standard deviation are reported.
+In PCA variants, 120 contact channels are compressed to 16
+principal components before input projection. Key hyperpa-
+rameters are listed in the supplementary configuration table.
+Spatial front ends, electrode reduction, and regularization
+are engineering design comparisons for representing and sim-
+plifying SmartPalate-style electropalatographic signals. The
+next section defines the evaluation conditions under which this
+recognizer is compared.
+IV. EVALUATION SETUP AND DECODING CONDITIONS
+This section fixes how EPGSpeller is compared across
+evaluation conditions and which metrics support the central
+claims. The core evaluation of EPGSpeller is character-string
+TABLE V
+EVALUATION CONDITION MAP. EACH CONDITION CORRESPONDS TO A
+DIFFERENT PRACTICAL QUESTION.
+Cond.
+Question
+Split / role
+P1
+Can unseen words be spelled? Word label; within-user
+P2
+Can another repetition be rec-
+ognized?
+Trial repetition; optimistic
+P3
+Can the model transfer as is?
+Participant; bottleneck
+P3MS
+Do multiple sources help?
+Multi-src transfer
+Multi-
+src
+Source combination label
+Same as P3MS
+k-shot
+Does performance recover?
+Cal. examples per word
+SS
+bridge
+Unseen-word layer strength?
+100 held words on p1
+decoding without lexicon projection. Within-user recognition,
+unseen-word recognition, cross-user transfer, and low-shot
+calibration each answer a distinct question.
+A. Evaluation Conditions
+EPGSpeller evaluation separates recognition questions rele-
+vant to future AAC systems. Within-user conditions measure
+how accurately character strings can be decoded when the rec-
+ognizer is trained on data from the target user. Word-holdout
+conditions measure whether spelling recognition generalizes
+to word labels not seen during training. Cross-user transfer
+conditions measure whether a recognizer trained on other
+users can be reused without target-user calibration data. Low-
+shot calibration conditions measure how much performance
+recovers when a few calibration examples are obtained from
+a new user.
+P1 (word holdout, within user) is the primary evidence
+for lexicon-free spelling with personalized calibration. P2
+(instance holdout, within user) is treated as a near-upper-bound
+within-user condition. P3 (cross-user transfer) is the primary
+evidence for the calibration bottleneck. Multi-source transfer,
+low-shot calibration, and the SilentSpeller bridge condition
+are auxiliary. Multi-source transfer (Multi-src; P3MS when
+multiple sources train before cross-user evaluation) trains on
+combinations of source participants before evaluating on a
+held-out target user. The SilentSpeller bridge (SS bridge) is
+a controlled unseen-word diagnostic on participant p1; it does
+not reproduce the original interactive SilentSpeller system.
+Direct comparison with the SilentSpeller-era recognizer and
+modern alternative decoders (beam search, language-model
+integration, attention-based encoder–decoder, and others) is
+outside the scope of this paper and is left for future work.
+B. Metrics and Decoding Conditions
+The primary metric is character error rate (CER) from
+greedy character-string decoding without lexicon projection.
+Lexicon-projected error (LEX) and real-time factor (RTF)
+are auxiliary diagnostics for closed-vocabulary conditions and
+inference cost; actual entry speed also depends on articulation
+rate, correction, feedback, and fatigue.
+
+
+TABLE VI
+LOW-SHOT CALIBRATION FEASIBILITY ON P3 (REQ.: REQUIRED
+REPETITIONS PER WORD; FEAS.: FEASIBLE VOCABULARY SIZE).
+k Req. rep./word Feas. vocab 50-word eval
+0 1
+1164
+Yes
+1 2
+1164
+Yes
+2 3
+363
+Yes
+4 5
+14
+No
+8 9
+0
+No
+C. Low-Shot Calibration and Controls
+In low-shot calibration evaluation, k-shot calibration obtains
+k examples per word label from the target user for words that
+appeared during training; it is distinct from generalization to
+unseen words not present during training (P1). Feasibility is
+constrained by per-word repetition density, not only by total
+trial count. We evaluate low-shot calibration within the range
+supported by the current data: k = 1 and k = 2 on p3; k = 4
+is limited to 14 words; k = 8 is infeasible. These counts
+follow directly from per-word repetition in the public release
+and explain why higher-k curves cannot yet be reported as
+standard benchmarks.
+The SilentSpeller bridge performs controlled unseen-word
+diagnosis under the same input modality (Section IV). Spatial
+front ends, electrode reduction, preprocessing controls, and
+lexicon projection support interpretation but do not replace
+P1–P3. P1, P2, and P3 answer different questions; we do not
+report a pooled average across them.
+Counts follow per-word repetition in the public SilentSpeller
+release.
+V. RESULTS
+This section presents EPGSpeller results as a single narra-
+tive organized around the protocol map in Table V. We first
+compare within-user conditions with user calibration against
+cross-user transfer using the main vector/GRU recognizer and
+greedy string decoding before lexicon projection. We then con-
+nect to SilentSpeller-style unseen-word evaluation, evaluate
+low-shot calibration, multi-source transfer, and preprocessing
+controls, and summarize engineering analyses.
+A. Main Results: Strong Within-User Performance, Large
+Cross-User Degradation
+Table VII summarizes the main results. With the same vec-
+tor/GRU recognizer and greedy string decoding, there is a large
+gap between within-user conditions with target-user calibration
+and cross-user transfer without it. P1 (word holdout, within
+user) reaches 0.1796±0.0844 CER (mean ± std over four
+random seeds). P2 (instance holdout, within user) reaches
+0.1451±0.0627 CER (three seeds). In contrast, P3 (cross-
+user transfer) degrades to 0.6909±0.1332 CER (six transfer
+directions). The P1/P2 mean ± std values are aggregated over
+random-seed repeats (n = 4 and n = 3, respectively); P3
+TABLE VII
+MAIN RESULTS FOR THE VECTOR/GRU RECOGNIZER (MEAN ± STD). n =
+SEEDS (P1/P2) OR DIRECTIONS (P3). LEX: LEXICON-PROJECTED CER;
+RTF: REAL-TIME FACTOR.
+Cond. CER
+LEX
+RTF
+P1
+0.1796±0.0844 0.1018±0.0679 0.000628±0.000232
+P2
+0.1451±0.0627 0.0747±0.0476 0.000107±0.000010
+P3
+0.6909±0.1332 0.6442±0.0604 0.000110±0.000014
+TABLE VIII
+LOW-SHOT CALIBRATION AND EVALUABILITY ON P3 (CER MEAN ± STD).
+Condition
+CER
+n
+Zero-shot, single source 0.8403±0.0948 8
+Zero-shot, multi-source
+0.8381±0.0336 4
+k = 1
+0.3503±0.0600 4
+k = 2
+0.2458±0.0085 4
+k = 4
+— (14 words)
+—
+k = 8
+infeasible
+0
+is aggregated over transfer directions (n = 6). A P1 CER
+of 0.18 corresponds roughly to one edit error per five to six
+characters on average (word length dependent). A P3 CER of
+0.69 corresponds roughly to one error per three characters;
+after k = 1 calibration, 0.35 corresponds roughly to slightly
+less than one error per three characters. Lexicon-projected
+values (LEX) are reported as a supplementary diagnostic for
+closed-vocabulary conditions. LEX further reduces error under
+within-user conditions, but the lexicon-free claim rests on CER
+before lexicon projection.
+B. SilentSpeller Bridge and Low-Shot Calibration
+We assess an auxiliary SilentSpeller bridge on participant
+p1 with 100 held-out test words from the same release. The
+vector/GRU recognizer reaches 0.1133±0.0128 CER averaged
+over four seeds under this non-interactive setup. This sanity
+check confirms unseen-word decoding within the release in-
+ventory; it does not compare against SilentSpeller-era interac-
+tive decoders (deferred; Section IV).
+Low-shot calibration experiments make the weakness of
+cross-user transfer concrete as a calibration-quantity prob-
+lem. On p3, zero-shot single-source transfer remains at
+0.8403±0.0948 CER (n = 8), and zero-shot multi-source
+transfer at 0.8381±0.0336 CER (n = 4). Using one example
+per word from the target user improves to 0.3503±0.0600 CER
+(n = 4); using two examples per word improves further to
+0.2458±0.0085 CER (n = 4). Standard evaluation of higher-
+k calibration curves is constrained by the currently available
+public data (Table VI); nevertheless, the k = 1 and k = 2
+points show that a small amount of target-user data yields
+large recovery relative to zero-shot transfer.
+C. Transfer Controls and Engineering Analyses
+Transfer controls test whether multi-source training or
+simple preprocessing can close the cross-user gap without
+
+
+TABLE IX
+ENGINEERING ANALYSES: SPATIAL FRONT ENDS AND ELECTRODE
+REDUCTION (GREEDY CER, MEAN ± STD).
+(a) P1 spatial front end
+Front end
+CER
+vector/GRU 0.18±0.08
+row-column 0.20±0.09
+grid
+0.31±0.15
+patch
+0.30±0.07
+(b) K = 64 electrode reduction
+Protocol Method CER
+P1
+top-k
+0.195±0.083
+P1
+spatial
+0.191±0.078
+P2
+top-k
+0.154±0.059
+P2
+spatial
+0.154±0.062
+target-user calibration. Multi-source transfer partially improves
+cross-user performance but does not resolve the calibration
+problem. When p4 is the target user, single-source cross-user
+transfer with all training sources to p4 (P3) reaches 0.686
+CER, whereas multi-source transfer (P3MS) reaches 0.582
+CER—both remain far above the within-user P1/P2 range in
+Table VII (roughly 0.15–0.18 CER). Preprocessing controls
+test whether cross-user failure can be explained by simple
+scale differences or contact-rate mismatch alone. A sweep
+over raw input, standardization, contact-rate matching, target-
+neighborhood distribution normalization, and PCA-based stan-
+dardization leaves best protocol averages at 0.6426 for P3 and
+0.5692 for P3MS.
+We analyze how SmartPalate signals should be represented
+and how future devices might be simplified. On P1, the
+vector/GRU path reaches 0.18±0.08 CER; row-column pool-
+ing is close at 0.20±0.09, whereas grid and patch variants
+degrade to roughly 0.31±0.15 and 0.30±0.07 (four seeds;
+Table IX(a)). Two-dimensional grid assumptions are therefore
+not consistently advantageous on sparse, user-specific contacts.
+Electrode reduction at K = 64 channels retains near-
+main P1/P2 performance across top-k, spatial, transfer-ranked,
+and random selection (Table IX(b)). Augmentation suppresses
+degradation from local missing contacts and channel dropout.
+None of these engineering analyses closes the P3 cross-user
+gap.
+Within-user calibration supports greedy string decoding on
+the release inventory; cross-user transfer and preprocessing
+controls leave error far above that range, while low-shot
+target-user data yields partial recovery (Tables VII and VIII).
+Section VI interprets calibration limits.
+VI. DISCUSSION
+A. Findings and Calibration Bottleneck
+Cross-user failure likely reflects contact-rate mismatch,
+articulatory differences, and sensor placement rather than
+decoder architecture alone (Table IX). Multi-source training
+(P3MS) and preprocessing controls shift cross-user CER only
+marginally relative to the within-user gap in Table VII. Prior
+work established EPG silent spelling as an input modal-
+ity [9]; this paper quantifies greedy string-decoding accuracy
+and calibration cost on that modality. Within-user CER near
+0.15–0.18 indicates feasibility of the offline recognizer, not
+proven interactive usability; deployment must still account for
+correction burden and fatigue.
+The central limitation is calibration, not inference speed.
+Cross-user transfer degrades sharply, and multi-source transfer
+plus simple preprocessing controls do not close the gap to
+within-user performance. Low-shot results show that zero-
+shot transfer is weak but a few target-user examples yield
+large recovery; higher-k curves remain constrained by per-
+word repetition density in the public data (Table VI).
+B. Limitations, Ethics, and Reproducibility
+Hands-free string decoding without vocalization may help
+settings where speech or hand input cannot be assumed, but fit,
+hygiene, correction interfaces, and user learning burden remain
+system-design questions beyond this offline study. This paper
+evaluates a public EPG spelling release under that dataset’s
+consent conditions; EPGSpeller performs offline evaluation
+only, with dedicated devices per participant.
+Limitations include four healthy participants (not clinical
+AAC users), offline recognition without interactive speed or
+comfort evaluation, a SilentSpeller bridge that differs from that
+system’s interactive setup, infeasible high-k held-word proto-
+cols at current repetition density (k = 4 on 14 words for p3),
+and deferred external decoder baselines (in-task architectural
+baselines in Table IX bound representation choices instead).
+Future deployment work must evaluate correction interfaces,
+candidate presentation, and user learning burden in addition to
+offline CER. Reproducibility: train, validation, and test splits,
+per-split sample counts, and label multiplicities are logged
+per protocol and seed; hyperparameters and tabulated results
+are provided in the supplementary materials for independent
+verification.
+VII. CONCLUSION
+Greedy string decoding from EPG contact sequences is fea-
+sible under within-user calibration on the SilentSpeller word
+inventory, remains poor without target-user data despite multi-
+source transfer and preprocessing, and improves markedly
+with a handful of target-user examples (Tables VII and VIII).
+We do not claim user-independent deployment or superiority
+over external decoder families deferred to future work. The
+next challenge is calibration-efficient personalization, short
+calibration sessions, source-user selection, LM-assisted correc-
+tion, and denser per-word repetition for higher-k benchmarks;
+deployment studies must measure correction burden, fatigue,
+and wearability beyond offline CER. Replication is supported
+by exported splits, per-k feasibility counts, and tabulated
+results in the supplementary materials.
+
+
+REFERENCES
+[1] B. Denby, T. Schultz, K. Honda, T. Hueber, J. Gilbert, and J. Brumberg,
+“Silent speech interfaces,” 2010.
+[2] J. Freitas, A. Teixeira, M. S. Dias, and S. Silva, An Introduction to
+Silent Speech Interfaces, ser. SpringerBriefs in Electrical and Computer
+Engineering.
+Springer, 2017.
+[3] J. A. Gonzalez-Lopez, A. Gomez-Alanis, J. M. Martin Donas, J. L.
+Perez-Cordoba, and A. M. Gomez, “Silent speech interfaces for speech
+restoration: A review,” 2020.
+[4] T. Hueber, E.-L. Benaroya, G. Chollet, B. Denby, G. Dreyfus, and
+M. Stone, “Development of a silent speech interface driven by ultrasound
+and optical images of the tongue and lips,” 2010.
+[5] X. Dong, Y. Chen, Y. Nishiyama, K. Sezaki, Y. Wang, K. Christofferson,
+and A. Mariakakis, “Rehearsse: Recognizing hidden-in-the-ear silently
+spelled expressions,” 2024.
+[6] W. Hardcastle, W. Jones, C. Knight, A. Trudgeon, and G. Calder, “New
+developments in electropalatography: A state-of-the-art report,” 1989.
+[7] W. J. Hardcastle, “Electropalatography in phonetic research and in
+speech training,” 1990.
+[8] J. Verhoeven, N. R. Miller, L. Daems, and C. C. Reyes-Aldasoro, “Vi-
+sualisation and analysis of speech production with electropalatography,”
+2019.
+[9] N. Kimura, T. Gemicioglu, J. Womack, R. Li, Y. Zhao, A. Bedri, Z. Su,
+A. Olwal, J. Rekimoto, and T. Starner, “Silentspeller: Towards mobile,
+hands-free, silent speech text entry using electropalatography,” 2022.
+[10] A. Graves, S. Fern´andez, F. Gomez, and J. Schmidhuber, “Connectionist
+temporal classification,” 2006.
+[11] D. S. Park, W. Chan, Y. Zhang, C.-C. Chiu, B. Zoph, E. D. Cubuk,
+and Q. V. Le, “Specaugment: A simple data augmentation method for
+automatic speech recognition,” 2019.

@@ -1,0 +1,3958 @@
+{
+  "created_at": "2026-02-25",
+  "dropped_words": [
+    {
+      "count": 2,
+      "label": "ABANDONED"
+    },
+    {
+      "count": 2,
+      "label": "ACCEPT"
+    },
+    {
+      "count": 2,
+      "label": "ACCEPTANCE"
+    },
+    {
+      "count": 2,
+      "label": "ACCIDENT"
+    },
+    {
+      "count": 2,
+      "label": "ACCOMPANIED"
+    },
+    {
+      "count": 2,
+      "label": "ACCORDING"
+    },
+    {
+      "count": 2,
+      "label": "ADVANCE"
+    },
+    {
+      "count": 2,
+      "label": "AFRAID"
+    },
+    {
+      "count": 2,
+      "label": "AGES"
+    },
+    {
+      "count": 2,
+      "label": "AGREE"
+    },
+    {
+      "count": 2,
+      "label": "AGREEMENT"
+    },
+    {
+      "count": 2,
+      "label": "AHEAD"
+    },
+    {
+      "count": 2,
+      "label": "ALGORITHM"
+    },
+    {
+      "count": 2,
+      "label": "ALLIGATOR"
+    },
+    {
+      "count": 2,
+      "label": "ALLOTTED"
+    },
+    {
+      "count": 2,
+      "label": "ALMOST"
+    },
+    {
+      "count": 2,
+      "label": "AND"
+    },
+    {
+      "count": 2,
+      "label": "ANIMAL"
+    },
+    {
+      "count": 2,
+      "label": "ANNIVERSARY"
+    },
+    {
+      "count": 2,
+      "label": "ANNOUNCE"
+    },
+    {
+      "count": 2,
+      "label": "ANY"
+    },
+    {
+      "count": 2,
+      "label": "ANYMORE"
+    },
+    {
+      "count": 2,
+      "label": "APARTMENTS"
+    },
+    {
+      "count": 2,
+      "label": "APPEARS"
+    },
+    {
+      "count": 2,
+      "label": "APPLE"
+    },
+    {
+      "count": 2,
+      "label": "APPOINTMENT"
+    },
+    {
+      "count": 2,
+      "label": "ARE"
+    },
+    {
+      "count": 2,
+      "label": "ARGUING"
+    },
+    {
+      "count": 2,
+      "label": "AROUND"
+    },
+    {
+      "count": 2,
+      "label": "ASKED"
+    },
+    {
+      "count": 2,
+      "label": "ASPIRATIONS"
+    },
+    {
+      "count": 2,
+      "label": "ASSAULT"
+    },
+    {
+      "count": 2,
+      "label": "ASSIGNMENT"
+    },
+    {
+      "count": 2,
+      "label": "ASTONISHMENT"
+    },
+    {
+      "count": 2,
+      "label": "AT"
+    },
+    {
+      "count": 2,
+      "label": "ATHLETES"
+    },
+    {
+      "count": 2,
+      "label": "AWARE"
+    },
+    {
+      "count": 2,
+      "label": "BACK"
+    },
+    {
+      "count": 2,
+      "label": "BAKING"
+    },
+    {
+      "count": 2,
+      "label": "BALL"
+    },
+    {
+      "count": 2,
+      "label": "BALONEY"
+    },
+    {
+      "count": 2,
+      "label": "BARE"
+    },
+    {
+      "count": 2,
+      "label": "BAROQUE"
+    },
+    {
+      "count": 2,
+      "label": "BASES"
+    },
+    {
+      "count": 2,
+      "label": "BATH"
+    },
+    {
+      "count": 2,
+      "label": "BATTLES"
+    },
+    {
+      "count": 2,
+      "label": "BEARS"
+    },
+    {
+      "count": 2,
+      "label": "BEEN"
+    },
+    {
+      "count": 2,
+      "label": "BEFORE"
+    },
+    {
+      "count": 2,
+      "label": "BEGINNING"
+    },
+    {
+      "count": 2,
+      "label": "BEST"
+    },
+    {
+      "count": 2,
+      "label": "BETWEEN"
+    },
+    {
+      "count": 2,
+      "label": "BEWARE"
+    },
+    {
+      "count": 2,
+      "label": "BIKE"
+    },
+    {
+      "count": 2,
+      "label": "BILLS"
+    },
+    {
+      "count": 2,
+      "label": "BIRTH"
+    },
+    {
+      "count": 2,
+      "label": "BITES"
+    },
+    {
+      "count": 2,
+      "label": "BLAST"
+    },
+    {
+      "count": 2,
+      "label": "BLAZED"
+    },
+    {
+      "count": 2,
+      "label": "BLOCKED"
+    },
+    {
+      "count": 2,
+      "label": "BLUES"
+    },
+    {
+      "count": 2,
+      "label": "BONE"
+    },
+    {
+      "count": 2,
+      "label": "BOOKS"
+    },
+    {
+      "count": 2,
+      "label": "BORING"
+    },
+    {
+      "count": 2,
+      "label": "BORROWER"
+    },
+    {
+      "count": 2,
+      "label": "BOYS"
+    },
+    {
+      "count": 2,
+      "label": "BREAKS"
+    },
+    {
+      "count": 2,
+      "label": "BRING"
+    },
+    {
+      "count": 2,
+      "label": "BROKE"
+    },
+    {
+      "count": 2,
+      "label": "BROKEN"
+    },
+    {
+      "count": 2,
+      "label": "BROWN"
+    },
+    {
+      "count": 2,
+      "label": "BROWSER"
+    },
+    {
+      "count": 2,
+      "label": "BUCKLE"
+    },
+    {
+      "count": 2,
+      "label": "BULLET"
+    },
+    {
+      "count": 2,
+      "label": "BURGLARS"
+    },
+    {
+      "count": 2,
+      "label": "BURIED"
+    },
+    {
+      "count": 2,
+      "label": "BUS"
+    },
+    {
+      "count": 2,
+      "label": "BUSINESS"
+    },
+    {
+      "count": 2,
+      "label": "BUSY"
+    },
+    {
+      "count": 2,
+      "label": "BUT"
+    },
+    {
+      "count": 2,
+      "label": "BYPASS"
+    },
+    {
+      "count": 2,
+      "label": "CALL"
+    },
+    {
+      "count": 2,
+      "label": "CALLED"
+    },
+    {
+      "count": 2,
+      "label": "CAMERA"
+    },
+    {
+      "count": 2,
+      "label": "CAMPING"
+    },
+    {
+      "count": 2,
+      "label": "CAN"
+    },
+    {
+      "count": 2,
+      "label": "CANADA"
+    },
+    {
+      "count": 2,
+      "label": "CANCER"
+    },
+    {
+      "count": 2,
+      "label": "CANNOT"
+    },
+    {
+      "count": 2,
+      "label": "CAPE"
+    },
+    {
+      "count": 2,
+      "label": "CAPITALIST"
+    },
+    {
+      "count": 2,
+      "label": "CAR"
+    },
+    {
+      "count": 2,
+      "label": "CARD"
+    },
+    {
+      "count": 2,
+      "label": "CARDS"
+    },
+    {
+      "count": 2,
+      "label": "CARE"
+    },
+    {
+      "count": 2,
+      "label": "CARELESS"
+    },
+    {
+      "count": 2,
+      "label": "CARES"
+    },
+    {
+      "count": 2,
+      "label": "CARS"
+    },
+    {
+      "count": 2,
+      "label": "CAT"
+    },
+    {
+      "count": 2,
+      "label": "CENTURY"
+    },
+    {
+      "count": 2,
+      "label": "CHAMBER"
+    },
+    {
+      "count": 2,
+      "label": "CHANCELLOR"
+    },
+    {
+      "count": 2,
+      "label": "CHANGED"
+    },
+    {
+      "count": 2,
+      "label": "CHECKS"
+    },
+    {
+      "count": 2,
+      "label": "CHEMICAL"
+    },
+    {
+      "count": 2,
+      "label": "CHEMISTRY"
+    },
+    {
+      "count": 2,
+      "label": "CHEVY"
+    },
+    {
+      "count": 2,
+      "label": "CHILD"
+    },
+    {
+      "count": 2,
+      "label": "CHILDREN"
+    },
+    {
+      "count": 2,
+      "label": "CHOCOLATE"
+    },
+    {
+      "count": 2,
+      "label": "CIRCUMSTANCES"
+    },
+    {
+      "count": 2,
+      "label": "CITY"
+    },
+    {
+      "count": 2,
+      "label": "CLAUS"
+    },
+    {
+      "count": 2,
+      "label": "CLOSED"
+    },
+    {
+      "count": 2,
+      "label": "COLD"
+    },
+    {
+      "count": 2,
+      "label": "COLLAPSE"
+    },
+    {
+      "count": 2,
+      "label": "COME"
+    },
+    {
+      "count": 2,
+      "label": "COMING"
+    },
+    {
+      "count": 2,
+      "label": "COMMENT"
+    },
+    {
+      "count": 2,
+      "label": "COMMUNICATE"
+    },
+    {
+      "count": 2,
+      "label": "COMPLAINTS"
+    },
+    {
+      "count": 2,
+      "label": "COMPLETELY"
+    },
+    {
+      "count": 2,
+      "label": "CONCENTRATE"
+    },
+    {
+      "count": 2,
+      "label": "CONFERENCES"
+    },
+    {
+      "count": 2,
+      "label": "CONNECTED"
+    },
+    {
+      "count": 2,
+      "label": "CONSCIENCE"
+    },
+    {
+      "count": 2,
+      "label": "CONSEQUENCES"
+    },
+    {
+      "count": 2,
+      "label": "CONSTRUCTION"
+    },
+    {
+      "count": 2,
+      "label": "CONTEST"
+    },
+    {
+      "count": 2,
+      "label": "CONTRAST"
+    },
+    {
+      "count": 2,
+      "label": "CORONATION"
+    },
+    {
+      "count": 2,
+      "label": "CORRECTION"
+    },
+    {
+      "count": 2,
+      "label": "COTTAGE"
+    },
+    {
+      "count": 2,
+      "label": "COTTON"
+    },
+    {
+      "count": 2,
+      "label": "COUNTRY"
+    },
+    {
+      "count": 2,
+      "label": "COUPON"
+    },
+    {
+      "count": 2,
+      "label": "COURSE"
+    },
+    {
+      "count": 2,
+      "label": "COURT"
+    },
+    {
+      "count": 2,
+      "label": "COURTS"
+    },
+    {
+      "count": 2,
+      "label": "CRIME"
+    },
+    {
+      "count": 2,
+      "label": "CROWDED"
+    },
+    {
+      "count": 2,
+      "label": "CUPS"
+    },
+    {
+      "count": 2,
+      "label": "CURVE"
+    },
+    {
+      "count": 2,
+      "label": "CUT"
+    },
+    {
+      "count": 2,
+      "label": "DARING"
+    },
+    {
+      "count": 2,
+      "label": "DAUGHTERS"
+    },
+    {
+      "count": 2,
+      "label": "DAY"
+    },
+    {
+      "count": 2,
+      "label": "DEED"
+    },
+    {
+      "count": 2,
+      "label": "DENIAL"
+    },
+    {
+      "count": 2,
+      "label": "DESERVE"
+    },
+    {
+      "count": 2,
+      "label": "DETAILS"
+    },
+    {
+      "count": 2,
+      "label": "DETECTOR"
+    },
+    {
+      "count": 2,
+      "label": "DEWDROP"
+    },
+    {
+      "count": 2,
+      "label": "DICTION"
+    },
+    {
+      "count": 2,
+      "label": "DINE"
+    },
+    {
+      "count": 2,
+      "label": "DINOSAURS"
+    },
+    {
+      "count": 2,
+      "label": "DIPLOMACY"
+    },
+    {
+      "count": 2,
+      "label": "DIPPED"
+    },
+    {
+      "count": 2,
+      "label": "DIRECTION"
+    },
+    {
+      "count": 2,
+      "label": "DISCHARGED"
+    },
+    {
+      "count": 2,
+      "label": "DISGUSTING"
+    },
+    {
+      "count": 2,
+      "label": "DISTURBANCE"
+    },
+    {
+      "count": 2,
+      "label": "DOCTOR"
+    },
+    {
+      "count": 2,
+      "label": "DOES"
+    },
+    {
+      "count": 2,
+      "label": "DOG"
+    },
+    {
+      "count": 2,
+      "label": "DOLPHINS"
+    },
+    {
+      "count": 2,
+      "label": "DOOR"
+    },
+    {
+      "count": 2,
+      "label": "DORMITORY"
+    },
+    {
+      "count": 2,
+      "label": "DOUBLE"
+    },
+    {
+      "count": 2,
+      "label": "DOW"
+    },
+    {
+      "count": 2,
+      "label": "DOWN"
+    },
+    {
+      "count": 2,
+      "label": "DREAM"
+    },
+    {
+      "count": 2,
+      "label": "DRESS"
+    },
+    {
+      "count": 2,
+      "label": "DRINK"
+    },
+    {
+      "count": 2,
+      "label": "DRIVERS"
+    },
+    {
+      "count": 2,
+      "label": "DRIVING"
+    },
+    {
+      "count": 2,
+      "label": "DROVE"
+    },
+    {
+      "count": 2,
+      "label": "DRUGS"
+    },
+    {
+      "count": 2,
+      "label": "DRY"
+    },
+    {
+      "count": 2,
+      "label": "DUCK"
+    },
+    {
+      "count": 2,
+      "label": "EACH"
+    },
+    {
+      "count": 2,
+      "label": "EARTH"
+    },
+    {
+      "count": 2,
+      "label": "EAST"
+    },
+    {
+      "count": 2,
+      "label": "EAT"
+    },
+    {
+      "count": 2,
+      "label": "EDITION"
+    },
+    {
+      "count": 2,
+      "label": "EDUCATION"
+    },
+    {
+      "count": 2,
+      "label": "EFFORT"
+    },
+    {
+      "count": 2,
+      "label": "EFFORTS"
+    },
+    {
+      "count": 2,
+      "label": "EIGHT"
+    },
+    {
+      "count": 2,
+      "label": "ELECTIONS"
+    },
+    {
+      "count": 2,
+      "label": "ELECTRIC"
+    },
+    {
+      "count": 2,
+      "label": "ELEPHANTS"
+    },
+    {
+      "count": 2,
+      "label": "ELEVATOR"
+    },
+    {
+      "count": 2,
+      "label": "EMAIL"
+    },
+    {
+      "count": 2,
+      "label": "EMPIRE"
+    },
+    {
+      "count": 2,
+      "label": "ENCOURAGEMENT"
+    },
+    {
+      "count": 2,
+      "label": "ENGINE"
+    },
+    {
+      "count": 2,
+      "label": "ENJOY"
+    },
+    {
+      "count": 2,
+      "label": "ENLARGED"
+    },
+    {
+      "count": 2,
+      "label": "ENOUGH"
+    },
+    {
+      "count": 2,
+      "label": "ENTIRE"
+    },
+    {
+      "count": 2,
+      "label": "EQUATION"
+    },
+    {
+      "count": 2,
+      "label": "EVENTUALLY"
+    },
+    {
+      "count": 2,
+      "label": "EVERY"
+    },
+    {
+      "count": 2,
+      "label": "EVERYBODY"
+    },
+    {
+      "count": 2,
+      "label": "EVERYDAY"
+    },
+    {
+      "count": 2,
+      "label": "EVERYONE"
+    },
+    {
+      "count": 2,
+      "label": "EVERYWHERE"
+    },
+    {
+      "count": 2,
+      "label": "EXAMPLE"
+    },
+    {
+      "count": 2,
+      "label": "EXCEED"
+    },
+    {
+      "count": 2,
+      "label": "EXCHANGE"
+    },
+    {
+      "count": 2,
+      "label": "EXCITING"
+    },
+    {
+      "count": 2,
+      "label": "EXERCISE"
+    },
+    {
+      "count": 2,
+      "label": "EXPECTANCY"
+    },
+    {
+      "count": 2,
+      "label": "EXPENSIVE"
+    },
+    {
+      "count": 2,
+      "label": "EXPERIENCE"
+    },
+    {
+      "count": 2,
+      "label": "EXPLOSION"
+    },
+    {
+      "count": 2,
+      "label": "EXTINCT"
+    },
+    {
+      "count": 2,
+      "label": "FACTS"
+    },
+    {
+      "count": 2,
+      "label": "FALL"
+    },
+    {
+      "count": 2,
+      "label": "FALLING"
+    },
+    {
+      "count": 2,
+      "label": "FANS"
+    },
+    {
+      "count": 2,
+      "label": "FASTER"
+    },
+    {
+      "count": 2,
+      "label": "FAVORITE"
+    },
+    {
+      "count": 2,
+      "label": "FAVOURITE"
+    },
+    {
+      "count": 2,
+      "label": "FAX"
+    },
+    {
+      "count": 2,
+      "label": "FEBRUARY"
+    },
+    {
+      "count": 2,
+      "label": "FEEL"
+    },
+    {
+      "count": 2,
+      "label": "FELL"
+    },
+    {
+      "count": 2,
+      "label": "FIELD"
+    },
+    {
+      "count": 2,
+      "label": "FIGURE"
+    },
+    {
+      "count": 2,
+      "label": "FILE"
+    },
+    {
+      "count": 2,
+      "label": "FINE"
+    },
+    {
+      "count": 2,
+      "label": "FINER"
+    },
+    {
+      "count": 2,
+      "label": "FIRE"
+    },
+    {
+      "count": 2,
+      "label": "FIRST"
+    },
+    {
+      "count": 2,
+      "label": "FISH"
+    },
+    {
+      "count": 2,
+      "label": "FIT"
+    },
+    {
+      "count": 2,
+      "label": "FIVE"
+    },
+    {
+      "count": 2,
+      "label": "FLASHING"
+    },
+    {
+      "count": 2,
+      "label": "FLAT"
+    },
+    {
+      "count": 2,
+      "label": "FOG"
+    },
+    {
+      "count": 2,
+      "label": "FOLDS"
+    },
+    {
+      "count": 2,
+      "label": "FOLLOW"
+    },
+    {
+      "count": 2,
+      "label": "FOOD"
+    },
+    {
+      "count": 2,
+      "label": "FOOTBALL"
+    },
+    {
+      "count": 2,
+      "label": "FOREST"
+    },
+    {
+      "count": 2,
+      "label": "FOREVER"
+    },
+    {
+      "count": 2,
+      "label": "FORWARD"
+    },
+    {
+      "count": 2,
+      "label": "FOURTH"
+    },
+    {
+      "count": 2,
+      "label": "FOX"
+    },
+    {
+      "count": 2,
+      "label": "FREQUENTLY"
+    },
+    {
+      "count": 2,
+      "label": "FREUD"
+    },
+    {
+      "count": 2,
+      "label": "FRIEND"
+    },
+    {
+      "count": 2,
+      "label": "FRIENDLY"
+    },
+    {
+      "count": 2,
+      "label": "FRONT"
+    },
+    {
+      "count": 2,
+      "label": "FUDGE"
+    },
+    {
+      "count": 2,
+      "label": "FULL"
+    },
+    {
+      "count": 2,
+      "label": "FULLY"
+    },
+    {
+      "count": 2,
+      "label": "FUN"
+    },
+    {
+      "count": 2,
+      "label": "FUTILE"
+    },
+    {
+      "count": 2,
+      "label": "GALLERY"
+    },
+    {
+      "count": 2,
+      "label": "GAMBLERS"
+    },
+    {
+      "count": 2,
+      "label": "GAME"
+    },
+    {
+      "count": 2,
+      "label": "GARBAGE"
+    },
+    {
+      "count": 2,
+      "label": "GAS"
+    },
+    {
+      "count": 2,
+      "label": "GEL"
+    },
+    {
+      "count": 2,
+      "label": "GENERATION"
+    },
+    {
+      "count": 2,
+      "label": "GET"
+    },
+    {
+      "count": 2,
+      "label": "GETTING"
+    },
+    {
+      "count": 2,
+      "label": "GIVE"
+    },
+    {
+      "count": 2,
+      "label": "GIVES"
+    },
+    {
+      "count": 2,
+      "label": "GOOD"
+    },
+    {
+      "count": 2,
+      "label": "GOT"
+    },
+    {
+      "count": 2,
+      "label": "GOVERNMENTS"
+    },
+    {
+      "count": 2,
+      "label": "GRANITE"
+    },
+    {
+      "count": 2,
+      "label": "GREASY"
+    },
+    {
+      "count": 2,
+      "label": "GROW"
+    },
+    {
+      "count": 2,
+      "label": "GROWING"
+    },
+    {
+      "count": 2,
+      "label": "GUN"
+    },
+    {
+      "count": 2,
+      "label": "HAIR"
+    },
+    {
+      "count": 2,
+      "label": "HAMBURGER"
+    },
+    {
+      "count": 2,
+      "label": "HAND"
+    },
+    {
+      "count": 2,
+      "label": "HANDICAPPED"
+    },
+    {
+      "count": 2,
+      "label": "HANDLE"
+    },
+    {
+      "count": 2,
+      "label": "HANDLED"
+    },
+    {
+      "count": 2,
+      "label": "HARDEST"
+    },
+    {
+      "count": 2,
+      "label": "HAS"
+    },
+    {
+      "count": 2,
+      "label": "HATE"
+    },
+    {
+      "count": 2,
+      "label": "HE"
+    },
+    {
+      "count": 2,
+      "label": "HEAD"
+    },
+    {
+      "count": 2,
+      "label": "HEALTHY"
+    },
+    {
+      "count": 2,
+      "label": "HEAR"
+    },
+    {
+      "count": 2,
+      "label": "HEAT"
+    },
+    {
+      "count": 2,
+      "label": "HECK"
+    },
+    {
+      "count": 2,
+      "label": "HELPS"
+    },
+    {
+      "count": 2,
+      "label": "HER"
+    },
+    {
+      "count": 2,
+      "label": "HERE"
+    },
+    {
+      "count": 2,
+      "label": "HIGH"
+    },
+    {
+      "count": 2,
+      "label": "HIGHER"
+    },
+    {
+      "count": 2,
+      "label": "HIGHWAY"
+    },
+    {
+      "count": 2,
+      "label": "HIM"
+    },
+    {
+      "count": 2,
+      "label": "HIS"
+    },
+    {
+      "count": 2,
+      "label": "HISTORIC"
+    },
+    {
+      "count": 2,
+      "label": "HONEST"
+    },
+    {
+      "count": 2,
+      "label": "HOPES"
+    },
+    {
+      "count": 2,
+      "label": "HORN"
+    },
+    {
+      "count": 2,
+      "label": "HOUSE"
+    },
+    {
+      "count": 2,
+      "label": "HOUSEKEEPER"
+    },
+    {
+      "count": 2,
+      "label": "HOW"
+    },
+    {
+      "count": 2,
+      "label": "I"
+    },
+    {
+      "count": 2,
+      "label": "ICE"
+    },
+    {
+      "count": 2,
+      "label": "IDEA"
+    },
+    {
+      "count": 2,
+      "label": "IDES"
+    },
+    {
+      "count": 2,
+      "label": "IDIOT"
+    },
+    {
+      "count": 2,
+      "label": "IF"
+    },
+    {
+      "count": 2,
+      "label": "IMAGINATION"
+    },
+    {
+      "count": 2,
+      "label": "IMPORTANT"
+    },
+    {
+      "count": 2,
+      "label": "IN"
+    },
+    {
+      "count": 1,
+      "label": "INDEX"
+    },
+    {
+      "count": 2,
+      "label": "INDICATION"
+    },
+    {
+      "count": 2,
+      "label": "INEFFICIENT"
+    },
+    {
+      "count": 2,
+      "label": "INFORMATION"
+    },
+    {
+      "count": 2,
+      "label": "INJUSTICE"
+    },
+    {
+      "count": 2,
+      "label": "INSPIRING"
+    },
+    {
+      "count": 2,
+      "label": "INSULATION"
+    },
+    {
+      "count": 2,
+      "label": "INSURANCE"
+    },
+    {
+      "count": 2,
+      "label": "INTERACTIONS"
+    },
+    {
+      "count": 2,
+      "label": "INTERESTING"
+    },
+    {
+      "count": 2,
+      "label": "INTERFACE"
+    },
+    {
+      "count": 2,
+      "label": "INVESTIGATE"
+    },
+    {
+      "count": 2,
+      "label": "IS"
+    },
+    {
+      "count": 2,
+      "label": "IT"
+    },
+    {
+      "count": 2,
+      "label": "JACKET"
+    },
+    {
+      "count": 2,
+      "label": "JAMMED"
+    },
+    {
+      "count": 2,
+      "label": "JEDI"
+    },
+    {
+      "count": 2,
+      "label": "JOB"
+    },
+    {
+      "count": 2,
+      "label": "JOBS"
+    },
+    {
+      "count": 2,
+      "label": "JOIN"
+    },
+    {
+      "count": 2,
+      "label": "JOKE"
+    },
+    {
+      "count": 2,
+      "label": "JONES"
+    },
+    {
+      "count": 2,
+      "label": "JUST"
+    },
+    {
+      "count": 2,
+      "label": "JUSTICE"
+    },
+    {
+      "count": 2,
+      "label": "KIDS"
+    },
+    {
+      "count": 2,
+      "label": "KING"
+    },
+    {
+      "count": 2,
+      "label": "KISSING"
+    },
+    {
+      "count": 2,
+      "label": "KNEE"
+    },
+    {
+      "count": 2,
+      "label": "KNEES"
+    },
+    {
+      "count": 2,
+      "label": "KNOCKING"
+    },
+    {
+      "count": 2,
+      "label": "KNOW"
+    },
+    {
+      "count": 2,
+      "label": "LABOUR"
+    },
+    {
+      "count": 2,
+      "label": "LAGOON"
+    },
+    {
+      "count": 2,
+      "label": "LAMB"
+    },
+    {
+      "count": 2,
+      "label": "LARGEST"
+    },
+    {
+      "count": 2,
+      "label": "LAST"
+    },
+    {
+      "count": 2,
+      "label": "LATE"
+    },
+    {
+      "count": 2,
+      "label": "LATER"
+    },
+    {
+      "count": 2,
+      "label": "LAUGH"
+    },
+    {
+      "count": 2,
+      "label": "LEAP"
+    },
+    {
+      "count": 2,
+      "label": "LEARNING"
+    },
+    {
+      "count": 2,
+      "label": "LEATHER"
+    },
+    {
+      "count": 2,
+      "label": "LEAVE"
+    },
+    {
+      "count": 2,
+      "label": "LEAVING"
+    },
+    {
+      "count": 2,
+      "label": "LEFT"
+    },
+    {
+      "count": 2,
+      "label": "LENDER"
+    },
+    {
+      "count": 2,
+      "label": "LENS"
+    },
+    {
+      "count": 2,
+      "label": "LESSON"
+    },
+    {
+      "count": 2,
+      "label": "LETTERS"
+    },
+    {
+      "count": 2,
+      "label": "LEVEE"
+    },
+    {
+      "count": 2,
+      "label": "LIBRARY"
+    },
+    {
+      "count": 2,
+      "label": "LIE"
+    },
+    {
+      "count": 2,
+      "label": "LIGHT"
+    },
+    {
+      "count": 2,
+      "label": "LIKE"
+    },
+    {
+      "count": 2,
+      "label": "LIMIT"
+    },
+    {
+      "count": 2,
+      "label": "LISTEN"
+    },
+    {
+      "count": 2,
+      "label": "LIVING"
+    },
+    {
+      "count": 2,
+      "label": "LOCATION"
+    },
+    {
+      "count": 2,
+      "label": "LOCKED"
+    },
+    {
+      "count": 2,
+      "label": "LONG"
+    },
+    {
+      "count": 2,
+      "label": "LOOSE"
+    },
+    {
+      "count": 2,
+      "label": "LOSERS"
+    },
+    {
+      "count": 2,
+      "label": "LOST"
+    },
+    {
+      "count": 2,
+      "label": "LOT"
+    },
+    {
+      "count": 2,
+      "label": "LOTTERY"
+    },
+    {
+      "count": 2,
+      "label": "LOUDLY"
+    },
+    {
+      "count": 2,
+      "label": "LOVE"
+    },
+    {
+      "count": 2,
+      "label": "LUCKILY"
+    },
+    {
+      "count": 2,
+      "label": "LUNCH"
+    },
+    {
+      "count": 2,
+      "label": "LYDIA"
+    },
+    {
+      "count": 2,
+      "label": "MACHINE"
+    },
+    {
+      "count": 2,
+      "label": "MACHINERY"
+    },
+    {
+      "count": 2,
+      "label": "MADE"
+    },
+    {
+      "count": 2,
+      "label": "MAIL"
+    },
+    {
+      "count": 2,
+      "label": "MAJESTY"
+    },
+    {
+      "count": 2,
+      "label": "MAKE"
+    },
+    {
+      "count": 2,
+      "label": "MAKEUP"
+    },
+    {
+      "count": 2,
+      "label": "MAN"
+    },
+    {
+      "count": 2,
+      "label": "MANY"
+    },
+    {
+      "count": 2,
+      "label": "MARCH"
+    },
+    {
+      "count": 2,
+      "label": "MARY"
+    },
+    {
+      "count": 2,
+      "label": "MASK"
+    },
+    {
+      "count": 2,
+      "label": "MATERNITY"
+    },
+    {
+      "count": 2,
+      "label": "MEANS"
+    },
+    {
+      "count": 2,
+      "label": "MEDIEVAL"
+    },
+    {
+      "count": 2,
+      "label": "MEET"
+    },
+    {
+      "count": 2,
+      "label": "MEETING"
+    },
+    {
+      "count": 2,
+      "label": "MET"
+    },
+    {
+      "count": 2,
+      "label": "METER"
+    },
+    {
+      "count": 2,
+      "label": "MICE"
+    },
+    {
+      "count": 2,
+      "label": "MICROSCOPES"
+    },
+    {
+      "count": 2,
+      "label": "MIDNIGHT"
+    },
+    {
+      "count": 2,
+      "label": "MIGHT"
+    },
+    {
+      "count": 2,
+      "label": "MIGHTIER"
+    },
+    {
+      "count": 2,
+      "label": "MIND"
+    },
+    {
+      "count": 2,
+      "label": "MINE"
+    },
+    {
+      "count": 2,
+      "label": "MINIMUM"
+    },
+    {
+      "count": 2,
+      "label": "MISSED"
+    },
+    {
+      "count": 2,
+      "label": "MISSION"
+    },
+    {
+      "count": 2,
+      "label": "MIX"
+    },
+    {
+      "count": 2,
+      "label": "MODERATION"
+    },
+    {
+      "count": 2,
+      "label": "MOM"
+    },
+    {
+      "count": 2,
+      "label": "MONKEY"
+    },
+    {
+      "count": 2,
+      "label": "MONTH"
+    },
+    {
+      "count": 2,
+      "label": "MONTHLY"
+    },
+    {
+      "count": 2,
+      "label": "MORE"
+    },
+    {
+      "count": 2,
+      "label": "MOTHER"
+    },
+    {
+      "count": 2,
+      "label": "MOVIE"
+    },
+    {
+      "count": 2,
+      "label": "MUCH"
+    },
+    {
+      "count": 2,
+      "label": "MURDER"
+    },
+    {
+      "count": 2,
+      "label": "MUSIC"
+    },
+    {
+      "count": 2,
+      "label": "MUST"
+    },
+    {
+      "count": 2,
+      "label": "MY"
+    },
+    {
+      "count": 2,
+      "label": "NASTY"
+    },
+    {
+      "count": 2,
+      "label": "NATIONS"
+    },
+    {
+      "count": 2,
+      "label": "NEARBY"
+    },
+    {
+      "count": 2,
+      "label": "NEEDED"
+    },
+    {
+      "count": 2,
+      "label": "NEEDS"
+    },
+    {
+      "count": 2,
+      "label": "NEITHER"
+    },
+    {
+      "count": 2,
+      "label": "NEVER"
+    },
+    {
+      "count": 2,
+      "label": "NEWS"
+    },
+    {
+      "count": 2,
+      "label": "NICE"
+    },
+    {
+      "count": 2,
+      "label": "NIGHT"
+    },
+    {
+      "count": 2,
+      "label": "NO"
+    },
+    {
+      "count": 2,
+      "label": "NOSE"
+    },
+    {
+      "count": 2,
+      "label": "NOTHING"
+    },
+    {
+      "count": 2,
+      "label": "NUMBER"
+    },
+    {
+      "count": 2,
+      "label": "OBJECTIVE"
+    },
+    {
+      "count": 2,
+      "label": "OBJECTS"
+    },
+    {
+      "count": 2,
+      "label": "OBSERVATION"
+    },
+    {
+      "count": 2,
+      "label": "OCCASIONAL"
+    },
+    {
+      "count": 2,
+      "label": "OCCUR"
+    },
+    {
+      "count": 2,
+      "label": "OCEANS"
+    },
+    {
+      "count": 2,
+      "label": "OFF"
+    },
+    {
+      "count": 2,
+      "label": "OFFENDERS"
+    },
+    {
+      "count": 2,
+      "label": "OFFENDS"
+    },
+    {
+      "count": 2,
+      "label": "OFFENSIVE"
+    },
+    {
+      "count": 2,
+      "label": "OFFER"
+    },
+    {
+      "count": 2,
+      "label": "OIL"
+    },
+    {
+      "count": 2,
+      "label": "OLD"
+    },
+    {
+      "count": 2,
+      "label": "ON"
+    },
+    {
+      "count": 2,
+      "label": "ONLY"
+    },
+    {
+      "count": 2,
+      "label": "OPERA"
+    },
+    {
+      "count": 2,
+      "label": "OPPOSING"
+    },
+    {
+      "count": 2,
+      "label": "OR"
+    },
+    {
+      "count": 2,
+      "label": "ORDER"
+    },
+    {
+      "count": 2,
+      "label": "ORDERED"
+    },
+    {
+      "count": 2,
+      "label": "ORGANIZATION"
+    },
+    {
+      "count": 2,
+      "label": "ORGANIZE"
+    },
+    {
+      "count": 2,
+      "label": "OWNED"
+    },
+    {
+      "count": 2,
+      "label": "PAID"
+    },
+    {
+      "count": 2,
+      "label": "PAINTINGS"
+    },
+    {
+      "count": 2,
+      "label": "PARK"
+    },
+    {
+      "count": 2,
+      "label": "PARKING"
+    },
+    {
+      "count": 2,
+      "label": "PARKWAYS"
+    },
+    {
+      "count": 2,
+      "label": "PARTS"
+    },
+    {
+      "count": 2,
+      "label": "PARTY"
+    },
+    {
+      "count": 2,
+      "label": "PAY"
+    },
+    {
+      "count": 2,
+      "label": "PEANUTS"
+    },
+    {
+      "count": 2,
+      "label": "PEERING"
+    },
+    {
+      "count": 2,
+      "label": "PEOPLE"
+    },
+    {
+      "count": 1,
+      "label": "PERIOD"
+    },
+    {
+      "count": 2,
+      "label": "PERSISTENT"
+    },
+    {
+      "count": 2,
+      "label": "PERSON"
+    },
+    {
+      "count": 2,
+      "label": "PERSONAL"
+    },
+    {
+      "count": 2,
+      "label": "PERSONS"
+    },
+    {
+      "count": 2,
+      "label": "PHENOMENON"
+    },
+    {
+      "count": 2,
+      "label": "PHYSICS"
+    },
+    {
+      "count": 2,
+      "label": "PICKET"
+    },
+    {
+      "count": 2,
+      "label": "PICTURE"
+    },
+    {
+      "count": 2,
+      "label": "PIES"
+    },
+    {
+      "count": 2,
+      "label": "PIG"
+    },
+    {
+      "count": 2,
+      "label": "PIMP"
+    },
+    {
+      "count": 2,
+      "label": "PLACE"
+    },
+    {
+      "count": 2,
+      "label": "PLAY"
+    },
+    {
+      "count": 2,
+      "label": "PLAYERS"
+    },
+    {
+      "count": 2,
+      "label": "PLAYING"
+    },
+    {
+      "count": 2,
+      "label": "PLEASANT"
+    },
+    {
+      "count": 2,
+      "label": "PLEASE"
+    },
+    {
+      "count": 2,
+      "label": "POLITICAL"
+    },
+    {
+      "count": 2,
+      "label": "POLITICS"
+    },
+    {
+      "count": 2,
+      "label": "POOREST"
+    },
+    {
+      "count": 2,
+      "label": "POSTAL"
+    },
+    {
+      "count": 2,
+      "label": "POWDER"
+    },
+    {
+      "count": 2,
+      "label": "PRAYER"
+    },
+    {
+      "count": 2,
+      "label": "PRECAUTIONS"
+    },
+    {
+      "count": 2,
+      "label": "PREDICTABLE"
+    },
+    {
+      "count": 2,
+      "label": "PREFER"
+    },
+    {
+      "count": 2,
+      "label": "PREFERRED"
+    },
+    {
+      "count": 2,
+      "label": "PREPARE"
+    },
+    {
+      "count": 2,
+      "label": "PRESCRIPTION"
+    },
+    {
+      "count": 2,
+      "label": "PRESENCE"
+    },
+    {
+      "count": 2,
+      "label": "PRESIDENTIAL"
+    },
+    {
+      "count": 2,
+      "label": "PRESIDENTS"
+    },
+    {
+      "count": 2,
+      "label": "PREVAILING"
+    },
+    {
+      "count": 2,
+      "label": "PRICE"
+    },
+    {
+      "count": 2,
+      "label": "PRIORITIES"
+    },
+    {
+      "count": 2,
+      "label": "PRIORITY"
+    },
+    {
+      "count": 2,
+      "label": "PRIZE"
+    },
+    {
+      "count": 2,
+      "label": "PROBLEM"
+    },
+    {
+      "count": 2,
+      "label": "PROBLEMS"
+    },
+    {
+      "count": 2,
+      "label": "PROFESSOR"
+    },
+    {
+      "count": 2,
+      "label": "PROFIT"
+    },
+    {
+      "count": 2,
+      "label": "PROPOSAL"
+    },
+    {
+      "count": 2,
+      "label": "PROTECT"
+    },
+    {
+      "count": 2,
+      "label": "PROTESTERS"
+    },
+    {
+      "count": 2,
+      "label": "PROVIDE"
+    },
+    {
+      "count": 2,
+      "label": "PROVIDED"
+    },
+    {
+      "count": 2,
+      "label": "PROVINCES"
+    },
+    {
+      "count": 2,
+      "label": "PSYCHIATRIST"
+    },
+    {
+      "count": 2,
+      "label": "PSYCHOLOGY"
+    },
+    {
+      "count": 2,
+      "label": "PUBLIC"
+    },
+    {
+      "count": 2,
+      "label": "PUBLISHED"
+    },
+    {
+      "count": 2,
+      "label": "PUMPING"
+    },
+    {
+      "count": 2,
+      "label": "PUNISHMENT"
+    },
+    {
+      "count": 2,
+      "label": "PUT"
+    },
+    {
+      "count": 2,
+      "label": "QUACKS"
+    },
+    {
+      "count": 2,
+      "label": "QUAKES"
+    },
+    {
+      "count": 2,
+      "label": "QUESTION"
+    },
+    {
+      "count": 2,
+      "label": "QUESTIONING"
+    },
+    {
+      "count": 2,
+      "label": "QUICK"
+    },
+    {
+      "count": 2,
+      "label": "QUICKLY"
+    },
+    {
+      "count": 2,
+      "label": "QUIT"
+    },
+    {
+      "count": 2,
+      "label": "QUITE"
+    },
+    {
+      "count": 2,
+      "label": "QUOTA"
+    },
+    {
+      "count": 2,
+      "label": "RAGED"
+    },
+    {
+      "count": 2,
+      "label": "RAIN"
+    },
+    {
+      "count": 2,
+      "label": "RAINDROPS"
+    },
+    {
+      "count": 2,
+      "label": "RATIONALE"
+    },
+    {
+      "count": 2,
+      "label": "RATTLE"
+    },
+    {
+      "count": 2,
+      "label": "REALLY"
+    },
+    {
+      "count": 2,
+      "label": "RECEIPTS"
+    },
+    {
+      "count": 2,
+      "label": "RECRUITMENT"
+    },
+    {
+      "count": 2,
+      "label": "RECTANGULAR"
+    },
+    {
+      "count": 2,
+      "label": "RECYCLING"
+    },
+    {
+      "count": 2,
+      "label": "REDOUBLE"
+    },
+    {
+      "count": 2,
+      "label": "REDRESS"
+    },
+    {
+      "count": 2,
+      "label": "REFERENDUM"
+    },
+    {
+      "count": 2,
+      "label": "REFUSE"
+    },
+    {
+      "count": 2,
+      "label": "REGISTERED"
+    },
+    {
+      "count": 2,
+      "label": "REGISTRATION"
+    },
+    {
+      "count": 2,
+      "label": "RELATIONS"
+    },
+    {
+      "count": 2,
+      "label": "RELUCTANT"
+    },
+    {
+      "count": 2,
+      "label": "REQUIRE"
+    },
+    {
+      "count": 2,
+      "label": "RESPONSE"
+    },
+    {
+      "count": 2,
+      "label": "RESULT"
+    },
+    {
+      "count": 2,
+      "label": "RESULTS"
+    },
+    {
+      "count": 2,
+      "label": "RETURN"
+    },
+    {
+      "count": 2,
+      "label": "RICH"
+    },
+    {
+      "count": 2,
+      "label": "RIDICULOUS"
+    },
+    {
+      "count": 2,
+      "label": "RIDING"
+    },
+    {
+      "count": 2,
+      "label": "RIFE"
+    },
+    {
+      "count": 2,
+      "label": "RIGHT"
+    },
+    {
+      "count": 2,
+      "label": "RINGS"
+    },
+    {
+      "count": 2,
+      "label": "RISEN"
+    },
+    {
+      "count": 2,
+      "label": "RISES"
+    },
+    {
+      "count": 2,
+      "label": "RISK"
+    },
+    {
+      "count": 2,
+      "label": "ROADS"
+    },
+    {
+      "count": 2,
+      "label": "ROMAN"
+    },
+    {
+      "count": 2,
+      "label": "ROVER"
+    },
+    {
+      "count": 2,
+      "label": "RULES"
+    },
+    {
+      "count": 2,
+      "label": "RUN"
+    },
+    {
+      "count": 2,
+      "label": "RUNS"
+    },
+    {
+      "count": 2,
+      "label": "SAD"
+    },
+    {
+      "count": 2,
+      "label": "SADDLES"
+    },
+    {
+      "count": 2,
+      "label": "SAFE"
+    },
+    {
+      "count": 2,
+      "label": "SAFETY"
+    },
+    {
+      "count": 2,
+      "label": "SALESMEN"
+    },
+    {
+      "count": 2,
+      "label": "SAMPLE"
+    },
+    {
+      "count": 2,
+      "label": "SATURDAY"
+    },
+    {
+      "count": 2,
+      "label": "SATURN"
+    },
+    {
+      "count": 2,
+      "label": "SAVING"
+    },
+    {
+      "count": 2,
+      "label": "SAYS"
+    },
+    {
+      "count": 2,
+      "label": "SCENE"
+    },
+    {
+      "count": 2,
+      "label": "SCHOOLS"
+    },
+    {
+      "count": 2,
+      "label": "SCRATCH"
+    },
+    {
+      "count": 2,
+      "label": "SEAT"
+    },
+    {
+      "count": 2,
+      "label": "SECOND"
+    },
+    {
+      "count": 2,
+      "label": "SECURITY"
+    },
+    {
+      "count": 2,
+      "label": "SEE"
+    },
+    {
+      "count": 2,
+      "label": "SEEMS"
+    },
+    {
+      "count": 2,
+      "label": "SEES"
+    },
+    {
+      "count": 2,
+      "label": "SEMINARS"
+    },
+    {
+      "count": 2,
+      "label": "SENDS"
+    },
+    {
+      "count": 2,
+      "label": "SENT"
+    },
+    {
+      "count": 2,
+      "label": "SENTENCE"
+    },
+    {
+      "count": 2,
+      "label": "SERVICE"
+    },
+    {
+      "count": 2,
+      "label": "SEVEN"
+    },
+    {
+      "count": 2,
+      "label": "SHACK"
+    },
+    {
+      "count": 2,
+      "label": "SHALL"
+    },
+    {
+      "count": 2,
+      "label": "SHARP"
+    },
+    {
+      "count": 2,
+      "label": "SHEDS"
+    },
+    {
+      "count": 2,
+      "label": "SHIP"
+    },
+    {
+      "count": 2,
+      "label": "SHIRTS"
+    },
+    {
+      "count": 2,
+      "label": "SHIVERING"
+    },
+    {
+      "count": 2,
+      "label": "SHOP"
+    },
+    {
+      "count": 2,
+      "label": "SHOULD"
+    },
+    {
+      "count": 2,
+      "label": "SHOULDERS"
+    },
+    {
+      "count": 2,
+      "label": "SHOUTING"
+    },
+    {
+      "count": 2,
+      "label": "SHRINE"
+    },
+    {
+      "count": 2,
+      "label": "SICK"
+    },
+    {
+      "count": 2,
+      "label": "SIDES"
+    },
+    {
+      "count": 2,
+      "label": "SIGN"
+    },
+    {
+      "count": 2,
+      "label": "SILLY"
+    },
+    {
+      "count": 2,
+      "label": "SILVER"
+    },
+    {
+      "count": 2,
+      "label": "SISTER"
+    },
+    {
+      "count": 2,
+      "label": "SIX"
+    },
+    {
+      "count": 2,
+      "label": "SIZE"
+    },
+    {
+      "count": 2,
+      "label": "SKIMMED"
+    },
+    {
+      "count": 2,
+      "label": "SLIP"
+    },
+    {
+      "count": 2,
+      "label": "SLIPPERY"
+    },
+    {
+      "count": 2,
+      "label": "SLOW"
+    },
+    {
+      "count": 2,
+      "label": "SMART"
+    },
+    {
+      "count": 2,
+      "label": "SNAKE"
+    },
+    {
+      "count": 2,
+      "label": "SNOW"
+    },
+    {
+      "count": 2,
+      "label": "SO"
+    },
+    {
+      "count": 2,
+      "label": "SOCKET"
+    },
+    {
+      "count": 2,
+      "label": "SOLD"
+    },
+    {
+      "count": 2,
+      "label": "SOMEONE"
+    },
+    {
+      "count": 1,
+      "label": "SPACE"
+    },
+    {
+      "count": 2,
+      "label": "SPAGHETTI"
+    },
+    {
+      "count": 2,
+      "label": "SPEAK"
+    },
+    {
+      "count": 2,
+      "label": "SPEED"
+    },
+    {
+      "count": 2,
+      "label": "SPEEDING"
+    },
+    {
+      "count": 2,
+      "label": "SPILL"
+    },
+    {
+      "count": 2,
+      "label": "SPILLED"
+    },
+    {
+      "count": 2,
+      "label": "SPOONFUL"
+    },
+    {
+      "count": 2,
+      "label": "SPORT"
+    },
+    {
+      "count": 2,
+      "label": "SPOT"
+    },
+    {
+      "count": 2,
+      "label": "SPRAWLING"
+    },
+    {
+      "count": 2,
+      "label": "SQUANDER"
+    },
+    {
+      "count": 2,
+      "label": "STABILITY"
+    },
+    {
+      "count": 2,
+      "label": "STAGE"
+    },
+    {
+      "count": 2,
+      "label": "STARLIGHT"
+    },
+    {
+      "count": 2,
+      "label": "STAYING"
+    },
+    {
+      "count": 2,
+      "label": "STEP"
+    },
+    {
+      "count": 2,
+      "label": "STICKER"
+    },
+    {
+      "count": 2,
+      "label": "STIFF"
+    },
+    {
+      "count": 2,
+      "label": "STILL"
+    },
+    {
+      "count": 2,
+      "label": "STIMULUS"
+    },
+    {
+      "count": 2,
+      "label": "STOCK"
+    },
+    {
+      "count": 2,
+      "label": "STRAINED"
+    },
+    {
+      "count": 2,
+      "label": "STRANGERS"
+    },
+    {
+      "count": 2,
+      "label": "STREETS"
+    },
+    {
+      "count": 2,
+      "label": "STRIKE"
+    },
+    {
+      "count": 2,
+      "label": "STUCK"
+    },
+    {
+      "count": 2,
+      "label": "SUBDIVISIONS"
+    },
+    {
+      "count": 2,
+      "label": "SUBJECT"
+    },
+    {
+      "count": 2,
+      "label": "SUCCEED"
+    },
+    {
+      "count": 2,
+      "label": "SUCH"
+    },
+    {
+      "count": 2,
+      "label": "SUM"
+    },
+    {
+      "count": 2,
+      "label": "SUNDAY"
+    },
+    {
+      "count": 2,
+      "label": "SUNNY"
+    },
+    {
+      "count": 2,
+      "label": "SUNSET"
+    },
+    {
+      "count": 2,
+      "label": "SUPER"
+    },
+    {
+      "count": 2,
+      "label": "SUPERMAN"
+    },
+    {
+      "count": 2,
+      "label": "SURE"
+    },
+    {
+      "count": 2,
+      "label": "SURGERY"
+    },
+    {
+      "count": 2,
+      "label": "SWAMP"
+    },
+    {
+      "count": 2,
+      "label": "SWIM"
+    },
+    {
+      "count": 2,
+      "label": "SYLLABUS"
+    },
+    {
+      "count": 2,
+      "label": "SYMPATHY"
+    },
+    {
+      "count": 2,
+      "label": "TABLETOP"
+    },
+    {
+      "count": 2,
+      "label": "TAKES"
+    },
+    {
+      "count": 2,
+      "label": "TAKING"
+    },
+    {
+      "count": 2,
+      "label": "TALKING"
+    },
+    {
+      "count": 2,
+      "label": "TAPE"
+    },
+    {
+      "count": 2,
+      "label": "TASTE"
+    },
+    {
+      "count": 2,
+      "label": "TAXATION"
+    },
+    {
+      "count": 2,
+      "label": "TELL"
+    },
+    {
+      "count": 2,
+      "label": "TEMPERAMENT"
+    },
+    {
+      "count": 2,
+      "label": "TENNIS"
+    },
+    {
+      "count": 2,
+      "label": "TESTS"
+    },
+    {
+      "count": 2,
+      "label": "THE"
+    },
+    {
+      "count": 2,
+      "label": "THEIR"
+    },
+    {
+      "count": 2,
+      "label": "THERE"
+    },
+    {
+      "count": 2,
+      "label": "THEY"
+    },
+    {
+      "count": 2,
+      "label": "THIGH"
+    },
+    {
+      "count": 2,
+      "label": "THING"
+    },
+    {
+      "count": 2,
+      "label": "THINGS"
+    },
+    {
+      "count": 2,
+      "label": "THINK"
+    },
+    {
+      "count": 2,
+      "label": "THINKING"
+    },
+    {
+      "count": 2,
+      "label": "THIS"
+    },
+    {
+      "count": 2,
+      "label": "THOROUGH"
+    },
+    {
+      "count": 2,
+      "label": "THOROUGHLY"
+    },
+    {
+      "count": 2,
+      "label": "THOSE"
+    },
+    {
+      "count": 2,
+      "label": "THOUSAND"
+    },
+    {
+      "count": 2,
+      "label": "THREE"
+    },
+    {
+      "count": 2,
+      "label": "THROUGH"
+    },
+    {
+      "count": 2,
+      "label": "TIE"
+    },
+    {
+      "count": 2,
+      "label": "TODAY"
+    },
+    {
+      "count": 2,
+      "label": "TOES"
+    },
+    {
+      "count": 2,
+      "label": "TOGETHER"
+    },
+    {
+      "count": 2,
+      "label": "TOIL"
+    },
+    {
+      "count": 2,
+      "label": "TOMORROW"
+    },
+    {
+      "count": 2,
+      "label": "TONIGHT"
+    },
+    {
+      "count": 2,
+      "label": "TOO"
+    },
+    {
+      "count": 2,
+      "label": "TOOK"
+    },
+    {
+      "count": 2,
+      "label": "TOP"
+    },
+    {
+      "count": 2,
+      "label": "TOSS"
+    },
+    {
+      "count": 2,
+      "label": "TOUCHDOWN"
+    },
+    {
+      "count": 2,
+      "label": "TOWER"
+    },
+    {
+      "count": 2,
+      "label": "TRADITIONAL"
+    },
+    {
+      "count": 2,
+      "label": "TRAINS"
+    },
+    {
+      "count": 2,
+      "label": "TRANSIT"
+    },
+    {
+      "count": 2,
+      "label": "TRAVEL"
+    },
+    {
+      "count": 2,
+      "label": "TRAVELING"
+    },
+    {
+      "count": 2,
+      "label": "TREASURER"
+    },
+    {
+      "count": 2,
+      "label": "TREASURY"
+    },
+    {
+      "count": 2,
+      "label": "TREAT"
+    },
+    {
+      "count": 2,
+      "label": "TREE"
+    },
+    {
+      "count": 2,
+      "label": "TRIED"
+    },
+    {
+      "count": 2,
+      "label": "TRIPLE"
+    },
+    {
+      "count": 2,
+      "label": "TRY"
+    },
+    {
+      "count": 2,
+      "label": "TUMOR"
+    },
+    {
+      "count": 2,
+      "label": "TURFED"
+    },
+    {
+      "count": 2,
+      "label": "TURN"
+    },
+    {
+      "count": 2,
+      "label": "TWO"
+    },
+    {
+      "count": 2,
+      "label": "UNACCEPTABLE"
+    },
+    {
+      "count": 2,
+      "label": "UNDERSTOOD"
+    },
+    {
+      "count": 2,
+      "label": "UNDERWENT"
+    },
+    {
+      "count": 2,
+      "label": "UNFORTUNATE"
+    },
+    {
+      "count": 2,
+      "label": "UNICYCLE"
+    },
+    {
+      "count": 2,
+      "label": "UNION"
+    },
+    {
+      "count": 2,
+      "label": "UNIONS"
+    },
+    {
+      "count": 2,
+      "label": "UNIVERSALLY"
+    },
+    {
+      "count": 2,
+      "label": "UP"
+    },
+    {
+      "count": 2,
+      "label": "US"
+    },
+    {
+      "count": 2,
+      "label": "USE"
+    },
+    {
+      "count": 2,
+      "label": "USER"
+    },
+    {
+      "count": 2,
+      "label": "USUALLY"
+    },
+    {
+      "count": 2,
+      "label": "VALIDATED"
+    },
+    {
+      "count": 2,
+      "label": "VANILLA"
+    },
+    {
+      "count": 2,
+      "label": "VENTILATION"
+    },
+    {
+      "count": 2,
+      "label": "VERBS"
+    },
+    {
+      "count": 2,
+      "label": "VERY"
+    },
+    {
+      "count": 2,
+      "label": "VICTIMS"
+    },
+    {
+      "count": 2,
+      "label": "VIDEO"
+    },
+    {
+      "count": 2,
+      "label": "VISITED"
+    },
+    {
+      "count": 2,
+      "label": "VOICE"
+    },
+    {
+      "count": 2,
+      "label": "VOTE"
+    },
+    {
+      "count": 2,
+      "label": "WANT"
+    },
+    {
+      "count": 2,
+      "label": "WANTS"
+    },
+    {
+      "count": 2,
+      "label": "WAR"
+    },
+    {
+      "count": 2,
+      "label": "WARM"
+    },
+    {
+      "count": 2,
+      "label": "WARRANTY"
+    },
+    {
+      "count": 2,
+      "label": "WAS"
+    },
+    {
+      "count": 2,
+      "label": "WATCH"
+    },
+    {
+      "count": 2,
+      "label": "WATCHED"
+    },
+    {
+      "count": 2,
+      "label": "WAVES"
+    },
+    {
+      "count": 2,
+      "label": "WE"
+    },
+    {
+      "count": 2,
+      "label": "WEAR"
+    },
+    {
+      "count": 2,
+      "label": "WEARING"
+    },
+    {
+      "count": 2,
+      "label": "WEARS"
+    },
+    {
+      "count": 2,
+      "label": "WEB"
+    },
+    {
+      "count": 2,
+      "label": "WEEK"
+    },
+    {
+      "count": 2,
+      "label": "WEEKEND"
+    },
+    {
+      "count": 2,
+      "label": "WEEPING"
+    },
+    {
+      "count": 2,
+      "label": "WERE"
+    },
+    {
+      "count": 2,
+      "label": "WHAT"
+    },
+    {
+      "count": 2,
+      "label": "WHERE"
+    },
+    {
+      "count": 2,
+      "label": "WHILE"
+    },
+    {
+      "count": 2,
+      "label": "WHOLE"
+    },
+    {
+      "count": 2,
+      "label": "WHY"
+    },
+    {
+      "count": 2,
+      "label": "WILLOWS"
+    },
+    {
+      "count": 2,
+      "label": "WIN"
+    },
+    {
+      "count": 2,
+      "label": "WINDOW"
+    },
+    {
+      "count": 2,
+      "label": "WINTER"
+    },
+    {
+      "count": 2,
+      "label": "WITH"
+    },
+    {
+      "count": 2,
+      "label": "WITHOUT"
+    },
+    {
+      "count": 2,
+      "label": "WORDS"
+    },
+    {
+      "count": 2,
+      "label": "WORLD"
+    },
+    {
+      "count": 2,
+      "label": "WORRY"
+    },
+    {
+      "count": 2,
+      "label": "WORTH"
+    },
+    {
+      "count": 2,
+      "label": "WRITING"
+    },
+    {
+      "count": 2,
+      "label": "WRONG"
+    },
+    {
+      "count": 2,
+      "label": "YAP"
+    },
+    {
+      "count": 2,
+      "label": "YEARS"
+    },
+    {
+      "count": 2,
+      "label": "YES"
+    },
+    {
+      "count": 2,
+      "label": "YOU"
+    },
+    {
+      "count": 2,
+      "label": "YOUR"
+    },
+    {
+      "count": 2,
+      "label": "ZOOM"
+    }
+  ],
+  "exclude_indices": [
+    509,
+    674,
+    1631,
+    1941
+  ],
+  "exclude_indices_json": "/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/results/dataset_audit_silentspeller_2026-02-24/exclusions/john_2328_exclude_indices.json",
+  "k_train": 1,
+  "n_competition_words": 50,
+  "n_samples_after_exclusions": 2793,
+  "n_samples_raw": 2797,
+  "n_vocab_after_exclusions": 1164,
+  "n_vocab_dropped": 801,
+  "n_vocab_kept": 363,
+  "orig_indices_competition": [
+    31,
+    144,
+    208,
+    237,
+    249,
+    287,
+    314,
+    324,
+    351,
+    379,
+    443,
+    451,
+    455,
+    506,
+    528,
+    549,
+    758,
+    1011,
+    1131,
+    1137,
+    1198,
+    1261,
+    1274,
+    1287,
+    1481,
+    1789,
+    1859,
+    1865,
+    1908,
+    1947,
+    1950,
+    1998,
+    2012,
+    2015,
+    2019,
+    2181,
+    2189,
+    2192,
+    2232,
+    2306,
+    2320,
+    2433,
+    2460,
+    2490,
+    2499,
+    2509,
+    2532,
+    2554,
+    2736,
+    2763
+  ],
+  "orig_indices_test": [
+    2,
+    9,
+    19,
+    28,
+    37,
+    42,
+    50,
+    54,
+    56,
+    61,
+    62,
+    63,
+    65,
+    68,
+    71,
+    72,
+    73,
+    80,
+    97,
+    110,
+    113,
+    119,
+    120,
+    124,
+    135,
+    141,
+    151,
+    156,
+    157,
+    160,
+    163,
+    175,
+    180,
+    181,
+    185,
+    207,
+    214,
+    217,
+    219,
+    222,
+    232,
+    238,
+    253,
+    255,
+    281,
+    284,
+    285,
+    293,
+    295,
+    306,
+    310,
+    315,
+    319,
+    328,
+    350,
+    358,
+    360,
+    369,
+    373,
+    380,
+    382,
+    407,
+    409,
+    411,
+    418,
+    421,
+    425,
+    429,
+    436,
+    447,
+    453,
+    454,
+    459,
+    463,
+    470,
+    471,
+    474,
+    479,
+    483,
+    485,
+    491,
+    499,
+    512,
+    525,
+    526,
+    532,
+    535,
+    538,
+    541,
+    542,
+    544,
+    552,
+    564,
+    565,
+    566,
+    567,
+    570,
+    1008,
+    1012,
+    1017,
+    1030,
+    1037,
+    1042,
+    1052,
+    1054,
+    1062,
+    1067,
+    1070,
+    1077,
+    1078,
+    1083,
+    1087,
+    1089,
+    1096,
+    1097,
+    1105,
+    1113,
+    1117,
+    1120,
+    1125,
+    1141,
+    1155,
+    1166,
+    1177,
+    1182,
+    1183,
+    1190,
+    1194,
+    1196,
+    1200,
+    1202,
+    1206,
+    1217,
+    1221,
+    1229,
+    1230,
+    1244,
+    1249,
+    1257,
+    1259,
+    1263,
+    1264,
+    1265,
+    1275,
+    1276,
+    1283,
+    1285,
+    1293,
+    1307,
+    1308,
+    1311,
+    1315,
+    1322,
+    1332,
+    1358,
+    1364,
+    1371,
+    1381,
+    1405,
+    1406,
+    1412,
+    1413,
+    1416,
+    1419,
+    1423,
+    1426,
+    1429,
+    1463,
+    1469,
+    1479,
+    1487,
+    1499,
+    1500,
+    1501,
+    1508,
+    1519,
+    1522,
+    1526,
+    1543,
+    1549,
+    1563,
+    1569,
+    1586,
+    1593,
+    1595,
+    1598,
+    1600,
+    1605,
+    1607,
+    1623,
+    1627,
+    1629,
+    1638,
+    1640,
+    1655,
+    1671,
+    1673,
+    1680,
+    1695,
+    1696,
+    1712,
+    1713,
+    1714,
+    1715,
+    1725,
+    1733,
+    1734,
+    1745,
+    1746,
+    1759,
+    1764,
+    1772,
+    1785,
+    1810,
+    1816,
+    1818,
+    1823,
+    1838,
+    1840,
+    1846,
+    1853,
+    1855,
+    1857,
+    1873,
+    1893,
+    1898,
+    1906,
+    1910,
+    1913,
+    1949,
+    1952,
+    1955,
+    1957,
+    1960,
+    1962,
+    1972,
+    1988,
+    1996,
+    1999,
+    2004,
+    2014,
+    2016,
+    2020,
+    2021,
+    2026,
+    2028,
+    2038,
+    2042,
+    2043,
+    2046,
+    2047,
+    2050,
+    2054,
+    2055,
+    2062,
+    2076,
+    2077,
+    2106,
+    2107,
+    2111,
+    2117,
+    2119,
+    2123,
+    2131,
+    2133,
+    2144,
+    2149,
+    2157,
+    2162,
+    2172,
+    2173,
+    2182,
+    2183,
+    2185,
+    2186,
+    2193,
+    2208,
+    2218,
+    2219,
+    2220,
+    2221,
+    2225,
+    2229,
+    2233,
+    2234,
+    2241,
+    2242,
+    2244,
+    2245,
+    2246,
+    2251,
+    2254,
+    2256,
+    2264,
+    2266,
+    2267,
+    2268,
+    2269,
+    2272,
+    2274,
+    2275,
+    2277,
+    2281,
+    2282,
+    2287,
+    2290,
+    2293,
+    2294,
+    2298,
+    2299,
+    2311,
+    2318,
+    2324,
+    2329,
+    2330,
+    2341,
+    2345,
+    2357,
+    2363,
+    2376,
+    2378,
+    2430,
+    2435,
+    2454,
+    2458,
+    2465,
+    2476,
+    2482,
+    2483,
+    2494,
+    2505,
+    2506,
+    2511,
+    2513,
+    2514,
+    2516,
+    2518,
+    2522,
+    2524,
+    2560,
+    2564,
+    2570,
+    2587,
+    2598,
+    2601,
+    2615,
+    2626,
+    2632,
+    2638,
+    2643,
+    2645,
+    2647,
+    2658,
+    2662,
+    2666,
+    2670,
+    2696,
+    2698,
+    2701,
+    2720,
+    2725,
+    2762,
+    2784
+  ],
+  "orig_indices_train": [
+    6,
+    10,
+    18,
+    32,
+    39,
+    45,
+    70,
+    77,
+    78,
+    79,
+    81,
+    93,
+    95,
+    104,
+    114,
+    122,
+    137,
+    138,
+    140,
+    142,
+    158,
+    159,
+    161,
+    162,
+    168,
+    169,
+    179,
+    186,
+    194,
+    199,
+    203,
+    206,
+    212,
+    224,
+    234,
+    242,
+    246,
+    258,
+    259,
+    289,
+    291,
+    294,
+    299,
+    302,
+    303,
+    318,
+    322,
+    326,
+    329,
+    334,
+    346,
+    371,
+    381,
+    385,
+    389,
+    390,
+    399,
+    402,
+    419,
+    423,
+    428,
+    433,
+    442,
+    445,
+    448,
+    464,
+    466,
+    468,
+    476,
+    477,
+    478,
+    480,
+    492,
+    493,
+    494,
+    497,
+    503,
+    517,
+    522,
+    529,
+    530,
+    533,
+    534,
+    540,
+    543,
+    546,
+    560,
+    561,
+    562,
+    568,
+    1002,
+    1013,
+    1016,
+    1022,
+    1031,
+    1061,
+    1065,
+    1072,
+    1090,
+    1110,
+    1119,
+    1124,
+    1128,
+    1139,
+    1142,
+    1157,
+    1161,
+    1171,
+    1174,
+    1185,
+    1208,
+    1222,
+    1225,
+    1237,
+    1250,
+    1253,
+    1255,
+    1278,
+    1296,
+    1300,
+    1302,
+    1303,
+    1316,
+    1317,
+    1336,
+    1338,
+    1344,
+    1347,
+    1354,
+    1355,
+    1360,
+    1368,
+    1373,
+    1382,
+    1388,
+    1396,
+    1397,
+    1398,
+    1433,
+    1437,
+    1438,
+    1444,
+    1449,
+    1453,
+    1454,
+    1464,
+    1465,
+    1466,
+    1468,
+    1480,
+    1503,
+    1504,
+    1512,
+    1513,
+    1523,
+    1547,
+    1566,
+    1573,
+    1579,
+    1581,
+    1583,
+    1589,
+    1599,
+    1606,
+    1613,
+    1616,
+    1618,
+    1619,
+    1622,
+    1639,
+    1645,
+    1656,
+    1659,
+    1676,
+    1689,
+    1691,
+    1698,
+    1701,
+    1703,
+    1705,
+    1711,
+    1728,
+    1736,
+    1738,
+    1750,
+    1753,
+    1760,
+    1768,
+    1793,
+    1801,
+    1812,
+    1836,
+    1850,
+    1861,
+    1863,
+    1881,
+    1885,
+    1888,
+    1903,
+    1907,
+    1909,
+    1912,
+    1916,
+    1923,
+    1937,
+    1945,
+    1963,
+    1965,
+    1974,
+    1984,
+    1987,
+    1990,
+    1993,
+    2025,
+    2029,
+    2030,
+    2035,
+    2039,
+    2057,
+    2066,
+    2074,
+    2079,
+    2081,
+    2091,
+    2093,
+    2097,
+    2099,
+    2109,
+    2118,
+    2125,
+    2126,
+    2134,
+    2135,
+    2150,
+    2155,
+    2160,
+    2161,
+    2187,
+    2198,
+    2202,
+    2203,
+    2204,
+    2206,
+    2210,
+    2212,
+    2215,
+    2222,
+    2230,
+    2238,
+    2250,
+    2255,
+    2257,
+    2260,
+    2276,
+    2283,
+    2301,
+    2302,
+    2303,
+    2307,
+    2309,
+    2314,
+    2323,
+    2327,
+    2334,
+    2349,
+    2369,
+    2372,
+    2386,
+    2392,
+    2393,
+    2414,
+    2426,
+    2431,
+    2446,
+    2448,
+    2451,
+    2459,
+    2462,
+    2512,
+    2520,
+    2531,
+    2533,
+    2537,
+    2547,
+    2556,
+    2574,
+    2608,
+    2623,
+    2624,
+    2627,
+    2635,
+    2656,
+    2659,
+    2663,
+    2665,
+    2667,
+    2672,
+    2676,
+    2704,
+    2710,
+    2719,
+    2723,
+    2728,
+    2731,
+    2737,
+    2745,
+    2750,
+    2761,
+    2765,
+    2778,
+    2779,
+    2793,
+    2795
+  ],
+  "out_npz": "/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw_dataset/protocolSkshot_split_seed0_subj3_k1_ds1.npz",
+  "raw_npz": "/mnt/share_gpu/naokkimu/epg_speller_for_icassp_camera_ready/raw/silentspeller_dataset/john_2328_dataset.npz",
+  "seed": 0
+}

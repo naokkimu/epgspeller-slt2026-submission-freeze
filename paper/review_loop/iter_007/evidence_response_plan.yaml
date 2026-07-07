@@ -1,0 +1,18 @@
+iteration: 7
+responses:
+  - issue_id: F-COMP-1
+    action: edit_text
+    rationale: "Merge redundant definitional tables (signal/task/decoding/controls) into tab:task_definition and prose"
+    status: fixed
+  - issue_id: F-COMP-2
+    action: edit_text
+    rationale: "Convert single-row and summary-only tables to prose while preserving numeric values"
+    status: fixed
+  - issue_id: F-COMP-3
+    action: edit_text
+    rationale: "Consolidate discussion subsections; retain ethics, limitations, deferred baselines"
+    status: fixed
+  - issue_id: F-COMP-4
+    action: reject
+    rationale: "No layout hacks (scriptsize, vspace, geometry) per ieee-latex-editing"
+    status: not_actionable

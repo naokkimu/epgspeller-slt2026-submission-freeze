@@ -1,0 +1,829 @@
+{
+  "facts": [
+    {
+      "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+      "evidence_path": "scripts/smartpalate_distribution.csv",
+      "evidence_sha256": "d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84",
+      "extract": {
+        "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+        "type": "smartpalate_grid_rows"
+      },
+      "fact_id": "grid_rows",
+      "latex_cmd": "GridRows",
+      "value": "16"
+    },
+    {
+      "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+      "evidence_path": "scripts/smartpalate_distribution.csv",
+      "evidence_sha256": "d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84",
+      "extract": {
+        "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+        "type": "smartpalate_grid_cols"
+      },
+      "fact_id": "grid_cols",
+      "latex_cmd": "GridCols",
+      "value": "16"
+    },
+    {
+      "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+      "evidence_path": "scripts/smartpalate_distribution.csv",
+      "evidence_sha256": "d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84",
+      "extract": {
+        "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+        "type": "smartpalate_total_channels"
+      },
+      "fact_id": "n_channels_total",
+      "latex_cmd": "TotalChannels",
+      "value": "124"
+    },
+    {
+      "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+      "evidence_path": "scripts/smartpalate_distribution.csv",
+      "evidence_sha256": "d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84",
+      "extract": {
+        "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+        "type": "smartpalate_mapped_channels"
+      },
+      "fact_id": "n_channels_mapped",
+      "latex_cmd": "MappedChannels",
+      "value": "120"
+    },
+    {
+      "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+      "evidence_path": "scripts/smartpalate_distribution.csv",
+      "evidence_sha256": "d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84",
+      "extract": {
+        "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+        "type": "smartpalate_unmapped_channels"
+      },
+      "fact_id": "n_channels_unmapped",
+      "latex_cmd": "UnmappedChannels",
+      "value": "4"
+    },
+    {
+      "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+      "evidence_path": "scripts/smartpalate_distribution.csv",
+      "evidence_sha256": "d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84",
+      "extract": {
+        "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+        "type": "smartpalate_duplicated_channels"
+      },
+      "fact_id": "n_channels_duplicated",
+      "latex_cmd": "DuplicatedChannels",
+      "value": "5"
+    },
+    {
+      "evidence_id": "ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17",
+      "evidence_path": "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv",
+      "evidence_sha256": "2f2840f6dee5b8b9e17faf696f9fb8f5f86c2a952d6c239eee2c202b747f0b06",
+      "extract": {
+        "column": "split_id",
+        "evidence_id": "ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17",
+        "regex": "^seed[0-9]+$",
+        "type": "csv_unique_count"
+      },
+      "fact_id": "n_seeds_p1",
+      "latex_cmd": "NSeedsPone",
+      "unique_values": [
+        "seed0",
+        "seed1",
+        "seed2",
+        "seed3"
+      ],
+      "value": "4"
+    },
+    {
+      "evidence_id": "ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17",
+      "evidence_path": "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv",
+      "evidence_sha256": "2f2840f6dee5b8b9e17faf696f9fb8f5f86c2a952d6c239eee2c202b747f0b06",
+      "extract": {
+        "column": "split_id",
+        "evidence_id": "ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17",
+        "join": ", ",
+        "regex": "^seed[0-9]+$",
+        "type": "csv_unique_sorted_join"
+      },
+      "fact_id": "seed_list_p1",
+      "latex_cmd": "SeedListPone",
+      "unique_values": [
+        "seed0",
+        "seed1",
+        "seed2",
+        "seed3"
+      ],
+      "value": "seed0, seed1, seed2, seed3"
+    },
+    {
+      "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "evidence_path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "evidence_sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "extract": {
+        "column": "model_family",
+        "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+        "type": "csv_unique_value"
+      },
+      "fact_id": "model_family_vector",
+      "latex_cmd": "ModelFamilyVector",
+      "value": "uni_gru"
+    },
+    {
+      "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "evidence_path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "evidence_sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "extract": {
+        "column": "n_units",
+        "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+        "type": "csv_unique_value"
+      },
+      "fact_id": "model_units",
+      "latex_cmd": "ModelUnits",
+      "value": "512"
+    },
+    {
+      "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "evidence_path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "evidence_sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "extract": {
+        "column": "n_layers",
+        "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+        "type": "csv_unique_value"
+      },
+      "fact_id": "model_layers",
+      "latex_cmd": "ModelLayers",
+      "value": "5"
+    },
+    {
+      "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "evidence_path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "evidence_sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "extract": {
+        "column": "stride_len",
+        "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+        "type": "csv_unique_value"
+      },
+      "fact_id": "model_stride",
+      "latex_cmd": "StrideLen",
+      "value": "4"
+    },
+    {
+      "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "evidence_path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "evidence_sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "extract": {
+        "column": "kernel_len",
+        "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+        "type": "csv_unique_value"
+      },
+      "fact_id": "model_kernel",
+      "latex_cmd": "KernelLen",
+      "value": "32"
+    },
+    {
+      "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "evidence_path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "evidence_sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "extract": {
+        "column": "input_proj_dim",
+        "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+        "type": "csv_unique_value"
+      },
+      "fact_id": "model_proj_dim",
+      "latex_cmd": "InputProjDim",
+      "value": "64"
+    },
+    {
+      "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "evidence_path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "evidence_sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "extract": {
+        "column": "frame_ms",
+        "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+        "format": "{:.1f}",
+        "type": "csv_unique_value"
+      },
+      "fact_id": "training_frame_ms",
+      "latex_cmd": "FrameMs",
+      "value": "10.0"
+    },
+    {
+      "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "evidence_path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "evidence_sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "extract": {
+        "column": "n_batch",
+        "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+        "type": "csv_unique_value"
+      },
+      "fact_id": "training_n_batch",
+      "latex_cmd": "TrainBatches",
+      "value": "10000"
+    },
+    {
+      "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+      "evidence_path": "sweeps/ed20260217/matrices/ed_p1_kcurve_deterministic.csv",
+      "evidence_sha256": "098bf6226d21e58cbd7019c2222a84574652417a0356d1adf217126ecef88d4f",
+      "extract": {
+        "column": "specaug_on",
+        "evidence_id": "ev_sweeps_ed20260217_matrices_ed_p1_kcurve_deterministic_csv",
+        "type": "csv_unique_value"
+      },
+      "fact_id": "training_specaug",
+      "latex_cmd": "SpecAugOn",
+      "value": "1"
+    }
+  ],
+  "facts_spec": "paper/facts_spec.yaml",
+  "paper_json": "paper/paper.json",
+  "provenance_macros": [
+    {
+      "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+      "evidence_path": "scripts/smartpalate_distribution.csv",
+      "evidence_sha256": "d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84",
+      "latex_cmd": "EvSmartpalateDistribution"
+    },
+    {
+      "evidence_id": "ev_scripts_smartpalate_distribution_csv",
+      "evidence_path": "scripts/smartpalate_distribution.csv",
+      "evidence_sha256": "d21d93c9ec3c0ecd6676908c8d8bc58ea2019533260b883c3d0a3b86213c0b84",
+      "latex_cmd": "ShaSmartpalateDistribution",
+      "sha_prefix_len": 12
+    },
+    {
+      "evidence_id": "ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17",
+      "evidence_path": "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv",
+      "evidence_sha256": "2f2840f6dee5b8b9e17faf696f9fb8f5f86c2a952d6c239eee2c202b747f0b06",
+      "latex_cmd": "EvSpatialCompare"
+    },
+    {
+      "evidence_id": "ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17",
+      "evidence_path": "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv",
+      "evidence_sha256": "2f2840f6dee5b8b9e17faf696f9fb8f5f86c2a952d6c239eee2c202b747f0b06",
+      "latex_cmd": "ShaSpatialCompare",
+      "sha_prefix_len": 12
+    },
+    {
+      "evidence_id": "ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17",
+      "evidence_path": "results/ed20260217/paperjson/h13_rowcol_vs_vector_p1_k32_k64_2026-02-17.csv",
+      "evidence_sha256": "a7fb56ec370de19333dc4ab1f059fbd473b9d0f4b40af525375c1c7d3877bb4b",
+      "latex_cmd": "EvRowcolCompare"
+    },
+    {
+      "evidence_id": "ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17",
+      "evidence_path": "results/ed20260217/paperjson/h13_rowcol_vs_vector_p1_k32_k64_2026-02-17.csv",
+      "evidence_sha256": "a7fb56ec370de19333dc4ab1f059fbd473b9d0f4b40af525375c1c7d3877bb4b",
+      "latex_cmd": "ShaRowcolCompare",
+      "sha_prefix_len": 12
+    },
+    {
+      "evidence_id": "ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17",
+      "evidence_path": "results/ed20260217/paperjson/h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17.csv",
+      "evidence_sha256": "0cd1fecedc166c732da45187356434c85c9316a546151dd6d5100e6caec19284",
+      "latex_cmd": "EvSpatialDropout"
+    },
+    {
+      "evidence_id": "ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17",
+      "evidence_path": "results/ed20260217/paperjson/h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17.csv",
+      "evidence_sha256": "0cd1fecedc166c732da45187356434c85c9316a546151dd6d5100e6caec19284",
+      "latex_cmd": "ShaSpatialDropout",
+      "sha_prefix_len": 12
+    }
+  ],
+  "tables": [
+    {
+      "out_tex": "paper/generated/tables/h11_spatial2d_vs_vector.tex",
+      "provenance": {
+        "columns": [
+          "K",
+          "Vector Greedy CER",
+          "Spatial2D Greedy CER",
+          "Vector Stream RTF",
+          "Spatial2D Stream RTF"
+        ],
+        "protocol": "P1",
+        "rows": [
+          {
+            "frontend": "vector",
+            "mean": 0.13991113782841905,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.016198751809371508,
+            "subset_K": 32,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.48845666905460816,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.126855778908605,
+            "subset_K": 32,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0004906094464863154,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 3.450758065737862e-05,
+            "subset_K": 32,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.0026699489245899924,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 0.00012734552652427831,
+            "subset_K": 32,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.12887873899559824,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.013460619241202492,
+            "subset_K": 64,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.26091757336496246,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.0299530426665527,
+            "subset_K": 64,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0004759518425483324,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 4.425006153582095e-06,
+            "subset_K": 64,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.002895349600866188,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 0.0003044254068853072,
+            "subset_K": 64,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.11939609105628553,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.01732020008798596,
+            "subset_K": 96,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.23037738854103285,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.03504918440068082,
+            "subset_K": 96,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0004752494997413124,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 2.3237503329836575e-05,
+            "subset_K": 96,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.002766516103499527,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 0.00023829573228087577,
+            "subset_K": 96,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.10475742308909865,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.009317184877120976,
+            "subset_K": 124,
+            "subset_method": "all"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.1831213821144896,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.010311086779629173,
+            "subset_K": 124,
+            "subset_method": "all"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0004690398831084274,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 1.4355750529308131e-05,
+            "subset_K": 124,
+            "subset_method": "all"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.0026391943066277424,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 6.677017190432161e-05,
+            "subset_K": 124,
+            "subset_method": "all"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.14397319715557455,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.01363087940284089,
+            "subset_K": 32,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.579515680416002,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.30524542643701524,
+            "subset_K": 32,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0005135800622331928,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 2.184871727738351e-05,
+            "subset_K": 32,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.0026737021033086785,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 0.00012880444680623374,
+            "subset_K": 32,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.11945550694592907,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.010259380724176256,
+            "subset_K": 64,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.3580836144389262,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.3079242428337709,
+            "subset_K": 64,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0005324717126943289,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 9.435332279628487e-05,
+            "subset_K": 64,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.002808227903447093,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 0.0001795049447918882,
+            "subset_K": 64,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.11371117796433644,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.016052215180594197,
+            "subset_K": 96,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.34380888485531197,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.31038110087718024,
+            "subset_K": 96,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.00048560221539950164,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 2.9314888126592547e-05,
+            "subset_K": 96,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.0026258677270944537,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 9.597962001782382e-05,
+            "subset_K": 96,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.10475742308909865,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.009317184877120976,
+            "subset_K": 124,
+            "subset_method": "all"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.1831213821144896,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.010311086779629173,
+            "subset_K": 124,
+            "subset_method": "all"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0004690398831084274,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 1.4355750529308131e-05,
+            "subset_K": 124,
+            "subset_method": "all"
+          },
+          {
+            "frontend": "spatial2d",
+            "mean": 0.0026391943066277424,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 6.677017190432161e-05,
+            "subset_K": 124,
+            "subset_method": "all"
+          }
+        ],
+        "table": "h11_spatial2d_vs_vector"
+      },
+      "source_evidence_id": "ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17",
+      "source_path": "results/ed20260217/paperjson/h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17.csv",
+      "source_sha256": "2f2840f6dee5b8b9e17faf696f9fb8f5f86c2a952d6c239eee2c202b747f0b06",
+      "table": "h11_spatial2d_vs_vector"
+    },
+    {
+      "out_tex": "paper/generated/tables/h13_rowcol_vs_vector.tex",
+      "provenance": {
+        "columns": [
+          "K",
+          "Vector Greedy CER",
+          "RowCol Greedy CER",
+          "Vector Stream RTF",
+          "RowCol Stream RTF"
+        ],
+        "protocol": "P1",
+        "rows": [
+          {
+            "frontend": "vector",
+            "mean": 0.13991113782841905,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.016198751809371508,
+            "subset_K": 32,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "rowcol",
+            "mean": 0.14481353971383074,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.020446241820984392,
+            "subset_K": 32,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0004906094464863154,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 3.450758065737862e-05,
+            "subset_K": 32,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "rowcol",
+            "mean": 0.0021413209441330672,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 0.0002760651167081859,
+            "subset_K": 32,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.12887873899559824,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.013460619241202492,
+            "subset_K": 64,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "rowcol",
+            "mean": 0.126884069124225,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.014294112516782866,
+            "subset_K": 64,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0004759518425483324,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 4.425006153582095e-06,
+            "subset_K": 64,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "rowcol",
+            "mean": 0.0020722703031338155,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 0.0001419569737708349,
+            "subset_K": 64,
+            "subset_method": "topk"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.14397319715557455,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.01363087940284089,
+            "subset_K": 32,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "rowcol",
+            "mean": 0.14655223818979646,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.00796479253929263,
+            "subset_K": 32,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0005135800622331928,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 2.184871727738351e-05,
+            "subset_K": 32,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "rowcol",
+            "mean": 0.00217573884699844,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 0.0003114836543976589,
+            "subset_K": 32,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.11945550694592907,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.010259380724176256,
+            "subset_K": 64,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "rowcol",
+            "mean": 0.12550617421626184,
+            "metric": "greedy_cer",
+            "n": 4,
+            "std": 0.019289115658641356,
+            "subset_K": 64,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "vector",
+            "mean": 0.0005324717126943289,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 9.435332279628487e-05,
+            "subset_K": 64,
+            "subset_method": "fps2k"
+          },
+          {
+            "frontend": "rowcol",
+            "mean": 0.0021043788342935492,
+            "metric": "greedy_rtf",
+            "n": 4,
+            "std": 0.00021633542239380188,
+            "subset_K": 64,
+            "subset_method": "fps2k"
+          }
+        ],
+        "table": "h13_rowcol_vs_vector"
+      },
+      "source_evidence_id": "ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17",
+      "source_path": "results/ed20260217/paperjson/h13_rowcol_vs_vector_p1_k32_k64_2026-02-17.csv",
+      "source_sha256": "a7fb56ec370de19333dc4ab1f059fbd473b9d0f4b40af525375c1c7d3877bb4b",
+      "table": "h13_rowcol_vs_vector"
+    },
+    {
+      "out_tex": "paper/generated/tables/h12_spatial_aug_dropout.tex",
+      "provenance": {
+        "model_family": "spatial2d_uni_gru",
+        "protocol": "P1",
+        "rows": [
+          {
+            "drop_rate": 0.0,
+            "enable_spatial_aug": 0,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          {
+            "drop_rate": 0.0,
+            "enable_spatial_aug": 1,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          {
+            "drop_rate": 0.1,
+            "enable_spatial_aug": 0,
+            "mean": 0.0245135,
+            "std": 0.002701075649934053
+          },
+          {
+            "drop_rate": 0.1,
+            "enable_spatial_aug": 1,
+            "mean": 0.018333750000000003,
+            "std": 0.006492583480402852
+          },
+          {
+            "drop_rate": 0.2,
+            "enable_spatial_aug": 0,
+            "mean": 0.078347,
+            "std": 0.016201870879623746
+          },
+          {
+            "drop_rate": 0.2,
+            "enable_spatial_aug": 1,
+            "mean": 0.0659815,
+            "std": 0.00969253996638652
+          },
+          {
+            "drop_rate": 0.3,
+            "enable_spatial_aug": 0,
+            "mean": 0.14403275,
+            "std": 0.018337409038629203
+          },
+          {
+            "drop_rate": 0.3,
+            "enable_spatial_aug": 1,
+            "mean": 0.122362,
+            "std": 0.011956250889527752
+          }
+        ],
+        "subset_K": 64,
+        "subset_method": "topk",
+        "table": "h12_spatial_aug_dropout"
+      },
+      "source_evidence_id": "ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17",
+      "source_path": "results/ed20260217/paperjson/h12_spatial_aug_fixed_dropout_summary_p1_topk_k64_2026-02-17.csv",
+      "source_sha256": "0cd1fecedc166c732da45187356434c85c9316a546151dd6d5100e6caec19284",
+      "table": "h12_spatial_aug_dropout"
+    }
+  ]
+}

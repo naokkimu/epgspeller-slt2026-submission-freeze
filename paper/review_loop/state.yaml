@@ -1,18 +1,32 @@
-manuscript: paper/SLT_draft_clean.md
-manuscript_hash: f1d187b0c2a3ef5cb53549c1d812a8270dfe847288a0751618a07286b986efd1
-current_iteration: 6
-status: complete
-loop_pass: true
-final_commit: 60c9c00
+manuscript: paper/final/slt2026.tex
+manuscript_hash: 7b2fc686effee986400294c4d872f2585f28ed84113cf920a942ad8752805830
+sections_hash_combined: e2cd490a0eff239b6c4e8b5eb62679ffd0bccd5c806330906f774d1f12557407
+current_iteration: 9
+status: blocked_score5
+loop_pass: false
+content_pages_target: 6
+content_pages_actual: 6
+review_target: "all_5"
+review_scores_iter_009: [4, 4, 4]
+score5_blockers: [D-BASE-1, D-N-1, D-AAC-1]
+pages:
+  before: 10
+  after: 7
+  content_after: 6
+  reference_after: 1
 iterations:
-  - iter: 5
-    composite: Borderline
-    slt_median: 4
-    slt_verdict: Weak Accept
-    gate_pass: false
-    note: writing_gate fail
   - iter: 6
     composite: Pass
     slt_median: 4
+    slt_scores: [3, 4, 4]
     slt_verdict: Weak Accept
+    gate_pass: true
+  - iter: 7
+    mode: format_compression
+    composite: Pass
+    slt_median: 4
+    slt_scores: [4, 4, 4]
+    slt_verdict: Weak Accept
+    compile_pages: 4
+    slt_format_audit: PASS
     gate_pass: true

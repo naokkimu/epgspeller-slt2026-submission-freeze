@@ -1,0 +1,952 @@
+paper:
+  title_working: "EPGSpeller: Towards Fast, Hands-Free AAC Text Entry with Electropalatographic Silent Spelling"
+  central_intent: "Show that electropalatographic silent spelling can support lexicon-free hands-free text entry when personalized calibration is available, while cross-user calibration remains the central bottleneck."
+questions:
+  Q.problem.aac_text_entry:
+    question: "What concrete AAC problem motivates this paper?"
+    answer: "People who cannot rely on speech or manual input need a text-entry channel that can be used silently and hands-free."
+    placement: {slot: core.problem, order: 1, priority: required, core_required: true, extension_only: false, role: problem, rhetorical_role: intro.problem}
+    claims: {emits: [], supports: []}
+    evidence: {artifacts: [], status: not_required}
+    render:
+      outputs:
+        - type: paragraph
+          id: para.problem.aac_text_entry
+          role: problem
+          group: intro_problem
+          order: 1
+          text: >
+            Hands-free text entry is a central problem for augmentative and alternative communication (AAC):
+            many users and usage settings cannot assume reliable speech, hand movement, or a visible keyboard.
+            Silent speech interfaces offer an appealing route, but a practical AAC channel must support more
+            than a small set of pre-defined commands. It must let users compose words and messages.
+    reviewer_risk:
+      objection: "The title promises fast text entry, but the experiments report recognition and inference metrics rather than a human WPM study."
+      mitigation: "Use 'towards fast text entry' and distinguish text-entry potential from measured low real-time factors."
+    status: answered
+
+  Q.problem.epg_signal:
+    question: "What does the SmartPalate/EPG device actually provide?"
+    answer: "It provides a multichannel time series of tongue-palate contact during silent articulation."
+    placement: {slot: core.problem, order: 2, priority: required, core_required: true, extension_only: false, role: problem, rhetorical_role: intro.reframing}
+    claims:
+      emits:
+        - id: C.epg_signal
+          statement: "The SilentSpeller-style data used here are multichannel electropalatographic contact time series paired with prompted word labels."
+          type: data_description
+          required_in_core: true
+      supports: []
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+        - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+        - A_results_dataset_audit_silentspeller_2026_02_24_report_md
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.problem.epg_signal
+          role: problem
+          group: intro_problem
+          order: 2
+          text: >
+            Electropalatography (EPG) makes this setting concrete. A SmartPalate-style sensor records
+            tongue-palate contact as a multichannel temporal pattern while the user silently articulates.
+            In the SilentSpeller-style recordings used in this work, each trial is a variable-length EPG
+            sequence paired with the word that the participant attempted to spell or articulate.
+    reviewer_risk:
+      objection: "Reviewers may not know what the device measures."
+      mitigation: "Define EPG as contact time series before introducing any model or benchmark terminology."
+    status: answered
+
+  Q.problem.prior_capability:
+    question: "What have prior silent-speech interfaces already shown?"
+    answer: "Prior work has shown useful command or constrained text-entry capability, but that is not yet arbitrary AAC spelling from character evidence."
+    placement: {slot: core.problem, order: 3, priority: required, core_required: true, extension_only: false, role: problem, rhetorical_role: intro.prior_capability}
+    claims: {emits: [], supports: [C.epg_signal]}
+    evidence:
+      artifacts:
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_report_md
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_coverage_matrix_csv
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_references_audit_md
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.problem.prior_capability
+          role: problem
+          group: intro_problem
+          order: 1
+          text: >
+            Prior silent-speech interfaces have shown that silent articulatory or biosignal patterns can be
+            mapped to useful commands or constrained text-entry actions. That capability is important, but it
+            is not the same as an AAC text channel that lets a user spell arbitrary messages from character
+            evidence.
+    reviewer_risk:
+      objection: "The related-work gap could be read as ignoring command-recognition progress."
+      mitigation: "Acknowledge prior capability, then separate it from the open-message spelling target."
+    status: answered
+
+  Q.problem.fixed_vocabulary:
+    question: "What gap remains after silent command recognition?"
+    answer: "Fixed-vocabulary silent commands do not by themselves provide open message composition; spelling recognition attacks that limitation."
+    placement: {slot: core.problem, order: 4, priority: required, core_required: true, extension_only: false, role: problem, rhetorical_role: intro.gap}
+    claims:
+      emits:
+        - id: C.fixed_vocab_gap
+          statement: "Silent spelling changes the interface problem from selecting among fixed commands to producing character strings that can express unseen words."
+          type: positioning
+          required_in_core: true
+      supports: [C.epg_signal]
+    evidence:
+      artifacts:
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_report_md
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_coverage_matrix_csv
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_references_audit_md
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.problem.fixed_vocabulary
+          role: gap
+          group: intro_problem
+          order: 1
+          text: >
+            The key interface question is therefore not simply whether EPG can recognize a known silent
+            command. EPGSpeller asks whether the contact signal can be decoded at the character level.
+            Character-level silent spelling breaks the fixed-vocabulary limitation of command recognition:
+            if the spelling stream is recognized well enough, the user is no longer restricted to words
+            that were present as output classes during training. The related-work comparison also motivates
+            keeping command recognition, modality-specific SSI systems, and LM-assisted text entry separate
+            from the present lexicon-free EPG spelling claim.
+    reviewer_risk:
+      objection: "The paper could be read as another recognizer benchmark rather than an AAC text-entry paper."
+      mitigation: "Make the fixed-vocabulary limitation the Introduction gap, then use experiments to bound how far the system gets."
+    status: answered
+
+  Q.claim.central:
+    question: "What is the central claim?"
+    answer: "EPGSpeller is not just a better recognizer: it demonstrates lexicon-free silent spelling as a hands-free AAC text-entry path, while showing that calibration rather than decoding speed is the remaining bottleneck."
+    placement: {slot: core.claim, order: 1, priority: required, core_required: true, extension_only: false, role: central_claim, rhetorical_role: intro.central_claim}
+    claims:
+      emits:
+        - id: C.central
+          statement: "EPGSpeller supports lexicon-free EPG silent spelling with strong personalized recognition, but cross-user calibration remains unresolved."
+          type: central_claim
+          required_in_core: true
+      supports: [C.fixed_vocab_gap]
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_slt_p2_20260626_kshot_feasibility_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_preproc20260626_preproc_ablation_report_md
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.claim.central
+          role: central_claim
+          rhetorical_role: intro.central_claim
+          group: intro_claim
+          order: 1
+          text: >
+            This paper presents EPGSpeller, a character-level recognizer for electropalatographic silent
+            spelling. The contribution is not only a lower-error decoder. The system shows that EPG can be
+            framed as a hands-free AAC text-entry interface that is no longer tied to a fixed command
+            vocabulary. At the same time, the experiments deliberately expose the remaining bottleneck:
+            personalized calibration is effective, whereas cross-participant transfer and high-shot
+            calibration are still constrained by the available data. The preprocessing sweep reinforces this
+            interpretation by showing that simple normalization changes cross-user errors but does not turn
+            them into personalized recognition.
+    reviewer_risk:
+      objection: "A broad SOTA claim would be too strong with four participants and partly historical data."
+      mitigation: "Claim strong personalized EPG spelling and calibrated limits, not universal SOTA across silent speech interfaces."
+    status: answered
+
+  Q.claim.evidence_preview:
+    question: "What evidence preview should the Introduction give?"
+    answer: "The Introduction should preview the personalized, word-holdout, calibration, transfer, and preprocessing checks without dumping detailed result numbers."
+    placement: {slot: core.claim, order: 2, priority: required, core_required: true, extension_only: false, role: central_claim, rhetorical_role: intro.evidence_preview}
+    claims: {emits: [], supports: [C.central]}
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.claim.evidence_preview
+          role: central_claim
+          group: intro_claim
+          order: 1
+          text: >
+            The evidence is organized around that claim boundary. The paper first tests personalized and
+            word-holdout spelling recognition, then asks whether calibration can be reduced, and finally
+            checks whether multi-source transfer or simple preprocessing removes the user-dependence.
+    reviewer_risk:
+      objection: "The Introduction could feel like a promise without a roadmap."
+      mitigation: "Preview the exact result blocks while leaving detailed numbers to Results."
+    status: answered
+
+  Q.claim.contributions:
+    question: "What contributions should be stated without turning the paper into a benchmark-only framing?"
+    answer: "The contribution is the AAC spelling framing, the lexicon-free recognizer, the SilentSpeller-compatible bridge, and the explicit calibration boundary."
+    placement: {slot: core.claim, order: 3, priority: required, core_required: true, extension_only: false, role: central_claim, rhetorical_role: intro.contributions}
+    claims: {emits: [], supports: [C.central]}
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_slt_p2_20260626_kshot_feasibility_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.claim.contributions
+          role: central_claim
+          group: intro_claim
+          order: 1
+          text: >
+            The contributions are: (1) an AAC-centered framing of SmartPalate EPG as a character-level
+            silent spelling channel, (2) a high-performing lexicon-free vector/GRU recognizer for that task,
+            and (3) evidence that connects personalized spelling, SilentSpeller-compatible word holdout, and
+            calibration limits without hiding the remaining user-dependence behind a single benchmark score.
+    reviewer_risk:
+      objection: "The contribution list could drift back toward a pure evaluation-contract framing."
+      mitigation: "Keep the first contribution as the AAC text-entry reframing, then state the experimental support."
+    status: answered
+
+  Q.method.00_signal_representation:
+    question: "How is the EPG signal represented for decoding?"
+    answer: "Each trial is represented as an ordered EPG contact-frame sequence, keeping the task tied to tongue-palate contact rather than audio or manual labels."
+    placement: {slot: core.method, order: 1, priority: required, core_required: true, extension_only: false, role: method, rhetorical_role: method.signal_representation}
+    claims: {emits: [], supports: [C.epg_signal, C.task]}
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+        - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.method.signal_representation
+          role: method
+          group: method_task
+          order: 1
+          text: >
+            The input representation is the EPG contact stream itself: each trial is treated as an ordered
+            sequence of palate-contact frames rather than as audio, video, or a manually segmented phone
+            sequence. This keeps the task tied to the SmartPalate-style signal and makes the decoding claim
+            about silent tongue-palate contact.
+    reviewer_risk:
+      objection: "The task could be confused with acoustic ASR or phone-level annotation."
+      mitigation: "State the frame-level EPG input before the CTC recognizer is introduced."
+    status: answered
+
+  Q.method.01_task_definition:
+    question: "What task or problem setting is studied?"
+    answer: "The task is lexicon-free character recognition from EPG contact sequences, evaluated with greedy character error rate and separated from lexicon projection."
+    placement: {slot: core.method, order: 2, priority: required, core_required: true, extension_only: false, role: method, rhetorical_role: method.task_object}
+    claims:
+      emits:
+        - id: C.task
+          statement: "The primary task is greedy character-level decoding from EPG time series rather than closed-set word classification."
+          type: task_definition
+          required_in_core: true
+      supports: [C.central]
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.task.definition
+          role: method
+          rhetorical_role: method.task_object
+          group: method_task
+          order: 1
+          text: >
+            Given an EPG contact sequence, the model outputs a character string. We treat greedy
+            character-level decoding as the primary lexicon-free result. Lexicon-projected scores are useful
+            diagnostics, but they are not allowed to carry the central claim because an AAC spelling
+            interface must eventually support words and messages outside a fixed evaluation lexicon.
+    reviewer_risk:
+      objection: "Lexicon-free could be undermined if lexicon projection is mixed into the main result."
+      mitigation: "Keep greedy CER as the main metric and label lexicon-projected results as secondary diagnostics."
+    status: answered
+
+  Q.method.02_workflow:
+    question: "What method or system is proposed?"
+    answer: "EPGSpeller combines CTC sequence recognition with EPG-specific front ends and regularization, while keeping the fastest vector/GRU recognizer as the main reporting path."
+    placement: {slot: core.method, order: 3, priority: required, core_required: true, extension_only: false, role: method, rhetorical_role: method.model_core}
+    claims:
+      emits:
+        - id: C.workflow
+          statement: "EPGSpeller uses character-level CTC sequence modeling for silent spelling from EPG contact time series."
+          type: method
+          required_in_core: true
+      supports: [C.task]
+    evidence:
+      artifacts:
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.method.workflow
+          role: method
+          rhetorical_role: method.model_core
+          group: method_workflow
+          order: 1
+          text: >
+            EPGSpeller uses a character-level CTC recognizer over EPG frames. We evaluate a high-capacity
+            vector/GRU recognizer as the main system and compare it with layout-aware variants that use
+            row-column pooling or two-dimensional palatal grids. The design goal is deliberately pragmatic:
+            maximize silent spelling accuracy under lexicon-free decoding, then use ablations to ask which
+            EPG-specific inductive biases help under the same protocols.
+    reviewer_risk:
+      objection: "Spatial front ends might be mistaken for the central novelty even when they do not win."
+      mitigation: "Frame spatial modeling as an ablation; keep the AAC spelling system and calibration finding central."
+    status: answered
+
+  Q.method.03_variant_scope:
+    question: "Which model variants are part of the claim, and which are ablations?"
+    answer: "The vector/GRU recognizer carries the interface claim; layout-aware and reduced-electrode variants are controlled ablations."
+    placement: {slot: core.method, order: 4, priority: required, core_required: true, extension_only: false, role: method, rhetorical_role: method.variant_scope}
+    claims: {emits: [], supports: [C.workflow]}
+    evidence:
+      artifacts:
+        - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+        - A_results_msx20260224_paper_tables_table_k64_methods_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.method.variant_scope
+          role: method
+          group: method_workflow
+          order: 1
+          text: >
+            The method scope is therefore intentionally narrow. The vector/GRU system is the main recognizer
+            used for the paper's interface claim, while layout-aware and reduced-electrode variants are
+            treated as controlled engineering ablations under the same decoding and reporting rules.
+    reviewer_risk:
+      objection: "A reader may mistake every ablation for a proposed production architecture."
+      mitigation: "Separate the main recognizer from engineering variants before Results."
+    status: answered
+
+  Q.setup.data_protocols:
+    question: "What data and evaluation protocols are used?"
+    answer: "The paper uses four participant datasets and reports personalized, word-holdout, cross-participant, multi-source, and low-shot calibration settings."
+    placement: {slot: core.evaluation, order: 1, priority: required, core_required: true, extension_only: false, role: evaluation, rhetorical_role: eval.data}
+    claims:
+      emits:
+        - id: C.protocols
+          statement: "The evaluation separates personalized recognition, unseen-word spelling, cross-participant transfer, and calibration conditions."
+          type: evaluation
+          required_in_core: true
+      supports: [C.central]
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+        - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.setup.data
+          role: evaluation
+          group: eval_setup
+          order: 1
+          text: >
+            The evaluation uses four SilentSpeller-style EPG datasets with different repetition densities:
+            p1 and p2 each contain 2328 trials over 1164 word types, p3 contains 2797 trials over 1164 word
+            types, and p4 contains 1167 trials over 1162 word types. The dataset summary table supports the
+            feasibility decisions used later in the calibration analysis, because low-shot and high-shot
+            calibration depend on repeated productions per word, not only on the number of participants.
+        - type: table
+          id: tab.dataset_summary
+          label: tab:dataset_summary
+          source_artifact: A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+          caption: "Dataset audit summary for the SilentSpeller-style EPG recordings."
+          role: evaluation
+          rhetorical_role: eval.data
+          order: 2
+    reviewer_risk:
+      objection: "Different protocols could be conflated."
+      mitigation: "Define each protocol by the user/word/calibration question it answers."
+    status: answered
+
+  Q.setup.protocols:
+    question: "Which evaluation protocols answer which scientific questions?"
+    answer: "Personalized, word-holdout, cross-participant, multi-source, and k-shot protocols are separated by whether they test recognition, unseen-word spelling, transfer, or calibration."
+    placement: {slot: core.evaluation, order: 2, priority: required, core_required: true, extension_only: false, role: evaluation, rhetorical_role: eval.protocols}
+    claims: {emits: [], supports: [C.protocols, C.central]}
+    evidence:
+      artifacts:
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.setup.protocols
+          role: evaluation
+          group: eval_setup
+          order: 1
+          text: >
+            The evaluation separates the claims that matter for an AAC spelling interface. Personalized
+            protocols measure whether the recognizer can work after user-specific training; word-holdout
+            protocols ask whether spelling generalizes beyond training word types; cross-participant protocols
+            test whether a model can be reused without target calibration; and k-shot protocols measure how
+            much target-user calibration is needed. Reported tables aggregate repeated runs by condition and
+            keep incompatible protocols separate rather than pooling instance holdout, word holdout, and
+            cross-participant transfer into one score.
+    reviewer_risk:
+      objection: "A reviewer could treat protocol differences as cherry-picking."
+      mitigation: "State the question answered by each protocol before reporting any result."
+    status: answered
+
+  Q.setup.metrics:
+    question: "What metrics and reporting conventions protect the lexicon-free claim?"
+    answer: "The paper reports greedy CER as the primary measure, lexicon projection as secondary, and RTF to document inference speed."
+    placement: {slot: core.evaluation, order: 3, priority: required, core_required: true, extension_only: false, role: evaluation, rhetorical_role: eval.metrics}
+    claims:
+      emits:
+        - id: C.metrics
+          statement: "Greedy character error rate is the primary recognition metric; lexicon-projected scores and real-time factor are reported separately."
+          type: evaluation
+          required_in_core: true
+      supports: [C.task]
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.setup.metrics
+          role: evaluation
+          group: eval_setup
+          order: 3
+          text: >
+            The primary metric is greedy character error rate (CER), computed without projecting the output
+            onto a candidate lexicon. Where useful, we also report lexicon-projected scores to compare with
+            closed-vocabulary behavior, but those values are not used as the main evidence for lexicon-free
+            text entry. Real-time factor (RTF) is reported separately to show that decoding latency is not
+            the main obstacle in the present experiments.
+    reviewer_risk:
+      objection: "A reviewer may suspect post-processing is hidden in the main result."
+      mitigation: "Explicitly state that greedy CER carries the main claim."
+    status: answered
+
+  Q.setup.controls:
+    question: "What baselines and controls keep the main claim interpretable?"
+    answer: "The main vector/GRU recognizer, SilentSpeller-compatible-lite word holdout, lexicon projection, preprocessing, spatial-front-end, and electrode-budget controls are separated by purpose."
+    placement: {slot: core.evaluation, order: 4, priority: required, core_required: true, extension_only: false, role: evaluation, rhetorical_role: eval.baselines_controls}
+    claims: {emits: [], supports: [C.metrics, C.protocols]}
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+        - A_results_msx20260224_paper_tables_table_k64_methods_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.setup.baselines_controls
+          role: evaluation
+          group: eval_setup
+          order: 1
+          text_by_profile:
+            core4: >
+              Baselines and controls are separated by what they test. The main vector/GRU path carries the
+              recognition result; SilentSpeller-compatible-lite word holdout connects to the historical task;
+              lexicon projection is reported only as a closed-vocabulary diagnostic; and transfer and
+              preprocessing controls are used to bound the calibration claim rather than to redefine the
+              primary task.
+            slt2026: >
+              Baselines and controls are separated by what they test. The main vector/GRU path carries the
+              recognition result; SilentSpeller-compatible-lite word holdout connects to the historical task;
+              lexicon projection is reported only as a closed-vocabulary diagnostic; and preprocessing,
+              spatial-front-end, and electrode-budget variants are used as ablations rather than as alternate
+              definitions of the primary task. This separation is what keeps the lexicon-free claim attached
+              to greedy CER instead of to a lexicon projection or a favorable post-processing condition.
+    reviewer_risk:
+      objection: "Ablation results could be mistaken for alternate primary decoding conditions."
+      mitigation: "Define controls as interpretation checks, not as changes to the lexicon-free metric."
+    status: answered
+
+  Q.result.01_personalized:
+    question: "How well does EPGSpeller work when user-specific training is available?"
+    answer: "The vector/GRU recognizer reaches strong personalized performance, with P1 CER 0.1796 and P2 CER 0.1451 in the main table."
+    placement: {slot: core.result, order: 1, priority: required, core_required: true, extension_only: false, role: main_result, result_role: primary_evidence}
+    claims:
+      emits:
+        - id: C.personalized_result
+          statement: "Under personalized or within-participant conditions, EPGSpeller achieves substantially lower greedy CER than cross-participant transfer."
+          type: main_result
+          required_in_core: true
+      supports: [C.central, C.metrics]
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.result.personalized
+          role: main_result
+          group: results_main
+          order: 1
+          text: >
+            Table~\ref{tab:main_protocols} gives the central recognition result. With the same vector/GRU
+            recognizer and greedy decoding, personalized conditions are much stronger than cross-participant
+            transfer: P1 reaches 0.1796 CER, P2 reaches 0.1451 CER, whereas P3 cross-participant transfer
+            remains at 0.6909 CER. The contrast is the main empirical shape of the paper: EPG silent spelling
+            is viable after user-specific calibration, but it is not yet ready for deployment to a new user
+            without target calibration.
+        - type: table
+          id: tab.main_protocols
+          label: tab:main_protocols
+          source_artifact: A_results_paper_layout_2026_03_03_table_main_compact_csv
+          caption: "Main protocol recap for the vector/GRU recognizer. CER is greedy character error rate; lex_all is lexicon-projected error."
+          role: main_result
+          order: 2
+    reviewer_risk:
+      objection: "The result could be oversold as a general cross-user solution."
+      mitigation: "Make the personalized/cross-participant contrast explicit in the first Results paragraph."
+    status: answered
+
+  Q.result.02_silentspeller_lite:
+    question: "How does the system connect to SilentSpeller-style unseen-word evaluation?"
+    answer: "A SilentSpeller-compatible-lite word-holdout condition with 100 unseen test word types gives CER 0.1133 +/- 0.0128 for subj1."
+    placement: {slot: core.result, order: 2, priority: required, core_required: true, extension_only: false, role: main_result, result_role: task_validity}
+    claims:
+      emits:
+        - id: C.silentspeller_lite
+          statement: "In a SilentSpeller-compatible-lite word-holdout condition, EPGSpeller maintains low greedy CER on 100 unseen test word types for subj1."
+          type: main_result
+          required_in_core: true
+      supports: [C.central, C.protocols]
+    evidence:
+      artifacts:
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_slt_p2_20260626_slt_p2_report_md
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.result.silentspeller_lite
+          role: main_result
+          group: results_main
+          order: 3
+          text: >
+            To connect this framing back to SilentSpeller-style evaluation, we additionally use a
+            word-holdout lite condition on subj1 with 100 unseen test word types. The vector/GRU recognizer
+            obtains 0.1133 +/- 0.0128 greedy CER across four seeds. This is not claimed as a historical
+            implementation reproduction; it is a same-dataset, spelling-oriented bridge showing that
+            the recognizer remains effective when the test words are held out.
+        - type: table
+          id: tab.silentspeller_lite
+          label: tab:silentspeller_lite
+          source_artifact: A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+          caption: "SilentSpeller-compatible-lite word-holdout result for subj1."
+          role: main_result
+          order: 4
+    reviewer_risk:
+      objection: "Reviewers may ask whether this is exactly the old SilentSpeller split and decoder."
+      mitigation: "Name it compatible-lite and avoid claiming a full historical implementation reproduction."
+    status: answered
+
+  Q.result.03_calibration:
+    question: "What happens when the target user has little or no calibration data?"
+    answer: "Zero-shot transfer is poor for subj3, but k=1 and k=2 within-subject calibration sharply reduce CER; higher k cannot be evaluated standardly from the available data."
+    placement: {slot: core.result, order: 3, priority: required, core_required: true, extension_only: false, role: main_result, result_role: constraint_or_recovery}
+    claims:
+      emits:
+        - id: C.calibration_curve
+          statement: "For subj3, calibration reduces CER from roughly 0.84 in zero-shot transfer to 0.3503 at k=1 and 0.2458 at k=2, but 50-word evaluation at k=4 and k=8 is data-infeasible."
+          type: main_result
+          required_in_core: true
+      supports: [C.central]
+    evidence:
+      artifacts:
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+        - A_results_slt_p2_20260626_kshot_feasibility_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.result.calibration
+          role: main_result
+          group: results_calibration
+          order: 5
+          text: >
+            The calibration experiments turn the cross-user weakness into a more actionable result.
+            For subj3, zero-shot transfer gives 0.8403 CER for single-source transfer and 0.8381 CER for
+            multi-source transfer, while one and two target examples per word reduce CER to 0.3503 and
+            0.2458. Additional k=1 runs on subj1 and subj2 give 0.1082 and 0.1118 CER, indicating that
+            one-shot personalized calibration can be strong when each word has two productions. However, the
+            available public data do not support a 50-word held-out evaluation at k=4 or k=8: only
+            14 word types satisfy the k=4 repetition requirement for subj3, and none satisfy k=8.
+        - type: table
+          id: tab.kshot_curve
+          label: tab:kshot_curve
+          source_artifact: A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+          caption: "Calibration curve and feasibility for subj3. The k=4 row is reduced-vocabulary diagnostic evidence; k=8 is data-infeasible."
+          role: main_result
+          order: 6
+        - type: table
+          id: tab.lowshot_extended
+          label: tab:lowshot_extended
+          source_artifact: A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+          caption: "Low-shot extension beyond subj3 for subjects with two repetitions per word."
+          role: main_result
+          order: 7
+          exclude_profiles: [slt2026]
+    reviewer_risk:
+      objection: "The k-shot curve could be criticized as incomplete."
+      mitigation: "State that k=4 and k=8 are infeasible under the standard held-out-token protocol and use this as calibration-burden evidence."
+    status: answered
+
+  Q.result.04_cross_user:
+    question: "Does multi-source transfer solve the cross-user problem?"
+    answer: "No. Multi-source transfer and simple preprocessing controls can shift cross-user CER, but they do not close the gap to personalized decoding."
+    placement: {slot: core.result, order: 4, priority: required, core_required: true, extension_only: false, role: main_result, result_role: failure_condition}
+    claims:
+      emits:
+        - id: C.cross_user_bottleneck
+          statement: "Cross-participant transfer remains substantially worse than personalized decoding even with multi-source variants and simple preprocessing controls."
+          type: main_result
+          required_in_core: true
+      supports: [C.central]
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_p3ms_compact_csv
+        - A_results_paper_layout_2026_03_03_table_to4_compact_csv
+        - A_results_msx20260224_paper_tables_table_p3ms_csv
+        - A_results_uc20260226_paper_tables_table_to4_generalization_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_preproc20260626_preproc_ablation_report_md
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.result.cross_user
+          role: main_result
+          group: results_transfer
+          order: 8
+          text: >
+            Multi-source transfer does not remove the bottleneck. Paired-source and multi-source variants
+            sometimes improve over a single-source baseline, but the resulting errors are still far from
+            personalized performance and vary strongly by target. For target subject 4, all-to-4 vector CER is
+            0.686 in P3 and 0.582 in P3MS. A preprocessing sweep over raw, standardized, contact-matched,
+            target-marginal, and PCA-standardized variants improves the best protocol-level averages only to
+            0.6426 for P3 and 0.5692 for P3MS. For the paper's AAC framing, this means the current evidence
+            supports personalized silent spelling, not an off-the-shelf model that can be deployed to a new
+            user without calibration.
+        - type: table
+          id: tab.p3ms
+          label: tab:p3ms
+          source_artifact: A_results_paper_layout_2026_03_03_table_p3ms_compact_csv
+          caption: "Multi-source cross-participant transfer results."
+          role: main_result
+          order: 9
+          exclude_profiles: [slt2026]
+        - type: table
+          id: tab.to4_generalization
+          label: tab:to4_generalization
+          source_artifact: A_results_paper_layout_2026_03_03_table_to4_compact_csv
+          caption: "Additional cross-participant generalization results for target subject 4."
+          role: main_result
+          order: 10
+          exclude_profiles: [slt2026]
+    reviewer_risk:
+      objection: "A reviewer may ask why cross-user performance is not solved."
+      mitigation: "Make it an explicit result and use it to motivate calibration as the next bottleneck."
+    status: answered
+
+  Q.result.05_validation_controls:
+    question: "Which validation checks support the cross-user interpretation?"
+    answer: "Multi-source training, target-specific transfer directions, and preprocessing controls reduce protocol ambiguity but do not change the personalized-only claim boundary."
+    placement: {slot: core.result, order: 5, priority: required, core_required: true, extension_only: false, role: main_result, result_role: validation_check}
+    claims: {emits: [], supports: [C.cross_user_bottleneck, C.boundary]}
+    evidence:
+      artifacts:
+        - A_results_paper_layout_2026_03_03_table_p3ms_compact_csv
+        - A_results_paper_layout_2026_03_03_table_to4_compact_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_preproc20260626_preproc_ablation_report_md
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.result.validation_controls
+          role: main_result
+          group: results_transfer
+          order: 1
+          text: >
+            These transfer results are interpreted alongside validation controls, not as an isolated negative
+            table. Multi-source training, target-specific transfer directions, and preprocessing variants all
+            test whether the observed gap can be attributed to a simple protocol artifact. They reduce some
+            ambiguities, but they do not change the claim boundary: the present system is supported as
+            personalized lexicon-free spelling, not as deployment without target calibration.
+    reviewer_risk:
+      objection: "The validation paragraph may sound like a post-hoc excuse for weak transfer."
+      mitigation: "Tie it directly to pre-declared controls and keep the conclusion bounded."
+    status: answered
+
+  Q.limit.registration:
+    question: "What limitation must be visible in the core paper?"
+    answer: "The paper does not prove EPG text entry without target calibration; it proves strong personalized recognition, shows that simple cross-user normalization is insufficient, and documents why high-k calibration cannot be fully evaluated without denser repeated recordings."
+    placement: {slot: core.boundary, order: 1, priority: required, core_required: true, extension_only: false, role: core_limitation, result_role: claim_scope}
+    claims:
+      emits:
+        - id: C.boundary
+          statement: "The current evidence is bounded to four participants and available repetition densities; simple normalization does not remove cross-user error, and high-k calibration requires denser per-user data."
+          type: limitation
+          required_in_core: true
+      supports: [C.central, C.calibration_curve]
+    evidence:
+      artifacts:
+        - A_results_slt_p2_20260626_kshot_feasibility_csv
+        - A_results_slt_p2_20260626_experiment_status_md
+        - A_results_slt_p2_20260626_split_audit_protocol_split_summary_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_preproc20260626_experiment_status_md
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.limit.registration
+          role: core_limitation
+          group: core_boundary
+          order: 1
+          text: >
+            The strongest limitation is not decoding speed or the existence of a recognizer. It is calibration.
+            The experiments show that EPGSpeller can work well when participant-specific data are available,
+            but cross-user transfer remains weak. The preprocessing ablation rules out a simple explanation in
+            which train-only standardization, contact-rate matching, target marginal normalization, or PCA
+            alone closes the gap; the best protocol-level preprocessing averages remain 0.6426 CER for P3
+            and 0.5692 CER for P3MS. The experiments also show that the present public recordings do not
+            contain enough repeated productions per word to run a 50-word held-out calibration evaluation at
+            k=4 or k=8. Future AAC-oriented EPG datasets therefore need denser repeated spelling trials, not only
+            more model variants.
+    reviewer_risk:
+      objection: "The limitation might be seen as a missing experiment."
+      mitigation: "Tie the limitation to the feasibility audit and explain that additional data collection would be required."
+    status: answered
+
+  Q.extension.00_preprocessing:
+    question: "Can the cross-user failure be explained away by simple preprocessing or normalization?"
+    answer: "No. Train-only standardization, contact-rate matching, target marginal normalization, and PCA/no-PCA controls move the numbers but do not make cross-user transfer competitive with personalized decoding."
+    placement: {slot: extension.analysis, order: 1, priority: optional, core_required: false, extension_only: true, role: extended_ablation}
+    claims:
+      emits:
+        - id: C.preprocessing_ablation
+          statement: "Simple preprocessing controls do not remove the cross-user bottleneck; the best protocol-level CER remains 0.6426 for P3 and 0.5692 for P3MS."
+          type: analysis
+          required_in_core: false
+      supports: [C.cross_user_bottleneck, C.boundary]
+    evidence:
+      artifacts:
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_direction_condition_csv
+        - A_results_preproc20260626_preproc_ablation_report_md
+        - A_results_preproc20260626_experiment_status_md
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.extension.preprocessing
+          role: extended_ablation
+          group: extension_analysis
+          order: 1
+          text: >
+            The preprocessing sweep tests whether the cross-user result is just a scale or contact-rate
+            artifact. It covers 120 runs over six transfer directions, four seeds, and five preprocessing
+            conditions: raw standardized, raw unstandardized, contact-rate matched, target-marginal
+            normalized, and PCA-standardized. The best protocol-level averages are still 0.6426 CER for P3
+            and 0.5692 CER for P3MS. This supports the calibration-bottleneck interpretation: simple
+            normalization helps in some directions but does not create an EPG spelling system that works for
+            a new user without target calibration.
+        - type: table
+          id: tab.preproc_protocol
+          label: tab:preproc_protocol
+          source_artifact: A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+          caption: "Preprocessing ablation summarized by protocol and condition."
+          role: extended_ablation
+          order: 2
+        - type: table
+          id: tab.preproc_direction
+          label: tab:preproc_direction
+          source_artifact: A_results_preproc20260626_paper_tables_table_preproc_direction_condition_csv
+          caption: "Preprocessing ablation by transfer direction."
+          role: extended_ablation
+          order: 3
+    reviewer_risk:
+      objection: "A reviewer may suspect cross-user transfer fails only because of a trivial normalization mismatch."
+      mitigation: "Report the preprocessing sweep as a bounded negative result: useful controls, but not a solved transfer method."
+    status: answered
+
+  Q.extension.spatial_frontends:
+    question: "What ablation belongs outside the core claim?"
+    answer: "Spatial and layout-aware front ends are useful to report, but they are not the central reason the interface works."
+    placement: {slot: extension.analysis, priority: optional, core_required: false, extension_only: true, role: extended_ablation}
+    claims:
+      emits:
+        - id: C.spatial_ablation
+          statement: "Layout-aware EPG front ends do not consistently outperform the vector/GRU baseline under the evaluated protocols."
+          type: analysis
+          required_in_core: false
+      supports: [C.workflow]
+    evidence:
+      artifacts:
+        - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+        - A_results_msx20260224_paper_tables_table_spatial_k64_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.extension.spatial_frontends
+          role: extended_ablation
+          group: extension_analysis
+          order: 1
+          text: >
+            The spatial ablations are important but should not become the paper's headline. Row-column
+            pooling is often close to the vector baseline, whereas two-dimensional grid variants can increase
+            CER and RTF. The result is useful because it prevents an overly simple story that palatal layout
+            always helps; in this dataset, the fastest and most reliable spelling recognizer is the vector/GRU
+            baseline.
+        - type: table
+          id: tab.spatial_k124
+          label: tab:spatial_k124
+          source_artifact: A_results_msx20260224_paper_tables_table_spatial_k124_csv
+          caption: "Spatial front-end comparison with the full electrode set."
+          role: extended_ablation
+          order: 2
+        - type: table
+          id: tab.spatial_k64
+          label: tab:spatial_k64
+          source_artifact: A_results_msx20260224_paper_tables_table_spatial_k64_csv
+          caption: "Spatial front-end comparison at a 64-electrode budget."
+          role: extended_ablation
+          order: 3
+    reviewer_risk:
+      objection: "Reviewers may expect a spatial model to be the main method."
+      mitigation: "Report spatial models as ablations and preserve the stronger text-entry/calibration narrative."
+    status: answered
+
+  Q.extension.electrode_budget:
+    question: "What robustness analysis strengthens the paper?"
+    answer: "Electrode-budget analyses show that smaller channel sets can preserve much of the result, but no universal subset method dominates."
+    placement: {slot: extension.analysis, priority: optional, core_required: false, extension_only: true, role: extended_ablation}
+    claims:
+      emits:
+        - id: C.electrode_budget
+          statement: "At 64 electrodes, several selection methods perform similarly enough that the paper should avoid claiming a universal electrode-selection rule."
+          type: analysis
+          required_in_core: false
+      supports: [C.central]
+    evidence:
+      artifacts:
+        - A_results_msx20260224_paper_tables_table_k64_methods_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.extension.electrode_budget
+          role: extended_ablation
+          group: extension_analysis
+          order: 4
+          text: >
+            The electrode-budget analysis is best used as a practical robustness result. A reduced 64-electrode
+            representation can preserve much of the performance, but within-subject top-k, farthest-point
+            selection, transfer-derived selection, and random subsets are close enough that the paper should
+            not claim a universal channel-selection rule.
+        - type: table
+          id: tab.k64_methods
+          label: tab:k64_methods
+          source_artifact: A_results_msx20260224_paper_tables_table_k64_methods_csv
+          caption: "Comparison of 64-electrode selection methods."
+          role: extended_ablation
+          order: 5
+    reviewer_risk:
+      objection: "A broad electrode-selection claim would overreach."
+      mitigation: "Use the table as engineering evidence, not as a universal sensor-design theorem."
+    status: answered
+
+  Q.audit.trace:
+    question: "What audit trace should the supplement expose?"
+    answer: "The qpaper trace links claims, paragraphs, and tables to observed artifacts in evidence/index.yaml."
+    placement: {slot: extension.audit, priority: optional, core_required: false, extension_only: true, role: auditability}
+    claims: {emits: [], supports: [C.boundary]}
+    evidence:
+      artifacts:
+        - A_results_slt_p2_20260626_slt_p2_report_md
+        - A_results_slt_p2_20260626_experiment_status_md
+        - A_results_slt_p2_20260626_split_audit_protocol_split_summary_csv
+      status: ready
+    render:
+      outputs:
+        - type: paragraph
+          id: para.audit.trace
+          role: auditability
+          group: extension_audit
+          order: 1
+          text: >
+            For review and revision, the qpaper source keeps the manuscript organized as claim-bearing
+            question cards. Each result paragraph and table points to an observed artifact ID in
+            evidence/index.yaml, and the generated trace files expose the mapping from claims to evidence.
+            This audit layer is not the scientific contribution, but it reduces the risk that paper text,
+            generated tables, and experiment artifacts drift apart during submission editing.
+    reviewer_risk:
+      objection: "Auditability could distract from the AAC contribution."
+      mitigation: "Keep audit details in the supplement or internal trace, not in the Introduction."
+    status: answered
+
+  Q.audit.manual_edit:
+    question: "How are manual edits handled?"
+    answer: "Generated TeX is treated as a reproducible draft view; human-edited venue TeX should live under paper/final while preserving qpaper block anchors."
+    placement: {slot: extension.audit, priority: optional, core_required: false, extension_only: true, role: auditability}
+    claims: {emits: [], supports: [C.boundary]}
+    evidence: {artifacts: [], status: not_required}
+    render:
+      outputs:
+        - type: paragraph
+          id: para.audit.manual_edit
+          role: auditability
+          group: extension_audit
+          order: 2
+          text: >
+            The generated TeX is a reproducible draft view, not the only editable manuscript. Venue-specific
+            cleanup can be copied into paper/final while preserving qpaper block anchors, so later checks can
+            still relate final prose back to the question cards and evidence registry.
+    reviewer_risk:
+      objection: "Generated TeX may require manual venue formatting."
+      mitigation: "Separate generated draft views from final human-edited TeX."
+    status: answered

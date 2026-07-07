@@ -1,0 +1,55 @@
+# Writing quality loop: composite-writing-reviewer + anti-gpt-linter → fix agent
+# Target manuscript: paper/final/slt2026.tex (+ sections/)
+
+loop:
+  id: writing_quality
+  sentinel_prefix: AGENT_LOOP_WAKE_WRITING
+  mode: dynamic
+  fallback_heartbeat_sec: 1800
+  max_iterations: 8
+
+  pipeline:
+    - step: export_plain_text
+      output: "writing_loop/iter_{n}/manuscript_plain.txt"
+    - step: anti_gpt_linter
+      tool_root: "${KIMURA_STYLE_TOOL_ROOT:-/Users/naokkimu/Desktop/SLT_submission/extras/kimuras_word_distribution}"
+      copy_reports_to: "writing_loop/iter_{n}/anti_gpt/"
+    - step: composite_writing_reviewer
+      mode: academic
+      subagents:
+        - book_structure_reviewer
+        - academic_argument_reviewer
+        - audit_gate_reviewer
+        - plain_expression_reviewer
+      aggregate: "writing_loop/iter_{n}/COMPOSITE_WRITING_REVIEW.md"
+    - step: fix_agent
+      model_requested: claude-sonnet  # fallback: composer-2.5-fast if unavailable
+      inputs:
+        - composite review
+        - anti_gpt report
+        - SLT page budget: 6 content pages, page 7 references-only preferred
+      output: "writing_loop/iter_{n}/FIX_LOG.md"
+    - step: compile_verify
+      command: "latexmk -pdf slt2026.tex"
+      cwd: paper/final
+
+  stop_condition: >
+    composite readiness == Pass AND
+    anti_gpt HIGH == 0 AND
+    Kimura grade >= C AND
+    no Critical/Major composite issues remain unaddressed OR
+    iteration >= max_iterations
+
+  priority_fix_queue:
+    - consensus: undefined protocol labels in abstract (P1/P2/P3)
+    - consensus: LEX/RTF and P3MS undefined at first use
+    - audit_gate: uncited related-work claim (intro LLM/cross-modal)
+    - anti_gpt: remove clearly/highly; reduce lexicon-free repetition
+    - structure: trim intro/section2 duplication without losing page-6 fill
+    - argument: align intro Q2 with bridge scope; AAC framing calibration
+
+  constraints:
+    - preserve scientific claims and numbers
+    - no new experiments
+    - maintain SLT format PASS (6 content pages)
+    - fix agent may edit LaTeX only; reviewers stay read-only

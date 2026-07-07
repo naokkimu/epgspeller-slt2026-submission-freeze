@@ -1,0 +1,118 @@
+\section{Signal, Data, and Task Definition}
+
+The recognizer receives not an acoustic waveform or video, but a multichannel time series representing tongue--palate contact, and outputs not a closed set of word classes but a character string.
+
+\subsection{EPG Contact Time Series}
+
+EPG records tongue--palate contact during articulation as a multichannel time series and has been used in speech production research, speech training, and articulatory analysis~\cite{hardcastle1989new,hardcastle1990electropalatography,verhoeven2019visualisation}.
+In the SmartPalate-style recordings considered here, each time-step frame represents a contact pattern indicating where on the palate contact occurs.
+Each trial is treated as a variable-length sequence of EPG contact frames, and the input received by EPGSpeller is this frame sequence.
+
+In the experimental representation used in this paper, SmartPalate contact channels are mapped to a grid aligned with palate layout (a surrogate grid), and aligned contact channels are used.
+A surrogate grid assigns each channel to row--column coordinates on the palate, supporting both treating channels as independent scalar features and comparing front ends that exploit spatial layout on the palate.
+The physical SmartPalate device specification and the post-export experimental representation used in this paper are not identical.
+Table~\ref{tab:signal_summary} specifies the number of aligned channels, the surrogate grid, missing placements, and duplicate placements.
+
+\begin{table}[t]
+\centering
+\caption{Summary of SmartPalate-style EPG signals (experimental representation).}
+\label{tab:signal_summary}
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}p{0.16\columnwidth}p{0.24\columnwidth}p{0.48\columnwidth}@{}}
+\toprule
+Item & Value & Role \\
+\midrule
+Input & Contact frames & Articulatory signal \\
+Grid & 16-by-16 surrogate & Spatial front ends \\
+Channels & 120 aligned & Multichannel patterns \\
+Layout & 4 missing, 5 dup. & Export mismatch \\
+Output & Character string & Spelling, not classes \\
+Decode & Greedy string & Lexicon-free eval. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Samples and Labels}
+
+Each sample consists of a variable-length EPG contact sequence and the word label that the participant attempted to spell.
+Labels are treated as character strings, not as word classes.
+For example, when the target word of a trial is a particular English word, the model learns the character sequence rather than treating the word as a single class identifier.
+This design makes EPGSpeller a silent spelling recognizer rather than a finite word classifier.
+
+In a word classifier, the output space is restricted to a vocabulary defined at training or evaluation time.
+In a string decoder, the recognizer can output character sequences and can therefore, in principle, compose words that never appeared as a single word class during training.
+The evaluation target is how accurately the character string corresponding to the target word can be decoded from the EPG contact time series.
+
+For the primary evaluation, we use character-string output before lexicon projection; lexicon-projected metrics are auxiliary (Table~\ref{tab:task_definition}).
+
+\subsection{Dataset}
+
+This paper uses EPG recordings derived from SilentSpeller~\cite{kimura2022silentspeller}.
+The data consist of silent spelling trials recorded with a SmartPalate-style intraoral sensor.
+The number of trials, word labels, sequence length, and mean contact rate differ across participants.
+These differences are important for interpreting later results.
+Within-user recognition measures performance when sufficient calibration data are available; cross-user transfer may manifest differences in contact rate, articulatory style, sensor placement, and oral anatomy as errors.
+
+Table~\ref{tab:dataset_summary} summarizes the dataset for each participant.
+p1 and p2 each contain 2328 trials and 1164 word labels.
+p3 contains 2797 trials and 1164 word labels, with a lower mean contact rate than the other participants; p4 contains 1167 trials and 1162 word labels with lower repetition density.
+Protocol labels P1--P3 denote evaluation splits; participant ids p1--p4 denote SilentSpeller recordings (Table~\ref{tab:dataset_summary}).
+Contact rate (Cr.) is the fraction of active palate channels per frame, averaged over trials; lower values indicate sparser contact patterns.
+These participant-level differences motivate treating protocols P1/P2 as within-user upper-bound conditions and P3 as the primary transfer bottleneck rather than pooling participants.
+Because of p4's lower repetition density, the same calibration conditions as the other participants cannot be set for some within-user evaluations.
+
+\begin{table}[t]
+\centering
+\caption{Overview of the SilentSpeller-derived dataset (Part.: participant; Tri.: trials; Lab.: word labels; Fr.: mean sequence length in frames; Cr.: mean contact rate).}
+\label{tab:dataset_summary}
+\setlength{\tabcolsep}{1.5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Part. & Tri. & Lab. & Fr. & Cr. \\
+\midrule
+p1 & 2328 & 1164 & 234 & 0.19 \\
+p2 & 2328 & 1164 & 196 & 0.20 \\
+p3 & 2797 & 1164 & 283 & 0.12 \\
+p4 & 1167 & 1162 & 229 & 0.19 \\
+\bottomrule
+\end{tabular}
+\end{table}
+p1/p2 support within-user and calibration evaluation; p3 is the primary transfer and k-shot target; p4 is mainly a transfer target (lower repetition density).
+
+For p1 and p2, repetitions per word are relatively balanced, making it easier to construct within-user unseen-word evaluation and low-shot calibration evaluation.
+By contrast, p4 has fewer trials relative to the number of word labels and cannot provide sufficient conditions with multiple repetitions of the same word.
+Therefore, p4 is treated mainly as a cross-user transfer target and is not mechanically included in all within-user and calibration conditions.
+
+\subsection{Task Definition and Metrics}
+\label{sec:task:definition}
+
+The primary task in this paper is to decode a character string from an EPG contact time series.
+The input is a contact frame sequence of varying length.
+The output is a normalized alphabetic character string.
+The model is not given frame-level character boundaries and learns the correspondence between the contact sequence of an entire trial and the word label.
+Accordingly, the recognizer described in later sections uses the connectionist temporal classification (CTC) framework~\cite{graves2006connectionist}.
+
+The primary metric is character error rate (CER) computed from greedy string decoding based on edit distance between the output string and the reference string before lexicon projection.
+Lexicon-projected error (LEX) and real-time factor (RTF) are supplementary diagnostics (Table~\ref{tab:task_definition}).
+
+\begin{table}[t]
+\centering
+\caption{Task definition and primary evaluation.}
+\label{tab:task_definition}
+\setlength{\tabcolsep}{1.5pt}
+\begin{tabular}{@{}p{0.14\columnwidth}p{0.50\columnwidth}p{0.28\columnwidth}@{}}
+\toprule
+Item & Definition & Role \\
+\midrule
+Input & EPG contact frames & Not acoustic \\
+Target & Character string & Not word class \\
+Primary decode & Greedy string & No lexicon \\
+Primary metric & CER & Pre-lexicon \\
+LEX / RTF & Projection / cost & Supplementary \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Evaluation conditions are divided into within-user calibration, unseen-word generalization, and cross-user transfer without target calibration; detailed definitions appear in Section~\ref{sec:evaluation} (Table~\ref{tab:protocol_map}).

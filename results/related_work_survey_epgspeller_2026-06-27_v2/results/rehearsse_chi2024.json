@@ -1,0 +1,89 @@
+{
+  "paper_id": "rehearsse_chi2024",
+  "title": "ReHEarSSE: Recognizing Hidden-in-the-Ear Silently Spelled Expressions",
+  "authors": [
+    "Xuefu Dong",
+    "Yifei Chen",
+    "Yuuki Nishiyama",
+    "Kaoru Sezaki",
+    "Yuntao Wang",
+    "Ken Christofferson",
+    "Alex Mariakakis"
+  ],
+  "year": 2024,
+  "venue": "CHI 2024 (ACM CHI Conference on Human Factors in Computing Systems)",
+  "doi": "10.1145/3613904.3642095",
+  "primary_url": "https://dl.acm.org/doi/10.1145/3613904.3642095",
+  "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3613904.3642095",
+  "code_or_data_release": null,
+  "citation_key_suggestion": "dong2024rehearsse",
+  "modality": "Ultrasonic ear-canal sensing (earbud-based SSI)",
+  "device": "Earbud form factor with ultrasonic sensing",
+  "task": "Silent spelling / silently spelled word recognition",
+  "output_unit": "characters/letters aggregated to words",
+  "vocabulary_setting": "includes unseen-word generalization (see paper)",
+  "datasets": "Ear-canal ultrasonic silent spelling dataset described in the paper",
+  "evaluation_protocol": "Participant/session splits; includes unseen-word evaluation (see paper)",
+  "metrics_reported": "Character/word-level accuracy/error rates and system-level comparisons (see paper)",
+  "decoder": "CTC-based modeling (paper describes intermediate embeddings and CTC-based recognition)",
+  "model_architecture": "Deep learning sequence model trained with CTC (details in the paper)",
+  "spatial_frontend": "Not applicable to EPG; ultrasonic sensing features are modeled as sequences",
+  "augmentation": "Paper describes synthetic/regularization augmentations for training (see paper)",
+  "key_contributions": [
+    "Earbud-based ultrasonic SSI for silent spelling with large-vocabulary and unseen-word generalization.",
+    "CTC-based modeling tailored to silently spelled letter transitions.",
+    "Provides a modern non-EPG silent spelling baseline for positioning open-vocabulary silent spelling systems."
+  ],
+  "limitations": [
+    "Modality differs from EPG; comparisons to EPG require careful protocol alignment.",
+    "Wearability and robustness depend on earbud fit and acoustic environment.",
+    "Letter-by-letter spelling may limit entry speed (inherent trade-off)."
+  ],
+  "reported_results_summary": "The paper reports unseen-word recognition performance and includes comparative tables against prior SSI systems; consult ACM DL for exact definitions and results.",
+  "relevance_to_epgspeller": "Minimal SSI comparison for open-vocabulary silent spelling beyond EPG; resolves the ICASSP review mention of ReHEarSSE and helps contextualize EPGSpeller in silent spelling literature.",
+  "takeaways_for_related_work_section": "ReHEarSSE (CHI 2024) demonstrates silent spelling via earbud ultrasonic sensing and CTC-based modeling with unseen-word generalization; it is a key non-EPG reference for positioning open-vocabulary silent spelling in wearable SSI.",
+  "sources": [
+    {
+      "url": "https://dl.acm.org/doi/10.1145/3613904.3642095",
+      "title": "ACM Digital Library: ReHEarSSE: Recognizing Hidden-in-the-Ear Silently Spelled Expressions",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/3613904.3642095",
+      "year": 2024,
+      "venue": "CHI 2024"
+    },
+    {
+      "url": "https://doi.org/10.1145/3613904.3642095",
+      "title": "DOI: 10.1145/3613904.3642095",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/3613904.3642095",
+      "year": 2024,
+      "venue": "CHI 2024",
+      "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3613904.3642095"
+    },
+    {
+      "url": "https://dblp.org/rec/conf/chi/DongCNS0CM24",
+      "title": "DBLP: ReHEarSSE: Recognizing Hidden-in-the-Ear Silently Spelled Expressions",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3613904.3642095",
+      "year": 2024,
+      "venue": "CHI 2024"
+    }
+  ],
+  "uncertain": [
+    "Exact numeric results are not transcribed here; consult the official paper for protocol details and numbers."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Includes or motivates compositional/open-vocabulary or held-out-word evaluation; still not directly leaderboard-comparable without matched splits and metrics.",
+  "participant_generalization": "Primarily source-specific; use only as a task anchor unless the paper explicitly reports cross-user/user-independent evaluation.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "Character-level silent spelling anchor; compare decoding constraints carefully and avoid mixing lexicon/word-prediction effects with sensor decoding.",
+  "transfer_or_adaptation_method": "Relevant as non-EPG SSI or method context; transfer/adaptation evidence should not be extrapolated to EPG without matched data.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Open-vocabulary non-EPG silent spelling anchor. In v2 it sharpens the distinction between task similarity and protocol comparability."
+}

@@ -1,0 +1,568 @@
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 27 Dec. 2024. Version 4.86a.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  paper/generated/facts.tex
+  paper/generated/provenance.tex
+Category 'changed_user':
+  paper/generated/facts.tex
+  paper/generated/provenance.tex
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (./paper/generated/facts.tex) (./paper/generated/provenance.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux)
+(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./main.out) (./main.out)
+Underfull \hbox (badness 1221) in paragraph at lines 22--27
+\OT1/ptm/m/n/10 We study open-vocabulary silent spelling from elec-
+
+
+LaTeX Warning: Citation `graves2006connectionist' on page 1 undefined on input 
+line 36.
+
+
+LaTeX Warning: Citation `kimura2022silentspeller' on page 1 undefined on input 
+line 40.
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 52--54
+ []\OT1/ptm/b/n/10 Layout-aware two-dimensional re-con-struc-tion.[] \OT1/ptm/m
+/n/10 We
+
+[1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
+ocal/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Underfull \hbox (badness 1946) in paragraph at lines 56--57
+ []\OT1/ptm/b/n/10 Row/column com-pres-sion.[] \OT1/ptm/m/n/10 We form row-wise
+ and
+
+LaTeX Warning: Citation `park2019specaugment' on page 2 undefined on input line
+ 60.
+
+
+LaTeX Warning: Reference `tab:h11' on page 2 undefined on input line 72.
+
+
+Underfull \hbox (badness 7133) in paragraph at lines 78--78
+[]\OT1/ptm/m/n/10 Table 1: []Vector vs two-dimensional con-vo-lu-tion
+(./paper/generated/tables/h11_spatial2d_vs_vector.tex)
+
+LaTeX Warning: Reference `tab:h13' on page 2 undefined on input line 84.
+
+
+(./paper/generated/tables/h13_rowcol_vs_vector.tex)
+
+LaTeX Warning: Reference `tab:h12' on page 2 undefined on input line 97.
+
+
+Underfull \hbox (badness 6825) in paragraph at lines 102--102
+[]\OT1/ptm/m/n/10 Table 3: []Fixed-dropout ro-bust-ness for the two-
+(./paper/generated/tables/h12_spatial_aug_dropout.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 This project main-tains a claim--evidence reg-
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 istry in \OT1/pcr/m/n/10 paper/paper.json\OT1/ptm/m/n/10 . All 
+nu-meric
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 facts and re-sult ta-bles in this draft are gen-
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 er-ated from pinned ev-i-dence snap-shots via
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/pcr/m/n/10 scripts/paper/generate[]facts[]tex.py
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+[]\OT1/ptm/m/n/10 Key pinned ev-i-dence iden-ti-
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 fiers used by this draft in-clude
+
+Overfull \hbox (4.5pt too wide) in paragraph at lines 112--113
+\OT1/pcr/m/n/10 ev_scripts_smartpalate_distribution_csv
+
+Overfull \hbox (261.67993pt too wide) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 d21d93c9ec3c\OT1/ptm/m/n/10 ), \OT1/pcr/m/n/10
+ ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17
+
+Overfull \hbox (189.67993pt too wide) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 2f2840f6dee5\OT1/ptm/m/n/10 ), \OT1/pcr/m/n/10
+ ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 a7fb56ec370d\OT1/ptm/m/n/10 ), and
+
+Overfull \hbox (214.5pt too wide) in paragraph at lines 112--113
+\OT1/pcr/m/n/10 ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64
+_2026-02-17
+(./main.bbl
+Underfull \hbox (badness 1205) in paragraph at lines 8--12
+\OT1/ptm/m/n/10 Cheng Chiu, Bar-ret Zoph, Ekin D. Cubuk, and
+)
+
+[3] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)</usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on main.pdf (3 pages, 107028 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: Found bibliography file(s):
+  ./results/related_work_survey_epgspeller_2026-02-17/references.bib
+Latexmk: applying rule 'bibtex main'...
+Rule 'bibtex main':  Reasons for rerun
+Category 'other':
+  Rerun of 'bibtex main' forced or previously required:
+    Reason or flag: 'Initial set up of rule'
+
+------------
+Run number 1 of rule 'bibtex main'
+------------
+------------
+Running 'bibtex  "main.aux"'
+------------
+This is BibTeX, Version 0.99d (TeX Live 2025)
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: results/related_work_survey_epgspeller_2026-02-17/references.bib
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+  main.bbl
+  main.out
+
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (./paper/generated/facts.tex) (./paper/generated/provenance.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux)
+(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./main.out) (./main.out)
+Underfull \hbox (badness 1221) in paragraph at lines 22--27
+\OT1/ptm/m/n/10 We study open-vocabulary silent spelling from elec-
+
+
+LaTeX Warning: Citation `kimura2022silentspeller' on page 1 undefined on input 
+line 40.
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 52--54
+ []\OT1/ptm/b/n/10 Layout-aware two-dimensional re-con-struc-tion.[] \OT1/ptm/m
+/n/10 We
+
+[1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
+ocal/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Underfull \hbox (badness 1946) in paragraph at lines 56--57
+ []\OT1/ptm/b/n/10 Row/column com-pres-sion.[] \OT1/ptm/m/n/10 We form row-wise
+ and
+
+Underfull \hbox (badness 7133) in paragraph at lines 78--78
+[]\OT1/ptm/m/n/10 Table 1: []Vector vs two-dimensional con-vo-lu-tion
+(./paper/generated/tables/h11_spatial2d_vs_vector.tex)
+(./paper/generated/tables/h13_rowcol_vs_vector.tex)
+Underfull \hbox (badness 6825) in paragraph at lines 102--102
+[]\OT1/ptm/m/n/10 Table 3: []Fixed-dropout ro-bust-ness for the two-
+(./paper/generated/tables/h12_spatial_aug_dropout.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 This project main-tains a claim--evidence reg-
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 istry in \OT1/pcr/m/n/10 paper/paper.json\OT1/ptm/m/n/10 . All 
+nu-meric
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 facts and re-sult ta-bles in this draft are gen-
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 er-ated from pinned ev-i-dence snap-shots via
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/pcr/m/n/10 scripts/paper/generate[]facts[]tex.py
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+[]\OT1/ptm/m/n/10 Key pinned ev-i-dence iden-ti-
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 fiers used by this draft in-clude
+
+Overfull \hbox (4.5pt too wide) in paragraph at lines 112--113
+\OT1/pcr/m/n/10 ev_scripts_smartpalate_distribution_csv
+
+Overfull \hbox (261.67993pt too wide) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 d21d93c9ec3c\OT1/ptm/m/n/10 ), \OT1/pcr/m/n/10
+ ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17
+
+Overfull \hbox (189.67993pt too wide) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 2f2840f6dee5\OT1/ptm/m/n/10 ), \OT1/pcr/m/n/10
+ ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 a7fb56ec370d\OT1/ptm/m/n/10 ), and
+
+Overfull \hbox (214.5pt too wide) in paragraph at lines 112--113
+\OT1/pcr/m/n/10 ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64
+_2026-02-17
+(./main.bbl
+Underfull \hbox (badness 1048) in paragraph at lines 8--12
+[]\OT1/ptm/m/n/10 Naoki Kimura, Tan Gemi-cioglu, Jonathan Wom-
+
+Underfull \hbox (badness 1205) in paragraph at lines 14--18
+\OT1/ptm/m/n/10 Cheng Chiu, Bar-ret Zoph, Ekin D. Cubuk, and
+)
+
+[3] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on main.pdf (3 pages, 108424 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: Found bibliography file(s):
+  ./results/related_work_survey_epgspeller_2026-02-17/references.bib
+Latexmk: applying rule 'bibtex main'...
+Rule 'bibtex main':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+
+------------
+Run number 2 of rule 'bibtex main'
+------------
+------------
+Running 'bibtex  "main.aux"'
+------------
+This is BibTeX, Version 0.99d (TeX Live 2025)
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: results/related_work_survey_epgspeller_2026-02-17/references.bib
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  main.aux
+
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (./paper/generated/facts.tex) (./paper/generated/provenance.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux)
+(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./main.out) (./main.out)
+Underfull \hbox (badness 1221) in paragraph at lines 22--27
+\OT1/ptm/m/n/10 We study open-vocabulary silent spelling from elec-
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 52--54
+ []\OT1/ptm/b/n/10 Layout-aware two-dimensional re-con-struc-tion.[] \OT1/ptm/m
+/n/10 We
+
+[1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
+ocal/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Underfull \hbox (badness 1946) in paragraph at lines 56--57
+ []\OT1/ptm/b/n/10 Row/column com-pres-sion.[] \OT1/ptm/m/n/10 We form row-wise
+ and
+
+Underfull \hbox (badness 7133) in paragraph at lines 78--78
+[]\OT1/ptm/m/n/10 Table 1: []Vector vs two-dimensional con-vo-lu-tion
+(./paper/generated/tables/h11_spatial2d_vs_vector.tex)
+(./paper/generated/tables/h13_rowcol_vs_vector.tex)
+Underfull \hbox (badness 6825) in paragraph at lines 102--102
+[]\OT1/ptm/m/n/10 Table 3: []Fixed-dropout ro-bust-ness for the two-
+(./paper/generated/tables/h12_spatial_aug_dropout.tex)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 This project main-tains a claim--evidence reg-
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 istry in \OT1/pcr/m/n/10 paper/paper.json\OT1/ptm/m/n/10 . All 
+nu-meric
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 facts and re-sult ta-bles in this draft are gen-
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/ptm/m/n/10 er-ated from pinned ev-i-dence snap-shots via
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+\OT1/pcr/m/n/10 scripts/paper/generate[]facts[]tex.py
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+[]\OT1/ptm/m/n/10 Key pinned ev-i-dence iden-ti-
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 fiers used by this draft in-clude
+
+Overfull \hbox (4.5pt too wide) in paragraph at lines 112--113
+\OT1/pcr/m/n/10 ev_scripts_smartpalate_distribution_csv
+
+Overfull \hbox (261.67993pt too wide) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 d21d93c9ec3c\OT1/ptm/m/n/10 ), \OT1/pcr/m/n/10
+ ev_ed20260217_h11_spatial2d_vs_vector_p1_k32_k64_k96_k124_2026-02-17
+
+Overfull \hbox (189.67993pt too wide) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 2f2840f6dee5\OT1/ptm/m/n/10 ), \OT1/pcr/m/n/10
+ ev_ed20260217_h13_rowcol_vs_vector_p1_k32_k64_2026-02-17
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 a7fb56ec370d\OT1/ptm/m/n/10 ), and
+
+Overfull \hbox (214.5pt too wide) in paragraph at lines 112--113
+\OT1/pcr/m/n/10 ev_ed20260217_h12_spatial_aug_fixed_dropout_summary_p1_topk_k64
+_2026-02-17
+(./main.bbl
+Underfull \hbox (badness 1048) in paragraph at lines 8--12
+[]\OT1/ptm/m/n/10 Naoki Kimura, Tan Gemi-cioglu, Jonathan Wom-
+
+Underfull \hbox (badness 1205) in paragraph at lines 14--18
+\OT1/ptm/m/n/10 Cheng Chiu, Bar-ret Zoph, Ekin D. Cubuk, and
+)
+
+[3] (./main.aux) )
+(see the transcript file for additional information)</usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on main.pdf (3 pages, 107877 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: Found bibliography file(s):
+  ./results/related_work_survey_epgspeller_2026-02-17/references.bib
+Latexmk: All targets (main.pdf) are up-to-date
+

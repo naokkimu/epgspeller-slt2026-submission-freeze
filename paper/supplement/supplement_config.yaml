@@ -1,0 +1,174 @@
+project:
+  name: EPGSpeller
+  profile: slt2026
+  venue: IEEE SLT 2026
+
+paths:
+  supplement_dir: paper/supplement
+  submission_dir: paper/submission
+  claim_to_evidence: paper/generated/claim_to_evidence.md
+  questions: paper/source/questions.yaml
+  deferred_issues: paper/review_loop/deferred_issues.yaml
+
+zip:
+  filename: put_this_zip_to_your_agent_or_llm_chat.zip
+
+artifacts:
+  - src: results/paper_layout_2026-03-03/table_dataset_summary.csv
+    dst: tables/table_dataset_summary.csv
+    paper_refs: ["Dataset summary"]
+  - src: results/paper_layout_2026-03-03/table_main_compact.csv
+    dst: tables/table_main_compact.csv
+    paper_refs: ["Main results (Table main protocols)"]
+  - src: results/paper_layout_2026-03-03/table_training_config.csv
+    dst: tables/table_training_config.csv
+    paper_refs: ["Supplementary configuration table"]
+  - src: results/paper_layout_2026-03-03/table_spatial_p1.csv
+    dst: tables/table_spatial_p1.csv
+    paper_refs: ["Spatial ablation P1"]
+  - src: results/paper_layout_2026-03-03/table_k64_p1p2.csv
+    dst: tables/table_k64_p1p2.csv
+    paper_refs: ["Electrode reduction P1/P2"]
+  - src: results/paper_layout_2026-03-03/table_p3ms_compact.csv
+    dst: tables/table_p3ms_compact.csv
+    paper_refs: ["Multi-source transfer"]
+  - src: results/paper_layout_2026-03-03/table_to4_compact.csv
+    dst: tables/table_to4_compact.csv
+    paper_refs: ["Transfer controls"]
+  - src: results/slt_p2_20260626/paper_tables/table_kshot_curve.csv
+    dst: tables/table_kshot_curve.csv
+    paper_refs: ["Low-shot calibration table"]
+  - src: results/slt_p2_20260626/paper_tables/table_silentspeller_lite.csv
+    dst: tables/table_silentspeller_lite.csv
+    paper_refs: ["SilentSpeller-compatible-lite"]
+  - src: results/slt_p2_20260626/paper_tables/table_lowshot_extended.csv
+    dst: tables/table_lowshot_extended.csv
+    paper_refs: ["Low-shot extended"]
+  - src: results/slt_p2_20260626/kshot_feasibility.csv
+    dst: tables/kshot_feasibility.csv
+    paper_refs: ["Calibration feasibility"]
+  - src: results/slt_p2_20260626/split_audit/protocol_split_summary.csv
+    dst: split_audit/protocol_split_summary.csv
+    paper_refs: ["Split definitions"]
+  - src: results/slt_p2_20260626/split_audit/protocol_split_vocab_sets.json
+    dst: split_audit/protocol_split_vocab_sets.json
+    paper_refs: ["Split vocab sets"]
+  - src: results/preproc20260626/paper_tables/table_preproc_protocol_condition.csv
+    dst: tables/table_preproc_protocol_condition.csv
+    paper_refs: ["Preprocessing controls"]
+  - src: results/dataset_audit_silentspeller_2026-02-24/dataset_summary.csv
+    dst: tables/dataset_audit_summary.csv
+    paper_refs: ["Dataset audit summary"]
+  - src: results/slt_p2_20260626/slt_p2_report.md
+    dst: reports/slt_p2_report.md
+    paper_refs: ["SLT P2 experiment report"]
+  - src: results/preproc20260626/preproc_ablation_report.md
+    dst: reports/preproc_ablation_report.md
+    paper_refs: ["Preprocessing ablation report"]
+  - src: results/dataset_audit_silentspeller_2026-02-24/report.md
+    dst: reports/dataset_audit_report.md
+    paper_refs: ["Dataset audit report"]
+
+path_remap:
+  results/paper_layout_2026-03-03/table_dataset_summary.csv: tables/table_dataset_summary.csv
+  results/paper_layout_2026-03-03/table_main_compact.csv: tables/table_main_compact.csv
+  results/paper_layout_2026-03-03/table_training_config.csv: tables/table_training_config.csv
+  results/paper_layout_2026-03-03/table_spatial_p1.csv: tables/table_spatial_p1.csv
+  results/paper_layout_2026-03-03/table_k64_p1p2.csv: tables/table_k64_p1p2.csv
+  results/paper_layout_2026-03-03/table_p3ms_compact.csv: tables/table_p3ms_compact.csv
+  results/paper_layout_2026-03-03/table_to4_compact.csv: tables/table_to4_compact.csv
+  results/slt_p2_20260626/paper_tables/table_kshot_curve.csv: tables/table_kshot_curve.csv
+  results/slt_p2_20260626/paper_tables/table_silentspeller_lite.csv: tables/table_silentspeller_lite.csv
+  results/slt_p2_20260626/paper_tables/table_lowshot_extended.csv: tables/table_lowshot_extended.csv
+  results/slt_p2_20260626/kshot_feasibility.csv: tables/kshot_feasibility.csv
+  results/slt_p2_20260626/split_audit/protocol_split_summary.csv: split_audit/protocol_split_summary.csv
+  results/preproc20260626/paper_tables/table_preproc_protocol_condition.csv: tables/table_preproc_protocol_condition.csv
+  results/dataset_audit_silentspeller_2026-02-24/dataset_summary.csv: tables/dataset_audit_summary.csv
+  results/dataset_audit_silentspeller_2026-02-24/report.md: reports/dataset_audit_report.md
+  results/slt_p2_20260626/slt_p2_report.md: reports/slt_p2_report.md
+  results/preproc20260626/preproc_ablation_report.md: reports/preproc_ablation_report.md
+
+anonymize:
+  patterns:
+    - regex: "/Volumes/[^\\s\\]`\"']+"
+      replace: "[REDACTED_PATH]"
+    - regex: "/Users/[^\\s\\]`\"']+"
+      replace: "[REDACTED_PATH]"
+    - regex: "naokkimu"
+      replace: "[REDACTED]"
+    - regex: "lyworks"
+      replace: "[REDACTED]"
+    - regex: "ly_backup"
+      replace: "[REDACTED]"
+
+smoke_tests:
+  - name: main_protocol_cer
+    type: csv_numeric
+    csv: tables/table_main_compact.csv
+    key_column: 0
+    value_column: 2
+    rows:
+      P1: { expected: 0.1796, tolerance: 0.02 }
+      P2: { expected: 0.1451, tolerance: 0.02 }
+      P3: { expected: 0.6909, tolerance: 0.02 }
+
+pdf:
+  enabled: true
+  title: "Supplementary Material — EPGSpeller (Anonymous Review Copy)"
+  intro: "Upload the entire supplementary zip to a coding agent or LLM session. Primary entry put_this_zip_to_your_agent_or_llm_chat.md. Prefer CSV/YAML over this PDF."
+  sections:
+    - caption: "Training configuration"
+      csv: tables/table_training_config.csv
+    - caption: "Main protocol results"
+      csv: tables/table_main_compact.csv
+    - caption: "Low-shot calibration curve"
+      csv: tables/table_kshot_curve.csv
+    - caption: "Protocol split summary"
+      csv: split_audit/protocol_split_summary.csv
+    - caption: "k-shot feasibility"
+      csv: tables/kshot_feasibility.csv
+    - caption: "SilentSpeller-compatible-lite"
+      csv: tables/table_silentspeller_lite.csv
+
+extra_faqs:
+  - question_id: D-BASE-1
+    question: "Why no external SilentSpeller-era / beam / LM baselines?"
+    short_answer: "External baselines require new benchmark runs (deferred). In-task architectural ablations bound representation choices."
+    paper_pointers: ["Table spatial/electrode", "Discussion limitations"]
+    evidence: [{ path: put_this_audit_deferred_experiments.yaml }]
+    status: deferred
+  - question_id: D-N-1
+    question: "Why only four healthy participants?"
+    short_answer: "Evaluation uses the public four-participant EPG release; clinical cohort expansion requires new data collection."
+    paper_pointers: ["Discussion limitations", "Dataset summary table"]
+    evidence:
+      - { path: tables/dataset_audit_summary.csv }
+      - { path: tables/table_dataset_summary.csv }
+    status: answered
+  - question_id: D-AAC-1
+    question: "Where is interactive AAC speed, correction UI, or user study?"
+    short_answer: "Offline greedy CER and RTF only; interactive deployment is explicitly out of scope for this submission."
+    paper_pointers: ["Results RTF diagnostic", "Discussion"]
+    evidence: [{ path: put_this_audit_deferred_experiments.yaml }]
+    status: deferred
+
+faq_evidence_map:
+  Q.setup.metrics:
+    - { path: tables/table_main_compact.csv }
+  Q.result.01_personalized:
+    - { path: tables/table_main_compact.csv }
+  Q.result.03_calibration:
+    - { path: tables/table_kshot_curve.csv }
+    - { path: tables/kshot_feasibility.csv }
+  Q.result.02_silentspeller_lite:
+    - { path: tables/table_silentspeller_lite.csv }
+    - { path: reports/slt_p2_report.md }
+  Q.setup.protocols:
+    - { path: split_audit/protocol_split_summary.csv }
+  Q.result.04_cross_user:
+    - { path: tables/table_preproc_protocol_condition.csv }
+
+static_files:
+  - put_this_zip_to_your_agent_or_llm_chat.md
+  - put_this_audit_START_HERE.md
+  - put_this_audit_deferred_experiments.yaml

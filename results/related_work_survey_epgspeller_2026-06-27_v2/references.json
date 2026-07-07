@@ -1,0 +1,2559 @@
+{
+  "generated_at": "2026-06-27",
+  "scope": "papers",
+  "total_entries": 36,
+  "entries": [
+    {
+      "citekey": "a8287fa9",
+      "bibtex_type": "misc",
+      "title": "arXiv: EPG2S: Speech Generation and Speech Enhancement based on Electropalatography and Audio Signals using Multimodal Learning",
+      "year": 2022,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2206.07860",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": null,
+      "verified": null,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "chen2022_epg2s.json"
+      ]
+    },
+    {
+      "citekey": "ab829007",
+      "bibtex_type": "misc",
+      "title": "PDF: A Cross-Modal Approach to Silent Speech with LLM-Enhanced Recognition",
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "https://arxiv.org/pdf/2403.05583",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": null,
+      "verified": null,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "benster2024_mona_llm_enhanced_ssr.json"
+      ]
+    },
+    {
+      "citekey": "c437c550",
+      "bibtex_type": "misc",
+      "title": "arXiv API: 2603.11877",
+      "year": 2026,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://export.arxiv.org/api/query?id_list=2603.11877",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "authors": null,
+      "verified": null,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "xu2026_llm_era_ssi_review.json"
+      ]
+    },
+    {
+      "citekey": "carreira1998dimensionality",
+      "bibtex_type": "misc",
+      "title": "Dimensionality reduction of electropalatographic data using latent variable models",
+      "year": 1998,
+      "venue": "Speech Communication",
+      "doi": "10.1016/s0167-6393(98)00059-4",
+      "url": "https://sciencedirect.com/science/article/pii/S0167639398000594",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Miguel Á.",
+          "family": "Carreira-Perpiñán",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Steve",
+          "family": "Renals",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "carreira_perpinan1998_dimred_epg.json"
+      ]
+    },
+    {
+      "citekey": "chugh2026morsear",
+      "bibtex_type": "misc",
+      "title": "MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable based Inertial Sensing",
+      "year": 2026,
+      "venue": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems",
+      "doi": "10.1145/3772318.3791436",
+      "url": "https://doi.org/10.1145/3772318.3791436",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-0354-9731",
+          "authenticated-orcid": false,
+          "given": "Garvit",
+          "family": "Chugh",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Computer Science and Engineering, Indian Institute of Technology Jodhpur, Jodhpur, Rajasthan, India"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-2868-3766",
+          "authenticated-orcid": false,
+          "given": "Indrajeet",
+          "family": "Ghosh",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Information Systems/ MPSC, University of Maryland Baltimore County, Baltimore, Maryland, USA"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-4827-3393",
+          "authenticated-orcid": false,
+          "given": "Nirmalya",
+          "family": "Roy",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Information Systems, University of Maryland Baltimore County, Baltimore, Maryland, USA"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3531-968X",
+          "authenticated-orcid": false,
+          "given": "Sandip",
+          "family": "Chakraborty",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "CSE, IIT Kharagpur, Kharagpur, West Bengal, India"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-9856-0687",
+          "authenticated-orcid": false,
+          "given": "Suchetana",
+          "family": "Chakraborty",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Computer Science and Engineering, Indian Institute of Technology Jodhpur, Jodhpur, Rajasthan, India"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "chugh2026_morsear.json"
+      ]
+    },
+    {
+      "citekey": "denby2010silent",
+      "bibtex_type": "misc",
+      "title": "Silent speech interfaces",
+      "year": 2010,
+      "venue": "Speech Communication",
+      "doi": "10.1016/j.specom.2009.08.002",
+      "url": "https://sciencedirect.com/science/article/pii/S0167639309001307",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "B.",
+          "family": "Denby",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "T.",
+          "family": "Schultz",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "K.",
+          "family": "Honda",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "T.",
+          "family": "Hueber",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "J.M.",
+          "family": "Gilbert",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "J.S.",
+          "family": "Brumberg",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "denby2010_silent_speech_interfaces.json"
+      ]
+    },
+    {
+      "citekey": "dong2024rehearsse",
+      "bibtex_type": "misc",
+      "title": "ReHEarSSE: Recognizing Hidden-in-the-Ear Silently Spelled Expressions",
+      "year": 2024,
+      "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+      "doi": "10.1145/3613904.3642095",
+      "url": "https://dl.acm.org/doi/10.1145/3613904.3642095",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0009-0000-6164-1539",
+          "authenticated-orcid": false,
+          "given": "Xuefu",
+          "family": "Dong",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "The University of Tokyo, Japan"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0005-4195-6716",
+          "authenticated-orcid": false,
+          "given": "Yifei",
+          "family": "Chen",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Tsinghua University, China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-5549-5595",
+          "authenticated-orcid": false,
+          "given": "Yuuki",
+          "family": "Nishiyama",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "The University of Tokyo, Japan"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-1194-4632",
+          "authenticated-orcid": false,
+          "given": "Kaoru",
+          "family": "Sezaki",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "The University of Tokyo, Japan"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-4249-8893",
+          "authenticated-orcid": false,
+          "given": "Yuntao",
+          "family": "Wang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Computer Science and Technology, Tsinghua University, China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-6420-4542",
+          "authenticated-orcid": false,
+          "given": "Ken",
+          "family": "Christofferson",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Computer Science, University of Toronto, Canada"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-9986-3345",
+          "authenticated-orcid": false,
+          "given": "Alex",
+          "family": "Mariakakis",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Computer Science, University of Toronto, Canada"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "rehearsse_chi2024.json"
+      ]
+    },
+    {
+      "citekey": "f05e6f30",
+      "bibtex_type": "misc",
+      "title": "arXiv PDF: EPG2S (2206.07860)",
+      "year": 2022,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "https://arxiv.org/pdf/2206.07860.pdf",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": null,
+      "verified": null,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "chen2022_epg2s.json"
+      ]
+    },
+    {
+      "citekey": "freitas2017an",
+      "bibtex_type": "book",
+      "title": "An Introduction to Silent Speech Interfaces",
+      "year": 2017,
+      "venue": "SpringerBriefs in Electrical and Computer Engineering",
+      "doi": "10.1007/978-3-319-40174-4",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-40174-4",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "João",
+          "family": "Freitas",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "António",
+          "family": "Teixeira",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Miguel Sales",
+          "family": "Dias",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Samuel",
+          "family": "Silva",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "ssi_book_springer2017.json"
+      ]
+    },
+    {
+      "citekey": "gilbert2010isolated",
+      "bibtex_type": "misc",
+      "title": "Isolated word recognition of silent speech using magnetic implants and sensors",
+      "year": 2010,
+      "venue": "Medical Engineering &amp; Physics",
+      "doi": "10.1016/j.medengphy.2010.08.011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20863739/",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "J.M.",
+          "family": "Gilbert",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "S.I.",
+          "family": "Rybchenko",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "R.",
+          "family": "Hofe",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "S.R.",
+          "family": "Ell",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "M.J.",
+          "family": "Fagan",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "R.K.",
+          "family": "Moore",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "P.",
+          "family": "Green",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "gilbert2010_magnetic_implants_silent_speech.json"
+      ]
+    },
+    {
+      "citekey": "gonzalez2020silent",
+      "bibtex_type": "misc",
+      "title": "Silent Speech Interfaces for Speech Restoration: A Review",
+      "year": 2020,
+      "venue": "IEEE Access",
+      "doi": "10.1109/access.2020.3026579",
+      "url": "https://ieeexplore.ieee.org/document/9205294/",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-5531-8994",
+          "authenticated-orcid": false,
+          "given": "Jose A.",
+          "family": "Gonzalez-Lopez",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-9797-8974",
+          "authenticated-orcid": false,
+          "given": "Alejandro",
+          "family": "Gomez-Alanis",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-4874-0166",
+          "authenticated-orcid": false,
+          "given": "Juan M.",
+          "family": "Martin Donas",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-1686-2401",
+          "authenticated-orcid": false,
+          "given": "Jose L.",
+          "family": "Perez-Cordoba",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-9995-3068",
+          "authenticated-orcid": false,
+          "given": "Angel M.",
+          "family": "Gomez",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "gonzalezlopez2020_ssi_restoration_review.json"
+      ]
+    },
+    {
+      "citekey": "graves2006connectionist",
+      "bibtex_type": "misc",
+      "title": "Connectionist temporal classification",
+      "year": 2006,
+      "venue": "Proceedings of the 23rd international conference on Machine learning  - ICML '06",
+      "doi": "10.1145/1143844.1143891",
+      "url": "https://dl.acm.org/doi/10.1145/1143844.1143891",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Alex",
+          "family": "Graves",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Santiago",
+          "family": "Fernández",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Faustino",
+          "family": "Gomez",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jürgen",
+          "family": "Schmidhuber",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "graves2006_ctc.json"
+      ]
+    },
+    {
+      "citekey": "guo2026cross",
+      "bibtex_type": "misc",
+      "title": "Cross-Modal Meta-Generalization for Silent Speech Recognition via Ultrasound Tongue Images",
+      "year": 2026,
+      "venue": "IEEE Transactions on Audio, Speech and Language Processing",
+      "doi": "10.1109/taslpro.2025.3646808",
+      "url": "https://doi.org/10.1109/taslpro.2025.3646808",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0009-0007-1074-4272",
+          "authenticated-orcid": false,
+          "given": "Minghao",
+          "family": "Guo",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "College of Intelligence and Computing, Tianjin University, Tianjin, China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-6548-980X",
+          "authenticated-orcid": false,
+          "given": "Qiang",
+          "family": "Fang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Institute of Linguistics, Chinese Academy of Social Sciences, Beijing, China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0008-7234-8475",
+          "authenticated-orcid": false,
+          "given": "Hongcheng",
+          "family": "Zhang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of Intelligence and Computing, Tianjin University, Tianjin, China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-7951-8907",
+          "authenticated-orcid": false,
+          "given": "Wenhuan",
+          "family": "Lu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of Intelligence and Computing, Tianjin University, Tianjin, China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-8964-9759",
+          "authenticated-orcid": false,
+          "given": "Jianguo",
+          "family": "Wei",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of Intelligence and Computing, Tianjin University, Tianjin, China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "guo2026_cross_modal_meta_generalization_uti.json"
+      ]
+    },
+    {
+      "citekey": "hardcastle1989new",
+      "bibtex_type": "misc",
+      "title": "New developments in electropalatography: A state-of-the-art report",
+      "year": 1989,
+      "venue": "Clinical Linguistics &amp; Phonetics",
+      "doi": "10.3109/02699208908985268",
+      "url": "https://doi.org/10.3109/02699208908985268",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "W.",
+          "family": "Hardcastle",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "W.",
+          "family": "Jones",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "C.",
+          "family": "Knight",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "A.",
+          "family": "Trudgeon",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "G.",
+          "family": "Calder",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "hardcastle1989_state_of_art_epg.json"
+      ]
+    },
+    {
+      "citekey": "hardcastle1990electropalatography",
+      "bibtex_type": "misc",
+      "title": "Electropalatography in phonetic research and in speech training",
+      "year": 1990,
+      "venue": "First International Conference on Spoken Language Processing (ICSLP 1990)",
+      "doi": "10.21437/icslp.1990-305",
+      "url": "https://isca-archive.org/icslp_1990/hardcastle90b_icslp.html",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "William J.",
+          "family": "Hardcastle",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "hardcastle1990_epg_phonetic_research.json"
+      ]
+    },
+    {
+      "citekey": "hardcastle1991epg",
+      "bibtex_type": "misc",
+      "title": "EPG data reduction methods and their implications for studies of lingual coarticulation",
+      "year": 1991,
+      "venue": "Journal of Phonetics",
+      "doi": "10.1016/s0095-4470(19)30343-2",
+      "url": "https://doi.org/10.1016/S0095-4470(19)30343-2",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "W.J.",
+          "family": "Hardcastle",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "F.",
+          "family": "Gibbon",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "K.",
+          "family": "Nicolaidis",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "hardcastle1991_epg_data_reduction_coarticulation.json"
+      ]
+    },
+    {
+      "citekey": "hiraki2025silentwhisper",
+      "bibtex_type": "misc",
+      "title": "SilentWhisper: inaudible faint whisper speech input for silent speech interaction",
+      "year": 2025,
+      "venue": "Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "doi": "10.1145/3706599.3721185",
+      "url": "https://doi.org/10.1145/3706599.3721185",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-6543-4593",
+          "authenticated-orcid": false,
+          "given": "Hirotaka",
+          "family": "Hiraki",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Graduate School of Interdisciplinary Information Studies, The University of Tokyo, Tokyo, Japan and Human Augmentation Research Center, National Institute of Advanced Industrial Science and Technology, Chiba, Japan"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-3629-2514",
+          "authenticated-orcid": false,
+          "given": "Jun",
+          "family": "Rekimoto",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "The University of Tokyo, Tokyo, Japan and Sony CSL Kyoto, Kyoto, Japan"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "hiraki2025_silentwhisper.json"
+      ]
+    },
+    {
+      "citekey": "hueber2010development",
+      "bibtex_type": "misc",
+      "title": "Development of a silent speech interface driven by ultrasound and optical images of the tongue and lips",
+      "year": 2010,
+      "venue": "Speech Communication",
+      "doi": "10.1016/j.specom.2009.11.004",
+      "url": "https://sciencedirect.com/science/article/pii/S0167639309001733",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Thomas",
+          "family": "Hueber",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Elie-Laurent",
+          "family": "Benaroya",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Gérard",
+          "family": "Chollet",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Bruce",
+          "family": "Denby",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Gérard",
+          "family": "Dreyfus",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Maureen",
+          "family": "Stone",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "hueber2010_ultrasound_optical_ssi.json"
+      ]
+    },
+    {
+      "citekey": "inoue2025a",
+      "bibtex_type": "misc",
+      "title": "A Silent Speech Decoding System from EEG and EMG with Heterogenous Electrode Configurations",
+      "year": 2025,
+      "venue": "Interspeech 2025",
+      "doi": "10.21437/interspeech.2025-1183",
+      "url": "https://doi.org/10.21437/interspeech.2025-1183",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Masakazu",
+          "family": "Inoue",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Motoshige",
+          "family": "Sato",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Kenichi",
+          "family": "Tomeoka",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Nathania",
+          "family": "Nah",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Eri",
+          "family": "Hatakeyama",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Kai",
+          "family": "Arulkumaran",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Ilya",
+          "family": "Horiguchi",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Shuntaro",
+          "family": "Sasai",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "inoue2025_eeg_emg_heterogeneous_electrodes.json"
+      ]
+    },
+    {
+      "citekey": "kele2026arxiv",
+      "bibtex_type": "misc",
+      "title": "arXiv: Silent Speech Interfaces in the Era of Large Language Models",
+      "year": 2026,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2603.11877",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        "Kele Xu",
+        "Yifan Wang",
+        "Ming Feng",
+        "Qisheng Xu",
+        "Wuyang Chen",
+        "Yutao Dou",
+        "Cheng Yang",
+        "Huaimin Wang"
+      ],
+      "verified": null,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "xu2026_llm_era_ssi_review.json"
+      ]
+    },
+    {
+      "citekey": "kimura2022silentspeller",
+      "bibtex_type": "misc",
+      "title": "SilentSpeller: Towards mobile, hands-free, silent speech text entry using electropalatography",
+      "year": 2022,
+      "venue": "CHI Conference on Human Factors in Computing Systems",
+      "doi": "10.1145/3491102.3502015",
+      "url": "https://dl.acm.org/doi/10.1145/3491102.3502015",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Naoki",
+          "family": "Kimura",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "The University of Tokyo, The University of Tokyo, Japan"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Tan",
+          "family": "Gemicioglu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Georgia Institute of Technology, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jonathan",
+          "family": "Womack",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Georgia Institute of Technology, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Richard",
+          "family": "Li",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Paul G. Allen School of Computer Science &amp; Engineering, University of Washington, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Yuhui",
+          "family": "Zhao",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of Interactive Computing, Georgia Institute of Technology, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Abdelkareem",
+          "family": "Bedri",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "HCII, Carnegie Mellon University, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Zixiong",
+          "family": "Su",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "GSII, The University of Tokyo, Japan"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Alex",
+          "family": "Olwal",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Google Inc., United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jun",
+          "family": "Rekimoto",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "The University of Tokyo, Japan and Sony CSL Kyoto, Japan"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Thad",
+          "family": "Starner",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of Interactive Computing, Georgia Institute of Technology, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "silentspeller_chi2022.json"
+      ]
+    },
+    {
+      "citekey": "lee2021biosignal",
+      "bibtex_type": "misc",
+      "title": "Biosignal Sensors and Deep Learning-Based Speech Recognition: A Review",
+      "year": 2021,
+      "venue": "Sensors",
+      "doi": "10.3390/s21041399",
+      "url": "https://doi.org/10.3390/s21041399",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-8586-4577",
+          "authenticated-orcid": false,
+          "given": "Wookey",
+          "family": "Lee",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Biomedical Science and Engineering &amp; Dept. of Industrial Security Governance &amp; IE, Inha University, 100 Inharo, Incheon 22212, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jessica Jiwon",
+          "family": "Seong",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Industrial Security Governance, Inha University, 100 Inharo, Incheon 22212, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Busra",
+          "family": "Ozlu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Biomedical Science and Engineering &amp; Department of Chemical Engineering, Inha University, 100 Inharo, Incheon 22212, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Bong Sup",
+          "family": "Shim",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Biomedical Science and Engineering &amp; Department of Chemical Engineering, Inha University, 100 Inharo, Incheon 22212, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Azizbek",
+          "family": "Marakhimov",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Frontier College, Inha University, 100 Inharo, Incheon 22212, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-3047-1167",
+          "authenticated-orcid": false,
+          "given": "Suan",
+          "family": "Lee",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of Computer Science, Semyung University, Jecheon 27136, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "lee2021_biosignal_speechrec_review.json"
+      ]
+    },
+    {
+      "citekey": "park2019specaugment",
+      "bibtex_type": "misc",
+      "title": "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition",
+      "year": 2019,
+      "venue": "Interspeech 2019",
+      "doi": "10.21437/interspeech.2019-2680",
+      "url": "https://isca-archive.org/interspeech_2019/park19_interspeech.html",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Daniel S.",
+          "family": "Park",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "William",
+          "family": "Chan",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Yu",
+          "family": "Zhang",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Chung-Cheng",
+          "family": "Chiu",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Barret",
+          "family": "Zoph",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ekin D.",
+          "family": "Cubuk",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Quoc V.",
+          "family": "Le",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "park2019_specaugment.json"
+      ]
+    },
+    {
+      "citekey": "ref129c5a0b",
+      "bibtex_type": "misc",
+      "title": "arXiv API: 2403.05583",
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://export.arxiv.org/api/query?id_list=2403.05583",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "authors": null,
+      "verified": null,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "benster2024_mona_llm_enhanced_ssr.json"
+      ]
+    },
+    {
+      "citekey": "ref6e16f2f3",
+      "bibtex_type": "misc",
+      "title": "arXiv: SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition",
+      "year": 2019,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "https://arxiv.org/abs/1904.08779",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": null,
+      "verified": null,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "park2019_specaugment.json"
+      ]
+    },
+    {
+      "citekey": "ref7ab01b5b",
+      "bibtex_type": "misc",
+      "title": "PDF: Silent Speech Interfaces in the Era of Large Language Models",
+      "year": 2026,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "https://arxiv.org/pdf/2603.11877",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": null,
+      "verified": null,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "xu2026_llm_era_ssi_review.json"
+      ]
+    },
+    {
+      "citekey": "shadle1993depth",
+      "bibtex_type": "misc",
+      "title": "Depth measurement of face and palate by structured light",
+      "year": 1993,
+      "venue": "3rd European Conference on Speech Communication and Technology (Eurospeech 1993)",
+      "doi": "10.21437/eurospeech.1993-403",
+      "url": "https://isca-archive.org/eurospeech_1993/shadle93_eurospeech.html",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Christine H.",
+          "family": "Shadle",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "J. N.",
+          "family": "Carter",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "T. P.",
+          "family": "Monks",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "J.",
+          "family": "Field",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "shadle1993_epg_structured_light.json"
+      ]
+    },
+    {
+      "citekey": "stone2020cross",
+      "bibtex_type": "misc",
+      "title": "Cross-Speaker Silent-Speech Command Word Recognition Using Electro-Optical Stomatography",
+      "year": 2020,
+      "venue": "ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+      "doi": "10.1109/icassp40776.2020.9053447",
+      "url": "https://doi.org/10.1109/ICASSP40776.2020.9053447",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Simon",
+          "family": "Stone",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Peter",
+          "family": "Birkholz",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "stone2020_electro_optical_stomatography_cross_speaker.json"
+      ]
+    },
+    {
+      "citekey": "su2025multimodal",
+      "bibtex_type": "misc",
+      "title": "Multimodal Silent Speech-based Text Entry with Word-initials Conditioned LLM",
+      "year": 2025,
+      "venue": "Proceedings of the 7th ACM Conference on Conversational User Interfaces",
+      "doi": "10.1145/3719160.3736612",
+      "url": "https://doi.org/10.1145/3719160.3736612",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-6048-3268",
+          "authenticated-orcid": false,
+          "given": "Zixiong",
+          "family": "Su",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "The University of Tokyo, Tokyo, Japan"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-1401-8482",
+          "authenticated-orcid": false,
+          "given": "Shitao",
+          "family": "Fang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Interactive Intelligent Systems Laboratory, The University of Tokyo, Tokyo, Japan"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-3629-2514",
+          "authenticated-orcid": false,
+          "given": "Jun",
+          "family": "Rekimoto",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Sony CSL Kyoto, Kyoto, Japan and The University of Tokyo, Tokyo, Japan"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "su2025_wordinitials_conditioned_llm_text_entry.json"
+      ]
+    },
+    {
+      "citekey": "tang2026sensing",
+      "bibtex_type": "misc",
+      "title": "Sensing technologies for silent speech interfaces",
+      "year": 2026,
+      "venue": "Nature Sensors",
+      "doi": "10.1038/s44460-025-00010-2",
+      "url": "https://doi.org/10.1038/s44460-025-00010-2",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-6368-5639",
+          "authenticated-orcid": false,
+          "given": "Chenyu",
+          "family": "Tang",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Liang",
+          "family": "Qi",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3096-4700",
+          "authenticated-orcid": false,
+          "given": "Shuo",
+          "family": "Gao",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0000-3685-9069",
+          "authenticated-orcid": false,
+          "given": "Zibo",
+          "family": "Zhang",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-4044-3063",
+          "authenticated-orcid": false,
+          "given": "Wentian",
+          "family": "Yi",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6381-9863",
+          "authenticated-orcid": false,
+          "given": "Muzi",
+          "family": "Xu",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Edoardo",
+          "family": "Occhipinti",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Yu",
+          "family": "Pan",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-9067-2534",
+          "authenticated-orcid": false,
+          "given": "Luigi G.",
+          "family": "Occhipinti",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "tang2026_sensing_technologies_ssi.json"
+      ]
+    },
+    {
+      "citekey": "toutios2006learning",
+      "bibtex_type": "misc",
+      "title": "Learning Electropalatograms from Acoustics",
+      "year": null,
+      "venue": "2006 IEEE International Conference on Acoustics Speed and Signal Processing Proceedings",
+      "doi": "10.1109/icassp.2006.1660032",
+      "url": "https://doi.org/10.1109/ICASSP.2006.1660032",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "A.",
+          "family": "Toutios",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "K.",
+          "family": "Margaritis",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "toutios2006_learning_epg_from_acoustics.json"
+      ]
+    },
+    {
+      "citekey": "toutios2006on",
+      "bibtex_type": "misc",
+      "title": "On the Acoustic-to-Electropalatographic Mapping",
+      "year": 2006,
+      "venue": "Lecture Notes in Computer Science",
+      "doi": "10.1007/11613107_16",
+      "url": "https://link.springer.com/chapter/10.1007/11613107_16",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Asterios",
+          "family": "Toutios",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Konstantinos",
+          "family": "Margaritis",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "toutios2006_acoustic_to_epg_mapping.json"
+      ]
+    },
+    {
+      "citekey": "tyler2024arxiv",
+      "bibtex_type": "misc",
+      "title": "arXiv: A Cross-Modal Approach to Silent Speech with LLM-Enhanced Recognition",
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2403.05583",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        "Tyler Benster",
+        "Guy Wilson",
+        "Reshef Elisha",
+        "Francis R. Willett",
+        "Shaul Druckmann"
+      ],
+      "verified": null,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "benster2024_mona_llm_enhanced_ssr.json"
+      ]
+    },
+    {
+      "citekey": "verhoeven2019visualisation",
+      "bibtex_type": "misc",
+      "title": "Visualisation and Analysis of Speech Production with Electropalatography",
+      "year": 2019,
+      "venue": "Journal of Imaging",
+      "doi": "10.3390/jimaging5030040",
+      "url": "https://doi.org/10.3390/jimaging5030040",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-0738-8517",
+          "authenticated-orcid": false,
+          "given": "Jo",
+          "family": "Verhoeven",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "School of Health Sciences, Division of Language &amp; Communication Science, Phonetics Laboratory, University of London, London EC1V 0HB, UK"
+            },
+            {
+              "name": "Department of Linguistics CLIPS, University of Antwerp, 2000 Antwerp, Belgium"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Naomi Rachel",
+          "family": "Miller",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of Health Sciences, Division of Language &amp; Communication Science, Phonetics Laboratory, University of London, London EC1V 0HB, UK"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Luc",
+          "family": "Daems",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Oral and Maxillo-Facial Surgery, ZNA Middelheim General Hospital, B2020 Antwerp, Belgium"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-9466-2018",
+          "authenticated-orcid": false,
+          "given": "Constantino Carlos",
+          "family": "Reyes-Aldasoro",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of Mathematics, Computer Science and Engineering, Department of Electrical Engineering, Research Centre in Biomedical Engineering, University of London, London EC1V 0HB, UK"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "verhoeven2019_visualisation_analysis_epg.json"
+      ]
+    },
+    {
+      "citekey": "wang2024watch",
+      "bibtex_type": "misc",
+      "title": "Watch Your Mouth: Silent Speech Recognition with Depth Sensing",
+      "year": 2024,
+      "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+      "doi": "10.1145/3613904.3642092",
+      "url": "https://doi.org/10.1145/3613904.3642092",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-4551-4932",
+          "authenticated-orcid": false,
+          "given": "Xue",
+          "family": "Wang",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Electrical and Computer Engineering, University of California, Los Angeles, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6048-3268",
+          "authenticated-orcid": false,
+          "given": "Zixiong",
+          "family": "Su",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Rekimoto Lab, The University of Tokyo, Japan"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-3629-2514",
+          "authenticated-orcid": false,
+          "given": "Jun",
+          "family": "Rekimoto",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "The University of Tokyo, Japan and Sony CSL Kyoto, Japan"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-2472-6968",
+          "authenticated-orcid": false,
+          "given": "Yang",
+          "family": "Zhang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Electrical and Computer Engineering, University of California, Los Angeles, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "wang2024_watch_your_mouth_depth_sensing.json"
+      ]
+    },
+    {
+      "citekey": "woo2021design",
+      "bibtex_type": "misc",
+      "title": "Design and Evaluation of Korean Electropalatography (K-EPG)",
+      "year": 2021,
+      "venue": "Sensors",
+      "doi": "10.3390/s21113802",
+      "url": "https://doi.org/10.3390/s21113802",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "authors": [
+        {
+          "given": "Seong-Tak",
+          "family": "Woo",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Electronic Engineering, Dong Seoul University, 76 Bokjeong-ro, Sujeong-gu, Seongnam-si 13117, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ji-Wan",
+          "family": "Ha",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Speech Pathology, Daegu University, 201, Daegudae-ro, Gyeongsan-si 38453, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Sungdae",
+          "family": "Na",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Biomedical Engineering, Kyungpook National Universicy Hospital, 130 Dongdeok-ro, Jung-gu, Daegu-si 41944, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Hyunjoo",
+          "family": "Choi",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Communication Disorders, Korean Nazarene University, Wolbong-ro 48, Cheonan-si 31172, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Sung-Bom",
+          "family": "Pyun",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Physical Medicine and Rehabilitation, Korea University College of Medicine, 73 Goryeodae-ro, Seongbuk-gu, Seoul 02841, Korea"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "verification_error": null,
+      "url_accessible": null,
+      "url_status": null,
+      "from_items": [
+        "woo2021_kepg_design.json"
+      ]
+    }
+  ],
+  "warnings": []
+}

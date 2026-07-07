@@ -1,0 +1,75 @@
+venue: Core4
+render_policy:
+  include_core: true
+  include_extension: false
+  compression: moderate
+slots:
+  core.problem:
+    order: 10
+    section: Introduction
+    required: true
+  core.claim:
+    order: 20
+    section: Introduction
+    required: true
+  core.method:
+    order: 30
+    section: Task and Method
+    required: true
+  core.evaluation:
+    order: 40
+    section: Evaluation
+    required: true
+  core.result:
+    order: 50
+    section: Results
+    required: true
+  core.boundary:
+    order: 60
+    section: Results
+    required: true
+  extension.analysis:
+    order: 70
+    section: Analysis
+    extension_only: true
+  extension.audit:
+    order: 80
+    section: Auditability
+    extension_only: true
+required_roles:
+  - problem
+  - central_claim
+  - method
+  - evaluation
+  - main_result
+  - core_limitation
+required_rhetorical_roles:
+  - intro.problem
+  - intro.prior_capability
+  - intro.gap
+  - intro.reframing
+  - intro.central_claim
+  - intro.evidence_preview
+  - intro.contributions
+  - method.task_object
+  - method.signal_representation
+  - method.model_core
+  - method.variant_scope
+  - eval.data
+  - eval.protocols
+  - eval.metrics
+  - eval.baselines_controls
+required_result_roles:
+  - primary_evidence
+  - task_validity
+  - failure_condition
+  - constraint_or_recovery
+  - validation_check
+  - claim_scope
+forbidden_sections:
+  - Related Work
+  - Discussion
+  - Conclusion
+  - Method
+  - Experimental Setup
+  - Results and Limitations

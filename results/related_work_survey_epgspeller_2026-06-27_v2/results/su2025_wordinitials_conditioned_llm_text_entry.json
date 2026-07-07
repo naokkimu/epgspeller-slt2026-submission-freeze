@@ -1,0 +1,86 @@
+{
+  "paper_id": "su2025_wordinitials_conditioned_llm_text_entry",
+  "title": "Multimodal Silent Speech-based Text Entry with Word-initials Conditioned LLM",
+  "authors": [
+    "Zixiong Su",
+    "Shitao Fang",
+    "Jun Rekimoto"
+  ],
+  "year": 2025,
+  "venue": "Proceedings of the 7th ACM Conference on Conversational User Interfaces",
+  "doi": "10.1145/3719160.3736612",
+  "primary_url": "https://doi.org/10.1145/3719160.3736612",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "su2025wordinitialsllm",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement",
+  "modality": "Multimodal silent-speech text entry; exact sensing channels are paper-specific and non-EPG unless otherwise stated by the source.",
+  "device": "Multimodal SSI input setup described in the ACM CUI 2025 paper.",
+  "task": "Silent speech-based text entry with word-initial cues and LLM-conditioned prediction.",
+  "output_unit": "Text/words produced from silent input cues with word-initial conditioning.",
+  "vocabulary_setting": "LLM-assisted text-entry setting; output support is shaped by word prediction and language-model conditioning rather than pure unconstrained greedy character decoding.",
+  "datasets": "Paper-specific text-entry/SSI dataset; use source paper for participant and session details.",
+  "evaluation_protocol": "Paper-specific multimodal text-entry evaluation; not directly CER-leaderboard comparable to EPGSpeller without matched splits and metrics.",
+  "protocol_generalization": "Important contrast case because language-model conditioning changes the protocol from pure sensor decoding toward assisted text entry.",
+  "participant_generalization": "Participant/user generalization must be read from the source; v2 treats it as contextual unless cross-user evidence is explicit.",
+  "metrics_reported": "Text-entry and recognition metrics reported by the CUI paper.",
+  "benchmark_or_audit_status": "Publisher-indexed paper; no v2-confirmed shared benchmark stack comparable to EPGSpeller split manifests.",
+  "leakage_or_constraint_notes": "LLM conditioning and word-initial cues should be separated from lexicon-free sensor decoding claims; do not compare directly against EPGSpeller greedy CER.",
+  "decoder": "LLM-conditioned text prediction/postprocessing around silent-speech cues.",
+  "model_architecture": "Paper-specific multimodal text-entry system with an LLM-conditioned component.",
+  "spatial_frontend": "Not EPG-specific; no palate-contact spatial frontend in the v2 evidence summary.",
+  "augmentation": "Not emphasized in v2 extraction; see paper.",
+  "language_model_or_postprocessing": "Central: word-initials conditioned LLM is part of the text-entry mechanism.",
+  "transfer_or_adaptation_method": "Not the primary v2 relevance; item is included for LM-assisted SSI positioning.",
+  "source_quality_notes": "Confirmed through DOI/Crossref/OpenAlex publisher metadata.",
+  "reproducibility_artifacts": "No v2-confirmed code/data release.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Introduces or evaluates LLM-conditioned word-initial assisted silent-speech text entry.",
+    "Provides a contemporary example where silent input is combined with language-model priors.",
+    "Useful for separating sensor decoding from text-entry assistance in related work."
+  ],
+  "limitations": [
+    "LLM assistance can obscure sensor-decoding quality if compared directly with lexicon-free CER.",
+    "Protocol and vocabulary constraints are paper-specific."
+  ],
+  "reported_results_summary": "See the ACM CUI 2025 paper; v2 uses the item for framing, not numeric normalization.",
+  "relevance_to_epgspeller": "Helps EPGSpeller justify reporting greedy CER and lexicon projection separately from LM/LLM-assisted text entry.",
+  "takeaways_for_related_work_section": "Recent SSI text-entry work increasingly uses language-model assistance, so EPGSpeller should explicitly frame lexicon-free and lexicon/LM-assisted results as different evaluation regimes.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Directly supports the current manuscript’s constraint separation: open-character decoding, lexicon projection, and LM/LLM assistance should not be collapsed into one leaderboard.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.1145/3719160.3736612",
+      "title": "DOI: Multimodal Silent Speech-based Text Entry with Word-initials Conditioned LLM",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/3719160.3736612",
+      "year": 2025,
+      "venue": "ACM CUI 2025",
+      "authors": [
+        "Zixiong Su",
+        "Shitao Fang",
+        "Jun Rekimoto"
+      ]
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1145/3719160.3736612",
+      "title": "Crossref API: 10.1145/3719160.3736612",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3719160.3736612",
+      "year": 2025,
+      "venue": "Proceedings of the 7th ACM Conference on Conversational User Interfaces"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1145/3719160.3736612",
+      "title": "OpenAlex: Multimodal Silent Speech-based Text Entry with Word-initials Conditioned LLM",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3719160.3736612",
+      "year": 2025,
+      "venue": "ACM CUI 2025"
+    }
+  ],
+  "uncertain": []
+}

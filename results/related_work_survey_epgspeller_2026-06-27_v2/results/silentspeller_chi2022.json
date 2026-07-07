@@ -1,0 +1,92 @@
+{
+  "paper_id": "silentspeller_chi2022",
+  "title": "SilentSpeller: Towards mobile, hands-free, silent speech text entry using electropalatography",
+  "authors": [
+    "Naoki Kimura",
+    "Tan Gemicioglu",
+    "Jonathan Womack",
+    "Richard Li",
+    "Yuhui Zhao",
+    "Abdelkareem Bedri",
+    "Zixiong Su",
+    "Alex Olwal",
+    "Jun Rekimoto",
+    "Thad Starner"
+  ],
+  "year": 2022,
+  "venue": "CHI 2022 (ACM CHI Conference on Human Factors in Computing Systems)",
+  "doi": "10.1145/3491102.3502015",
+  "primary_url": "https://dl.acm.org/doi/10.1145/3491102.3502015",
+  "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3491102.3502015",
+  "code_or_data_release": null,
+  "citation_key_suggestion": "kimura2022silentspeller",
+  "modality": "EPG (electropalatography; intra-oral palate contact sensing)",
+  "device": "Intra-oral dental retainer with palate-contact sensing (SmartPalate-like EPG form factor)",
+  "task": "Silent spelling / silent speech text entry",
+  "output_unit": "characters (letters), aggregated to words",
+  "vocabulary_setting": "open-vocabulary silent spelling with held-out (unseen) words evaluation",
+  "datasets": "EPG text-entry dataset described in the paper",
+  "evaluation_protocol": "The paper reports offline evaluations and includes an unseen-word generalization setting; see the official paper for exact split definitions.",
+  "metrics_reported": "Character/word-level accuracy/error rates and text-entry metrics (see paper).",
+  "decoder": "CTC-based sequence decoding (details in the paper)",
+  "model_architecture": "Deep sequence model trained with CTC (details in the paper)",
+  "spatial_frontend": "Multi-channel EPG time series (no explicit 2D reconstruction in the baseline description)",
+  "augmentation": "See paper (augmentation/robustness details are paper-specific)",
+  "key_contributions": [
+    "EPG-based wearable silent spelling text-entry system for mobile, hands-free scenarios.",
+    "Unseen-word generalization via letter-level composition (silent spelling).",
+    "Evaluation beyond isolated words (e.g., phrase entry and walking robustness)."
+  ],
+  "limitations": [
+    "Requires a custom intra-oral device and user-specific fit.",
+    "Performance depends on sensor fit and intra-oral conditions.",
+    "Cross-study comparisons require careful protocol alignment (lexicon size, unseen-word setting, etc.)."
+  ],
+  "reported_results_summary": "The paper reports protocol-specific character/word-level results including an unseen-word evaluation; see the ACM DL paper for exact numbers and definitions.",
+  "relevance_to_epgspeller": "Directly relevant EPG silent spelling/text entry system; a key horizontal comparison point for positioning open-vocabulary silent spelling with palate-contact sensing.",
+  "takeaways_for_related_work_section": "SilentSpeller (CHI 2022) is a primary EPG-based silent spelling system demonstrating wearable text entry and unseen-word generalization via letter-by-letter composition; it anchors the EPG silent spelling related-work discussion.",
+  "sources": [
+    {
+      "url": "https://dl.acm.org/doi/10.1145/3491102.3502015",
+      "title": "ACM Digital Library: SilentSpeller: Towards mobile, hands-free, silent speech text entry using electropalatography",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/3491102.3502015",
+      "year": 2022,
+      "venue": "CHI 2022"
+    },
+    {
+      "url": "https://doi.org/10.1145/3491102.3502015",
+      "title": "DOI: 10.1145/3491102.3502015",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/3491102.3502015",
+      "year": 2022,
+      "venue": "CHI 2022",
+      "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3491102.3502015"
+    },
+    {
+      "url": "https://dblp.org/rec/conf/chi/KimuraGWLZBSORS22",
+      "title": "DBLP: SilentSpeller: Towards mobile, hands-free, silent speech text entry using electropalatography",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3491102.3502015",
+      "year": 2022,
+      "venue": "CHI 2022"
+    }
+  ],
+  "uncertain": [
+    "Exact protocol definitions and numeric results are not transcribed here; consult the official ACM DL paper."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Includes or motivates compositional/open-vocabulary or held-out-word evaluation; still not directly leaderboard-comparable without matched splits and metrics.",
+  "participant_generalization": "Primarily source-specific; use only as a task anchor unless the paper explicitly reports cross-user/user-independent evaluation.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "Character-level silent spelling anchor; compare decoding constraints carefully and avoid mixing lexicon/word-prediction effects with sensor decoding.",
+  "transfer_or_adaptation_method": "Relevant to EPG spatial/device representation; transfer/adaptation is not necessarily evaluated unless stated in the original item.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Direct EPG silent spelling anchor. In v2 it supports positioning EPGSpeller as a protocol-audited benchmark rather than a claim of a single cross-paper CER leaderboard."
+}

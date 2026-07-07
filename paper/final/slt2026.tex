@@ -1,0 +1,56 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[strings]{underscore}
+\usepackage[hidelinks]{hyperref}
+\RequirePackage{ifpdf}
+\ifpdf
+  \pdfinclusioncopyfonts=1
+  \pdfobjcompresslevel=2
+\fi
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\input{macros}
+\makeatletter
+\def\@IEEEabskeysecsize{\normalsize}
+\renewcommand{\small}{\fontsize{9.15}{10.98}\selectfont}
+\makeatother
+\renewcommand{\footnotesize}{\small}
+
+\begin{document}
+
+\title{EPGSpeller: Lexicon-Free Silent Spelling Recognition with Electropalatography}
+
+\author{\IEEEauthorblockN{Anonymous Submission}}
+
+\maketitle
+
+\begin{abstract}
+Hands-free character entry motivates decoding beyond fixed command vocabularies; this paper reports an offline recognition-layer study on a corpus-bounded SilentSpeller spelling task, not interactive augmentative and alternative communication (AAC) deployment.
+We present EPGSpeller, which decodes character strings from SmartPalate-style electropalatographic contact time series using connectionist temporal classification and greedy decoding before lexicon projection.
+On four healthy participants, word-holdout (P1) and instance-holdout (P2) character error rate (CER) stay near 0.18, cross-user transfer (P3) exceeds 0.69, and one held-word example per label on p3 at k=1 partially recovers error to about 0.35 CER.
+Results are limited to offline recognition-layer evaluation; interactive AAC input is future work.
+\end{abstract}
+
+\begin{IEEEkeywords}
+electropalatography, silent spelling, AAC, lexicon-free recognition, character-level decoding, calibration, silent speech interface
+\end{IEEEkeywords}
+
+\input{sections/01_introduction}
+\input{sections/02_signal_task}
+\input{sections/03_system}
+\input{sections/04_evaluation}
+\input{sections/05_results}
+\input{sections/06_discussion}
+\input{sections/07_conclusion}
+
+\clearpage
+\bibliographystyle{IEEEtran}
+\bibliography{../bibliography/references_sanitized_ascii_cited}
+
+\end{document}

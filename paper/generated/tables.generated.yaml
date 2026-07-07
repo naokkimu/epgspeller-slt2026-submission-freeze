@@ -1,0 +1,66 @@
+generated: true
+source: questions.yaml
+profile: slt2026
+tables:
+  tab.dataset_summary:
+    source_question: Q.setup.data_protocols
+    slot: core.evaluation
+    claims:
+    - C.protocols
+    source_artifact: A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    label: tab:dataset_summary
+    caption: Dataset audit summary for the SilentSpeller-style EPG recordings.
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    profile: slt2026
+    section: Evaluation
+    render_order: 2
+    rhetorical_role: eval.data
+    result_role: null
+  tab.main_protocols:
+    source_question: Q.result.01_personalized
+    slot: core.result
+    claims:
+    - C.personalized_result
+    source_artifact: A_results_paper_layout_2026_03_03_table_main_compact_csv
+    label: tab:main_protocols
+    caption: Main protocol recap for the vector/GRU recognizer. CER is greedy character
+      error rate; lex_all is lexicon-projected error.
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    profile: slt2026
+    section: Results
+    render_order: 2
+    rhetorical_role: null
+    result_role: primary_evidence
+  tab.silentspeller_lite:
+    source_question: Q.result.02_silentspeller_lite
+    slot: core.result
+    claims:
+    - C.silentspeller_lite
+    source_artifact: A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    label: tab:silentspeller_lite
+    caption: SilentSpeller-compatible-lite word-holdout result for subj1.
+    evidence:
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    profile: slt2026
+    section: Results
+    render_order: 2
+    rhetorical_role: null
+    result_role: task_validity
+  tab.kshot_curve:
+    source_question: Q.result.03_calibration
+    slot: core.result
+    claims:
+    - C.calibration_curve
+    source_artifact: A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    label: tab:kshot_curve
+    caption: Calibration curve and feasibility for subj3. The k=4 row is reduced-vocabulary
+      diagnostic evidence; k=8 is data-infeasible.
+    evidence:
+    - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    profile: slt2026
+    section: Results
+    render_order: 2
+    rhetorical_role: null
+    result_role: constraint_or_recovery

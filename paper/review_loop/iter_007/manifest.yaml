@@ -1,0 +1,11 @@
+iteration: 7
+timestamp: "2026-07-01"
+manuscript: paper/final/slt2026.tex
+manuscript_hash: "7b2fc686effee986400294c4d872f2585f28ed84113cf920a942ad8752805830"
+mode: format_compression
+target: "6 content pages (SLT 6+2)"
+result_pages: 4
+result_content_pages: 3
+baseline_review_scores: [3, 4, 4]
+final_review_scores: [4, 4, 4]
+prior_iteration: iter_006

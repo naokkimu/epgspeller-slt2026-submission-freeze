@@ -1,0 +1,83 @@
+{
+  "paper_id": "woo2021_kepg_design",
+  "title": "Design and Evaluation of Korean Electropalatography (K-EPG)",
+  "authors": [
+    "Seong-Tak Woo",
+    "Ji-Wan Ha",
+    "Sungdae Na",
+    "Hyunjoo Choi",
+    "Sung-Bom Pyun"
+  ],
+  "year": 2021,
+  "venue": "Sensors",
+  "doi": "10.3390/s21113802",
+  "primary_url": "https://doi.org/10.3390/s21113802",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "woo2021kepg",
+  "modality": "Electropalatography (EPG) device / instrumentation",
+  "device": "K-EPG (Korean Electropalatography) system as described in the paper",
+  "task": "Design and evaluation of an EPG system (hardware + measurement validation)",
+  "output_unit": "EPG contact measurements (electrode contact patterns)",
+  "vocabulary_setting": "N/A (device/instrumentation focus)",
+  "datasets": "Device evaluation measurements as reported (see paper for specifics)",
+  "evaluation_protocol": "Device design and evaluation protocol as reported (see paper)",
+  "metrics_reported": "Device/system evaluation metrics as reported (paper-specific)",
+  "decoder": "N/A",
+  "model_architecture": "N/A",
+  "spatial_frontend": "EPG electrode layout and contact-pattern representation (device-defined)",
+  "augmentation": "N/A",
+  "key_contributions": [
+    "Describes the design and evaluation of a Korean EPG system (K-EPG), contributing to the diversity of EPG device designs and layouts.",
+    "Provides relevant context for sensor design constraints (electrode layouts, manufacturing, evaluation) that influence modeling assumptions.",
+    "Useful for discussing that EPG layouts are device-specific and that electrode selection/design questions are meaningful."
+  ],
+  "limitations": [
+    "Not an end-to-end decoding benchmark; focuses on device design and evaluation rather than CER/WER-style metrics.",
+    "Conclusions may be tied to the specific K-EPG hardware and evaluation setup."
+  ],
+  "reported_results_summary": "Device/instrumentation paper; reports design and evaluation results specific to K-EPG (see DOI/Crossref sources).",
+  "relevance_to_epgspeller": "Supports Related Work on EPG device diversity and electrode-layout considerations, providing context for electrode selection and spatial front-end assumptions.",
+  "takeaways_for_related_work_section": "A modern EPG device paper (Sensors 2021) that can be cited to emphasize that electrode layouts/devices vary and that sensor design (layout, coverage) is an explicit dimension in EPG-based decoding systems.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.3390/s21113802",
+      "title": "DOI: 10.3390/s21113802",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.3390/s21113802",
+      "year": 2021,
+      "venue": "Sensors"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.3390/s21113802",
+      "title": "Crossref API: 10.3390/s21113802",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.3390/s21113802"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.3390/s21113802",
+      "title": "OpenAlex: Design and Evaluation of Korean Electropalatography (K-EPG)",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.3390/s21113802",
+      "year": 2021,
+      "venue": "Sensors"
+    }
+  ],
+  "uncertain": [
+    "This JSON does not transcribe detailed electrode layout parameters; consult the paper for the exact K-EPG electrode design and evaluation results."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Protocol is paper-specific; v2 report treats it as contextual unless split/metric definitions align with EPGSpeller.",
+  "participant_generalization": "Not a participant-generalization benchmark; use for modality, method, or representation context.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "No v2-specific language-model or postprocessing mechanism was added beyond the original survey extraction.",
+  "transfer_or_adaptation_method": "Relevant to EPG spatial/device representation; transfer/adaptation is not necessarily evaluated unless stated in the original item.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "EPG representation/device context. In v2 it supports the manuscript discussion of spatial layout, electrode budget, and device-specific assumptions."
+}

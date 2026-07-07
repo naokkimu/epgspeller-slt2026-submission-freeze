@@ -1,0 +1,83 @@
+{
+  "paper_id": "gonzalezlopez2020_ssi_restoration_review",
+  "title": "Silent Speech Interfaces for Speech Restoration: A Review",
+  "authors": [
+    "Jose A. Gonzalez-Lopez",
+    "Alejandro Gomez-Alanis",
+    "Juan M. Martin Donas",
+    "Jose L. Perez-Cordoba",
+    "Angel M. Gomez"
+  ],
+  "year": 2020,
+  "venue": "IEEE Access",
+  "doi": "10.1109/access.2020.3026579",
+  "primary_url": "https://ieeexplore.ieee.org/document/9205294/",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "gonzalezlopez2020ssi",
+  "modality": "Survey / review (Silent Speech Interfaces, SSI)",
+  "device": "N/A (review of multiple devices and sensing modalities)",
+  "task": "Silent Speech Interfaces for speech restoration (speech reconstruction / communication without audible speech)",
+  "output_unit": "N/A (review; varies by system, e.g., speech or text)",
+  "vocabulary_setting": "N/A (review; varies by system/protocol)",
+  "datasets": "N/A (review; summarizes multiple datasets across modalities)",
+  "evaluation_protocol": "N/A (review; summarizes multiple evaluation protocols)",
+  "metrics_reported": "N/A (review; discusses metrics used in SSI literature)",
+  "decoder": "Varies by modality (review; e.g., HMM/DNN/CTC/seq2seq depending on system)",
+  "model_architecture": "Varies (review; includes classical and deep-learning approaches depending on sensing modality)",
+  "spatial_frontend": "Varies (review; modality-specific front-ends, including spatial encoders for imaging/arrays)",
+  "augmentation": "Varies / not consistently standardized across SSI literature",
+  "key_contributions": [
+    "Surveys Silent Speech Interfaces with a focus on speech restoration, covering sensing modalities, system pipelines, and challenges.",
+    "Provides a modality-centric organization useful for positioning EPG-based silent spelling within the broader SSI landscape.",
+    "Highlights practical issues (sensing variability, usability, robustness) that directly motivate systematic protocol reporting."
+  ],
+  "limitations": [
+    "As a review, it does not define a single standardized benchmark; comparisons across modalities remain protocol-dependent.",
+    "Focus is on speech restoration; open-vocabulary silent spelling/text-entry is not the sole emphasis."
+  ],
+  "reported_results_summary": "Review paper; it synthesizes prior results and challenges rather than reporting a single unified benchmark.",
+  "relevance_to_epgspeller": "Provides a recent SSI survey for positioning and for motivating why EPG-based silent spelling must be evaluated with protocol-aware comparisons (lexicon constraints, open-vocabulary settings, robustness).",
+  "takeaways_for_related_work_section": "A modern SSI review (IEEE Access 2020) that can be cited to define SSI scope and challenges, and to position EPG-based open-vocabulary silent spelling among other speech-restoration modalities.",
+  "sources": [
+    {
+      "url": "https://ieeexplore.ieee.org/document/9205294/",
+      "title": "IEEE Xplore: Silent Speech Interfaces for Speech Restoration: A Review",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1109/access.2020.3026579",
+      "year": 2020,
+      "venue": "IEEE Access"
+    },
+    {
+      "url": "https://doi.org/10.1109/ACCESS.2020.3026579",
+      "title": "DOI: 10.1109/ACCESS.2020.3026579",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1109/access.2020.3026579",
+      "year": 2020,
+      "venue": "IEEE Access"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1109/access.2020.3026579",
+      "title": "Crossref API: 10.1109/access.2020.3026579",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1109/access.2020.3026579"
+    }
+  ],
+  "uncertain": [
+    "This JSON does not enumerate all modalities/pipelines listed in the review; consult the paper for the complete taxonomy and modality coverage."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Protocol is paper-specific; v2 report treats it as contextual unless split/metric definitions align with EPGSpeller.",
+  "participant_generalization": "Multi-participant or cross-participant behavior is discussed in the source-specific protocol; exact comparability depends on the paper definition.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "No v2-specific language-model or postprocessing mechanism was added beyond the original survey extraction.",
+  "transfer_or_adaptation_method": "Relevant as non-EPG SSI or method context; transfer/adaptation evidence should not be extrapolated to EPG without matched data.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Seeded from the frozen 2026-02-17 survey; v2 uses this item to preserve the original EPG-centered baseline while adding protocol/audit/transfer lenses for the current manuscript."
+}

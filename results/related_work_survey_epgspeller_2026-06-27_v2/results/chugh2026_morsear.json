@@ -1,0 +1,90 @@
+{
+  "paper_id": "chugh2026_morsear",
+  "title": "MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable based Inertial Sensing",
+  "authors": [
+    "Garvit Chugh",
+    "Indrajeet Ghosh",
+    "Nirmalya Roy",
+    "Sandip Chakraborty",
+    "Suchetana Chakraborty"
+  ],
+  "year": 2026,
+  "venue": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems",
+  "doi": "10.1145/3772318.3791436",
+  "primary_url": "https://doi.org/10.1145/3772318.3791436",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "chugh2026morsear",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement",
+  "modality": "Earable inertial sensing for covert/silent messaging.",
+  "device": "Earable inertial sensor platform described in the CHI 2026 paper.",
+  "task": "Low-resource covert messaging / silent communication.",
+  "output_unit": "Messaging units defined by the MorsEar task.",
+  "vocabulary_setting": "Low-resource covert messaging; not direct EPG open-character spelling.",
+  "datasets": "Paper-specific earable dataset.",
+  "evaluation_protocol": "Paper-specific generalization and low-resource evaluation.",
+  "protocol_generalization": "Relevant because the title and metadata emphasize generalizable low-resource behavior; protocol is still modality-specific.",
+  "participant_generalization": "Included for generalization framing; exact participant split definitions should be read from the paper.",
+  "metrics_reported": "Messaging/recognition metrics reported by the CHI 2026 paper.",
+  "benchmark_or_audit_status": "Publisher-indexed paper; no v2-confirmed shared benchmark stack comparable to EPGSpeller.",
+  "leakage_or_constraint_notes": "Task constraints differ from lexicon-free character spelling; compare only at the level of low-resource/generalization framing.",
+  "decoder": "Paper-specific classifier/decoder for earable inertial covert messaging.",
+  "model_architecture": "Paper-specific low-resource earable model.",
+  "spatial_frontend": "Not applicable to EPG palate layout.",
+  "augmentation": "See paper.",
+  "language_model_or_postprocessing": "Not the main v2 relevance.",
+  "transfer_or_adaptation_method": "Low-resource and generalizable modeling are central to the paper framing.",
+  "source_quality_notes": "Confirmed through DOI/Crossref/OpenAlex metadata.",
+  "reproducibility_artifacts": "No v2-confirmed code/data release.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Adds a contemporary earable covert messaging SSI-like system.",
+    "Emphasizes low-resource/generalizable behavior in wearable sensing.",
+    "Provides a contrast point for EPGSpeller low-shot/cross-participant discussion."
+  ],
+  "limitations": [
+    "Different task and sensor modality from EPGSpeller.",
+    "Protocol-level details must be kept separate from EPG split families."
+  ],
+  "reported_results_summary": "See CHI 2026 paper; v2 uses this for generalization/low-resource framing.",
+  "relevance_to_epgspeller": "Supports the current manuscript emphasis that generalization claims should be protocol-specific and target-specific.",
+  "takeaways_for_related_work_section": "Wearable SSI work increasingly foregrounds low-resource and generalizable settings; EPGSpeller can align rhetorically while keeping EPG-specific evidence separate.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Useful background for low-shot and cross-participant framing, without serving as a direct CER comparison.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.1145/3772318.3791436",
+      "title": "DOI: MorsEar",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/3772318.3791436",
+      "year": 2026,
+      "venue": "CHI 2026",
+      "authors": [
+        "Garvit Chugh",
+        "Indrajeet Ghosh",
+        "Nirmalya Roy",
+        "Sandip Chakraborty",
+        "Suchetana Chakraborty"
+      ]
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1145/3772318.3791436",
+      "title": "Crossref API: 10.1145/3772318.3791436",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3772318.3791436",
+      "year": 2026,
+      "venue": "CHI 2026"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1145/3772318.3791436",
+      "title": "OpenAlex: MorsEar",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3772318.3791436",
+      "year": 2026,
+      "venue": "CHI 2026"
+    }
+  ],
+  "uncertain": []
+}

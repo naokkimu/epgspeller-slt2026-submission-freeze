@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "timestamp": "2026-07-01T17:11:22+09:00",
+  "file": "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/writing_loop/iter_002/manuscript_plain.txt",
+  "tool_root": "/Users/naokkimu/Desktop/SLT_submission/extras/kimuras_word_distribution",
+  "text_stats": {
+    "chars": 33357,
+    "words": 4630,
+    "sentences": 225,
+    "avg_sentence_len": 20.58,
+    "sentence_len_var": 111.21,
+    "sentence_len_std": 10.55,
+    "long_sentences_over_40": 10
+  },
+  "rules": {
+    "high": [
+      {
+        "rule_id": "AI_SELF_REFERENCE",
+        "severity": "high",
+        "description": "Self-referential assistant language",
+        "suggestion": "Remove self-referential assistant language; describe the method, limitation, or requirement directly.",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "AS_CHATGPT",
+        "severity": "high",
+        "description": "Assistant self-positioning using model name",
+        "suggestion": "Remove assistant self-positioning. State the claim or limitation directly without referring to the model as a speaker.",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "BLOG_INTRO",
+        "severity": "high",
+        "description": "Blog-like intro framing",
+        "suggestion": "Replace blog framing with paper framing (problem → gap → approach → contributions).",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "CHAT_CLOSING",
+        "severity": "high",
+        "description": "Chatty closing / user-addressing phrases",
+        "suggestion": "Remove conversational closings; end with a concrete statement of contributions or findings.",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "HYPE_MARKETING",
+        "severity": "high",
+        "description": "Marketing/hype phrasing",
+        "suggestion": "Replace hype with measurable, falsifiable claims (what improves, by how much, under what setting).",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "PROMPT_ARTIFACTS",
+        "severity": "high",
+        "description": "Conversation-style acknowledgements at paragraph start",
+        "suggestion": "Remove conversational acknowledgements. Start with the claim or the topic sentence.",
+        "count": 0,
+        "examples": []
+      }
+    ],
+    "medium": [
+      {
+        "rule_id": "VAGUE_INTENSIFIERS",
+        "severity": "medium",
+        "description": "Vague intensifiers/adjectives",
+        "suggestion": "Prefer quantitative or specific descriptors; avoid intensifiers when not supported by evidence.",
+        "count": 1,
+        "examples": [
+          {
+            "match": "highly",
+            "context": "atial structure more explicitly, but electropalatographic contact is sparse and highly participant-dependent, so a strong two-dimensional spatial assumption is not al"
+          }
+        ]
+      },
+      {
+        "rule_id": "CLICHE_OPENINGS",
+        "severity": "medium",
+        "description": "Cliché background framing",
+        "suggestion": "Replace clichés with concrete context (what changed, when, and why it matters for this paper).",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "EMPTY_NOTING",
+        "severity": "medium",
+        "description": "Wordy meta-phrases (often deletable)",
+        "suggestion": "Often removable. State the fact directly.",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "EM_DASH",
+        "severity": "medium",
+        "description": "Em dash usage (—) can read chatty",
+        "suggestion": "Consider replacing em dashes with periods, commas, or parentheses for a more literal, translation-friendly style.",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "GENERIC_ADJECTIVES",
+        "severity": "medium",
+        "description": "Generic quality adjectives (often marketing-ish)",
+        "suggestion": "Define what 'robust/scalable' means (failure modes, scale, measurements).",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "METAPHOR_TRAVEL",
+        "severity": "medium",
+        "description": "Metaphor-like verbs (often bloggy)",
+        "suggestion": "Prefer literal verbs: 'analyze', 'evaluate', 'describe', 'define'.",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "OVERCLAIMING_ADVERBS",
+        "severity": "medium",
+        "description": "Overconfident adverbs (require evidence)",
+        "suggestion": "Either justify with evidence/definition or remove the adverb.",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "VAGUE_SCOPE",
+        "severity": "medium",
+        "description": "Vague scope words",
+        "suggestion": "Prefer specifics (counts, categories, or explicit scope) over vague quantifiers.",
+        "count": 0,
+        "examples": []
+      },
+      {
+        "rule_id": "WORDY_IN_ORDER_TO",
+        "severity": "medium",
+        "description": "Wordy phrasing: in order to",
+        "suggestion": "Often removable: replace with 'to'.",
+        "count": 0,
+        "examples": []
+      }
+    ]
+  },
+  "repetition": {
+    "ngram_n": 4,
+    "min_count": 3,
+    "top": [
+      {
+        "ngram": "lexicon free string decoding",
+        "count": 8
+      },
+      {
+        "ngram": "epg silent spelling can",
+        "count": 5
+      },
+      {
+        "ngram": "smartpalate style epg silent",
+        "count": 5
+      },
+      {
+        "ngram": "style epg silent spelling",
+        "count": 5
+      },
+      {
+        "ngram": "epg contact time series",
+        "count": 4
+      },
+      {
+        "ngram": "from the target user",
+        "count": 4
+      },
+      {
+        "ngram": "is treated as a",
+        "count": 4
+      },
+      {
+        "ngram": "a modern string decoder",
+        "count": 3
+      }
+    ]
+  },
+  "kimura": {
+    "score": 45,
+    "grade": "D",
+    "grade_description": "要改善 - 大幅な修正が必要",
+    "issues": [
+      {
+        "type": "DIFFICULTY_HIGH",
+        "message": "文章が難しすぎます (Grade 13.7 > 目標11.0)",
+        "severity": "high",
+        "fix": "多音節語を短い表現に置換し、文を分割してください"
+      },
+      {
+        "type": "NOMINALIZATION_HIGH",
+        "message": "名詞化が多すぎます (91.7/1000語 > 目標31.5)",
+        "severity": "high",
+        "fix": "-tion/-ment形を動詞形に変換してください"
+      },
+      {
+        "type": "LONG_SENTENCES",
+        "message": "40語以上の長文が 5 個あります",
+        "severity": "high",
+        "fix": "セミコロンや関係節で分割してください"
+      }
+    ],
+    "warnings": [
+      {
+        "type": "PASSIVE_HIGH",
+        "message": "受動態が多すぎます (18.9% > 目標10%)",
+        "severity": "medium",
+        "fix": "能動態 \"We ...\" を使用してください - 木村スタイルでは \"we\" を積極使用"
+      },
+      {
+        "type": "AWL_LOW",
+        "message": "学術語彙が不足しています (4.5% < 目標10.9%)",
+        "severity": "low",
+        "fix": "use→utilize, show→demonstrate 等の学術語彙を適度に使用"
+      }
+    ],
+    "metrics": {
+      "sentence_length": 20.1,
+      "flesch_kincaid_grade": 13.7,
+      "flesch_reading_ease": 26.1,
+      "passive_ratio": 0.189,
+      "awl_coverage": 0.0453,
+      "hedge_per_1000": 13.0,
+      "nominalization_per_1000": 91.7
+    },
+    "total_words": 3773,
+    "total_sentences": 220,
+    "careful_words_per_1000": 1.9
+  }
+}

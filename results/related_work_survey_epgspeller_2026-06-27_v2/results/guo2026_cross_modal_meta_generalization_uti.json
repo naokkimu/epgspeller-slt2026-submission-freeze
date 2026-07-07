@@ -1,0 +1,90 @@
+{
+  "paper_id": "guo2026_cross_modal_meta_generalization_uti",
+  "title": "Cross-Modal Meta-Generalization for Silent Speech Recognition via Ultrasound Tongue Images",
+  "authors": [
+    "Minghao Guo",
+    "Qiang Fang",
+    "Hongcheng Zhang",
+    "Wenhuan Lu",
+    "Jianguo Wei"
+  ],
+  "year": 2026,
+  "venue": "IEEE Transactions on Audio, Speech and Language Processing",
+  "doi": "10.1109/taslpro.2025.3646808",
+  "primary_url": "https://doi.org/10.1109/taslpro.2025.3646808",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "guo2026crossmodalmetageneralization",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement",
+  "modality": "Ultrasound tongue images for silent speech recognition.",
+  "device": "Ultrasound tongue imaging system described in the IEEE paper.",
+  "task": "Silent speech recognition via ultrasound tongue images with cross-modal meta-generalization.",
+  "output_unit": "Speech/text units defined by the paper-specific recognition task.",
+  "vocabulary_setting": "Paper-specific SSR setting; not EPG open-character silent spelling.",
+  "datasets": "Paper-specific ultrasound tongue image SSR datasets.",
+  "evaluation_protocol": "Cross-modal meta-generalization protocol described by the IEEE paper.",
+  "protocol_generalization": "Highly relevant for transfer/generalization framing, though modality and task differ from EPGSpeller.",
+  "participant_generalization": "Generalization is central at the cross-modal level; participant split details must be read from the paper.",
+  "metrics_reported": "Recognition metrics reported by IEEE TASLP paper.",
+  "benchmark_or_audit_status": "Peer-reviewed journal paper; no v2-confirmed shared benchmark artifacts comparable to EPGSpeller.",
+  "leakage_or_constraint_notes": "Cross-modal training resources and vocabulary constraints should be separated from EPGSpeller sensor-only protocols.",
+  "decoder": "Paper-specific ultrasound SSR decoder.",
+  "model_architecture": "Cross-modal meta-generalization model described by the authors.",
+  "spatial_frontend": "Ultrasound image representation, not EPG palatogram layout.",
+  "augmentation": "Cross-modal/meta-learning strategy rather than simple augmentation.",
+  "language_model_or_postprocessing": "Paper-specific; not the main v2 relevance.",
+  "transfer_or_adaptation_method": "Central: cross-modal meta-generalization.",
+  "source_quality_notes": "Confirmed through DOI/Crossref/OpenAlex metadata.",
+  "reproducibility_artifacts": "No v2-confirmed code/data release.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Targets cross-modal generalization in ultrasound-based silent speech recognition.",
+    "Provides a contemporary transfer-learning contrast for articulatory SSI.",
+    "Useful for EPGSpeller cross-participant transfer framing."
+  ],
+  "limitations": [
+    "Non-EPG modality.",
+    "Cross-modal gains should not be assumed for EPG palate contact without evidence."
+  ],
+  "reported_results_summary": "See IEEE TASLP paper; v2 uses this for transfer/generalization framing.",
+  "relevance_to_epgspeller": "Supports the manuscript’s view that transfer mismatch is a primary SSI bottleneck and needs explicit protocol separation.",
+  "takeaways_for_related_work_section": "Cross-modal and meta-generalization are active SSR directions; EPGSpeller contributes an auditable EPG-specific benchmark rather than a universal transfer method.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Helps position P3/P3MS results as part of a broader transfer-generalization problem while keeping the evidence EPG-specific.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.1109/taslpro.2025.3646808",
+      "title": "DOI: Cross-Modal Meta-Generalization for Silent Speech Recognition via Ultrasound Tongue Images",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1109/taslpro.2025.3646808",
+      "year": 2026,
+      "venue": "IEEE TASLP",
+      "authors": [
+        "Minghao Guo",
+        "Qiang Fang",
+        "Hongcheng Zhang",
+        "Wenhuan Lu",
+        "Jianguo Wei"
+      ]
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1109/taslpro.2025.3646808",
+      "title": "Crossref API: 10.1109/taslpro.2025.3646808",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1109/taslpro.2025.3646808",
+      "year": 2026,
+      "venue": "IEEE TASLP"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1109/taslpro.2025.3646808",
+      "title": "OpenAlex: Cross-Modal Meta-Generalization for Silent Speech Recognition via Ultrasound Tongue Images",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1109/taslpro.2025.3646808",
+      "year": 2026,
+      "venue": "IEEE TASLP"
+    }
+  ],
+  "uncertain": []
+}

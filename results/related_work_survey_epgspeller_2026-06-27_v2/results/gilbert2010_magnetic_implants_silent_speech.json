@@ -1,0 +1,88 @@
+{
+  "paper_id": "gilbert2010_magnetic_implants_silent_speech",
+  "title": "Isolated word recognition of silent speech using magnetic implants and sensors",
+  "authors": [
+    "J. M. Gilbert",
+    "S. I. Rybchenko",
+    "R. Hofe",
+    "S. R. Ell",
+    "M. J. Fagan",
+    "R. K. Moore",
+    "P. Green"
+  ],
+  "year": 2010,
+  "venue": "Medical Engineering & Physics 32(10):1189-1197",
+  "doi": "10.1016/j.medengphy.2010.08.011",
+  "primary_url": "https://www.sciencedirect.com/science/article/pii/S1350453310001803",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "gilbert2010magnetic",
+  "modality": "Magnetic implants + external magnetic sensors (articulator motion sensing)",
+  "device": "Permanent magnets on tongue/lips + magnetic sensors around face/head",
+  "task": "Silent speech recognition (isolated-word recognition for small vocabulary)",
+  "output_unit": "words",
+  "vocabulary_setting": "closed vocabulary (isolated words)",
+  "datasets": "Speaker-dependent recordings described in the paper",
+  "evaluation_protocol": "Isolated-word recognition with template sets and evaluation trials as reported in the paper",
+  "metrics_reported": "Recognition rates for closed-vocabulary isolated-word tasks",
+  "decoder": "Template matching using Dynamic Time Warping (DTW)",
+  "model_architecture": "Non-neural template-based classifier (DTW)",
+  "spatial_frontend": "Magnetic sensor array around the face; not an image-like 2D palate grid",
+  "augmentation": "Not central; focus is on sensor concept and DTW recognition",
+  "key_contributions": [
+    "Demonstrates silent speech recognition using magnetic implants/sensors without acoustic input.",
+    "Uses DTW-based template matching to achieve high recognition rates on small-vocabulary isolated-word tasks.",
+    "Discusses feasibility for laryngectomy-related silent communication scenarios."
+  ],
+  "limitations": [
+    "Invasive (requires magnets/implants), raising practical and safety concerns.",
+    "Closed-vocabulary isolated-word setting; does not directly address open-vocabulary silent spelling.",
+    "Speaker-dependent training; generalization across speakers and sessions is challenging."
+  ],
+  "reported_results_summary": "The paper reports >90% recognition rates for a closed vocabulary (e.g., 57 isolated words) under its protocol; see the official paper for details.",
+  "relevance_to_epgspeller": "Included as minimal SSI comparison and as an example of articulator-motion sensing for silent speech; helps contextualize why sensor modality and protocol choice matter when comparing to EPG-based silent spelling.",
+  "takeaways_for_related_work_section": "A representative non-EPG articulator-sensing SSI (magnetic implants) showing high closed-vocabulary isolated-word recognition with DTW; useful for framing modality trade-offs and why open-vocabulary silent spelling requires different evaluation protocols.",
+  "sources": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20863739/",
+      "title": "PubMed: Isolated word recognition of silent speech using magnetic implants and sensors",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1016/j.medengphy.2010.08.011",
+      "year": 2010,
+      "venue": "Medical Engineering & Physics"
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/pii/S1350453310001803",
+      "title": "ScienceDirect: Isolated word recognition of silent speech using magnetic implants and sensors",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1016/j.medengphy.2010.08.011",
+      "year": 2010,
+      "venue": "Medical Engineering & Physics"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.medengphy.2010.08.011",
+      "title": "DOI: 10.1016/j.medengphy.2010.08.011",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1016/j.medengphy.2010.08.011",
+      "year": 2010,
+      "venue": "Medical Engineering & Physics"
+    }
+  ],
+  "uncertain": [
+    "This entry summarizes the approach and setting; consult the paper for sensor placement and protocol details."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Closed-vocabulary or constrained protocol; useful as contrast but not directly comparable to EPGSpeller open-character decoding.",
+  "participant_generalization": "Primarily source-specific; use only as a task anchor unless the paper explicitly reports cross-user/user-independent evaluation.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "No v2-specific language-model or postprocessing mechanism was added beyond the original survey extraction.",
+  "transfer_or_adaptation_method": "Relevant as non-EPG SSI or method context; transfer/adaptation evidence should not be extrapolated to EPG without matched data.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Seeded from the frozen 2026-02-17 survey; v2 uses this item to preserve the original EPG-centered baseline while adding protocol/audit/transfer lenses for the current manuscript."
+}

@@ -1,0 +1,12 @@
+iteration: 9
+timestamp: "2026-07-01"
+manuscript: paper/final/slt2026.tex
+mode: strengthen_to_reviewer_5
+target_content_pages: 6
+content_fill: full
+review_target: "all reviewers score 5"
+loop:
+  armed: true
+  mode: dynamic
+  sentinel_prefix: AGENT_LOOP_WAKE_AUDITABLE_REVIEW
+  stop_condition: "all venue reviewers == 5 AND content_pages == 6 AND slt audit PASS"

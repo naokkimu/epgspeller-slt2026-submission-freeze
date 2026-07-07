@@ -1,0 +1,842 @@
+{
+  "tex_path": "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/final/slt2026.tex",
+  "pdf_path": "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/final/slt2026.pdf",
+  "out_dir": "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/writing_loop/iter_003/visual",
+  "compile_ok": true,
+  "compile_exit_code": 0,
+  "compile_log": "compile skipped (--skip-compile)",
+  "render_dpi": 200,
+  "rendered_pages": [
+    "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/writing_loop/iter_003/visual/renders/page-01.png",
+    "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/writing_loop/iter_003/visual/renders/page-02.png",
+    "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/writing_loop/iter_003/visual/renders/page-03.png",
+    "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/writing_loop/iter_003/visual/renders/page-04.png",
+    "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/writing_loop/iter_003/visual/renders/page-05.png",
+    "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/writing_loop/iter_003/visual/renders/page-06.png",
+    "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/writing_loop/iter_003/visual/renders/page-07.png"
+  ],
+  "visual_check_ok": true,
+  "visual_check_issues": [
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=53.1pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 1,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=51.4pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=553.5pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=52.9pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 2,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=50.5pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=52.9pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=54.4pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=54.4pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=51.2pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 3,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=61.5pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=52.9pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=58.5pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=555.7pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=52.9pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=547.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.1pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=66.2pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=52.9pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=50.7pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=562.8pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=52.9pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=548.6pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=558.8pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=555.1pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 5,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=51.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=51.4pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 6,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows right margin (x=563.0pt, page_width=612.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 7,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 7,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=52.8pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 7,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows left margin (x=49.0pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 7,
+      "severity": "Major",
+      "priority": "P1",
+      "message": "Content overflows top margin (y=61.8pt, margin=72.0pt)"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Critical",
+      "priority": "P0",
+      "message": "Block overlap detected: 615 sq pt"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Critical",
+      "priority": "P0",
+      "message": "Block overlap detected: 1230 sq pt"
+    },
+    {
+      "module": "VISUAL",
+      "page": 4,
+      "severity": "Critical",
+      "priority": "P0",
+      "message": "Block overlap detected: 1407 sq pt"
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-07-01T09:20:11.676134+00:00"
+}

@@ -1,0 +1,88 @@
+{
+  "paper_id": "wang2024_watch_your_mouth_depth_sensing",
+  "title": "Watch Your Mouth: Silent Speech Recognition with Depth Sensing",
+  "authors": [
+    "Xue Wang",
+    "Zixiong Su",
+    "Jun Rekimoto",
+    "Yang Zhang"
+  ],
+  "year": 2024,
+  "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+  "doi": "10.1145/3613904.3642092",
+  "primary_url": "https://doi.org/10.1145/3613904.3642092",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "wang2024watchyourmouth",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement",
+  "modality": "Depth sensing of mouth/orofacial movement for silent speech recognition.",
+  "device": "Depth sensing setup described in the CHI 2024 paper.",
+  "task": "Silent speech recognition using mouth depth signals.",
+  "output_unit": "Speech/text units defined by the paper-specific recognition task.",
+  "vocabulary_setting": "Paper-specific recognition setting; likely constrained relative to open-character EPG spelling.",
+  "datasets": "Paper-specific depth-sensing silent speech dataset.",
+  "evaluation_protocol": "Paper-specific participant/task evaluation.",
+  "protocol_generalization": "Contemporary non-EPG articulatory-sensing benchmark context; not directly comparable without matched vocabulary and splits.",
+  "participant_generalization": "Cross-user status should be read from the source; v2 keeps it as modality/protocol context.",
+  "metrics_reported": "Recognition metrics reported by the CHI 2024 paper.",
+  "benchmark_or_audit_status": "Publisher-indexed paper; no v2-confirmed shared deterministic split/audit registry comparable to EPGSpeller.",
+  "leakage_or_constraint_notes": "Depth-sensing recognition constraints and vocabulary support differ from lexicon-free EPG character decoding.",
+  "decoder": "Paper-specific depth-signal recognition pipeline.",
+  "model_architecture": "Paper-specific depth-sensing model.",
+  "spatial_frontend": "Depth image/spatial mouth representation, not EPG palatogram layout.",
+  "augmentation": "See paper.",
+  "language_model_or_postprocessing": "Paper-specific; not the main v2 relevance.",
+  "transfer_or_adaptation_method": "Not the main v2 relevance unless source reports cross-user adaptation.",
+  "source_quality_notes": "Confirmed through DOI/Crossref/OpenAlex metadata.",
+  "reproducibility_artifacts": "No v2-confirmed code/data release.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Shows depth sensing as a contemporary articulatory SSI modality.",
+    "Provides a non-EPG spatial sensing contrast for silent speech recognition.",
+    "Useful for protocol-aware positioning of EPG spatial front ends."
+  ],
+  "limitations": [
+    "Different sensor physics and privacy profile from intra-oral EPG.",
+    "Numeric comparison to EPGSpeller would require matched tasks and splits."
+  ],
+  "reported_results_summary": "See CHI 2024 paper; v2 uses it for modality and spatial-sensing positioning.",
+  "relevance_to_epgspeller": "Supports discussion that spatial representations are modality-specific; depth images and EPG palatograms should not be conflated.",
+  "takeaways_for_related_work_section": "Recent SSI systems use spatial or image-like articulatory cues, but protocol comparability remains the central issue.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Helps position row/column/grid EPG front ends against other spatial SSI modalities while keeping claims EPG-specific.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.1145/3613904.3642092",
+      "title": "DOI: Watch Your Mouth",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/3613904.3642092",
+      "year": 2024,
+      "venue": "CHI 2024",
+      "authors": [
+        "Xue Wang",
+        "Zixiong Su",
+        "Jun Rekimoto",
+        "Yang Zhang"
+      ]
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1145/3613904.3642092",
+      "title": "Crossref API: 10.1145/3613904.3642092",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3613904.3642092",
+      "year": 2024,
+      "venue": "CHI 2024"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1145/3613904.3642092",
+      "title": "OpenAlex: Watch Your Mouth",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3613904.3642092",
+      "year": 2024,
+      "venue": "CHI 2024"
+    }
+  ],
+  "uncertain": []
+}

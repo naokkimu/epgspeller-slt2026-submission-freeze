@@ -1,0 +1,96 @@
+{
+  "paper_id": "inoue2025_eeg_emg_heterogeneous_electrodes",
+  "title": "A Silent Speech Decoding System from EEG and EMG with Heterogenous Electrode Configurations",
+  "authors": [
+    "Masakazu Inoue",
+    "Motoshige Sato",
+    "Kenichi Tomeoka",
+    "Nathania Nah",
+    "Eri Hatakeyama",
+    "Kai Arulkumaran",
+    "Ilya Horiguchi",
+    "Shuntaro Sasai"
+  ],
+  "year": 2025,
+  "venue": "Interspeech 2025",
+  "doi": "10.21437/interspeech.2025-1183",
+  "primary_url": "https://doi.org/10.21437/interspeech.2025-1183",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "inoue2025heterogeneouseegemg",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement",
+  "modality": "EEG and EMG biosignals for silent speech decoding.",
+  "device": "Heterogeneous EEG/EMG electrode configurations described in the Interspeech paper.",
+  "task": "Silent speech decoding from EEG and EMG.",
+  "output_unit": "Speech/text units as defined by the paper.",
+  "vocabulary_setting": "Paper-specific; not EPG open-character spelling.",
+  "datasets": "Paper-specific EEG/EMG silent speech data.",
+  "evaluation_protocol": "Paper-specific heterogeneous-electrode evaluation.",
+  "protocol_generalization": "Relevant to sensor-layout mismatch and heterogeneous hardware, a close conceptual analogue to EPG electrode-layout transfer issues.",
+  "participant_generalization": "Generalization status should be read from the paper; v2 uses it for heterogeneous sensor configuration framing.",
+  "metrics_reported": "Silent speech decoding metrics reported by Interspeech 2025 paper.",
+  "benchmark_or_audit_status": "Peer-reviewed conference paper; no v2-confirmed shared split/audit stack comparable to EPGSpeller.",
+  "leakage_or_constraint_notes": "Decoder constraints and vocabulary support differ from EPGSpeller; use for sensor heterogeneity framing.",
+  "decoder": "Paper-specific EEG/EMG silent speech decoder.",
+  "model_architecture": "Paper-specific biosignal model.",
+  "spatial_frontend": "Electrode-configuration-aware biosignal input, not EPG palate layout.",
+  "augmentation": "See paper.",
+  "language_model_or_postprocessing": "Paper-specific; not main v2 relevance.",
+  "transfer_or_adaptation_method": "Heterogeneous electrode configurations are central to the framing.",
+  "source_quality_notes": "Confirmed through DOI/Crossref/OpenAlex metadata.",
+  "reproducibility_artifacts": "No v2-confirmed code/data release.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Addresses silent speech decoding under heterogeneous electrode configurations.",
+    "Offers contemporary biosignal evidence for hardware-layout mismatch challenges.",
+    "Useful analogy for EPG electrode selection and transfer constraints."
+  ],
+  "limitations": [
+    "Non-EPG modality.",
+    "Metric and protocol differences prevent direct comparison to EPGSpeller."
+  ],
+  "reported_results_summary": "See Interspeech 2025 paper; v2 uses it for heterogeneous-electrode positioning.",
+  "relevance_to_epgspeller": "Supports the claim that sensor/electrode configuration is a meaningful evaluation variable, not just an implementation detail.",
+  "takeaways_for_related_work_section": "Recent SSI decoding work treats electrode configuration as a first-class issue; EPGSpeller’s electrode-budget and protocol audits fit this broader trend.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Useful for motivating EPGSpeller’s electrode reduction and layout-aware analyses without claiming cross-modality performance equivalence.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.21437/interspeech.2025-1183",
+      "title": "DOI: A Silent Speech Decoding System from EEG and EMG with Heterogenous Electrode Configurations",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.21437/interspeech.2025-1183",
+      "year": 2025,
+      "venue": "Interspeech 2025",
+      "authors": [
+        "Masakazu Inoue",
+        "Motoshige Sato",
+        "Kenichi Tomeoka",
+        "Nathania Nah",
+        "Eri Hatakeyama",
+        "Kai Arulkumaran",
+        "Ilya Horiguchi",
+        "Shuntaro Sasai"
+      ]
+    },
+    {
+      "url": "https://api.crossref.org/works/10.21437/interspeech.2025-1183",
+      "title": "Crossref API: 10.21437/interspeech.2025-1183",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.21437/interspeech.2025-1183",
+      "year": 2025,
+      "venue": "Interspeech 2025"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.21437/interspeech.2025-1183",
+      "title": "OpenAlex: A Silent Speech Decoding System from EEG and EMG",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.21437/interspeech.2025-1183",
+      "year": 2025,
+      "venue": "Interspeech 2025"
+    }
+  ],
+  "uncertain": []
+}

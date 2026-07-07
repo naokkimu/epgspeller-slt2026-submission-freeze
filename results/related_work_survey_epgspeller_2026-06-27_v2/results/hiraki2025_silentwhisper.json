@@ -1,0 +1,84 @@
+{
+  "paper_id": "hiraki2025_silentwhisper",
+  "title": "SilentWhisper: inaudible faint whisper speech input for silent speech interaction",
+  "authors": [
+    "Hirotaka Hiraki",
+    "Jun Rekimoto"
+  ],
+  "year": 2025,
+  "venue": "Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+  "doi": "10.1145/3706599.3721185",
+  "primary_url": "https://doi.org/10.1145/3706599.3721185",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "hiraki2025silentwhisper",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement",
+  "modality": "Inaudible or ultra-low-volume whispered acoustic input for silent speech interaction.",
+  "device": "Wearable or near-mouth acoustic capture setup described by the CHI Extended Abstracts paper.",
+  "task": "Silent speech interaction using faint whisper input.",
+  "output_unit": "Speech/text units as defined by the paper-specific recognition task.",
+  "vocabulary_setting": "Whisper-based recognition setting; not EPG lexicon-free silent spelling.",
+  "datasets": "Paper-specific faint-whisper interaction dataset.",
+  "evaluation_protocol": "Paper-specific prototype/evaluation protocol.",
+  "protocol_generalization": "Contextual SSI modality comparison; protocol differs from EPG word/instance/cross-participant split families.",
+  "participant_generalization": "User-independent or cross-user status must be read from the paper; v2 does not infer it.",
+  "metrics_reported": "Recognition/interaction metrics reported by the CHI Extended Abstracts paper.",
+  "benchmark_or_audit_status": "Publisher-indexed paper; no v2-confirmed deterministic split benchmark comparable to EPGSpeller.",
+  "leakage_or_constraint_notes": "Do not compare faint-whisper acoustic recognition directly with contact-sensor lexicon-free EPG decoding.",
+  "decoder": "Paper-specific recognition pipeline for faint whispered speech.",
+  "model_architecture": "Paper-specific acoustic/interaction model.",
+  "spatial_frontend": "Not applicable to EPG palate layout.",
+  "augmentation": "Not emphasized in v2 extraction; see paper.",
+  "language_model_or_postprocessing": "Paper-specific; not the main v2 relevance.",
+  "transfer_or_adaptation_method": "Not the main v2 relevance; included as a modality contrast.",
+  "source_quality_notes": "Confirmed through DOI/Crossref/OpenAlex metadata.",
+  "reproducibility_artifacts": "No v2-confirmed code/data release.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Adds a contemporary faint-whisper SSI modality for silent interaction.",
+    "Shows that acoustic-near-silent methods occupy a different point in the SSI design space than EPG.",
+    "Useful for privacy and interaction framing."
+  ],
+  "limitations": [
+    "Faint whisper input may still rely on residual acoustic production unlike fully non-acoustic SSI.",
+    "Not directly comparable to EPGSpeller protocol families."
+  ],
+  "reported_results_summary": "See CHI EA 2025 paper; v2 uses this for modality positioning.",
+  "relevance_to_epgspeller": "Supports careful wording around silent speech: EPGSpeller is non-acoustic palate-contact decoding rather than faint-whisper recognition.",
+  "takeaways_for_related_work_section": "Recent SSI interaction work spans non-acoustic sensing and near-silent acoustics; comparisons must separate modality, privacy, and protocol assumptions.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Helps limit deployment/privacy claims to the audited EPG setup and avoid overgeneralizing from other silent-interaction modalities.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.1145/3706599.3721185",
+      "title": "DOI: SilentWhisper: inaudible faint whisper speech input for silent speech interaction",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/3706599.3721185",
+      "year": 2025,
+      "venue": "CHI EA 2025",
+      "authors": [
+        "Hirotaka Hiraki",
+        "Jun Rekimoto"
+      ]
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1145/3706599.3721185",
+      "title": "Crossref API: 10.1145/3706599.3721185",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3706599.3721185",
+      "year": 2025,
+      "venue": "CHI EA 2025"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1145/3706599.3721185",
+      "title": "OpenAlex: SilentWhisper",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/3706599.3721185",
+      "year": 2025,
+      "venue": "CHI EA 2025"
+    }
+  ],
+  "uncertain": []
+}

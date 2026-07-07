@@ -1,0 +1,398 @@
+generated: true
+source: questions.yaml
+profile: slt2026
+slots:
+  core.problem:
+    section: Introduction
+    slot_order: 10
+    included_by_profile: true
+    rhetorical_roles:
+    - intro.problem
+    - intro.reframing
+    - intro.prior_capability
+    - intro.gap
+    result_roles: []
+    questions:
+    - id: Q.problem.aac_text_entry
+      render_index: 1
+      rhetorical_role: intro.problem
+      result_role: null
+      outputs:
+      - id: para.problem.aac_text_entry
+        type: paragraph
+        order: 1
+        rhetorical_role: intro.problem
+        result_role: null
+        evidence: []
+    - id: Q.problem.epg_signal
+      render_index: 2
+      rhetorical_role: intro.reframing
+      result_role: null
+      outputs:
+      - id: para.problem.epg_signal
+        type: paragraph
+        order: 2
+        rhetorical_role: intro.reframing
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+        - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+        - A_results_dataset_audit_silentspeller_2026_02_24_report_md
+    - id: Q.problem.prior_capability
+      render_index: 3
+      rhetorical_role: intro.prior_capability
+      result_role: null
+      outputs:
+      - id: para.problem.prior_capability
+        type: paragraph
+        order: 1
+        rhetorical_role: intro.prior_capability
+        result_role: null
+        evidence:
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_report_md
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_coverage_matrix_csv
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_references_audit_md
+    - id: Q.problem.fixed_vocabulary
+      render_index: 4
+      rhetorical_role: intro.gap
+      result_role: null
+      outputs:
+      - id: para.problem.fixed_vocabulary
+        type: paragraph
+        order: 1
+        rhetorical_role: intro.gap
+        result_role: null
+        evidence:
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_report_md
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_coverage_matrix_csv
+        - A_results_related_work_survey_epgspeller_2026_06_27_v2_references_audit_md
+  core.claim:
+    section: Introduction
+    slot_order: 20
+    included_by_profile: true
+    rhetorical_roles:
+    - intro.central_claim
+    - intro.evidence_preview
+    - intro.contributions
+    result_roles: []
+    questions:
+    - id: Q.claim.central
+      render_index: 5
+      rhetorical_role: intro.central_claim
+      result_role: null
+      outputs:
+      - id: para.claim.central
+        type: paragraph
+        order: 1
+        rhetorical_role: intro.central_claim
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_slt_p2_20260626_kshot_feasibility_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_preproc20260626_preproc_ablation_report_md
+    - id: Q.claim.evidence_preview
+      render_index: 6
+      rhetorical_role: intro.evidence_preview
+      result_role: null
+      outputs:
+      - id: para.claim.evidence_preview
+        type: paragraph
+        order: 1
+        rhetorical_role: intro.evidence_preview
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    - id: Q.claim.contributions
+      render_index: 7
+      rhetorical_role: intro.contributions
+      result_role: null
+      outputs:
+      - id: para.claim.contributions
+        type: paragraph
+        order: 1
+        rhetorical_role: intro.contributions
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_slt_p2_20260626_kshot_feasibility_csv
+  core.method:
+    section: Task and Method
+    slot_order: 30
+    included_by_profile: true
+    rhetorical_roles:
+    - method.signal_representation
+    - method.task_object
+    - method.model_core
+    - method.variant_scope
+    result_roles: []
+    questions:
+    - id: Q.method.00_signal_representation
+      render_index: 8
+      rhetorical_role: method.signal_representation
+      result_role: null
+      outputs:
+      - id: para.method.signal_representation
+        type: paragraph
+        order: 1
+        rhetorical_role: method.signal_representation
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+        - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+    - id: Q.method.01_task_definition
+      render_index: 9
+      rhetorical_role: method.task_object
+      result_role: null
+      outputs:
+      - id: para.task.definition
+        type: paragraph
+        order: 1
+        rhetorical_role: method.task_object
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - id: Q.method.02_workflow
+      render_index: 10
+      rhetorical_role: method.model_core
+      result_role: null
+      outputs:
+      - id: para.method.workflow
+        type: paragraph
+        order: 1
+        rhetorical_role: method.model_core
+        result_role: null
+        evidence:
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+    - id: Q.method.03_variant_scope
+      render_index: 11
+      rhetorical_role: method.variant_scope
+      result_role: null
+      outputs:
+      - id: para.method.variant_scope
+        type: paragraph
+        order: 1
+        rhetorical_role: method.variant_scope
+        result_role: null
+        evidence:
+        - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+        - A_results_msx20260224_paper_tables_table_k64_methods_csv
+  core.evaluation:
+    section: Evaluation
+    slot_order: 40
+    included_by_profile: true
+    rhetorical_roles:
+    - eval.data
+    - eval.protocols
+    - eval.metrics
+    - eval.baselines_controls
+    result_roles: []
+    questions:
+    - id: Q.setup.data_protocols
+      render_index: 12
+      rhetorical_role: eval.data
+      result_role: null
+      outputs:
+      - id: para.setup.data
+        type: paragraph
+        order: 1
+        rhetorical_role: eval.data
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+        - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+      - id: tab.dataset_summary
+        type: table
+        order: 2
+        rhetorical_role: eval.data
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    - id: Q.setup.protocols
+      render_index: 13
+      rhetorical_role: eval.protocols
+      result_role: null
+      outputs:
+      - id: para.setup.protocols
+        type: paragraph
+        order: 1
+        rhetorical_role: eval.protocols
+        result_role: null
+        evidence:
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - id: Q.setup.metrics
+      render_index: 14
+      rhetorical_role: eval.metrics
+      result_role: null
+      outputs:
+      - id: para.setup.metrics
+        type: paragraph
+        order: 3
+        rhetorical_role: eval.metrics
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - id: Q.setup.controls
+      render_index: 15
+      rhetorical_role: eval.baselines_controls
+      result_role: null
+      outputs:
+      - id: para.setup.baselines_controls
+        type: paragraph
+        order: 1
+        rhetorical_role: eval.baselines_controls
+        result_role: null
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+        - A_results_msx20260224_paper_tables_table_k64_methods_csv
+  core.result:
+    section: Results
+    slot_order: 50
+    included_by_profile: true
+    rhetorical_roles: []
+    result_roles:
+    - primary_evidence
+    - task_validity
+    - constraint_or_recovery
+    - failure_condition
+    - validation_check
+    questions:
+    - id: Q.result.01_personalized
+      render_index: 16
+      rhetorical_role: null
+      result_role: primary_evidence
+      outputs:
+      - id: para.result.personalized
+        type: paragraph
+        order: 1
+        rhetorical_role: null
+        result_role: primary_evidence
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+        - A_results_msx20260224_paper_tables_table_main_csv
+      - id: tab.main_protocols
+        type: table
+        order: 2
+        rhetorical_role: null
+        result_role: primary_evidence
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - id: Q.result.02_silentspeller_lite
+      render_index: 17
+      rhetorical_role: null
+      result_role: task_validity
+      outputs:
+      - id: para.result.silentspeller_lite
+        type: paragraph
+        order: 3
+        rhetorical_role: null
+        result_role: task_validity
+        evidence:
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+        - A_results_slt_p2_20260626_slt_p2_report_md
+      - id: tab.silentspeller_lite
+        type: table
+        order: 4
+        rhetorical_role: null
+        result_role: task_validity
+        evidence:
+        - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - id: Q.result.03_calibration
+      render_index: 18
+      rhetorical_role: null
+      result_role: constraint_or_recovery
+      outputs:
+      - id: para.result.calibration
+        type: paragraph
+        order: 5
+        rhetorical_role: null
+        result_role: constraint_or_recovery
+        evidence:
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+        - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+        - A_results_slt_p2_20260626_kshot_feasibility_csv
+      - id: tab.kshot_curve
+        type: table
+        order: 6
+        rhetorical_role: null
+        result_role: constraint_or_recovery
+        evidence:
+        - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    - id: Q.result.04_cross_user
+      render_index: 19
+      rhetorical_role: null
+      result_role: failure_condition
+      outputs:
+      - id: para.result.cross_user
+        type: paragraph
+        order: 8
+        rhetorical_role: null
+        result_role: failure_condition
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_p3ms_compact_csv
+        - A_results_paper_layout_2026_03_03_table_to4_compact_csv
+        - A_results_msx20260224_paper_tables_table_p3ms_csv
+        - A_results_uc20260226_paper_tables_table_to4_generalization_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_preproc20260626_preproc_ablation_report_md
+    - id: Q.result.05_validation_controls
+      render_index: 20
+      rhetorical_role: null
+      result_role: validation_check
+      outputs:
+      - id: para.result.validation_controls
+        type: paragraph
+        order: 1
+        rhetorical_role: null
+        result_role: validation_check
+        evidence:
+        - A_results_paper_layout_2026_03_03_table_p3ms_compact_csv
+        - A_results_paper_layout_2026_03_03_table_to4_compact_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_preproc20260626_preproc_ablation_report_md
+  core.boundary:
+    section: Results
+    slot_order: 60
+    included_by_profile: true
+    rhetorical_roles: []
+    result_roles:
+    - claim_scope
+    questions:
+    - id: Q.limit.registration
+      render_index: 21
+      rhetorical_role: null
+      result_role: claim_scope
+      outputs:
+      - id: para.limit.registration
+        type: paragraph
+        order: 1
+        rhetorical_role: null
+        result_role: claim_scope
+        evidence:
+        - A_results_slt_p2_20260626_kshot_feasibility_csv
+        - A_results_slt_p2_20260626_experiment_status_md
+        - A_results_slt_p2_20260626_split_audit_protocol_split_summary_csv
+        - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+        - A_results_preproc20260626_experiment_status_md

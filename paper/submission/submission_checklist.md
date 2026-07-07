@@ -14,7 +14,7 @@
 - paper_type: `regular`
 - title: `EPGSpeller: Lexicon-Free Silent Spelling Recognition with Electropalatography`
 - keywords: `silent speech interface, electropalatography, character-level decoding, text entry, auditability`
-- abstract_chars: `990` (limit 1000)
+- abstract_chars: `926` (limit 1000)
 
 ## Important dates (AoE)
 - Paper Submission Portal Opens: 17 January 2026

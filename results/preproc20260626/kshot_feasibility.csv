@@ -1,0 +1,11 @@
+subject,raw_npz,k,required_repetitions_per_word,n_samples,n_vocab,feasible_vocab,feasible_for_50_word_eval
+subj3,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/john_2328_dataset.npz,0,1,2797,1164,1164,True
+subj3,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/john_2328_dataset.npz,1,2,2797,1164,1164,True
+subj3,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/john_2328_dataset.npz,2,3,2797,1164,363,True
+subj3,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/john_2328_dataset.npz,4,5,2797,1164,14,False
+subj3,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/john_2328_dataset.npz,8,9,2797,1164,0,False
+subj4,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/su_1167_old_dataset.npz,0,1,1167,1162,1162,True
+subj4,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/su_1167_old_dataset.npz,1,2,1167,1162,5,False
+subj4,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/su_1167_old_dataset.npz,2,3,1167,1162,0,False
+subj4,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/su_1167_old_dataset.npz,4,5,1167,1162,0,False
+subj4,/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/dataset/su_1167_old_dataset.npz,8,9,1167,1162,0,False

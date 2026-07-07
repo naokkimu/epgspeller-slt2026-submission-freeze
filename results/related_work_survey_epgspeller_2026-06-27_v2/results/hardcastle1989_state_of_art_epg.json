@@ -1,0 +1,83 @@
+{
+  "paper_id": "hardcastle1989_state_of_art_epg",
+  "title": "New developments in electropalatography: A state-of-the-art report",
+  "authors": [
+    "W. Hardcastle",
+    "W. Jones",
+    "C. Knight",
+    "A. Trudgeon",
+    "G. Calder"
+  ],
+  "year": 1989,
+  "venue": "Clinical Linguistics & Phonetics",
+  "doi": "10.3109/02699208908985268",
+  "primary_url": "https://doi.org/10.3109/02699208908985268",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "hardcastle1989epg",
+  "modality": "Electropalatography (EPG)",
+  "device": "EPG pseudopalate (palate-contact electrode arrays; instrumentation report)",
+  "task": "State-of-the-art overview of EPG developments (instrumentation, visualization, and analysis)",
+  "output_unit": "N/A (instrumentation / overview paper)",
+  "vocabulary_setting": "N/A",
+  "datasets": "N/A (overview/report)",
+  "evaluation_protocol": "N/A (overview/report)",
+  "metrics_reported": "N/A (overview/report)",
+  "decoder": "N/A",
+  "model_architecture": "N/A",
+  "spatial_frontend": "EPG electrode arrays yield spatial tongue–palate contact patterns",
+  "augmentation": "N/A",
+  "key_contributions": [
+    "Provides an early state-of-the-art report summarizing developments in EPG instrumentation and usage.",
+    "Serves as a foundational reference for what EPG measures (contact patterns) and how EPG data are represented/visualized.",
+    "Useful background for motivating spatially structured representations when modeling EPG time series."
+  ],
+  "limitations": [
+    "Not a machine-learning decoding paper; focuses on EPG technology and practice rather than text/speech decoding benchmarks.",
+    "As an early report, it predates later deep-learning approaches and modern wearable form factors."
+  ],
+  "reported_results_summary": "Overview/report; it synthesizes developments and usage rather than presenting a single benchmark.",
+  "relevance_to_epgspeller": "Provides foundational EPG background and motivates why the electrode layout and spatial structure matter, supporting Related Work sections on EPG sensing and sensor design assumptions.",
+  "takeaways_for_related_work_section": "A foundational EPG state-of-the-art report that can be cited to explain EPG sensing/representation basics and to motivate spatial inductive biases and electrode-layout considerations.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.3109/02699208908985268",
+      "title": "DOI: 10.3109/02699208908985268",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.3109/02699208908985268",
+      "year": 1989,
+      "venue": "Clinical Linguistics & Phonetics"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.3109/02699208908985268",
+      "title": "Crossref API: 10.3109/02699208908985268",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.3109/02699208908985268"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.3109/02699208908985268",
+      "title": "OpenAlex: New developments in electropalatography: A state-of-the-art report",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.3109/02699208908985268",
+      "year": 1989,
+      "venue": "Clinical Linguistics & Phonetics"
+    }
+  ],
+  "uncertain": [
+    "This entry does not enumerate the full set of developments discussed; consult the paper for detailed instrumentation and analysis descriptions."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Protocol is paper-specific; v2 report treats it as contextual unless split/metric definitions align with EPGSpeller.",
+  "participant_generalization": "Not a participant-generalization benchmark; use for modality, method, or representation context.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "No v2-specific language-model or postprocessing mechanism was added beyond the original survey extraction.",
+  "transfer_or_adaptation_method": "Relevant to EPG spatial/device representation; transfer/adaptation is not necessarily evaluated unless stated in the original item.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "EPG representation/device context. In v2 it supports the manuscript discussion of spatial layout, electrode budget, and device-specific assumptions."
+}

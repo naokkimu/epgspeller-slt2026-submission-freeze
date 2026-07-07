@@ -1,0 +1,25 @@
+iteration: 9
+responses:
+  - issue_id: F-FILL-1
+    action: add_existing_evidence
+    rationale: "Added spatial P1, electrode K64, k-shot feasibility tables from existing CSVs"
+    status: fixed
+    artifact:
+      - results/paper_layout_2026-03-03/table_spatial_p1.csv
+      - results/paper_layout_2026-03-03/table_k64_p1p2.csv
+      - results/slt_p2_20260626/kshot_feasibility.csv
+  - issue_id: V-S5-1
+    action: defer_experiment
+    rationale: "External baselines forbidden in pre-submission loop; D-BASE-1"
+    status: deferred
+    deferred_issue_id: D-BASE-1
+  - issue_id: V-S5-2
+    action: defer_experiment
+    rationale: "Interactive AAC study forbidden; D-AAC-1"
+    status: deferred
+    deferred_issue_id: D-AAC-1
+  - issue_id: V-S5-3
+    action: defer_experiment
+    rationale: "New data collection forbidden; D-N-1"
+    status: deferred
+    deferred_issue_id: D-N-1

@@ -1,0 +1,10 @@
+iteration: 8
+timestamp: "2026-07-01"
+manuscript: paper/final/slt2026.tex
+mode: format_compression_strict_6pp
+target_content_pages: 6
+result_content_pages: 6
+result_total_pages: 7
+slt_audit: PASS
+review_scores: [4, 4, 4]
+stop_reason: "content_pages == 6 and format audit PASS"

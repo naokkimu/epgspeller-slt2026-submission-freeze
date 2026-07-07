@@ -1,0 +1,7 @@
+target,k,condition,n,cer_m,cer_s,rtf_m,rtf_s,notes
+subj3,0,P3_single_source,8,0.840301,0.094775,0.000097,0.000004,msx/uc vector
+subj3,0,P3MS_multi_source,4,0.838062,0.033612,0.000096,0.000002,msx:p3ms vector
+subj3,1,P2K_within_subject,4,0.350280,0.059950,0.000164,0.000009,msx:existing
+subj3,2,P2K_within_subject,4,0.245802,0.008507,0.000165,0.000002,msx:existing
+subj3,4,P2K_reduced_vocab,4,0.781609,0.208381,0.002482,0.000169,"sltp2:new reduced vocabulary (min_repetitions=5, n_competition_words=1)"
+subj3,8,N/A,0,,,,,"infeasible (feasible_vocab=0, feasible_for_50_word_eval=False)"

@@ -1,0 +1,82 @@
+{
+  "paper_id": "verhoeven2019_visualisation_analysis_epg",
+  "title": "Visualisation and Analysis of Speech Production with Electropalatography",
+  "authors": [
+    "Jo Verhoeven",
+    "Naomi Rachel Miller",
+    "Luc Daems",
+    "Constantino Carlos Reyes-Aldasoro"
+  ],
+  "year": 2019,
+  "venue": "Journal of Imaging",
+  "doi": "10.3390/jimaging5030040",
+  "primary_url": "https://doi.org/10.3390/jimaging5030040",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "verhoeven2019epgimaging",
+  "modality": "Electropalatography (EPG)",
+  "device": "EPG pseudopalate / electrode contact array (as used in EPG studies)",
+  "task": "Visualization and analysis methods for EPG-based speech production research",
+  "output_unit": "visualizations / analysis outputs (paper-specific)",
+  "vocabulary_setting": "N/A (analysis/visualization focus)",
+  "datasets": "EPG data used for visualization/analysis examples (see paper for specifics)",
+  "evaluation_protocol": "Methodological discussion and illustrative analyses (see paper)",
+  "metrics_reported": "Varies by analysis; paper focuses on visualization and analysis techniques",
+  "decoder": "N/A",
+  "model_architecture": "N/A (methodological/analysis paper)",
+  "spatial_frontend": "EPG inherently provides a spatial contact pattern that can be visualized on palate layouts",
+  "augmentation": "N/A",
+  "key_contributions": [
+    "Discusses methods for visualizing and analyzing EPG contact patterns in speech production studies.",
+    "Provides context for representing EPG as spatial patterns (palatograms) and motivates explicit spatial modeling assumptions.",
+    "Useful background for connecting electrode-layout geometry to analysis and to model front-end design."
+  ],
+  "limitations": [
+    "Not an end-to-end decoding benchmark; focuses on visualization/analysis rather than CER/WER-style evaluation.",
+    "Specific visualization conventions depend on the EPG hardware/layout used."
+  ],
+  "reported_results_summary": "Methodological/analysis paper; it presents visualization and analysis approaches rather than a single decoding benchmark.",
+  "relevance_to_epgspeller": "Supports Related Work sections that argue EPG should be treated as spatial data and that geometry/layout assumptions matter, complementing experiments on 2D reconstruction and electrode selection.",
+  "takeaways_for_related_work_section": "A modern EPG visualization/analysis reference (Journal of Imaging 2019) that can be cited to motivate spatially structured representations (palatograms) and to justify investigating geometry-aware front-ends.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.3390/jimaging5030040",
+      "title": "DOI: 10.3390/jimaging5030040",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.3390/jimaging5030040",
+      "year": 2019,
+      "venue": "Journal of Imaging"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.3390/jimaging5030040",
+      "title": "Crossref API: 10.3390/jimaging5030040",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.3390/jimaging5030040"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.3390/jimaging5030040",
+      "title": "OpenAlex: Visualisation and Analysis of Speech Production with Electropalatography",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.3390/jimaging5030040",
+      "year": 2019,
+      "venue": "Journal of Imaging"
+    }
+  ],
+  "uncertain": [
+    "This JSON does not enumerate all visualization/analysis techniques described; consult the paper for full methodological details."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Protocol is paper-specific; v2 report treats it as contextual unless split/metric definitions align with EPGSpeller.",
+  "participant_generalization": "Not a participant-generalization benchmark; use for modality, method, or representation context.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "No v2-specific language-model or postprocessing mechanism was added beyond the original survey extraction.",
+  "transfer_or_adaptation_method": "Relevant to EPG spatial/device representation; transfer/adaptation is not necessarily evaluated unless stated in the original item.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "EPG representation/device context. In v2 it supports the manuscript discussion of spatial layout, electrode budget, and device-specific assumptions."
+}

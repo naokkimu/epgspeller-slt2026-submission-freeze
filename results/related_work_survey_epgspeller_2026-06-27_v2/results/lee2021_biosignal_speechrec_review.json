@@ -1,0 +1,84 @@
+{
+  "paper_id": "lee2021_biosignal_speechrec_review",
+  "title": "Biosignal Sensors and Deep Learning-Based Speech Recognition: A Review",
+  "authors": [
+    "Wookey Lee",
+    "Jessica Jiwon Seong",
+    "Busra Ozlu",
+    "Bong Sup Shim",
+    "Azizbek Marakhimov",
+    "Suan Lee"
+  ],
+  "year": 2021,
+  "venue": "Sensors",
+  "doi": "10.3390/s21041399",
+  "primary_url": "https://doi.org/10.3390/s21041399",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "lee2021biosignalreview",
+  "modality": "Survey / review (biosignal-based speech recognition)",
+  "device": "N/A (review of multiple biosignal sensors and setups)",
+  "task": "Speech recognition from biosignals using deep learning (review)",
+  "output_unit": "N/A (review; varies by system, e.g., phonemes/words/characters)",
+  "vocabulary_setting": "N/A (review; varies by dataset and system)",
+  "datasets": "N/A (review; summarizes multiple datasets and sensing modalities)",
+  "evaluation_protocol": "N/A (review; summarizes multiple evaluation protocols)",
+  "metrics_reported": "N/A (review; discusses metrics used across studies)",
+  "decoder": "Varies (review; depending on modality and task formulation)",
+  "model_architecture": "Varies (review; emphasizes deep learning approaches for biosignal-based speech recognition)",
+  "spatial_frontend": "Varies (review; includes modality-specific spatial/array handling when applicable)",
+  "augmentation": "Varies (review; augmentation policies are not standardized across modalities)",
+  "key_contributions": [
+    "Reviews biosignal sensors and deep-learning approaches for speech recognition, providing a modality-level overview beyond acoustics.",
+    "Useful high-level reference to contextualize EPG as one biosignal modality among many, and to motivate why spatial modeling and robustness are recurring themes.",
+    "Summarizes challenges common to biosignal speech recognition (variability, limited data, sensor reliability) that map to EPGSpeller experimental axes (robustness, augmentation, sensor design)."
+  ],
+  "limitations": [
+    "Broad scope; individual modality-specific details may be covered at different depths.",
+    "Does not provide a unified benchmark; cross-paper comparisons remain protocol-dependent."
+  ],
+  "reported_results_summary": "Review paper; it synthesizes prior results rather than reporting a single unified benchmark.",
+  "relevance_to_epgspeller": "Provides additional context and vocabulary for positioning EPG-based decoding within the broader biosignal+DL speech recognition literature, supporting the motivation for spatial front-ends and robustness evaluations.",
+  "takeaways_for_related_work_section": "A broad biosignal+DL review (Sensors 2021) that can be cited for general challenges and trends in biosignal-based speech recognition, complementing SSI-focused surveys when motivating robustness and representation choices for EPG.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.3390/s21041399",
+      "title": "DOI: 10.3390/s21041399",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.3390/s21041399",
+      "year": 2021,
+      "venue": "Sensors"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.3390/s21041399",
+      "title": "Crossref API: 10.3390/s21041399",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.3390/s21041399"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.3390/s21041399",
+      "title": "OpenAlex: Biosignal Sensors and Deep Learning-Based Speech Recognition: A Review",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.3390/s21041399",
+      "year": 2021,
+      "venue": "Sensors"
+    }
+  ],
+  "uncertain": [
+    "Publisher landing pages for some MDPI DOIs may block automated HEAD requests; DOI metadata is verified via doi.org/Crossref."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Survey or review item; protocol content is taxonomy-level rather than a benchmark result.",
+  "participant_generalization": "Multi-participant or cross-participant behavior is discussed in the source-specific protocol; exact comparability depends on the paper definition.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "No v2-specific language-model or postprocessing mechanism was added beyond the original survey extraction.",
+  "transfer_or_adaptation_method": "Relevant as non-EPG SSI or method context; transfer/adaptation evidence should not be extrapolated to EPG without matched data.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Seeded from the frozen 2026-02-17 survey; v2 uses this item to preserve the original EPG-centered baseline while adding protocol/audit/transfer lenses for the current manuscript."
+}

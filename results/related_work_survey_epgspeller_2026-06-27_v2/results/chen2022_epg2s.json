@@ -1,0 +1,81 @@
+{
+  "paper_id": "chen2022_epg2s",
+  "title": "EPG2S: Speech Generation and Speech Enhancement based on Electropalatography and Audio Signals using Multimodal Learning",
+  "authors": [
+    "Li-Chin Chen",
+    "Po-Hsun Chen",
+    "Richard Tzong-Han Tsai",
+    "Yu Tsao"
+  ],
+  "year": 2022,
+  "venue": "arXiv (2206.07860) / ICASSP 2023 presentation material",
+  "doi": null,
+  "primary_url": "https://arxiv.org/abs/2206.07860",
+  "pdf_url": "https://arxiv.org/pdf/2206.07860.pdf",
+  "code_or_data_release": null,
+  "citation_key_suggestion": "chen2022epg2s",
+  "modality": "Electropalatography (EPG) + audio (multimodal learning)",
+  "device": "EPG sensing + audio recording (as reported in the paper)",
+  "task": "Articulatory-to-speech generation and speech enhancement using EPG (multimodal)",
+  "output_unit": "speech waveform / enhanced speech (via learned mapping)",
+  "vocabulary_setting": "N/A (speech generation/enhancement task)",
+  "datasets": "EPG+audio dataset described in the paper",
+  "evaluation_protocol": "Objective/subjective speech quality/intelligibility evaluation as reported in the paper",
+  "metrics_reported": "Speech generation/enhancement metrics reported in the paper (see sources)",
+  "decoder": "Neural multimodal fusion strategies (early/late fusion variants as evaluated)",
+  "model_architecture": "Multimodal deep learning model for EPG-to-speech generation/enhancement",
+  "spatial_frontend": "EPG is used as an articulatory modality; internal representation details are paper-specific",
+  "augmentation": "Not central; paper focuses on fusion strategies and multimodal learning",
+  "key_contributions": [
+    "Proposes an EPG-to-speech generation/enhancement system using multimodal learning.",
+    "Evaluates fusion strategies combining EPG with noisy speech signals and shows EPG contributes to quality/intelligibility.",
+    "Highlights that EPG has been underexplored compared to other articulatory modalities for speech generation tasks."
+  ],
+  "limitations": [
+    "Task differs from text decoding (silent spelling); results do not directly translate to CER/WER.",
+    "Reproducibility depends on access to EPG+audio datasets and hardware.",
+    "Model details and performance are tied to the dataset and fusion setup used."
+  ],
+  "reported_results_summary": "The paper reports that EPG-only can generate speech with desirable outcomes and that adding EPG to noisy audio improves enhancement; see arXiv/IEEE presentation sources for details.",
+  "relevance_to_epgspeller": "Demonstrates EPG as a useful articulatory signal for learned speech mapping, supporting the motivation to explore richer spatial front-ends (H11–H13) and robustness/augmentation ideas for EPG-based decoding.",
+  "takeaways_for_related_work_section": "EPG2S shows that EPG provides informative articulatory cues for neural speech generation/enhancement; it supports the broader claim that EPG can be a strong input modality beyond clinical visualization and motivates learning-based front-ends.",
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2206.07860",
+      "title": "arXiv: EPG2S: Speech Generation and Speech Enhancement based on Electropalatography and Audio Signals using Multimodal Learning",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "year": 2022,
+      "venue": "arXiv"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2206.07860.pdf",
+      "title": "arXiv PDF: EPG2S (2206.07860)",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "year": 2022,
+      "venue": "arXiv"
+    },
+    {
+      "url": "https://resourcecenter.ieee.org/conferences/icassp-2023/spsicassp23vid2694",
+      "title": "IEEE Resource Center (ICASSP 2023): EPG2S presentation material",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "year": 2023
+    }
+  ],
+  "uncertain": [
+    "The arXiv entry is used as the primary reference; publication venue details beyond the ICASSP 2023 resource page should be confirmed if citing a final proceedings version."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Protocol is paper-specific; v2 report treats it as contextual unless split/metric definitions align with EPGSpeller.",
+  "participant_generalization": "Not a participant-generalization benchmark; use for modality, method, or representation context.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "No v2-specific language-model or postprocessing mechanism was added beyond the original survey extraction.",
+  "transfer_or_adaptation_method": "Relevant to EPG spatial/device representation; transfer/adaptation is not necessarily evaluated unless stated in the original item.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Seeded from the frozen 2026-02-17 survey; v2 uses this item to preserve the original EPG-centered baseline while adding protocol/audit/transfer lenses for the current manuscript."
+}

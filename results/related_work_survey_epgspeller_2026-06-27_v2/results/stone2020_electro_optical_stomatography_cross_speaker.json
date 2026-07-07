@@ -1,0 +1,84 @@
+{
+  "paper_id": "stone2020_electro_optical_stomatography_cross_speaker",
+  "title": "Cross-Speaker Silent-Speech Command Word Recognition Using Electro-Optical Stomatography",
+  "authors": [
+    "Simon Stone",
+    "Peter Birkholz"
+  ],
+  "year": 2020,
+  "venue": "ICASSP 2020 - IEEE International Conference on Acoustics, Speech and Signal Processing",
+  "doi": "10.1109/ICASSP40776.2020.9053447",
+  "primary_url": "https://doi.org/10.1109/ICASSP40776.2020.9053447",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "stone2020stomatography",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement_gap_closure",
+  "modality": "Electro-optical stomatography; intraoral/articulatory sensing related to palate/tongue-contact style SSI.",
+  "device": "Electro-optical stomatography setup described in the ICASSP paper.",
+  "task": "Cross-speaker silent-speech command word recognition.",
+  "output_unit": "Command words.",
+  "vocabulary_setting": "Closed or constrained command-word recognition.",
+  "datasets": "Paper-specific electro-optical stomatography command-word dataset.",
+  "evaluation_protocol": "Cross-speaker command-word recognition protocol.",
+  "protocol_generalization": "Important gap-closure item: directly addresses cross-speaker silent-speech recognition in a mouth/palate-related sensor setting, but under constrained command words.",
+  "participant_generalization": "Cross-speaker evaluation is central according to the title/metadata.",
+  "metrics_reported": "Command-word recognition metrics reported by ICASSP 2020 paper.",
+  "benchmark_or_audit_status": "Peer-reviewed conference paper; no v2-confirmed shared deterministic EPGSpeller-style artifact registry.",
+  "leakage_or_constraint_notes": "Closed command-word recognition is not comparable to lexicon-free spelling CER; cite as cross-speaker sensor context only.",
+  "decoder": "Paper-specific command-word recognizer.",
+  "model_architecture": "Paper-specific electro-optical stomatography recognition model.",
+  "spatial_frontend": "Mouth/stomatography sensor representation; related to but not identical with EPG electrode palatograms.",
+  "augmentation": "See paper.",
+  "language_model_or_postprocessing": "Likely constrained by command vocabulary; not LM/LLM-assisted open text entry.",
+  "transfer_or_adaptation_method": "Cross-speaker recognition is central.",
+  "source_quality_notes": "Confirmed through DOI/Crossref/OpenAlex metadata.",
+  "reproducibility_artifacts": "No v2-confirmed code/data release.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Adds a cross-speaker silent-speech command-word recognition reference in a stomatography sensor setting.",
+    "Closes the prior search-log gap around EPG-adjacent recognition work beyond SilentSpeller.",
+    "Useful contrast between cross-speaker closed-vocabulary recognition and EPGSpeller cross-participant spelling."
+  ],
+  "limitations": [
+    "Closed command-word task differs from open-character silent spelling.",
+    "Sensor modality is EPG-adjacent but not the same as the EPGSpeller data source."
+  ],
+  "reported_results_summary": "See ICASSP 2020 paper; v2 uses it as gap-closure context rather than normalized metrics.",
+  "relevance_to_epgspeller": "Provides a closer articulatory/intraoral cross-speaker recognition reference than broad SSI surveys, while reinforcing the need to separate vocabulary constraints.",
+  "takeaways_for_related_work_section": "Cross-speaker mouth-sensor recognition existed before EPGSpeller, but often in constrained command-word settings; EPGSpeller’s contribution is audited open-character/protocol-separated benchmarking.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Addresses the 2026-02-17 search-log gap for EPG/EPG-adjacent recognition and helps sharpen the distinction between command-word cross-speaker recognition and lexicon-free spelling.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.1109/ICASSP40776.2020.9053447",
+      "title": "DOI: Cross-Speaker Silent-Speech Command Word Recognition Using Electro-Optical Stomatography",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1109/ICASSP40776.2020.9053447",
+      "year": 2020,
+      "venue": "ICASSP 2020",
+      "authors": [
+        "Simon Stone",
+        "Peter Birkholz"
+      ]
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1109/ICASSP40776.2020.9053447",
+      "title": "Crossref API: 10.1109/ICASSP40776.2020.9053447",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1109/ICASSP40776.2020.9053447",
+      "year": 2020,
+      "venue": "ICASSP 2020"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1109/ICASSP40776.2020.9053447",
+      "title": "OpenAlex: Cross-Speaker Silent-Speech Command Word Recognition Using Electro-Optical Stomatography",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1109/ICASSP40776.2020.9053447",
+      "year": 2020,
+      "venue": "ICASSP 2020"
+    }
+  ],
+  "uncertain": []
+}

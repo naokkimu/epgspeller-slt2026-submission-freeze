@@ -1,0 +1,98 @@
+{
+  "paper_id": "tang2026_sensing_technologies_ssi",
+  "title": "Sensing technologies for silent speech interfaces",
+  "authors": [
+    "Chenyu Tang",
+    "Liang Qi",
+    "Shuo Gao",
+    "Zibo Zhang",
+    "Wentian Yi",
+    "Muzi Xu",
+    "Edoardo Occhipinti",
+    "Yu Pan",
+    "Luigi G. Occhipinti"
+  ],
+  "year": 2026,
+  "venue": "Nature Sensors",
+  "doi": "10.1038/s44460-025-00010-2",
+  "primary_url": "https://doi.org/10.1038/s44460-025-00010-2",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "tang2026sensingtechnologiesssi",
+  "coverage_origin": "added_in_v2_2026-06-27_web_supplement",
+  "modality": "Review of sensing technologies for SSI across modalities.",
+  "device": "Multiple SSI sensing technologies surveyed.",
+  "task": "Review and taxonomy of silent speech interface sensing technologies.",
+  "output_unit": "Not a decoder benchmark; taxonomy/review output.",
+  "vocabulary_setting": "Not applicable; review article.",
+  "datasets": "Multiple datasets/systems discussed by the review.",
+  "evaluation_protocol": "Review-level synthesis rather than one benchmark protocol.",
+  "protocol_generalization": "Current review source for sensor taxonomy; useful for avoiding overbroad claims about EPG as one SSI modality among many.",
+  "participant_generalization": "Review item; participant generalization varies across surveyed systems.",
+  "metrics_reported": "Review-level comparison dimensions rather than a single metric table.",
+  "benchmark_or_audit_status": "High-level review; not a reproducibility artifact for EPGSpeller.",
+  "leakage_or_constraint_notes": "Use as modality taxonomy, not as evidence for EPGSpeller numeric performance.",
+  "decoder": "Not a decoder paper.",
+  "model_architecture": "Not applicable; review.",
+  "spatial_frontend": "Surveyed across modalities; EPG-specific spatial assumptions should still cite EPG papers.",
+  "augmentation": "Varies across reviewed systems.",
+  "language_model_or_postprocessing": "Varies across reviewed systems.",
+  "transfer_or_adaptation_method": "Varies across reviewed systems.",
+  "source_quality_notes": "Current peer-reviewed review confirmed through DOI/Crossref/OpenAlex metadata.",
+  "reproducibility_artifacts": "Review article; no single dataset artifact.",
+  "evidence_retrieved_at": "2026-06-27",
+  "key_contributions": [
+    "Provides a 2026 synthesis of sensing technologies for SSI.",
+    "Updates the broader modality taxonomy beyond earlier 2010/2017/2020 reviews.",
+    "Useful for contemporary positioning of EPG as one SSI sensor family."
+  ],
+  "limitations": [
+    "Review-level claims do not replace protocol-matched benchmark evidence.",
+    "Specific EPG conclusions still require EPG-centered sources."
+  ],
+  "reported_results_summary": "Review article; use for taxonomy rather than normalized metrics.",
+  "relevance_to_epgspeller": "Updates the SSI review backbone and helps frame EPGSpeller as an auditable benchmark within a broad sensing landscape.",
+  "takeaways_for_related_work_section": "A current SSI sensing review should be cited alongside older SSI surveys when describing modality scope and sensor variability.",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Strengthens the Introduction/Related Work with current survey context while preserving EPGSpeller’s narrow evidence claims.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.1038/s44460-025-00010-2",
+      "title": "DOI: Sensing technologies for silent speech interfaces",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1038/s44460-025-00010-2",
+      "year": 2026,
+      "venue": "Nature Sensors",
+      "authors": [
+        "Chenyu Tang",
+        "Liang Qi",
+        "Shuo Gao",
+        "Zibo Zhang",
+        "Wentian Yi",
+        "Muzi Xu",
+        "Edoardo Occhipinti",
+        "Yu Pan",
+        "Luigi G. Occhipinti"
+      ]
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1038/s44460-025-00010-2",
+      "title": "Crossref API: 10.1038/s44460-025-00010-2",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1038/s44460-025-00010-2",
+      "year": 2026,
+      "venue": "Nature Sensors"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1038/s44460-025-00010-2",
+      "title": "OpenAlex: Sensing technologies for silent speech interfaces",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1038/s44460-025-00010-2",
+      "year": 2026,
+      "venue": "Nature Sensors"
+    }
+  ],
+  "uncertain": []
+}

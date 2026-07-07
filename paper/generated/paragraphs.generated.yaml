@@ -1,0 +1,319 @@
+generated: true
+source: questions.yaml
+profile: slt2026
+paragraphs:
+  para.problem.aac_text_entry:
+    source_question: Q.problem.aac_text_entry
+    slot: core.problem
+    claims: []
+    evidence: []
+    profile: slt2026
+    section: Introduction
+    render_order: 1
+    role: problem
+    rhetorical_role: intro.problem
+    result_role: null
+  para.problem.epg_signal:
+    source_question: Q.problem.epg_signal
+    slot: core.problem
+    claims:
+    - C.epg_signal
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+    - A_results_dataset_audit_silentspeller_2026_02_24_report_md
+    profile: slt2026
+    section: Introduction
+    render_order: 1
+    role: problem
+    rhetorical_role: intro.reframing
+    result_role: null
+  para.problem.prior_capability:
+    source_question: Q.problem.prior_capability
+    slot: core.problem
+    claims: []
+    evidence:
+    - A_results_related_work_survey_epgspeller_2026_06_27_v2_report_md
+    - A_results_related_work_survey_epgspeller_2026_06_27_v2_coverage_matrix_csv
+    - A_results_related_work_survey_epgspeller_2026_06_27_v2_references_audit_md
+    profile: slt2026
+    section: Introduction
+    render_order: 1
+    role: problem
+    rhetorical_role: intro.prior_capability
+    result_role: null
+  para.problem.fixed_vocabulary:
+    source_question: Q.problem.fixed_vocabulary
+    slot: core.problem
+    claims:
+    - C.fixed_vocab_gap
+    evidence:
+    - A_results_related_work_survey_epgspeller_2026_06_27_v2_report_md
+    - A_results_related_work_survey_epgspeller_2026_06_27_v2_coverage_matrix_csv
+    - A_results_related_work_survey_epgspeller_2026_06_27_v2_references_audit_md
+    profile: slt2026
+    section: Introduction
+    render_order: 1
+    role: gap
+    rhetorical_role: intro.gap
+    result_role: null
+  para.claim.central:
+    source_question: Q.claim.central
+    slot: core.claim
+    claims:
+    - C.central
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    - A_results_slt_p2_20260626_kshot_feasibility_csv
+    - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    - A_results_preproc20260626_preproc_ablation_report_md
+    profile: slt2026
+    section: Introduction
+    render_order: 1
+    role: central_claim
+    rhetorical_role: intro.central_claim
+    result_role: null
+  para.claim.evidence_preview:
+    source_question: Q.claim.evidence_preview
+    slot: core.claim
+    claims: []
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    profile: slt2026
+    section: Introduction
+    render_order: 1
+    role: central_claim
+    rhetorical_role: intro.evidence_preview
+    result_role: null
+  para.claim.contributions:
+    source_question: Q.claim.contributions
+    slot: core.claim
+    claims: []
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - A_results_slt_p2_20260626_kshot_feasibility_csv
+    profile: slt2026
+    section: Introduction
+    render_order: 1
+    role: central_claim
+    rhetorical_role: intro.contributions
+    result_role: null
+  para.method.signal_representation:
+    source_question: Q.method.00_signal_representation
+    slot: core.method
+    claims: []
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+    profile: slt2026
+    section: Task and Method
+    render_order: 1
+    role: method
+    rhetorical_role: method.signal_representation
+    result_role: null
+  para.task.definition:
+    source_question: Q.method.01_task_definition
+    slot: core.method
+    claims:
+    - C.task
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    profile: slt2026
+    section: Task and Method
+    render_order: 1
+    role: method
+    rhetorical_role: method.task_object
+    result_role: null
+  para.method.workflow:
+    source_question: Q.method.02_workflow
+    slot: core.method
+    claims:
+    - C.workflow
+    evidence:
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+    profile: slt2026
+    section: Task and Method
+    render_order: 1
+    role: method
+    rhetorical_role: method.model_core
+    result_role: null
+  para.method.variant_scope:
+    source_question: Q.method.03_variant_scope
+    slot: core.method
+    claims: []
+    evidence:
+    - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+    - A_results_msx20260224_paper_tables_table_k64_methods_csv
+    profile: slt2026
+    section: Task and Method
+    render_order: 1
+    role: method
+    rhetorical_role: method.variant_scope
+    result_role: null
+  para.setup.data:
+    source_question: Q.setup.data_protocols
+    slot: core.evaluation
+    claims:
+    - C.protocols
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+    - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    profile: slt2026
+    section: Evaluation
+    render_order: 1
+    role: evaluation
+    rhetorical_role: eval.data
+    result_role: null
+  para.setup.protocols:
+    source_question: Q.setup.protocols
+    slot: core.evaluation
+    claims: []
+    evidence:
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+    - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    profile: slt2026
+    section: Evaluation
+    render_order: 1
+    role: evaluation
+    rhetorical_role: eval.protocols
+    result_role: null
+  para.setup.metrics:
+    source_question: Q.setup.metrics
+    slot: core.evaluation
+    claims:
+    - C.metrics
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    profile: slt2026
+    section: Evaluation
+    render_order: 1
+    role: evaluation
+    rhetorical_role: eval.metrics
+    result_role: null
+  para.setup.baselines_controls:
+    source_question: Q.setup.controls
+    slot: core.evaluation
+    claims: []
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+    - A_results_msx20260224_paper_tables_table_k64_methods_csv
+    profile: slt2026
+    section: Evaluation
+    render_order: 1
+    role: evaluation
+    rhetorical_role: eval.baselines_controls
+    result_role: null
+  para.result.personalized:
+    source_question: Q.result.01_personalized
+    slot: core.result
+    claims:
+    - C.personalized_result
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    profile: slt2026
+    section: Results
+    render_order: 1
+    role: main_result
+    rhetorical_role: null
+    result_role: primary_evidence
+  para.result.silentspeller_lite:
+    source_question: Q.result.02_silentspeller_lite
+    slot: core.result
+    claims:
+    - C.silentspeller_lite
+    evidence:
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - A_results_slt_p2_20260626_slt_p2_report_md
+    profile: slt2026
+    section: Results
+    render_order: 1
+    role: main_result
+    rhetorical_role: null
+    result_role: task_validity
+  para.result.calibration:
+    source_question: Q.result.03_calibration
+    slot: core.result
+    claims:
+    - C.calibration_curve
+    evidence:
+    - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+    - A_results_slt_p2_20260626_kshot_feasibility_csv
+    profile: slt2026
+    section: Results
+    render_order: 1
+    role: main_result
+    rhetorical_role: null
+    result_role: constraint_or_recovery
+  para.result.cross_user:
+    source_question: Q.result.04_cross_user
+    slot: core.result
+    claims:
+    - C.cross_user_bottleneck
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_p3ms_compact_csv
+    - A_results_paper_layout_2026_03_03_table_to4_compact_csv
+    - A_results_msx20260224_paper_tables_table_p3ms_csv
+    - A_results_uc20260226_paper_tables_table_to4_generalization_csv
+    - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    - A_results_preproc20260626_preproc_ablation_report_md
+    profile: slt2026
+    section: Results
+    render_order: 1
+    role: main_result
+    rhetorical_role: null
+    result_role: failure_condition
+  para.result.validation_controls:
+    source_question: Q.result.05_validation_controls
+    slot: core.result
+    claims: []
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_p3ms_compact_csv
+    - A_results_paper_layout_2026_03_03_table_to4_compact_csv
+    - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    - A_results_preproc20260626_preproc_ablation_report_md
+    profile: slt2026
+    section: Results
+    render_order: 1
+    role: main_result
+    rhetorical_role: null
+    result_role: validation_check
+  para.limit.registration:
+    source_question: Q.limit.registration
+    slot: core.boundary
+    claims:
+    - C.boundary
+    evidence:
+    - A_results_slt_p2_20260626_kshot_feasibility_csv
+    - A_results_slt_p2_20260626_experiment_status_md
+    - A_results_slt_p2_20260626_split_audit_protocol_split_summary_csv
+    - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    - A_results_preproc20260626_experiment_status_md
+    profile: slt2026
+    section: Results
+    render_order: 1
+    role: core_limitation
+    rhetorical_role: null
+    result_role: claim_scope

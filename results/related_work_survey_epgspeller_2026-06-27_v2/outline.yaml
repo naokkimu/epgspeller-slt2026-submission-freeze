@@ -1,0 +1,107 @@
+topic: "Related work and positioning update for EPGSpeller: auditable lexicon-free EPG silent spelling benchmarks, protocol-specific generalization, and transfer-aware SSI evaluation"
+items:
+  - paper_id: "carreira_perpinan1998_dimred_epg"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "chen2022_epg2s"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "denby2010_silent_speech_interfaces"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "gilbert2010_magnetic_implants_silent_speech"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "gonzalezlopez2020_ssi_restoration_review"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "graves2006_ctc"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "hardcastle1989_state_of_art_epg"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "hardcastle1990_epg_phonetic_research"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "hardcastle1991_epg_data_reduction_coarticulation"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "hueber2010_ultrasound_optical_ssi"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "lee2021_biosignal_speechrec_review"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "park2019_specaugment"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "rehearsse_chi2024"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "shadle1993_epg_structured_light"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "silentspeller_chi2022"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "ssi_book_springer2017"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "toutios2006_acoustic_to_epg_mapping"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "toutios2006_learning_epg_from_acoustics"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "verhoeven2019_visualisation_analysis_epg"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "woo2021_kepg_design"
+    seed: true
+    notes: "Seeded from the frozen 2026-02-17 EPG-centered related-work survey and enriched with v2 protocol/audit fields."
+  - paper_id: "su2025_wordinitials_conditioned_llm_text_entry"
+    seed: false
+    notes: "Directly supports the current manuscript’s constraint separation: open-character decoding, lexicon projection, and LM/LLM assistance should not be collapsed into one leaderboard."
+  - paper_id: "hiraki2025_silentwhisper"
+    seed: false
+    notes: "Helps limit deployment/privacy claims to the audited EPG setup and avoid overgeneralizing from other silent-interaction modalities."
+  - paper_id: "chugh2026_morsear"
+    seed: false
+    notes: "Useful background for low-shot and cross-participant framing, without serving as a direct CER comparison."
+  - paper_id: "wang2024_watch_your_mouth_depth_sensing"
+    seed: false
+    notes: "Helps position row/column/grid EPG front ends against other spatial SSI modalities while keeping claims EPG-specific."
+  - paper_id: "tang2026_sensing_technologies_ssi"
+    seed: false
+    notes: "Strengthens the Introduction/Related Work with current survey context while preserving EPGSpeller’s narrow evidence claims."
+  - paper_id: "benster2024_mona_llm_enhanced_ssr"
+    seed: false
+    notes: "Supports adding language about future LM-assisted decoding while keeping current claims limited to audited lexicon-free/lexicon-projected protocols."
+  - paper_id: "xu2026_llm_era_ssi_review"
+    seed: false
+    notes: "Supports a short future-work/positioning note: EPGSpeller could later add LM-assisted decoding, but current claims remain lexicon-free and audit-bound."
+  - paper_id: "inoue2025_eeg_emg_heterogeneous_electrodes"
+    seed: false
+    notes: "Useful for motivating EPGSpeller’s electrode reduction and layout-aware analyses without claiming cross-modality performance equivalence."
+  - paper_id: "guo2026_cross_modal_meta_generalization_uti"
+    seed: false
+    notes: "Helps position P3/P3MS results as part of a broader transfer-generalization problem while keeping the evidence EPG-specific."
+  - paper_id: "stone2020_electro_optical_stomatography_cross_speaker"
+    seed: false
+    notes: "Addresses the 2026-02-17 search-log gap for EPG/EPG-adjacent recognition and helps sharpen the distinction between command-word cross-speaker recognition and lexicon-free spelling."
+
+execution:
+  batch_size: 4
+  items_per_agent: 1
+  output_dir: "./results"
+  validation:
+    require_all_fields: true
+    require_sources: true
+    min_sources: 3
+  bibliography:
+    format: bibtex
+    scope: papers
+    out_bib: "./references.bib"
+    out_json: "./references.json"
+    out_audit: "./references_audit.md"

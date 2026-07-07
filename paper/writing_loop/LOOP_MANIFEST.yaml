@@ -1,0 +1,5 @@
+target: /Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography/paper/final/slt2026.tex
+max_iterations: 5
+mode: academic
+visual: true
+stop_when: writing_gate_pass

@@ -1,0 +1,171 @@
+generated: true
+source: questions.yaml
+profile: slt2026
+claims:
+  C.epg_signal:
+    statement: The SilentSpeller-style data used here are multichannel electropalatographic
+      contact time series paired with prompted word labels.
+    type: data_description
+    emitted_by: Q.problem.epg_signal
+    slot: core.problem
+    rhetorical_role: intro.reframing
+    result_role: null
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+    - A_results_dataset_audit_silentspeller_2026_02_24_report_md
+    profile: slt2026
+  C.fixed_vocab_gap:
+    statement: Silent spelling changes the interface problem from selecting among
+      fixed commands to producing character strings that can express unseen words.
+    type: positioning
+    emitted_by: Q.problem.fixed_vocabulary
+    slot: core.problem
+    rhetorical_role: intro.gap
+    result_role: null
+    evidence:
+    - A_results_related_work_survey_epgspeller_2026_06_27_v2_report_md
+    - A_results_related_work_survey_epgspeller_2026_06_27_v2_coverage_matrix_csv
+    - A_results_related_work_survey_epgspeller_2026_06_27_v2_references_audit_md
+    profile: slt2026
+  C.central:
+    statement: EPGSpeller supports lexicon-free EPG silent spelling with strong personalized
+      recognition, but cross-user calibration remains unresolved.
+    type: central_claim
+    emitted_by: Q.claim.central
+    slot: core.claim
+    rhetorical_role: intro.central_claim
+    result_role: null
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    - A_results_slt_p2_20260626_kshot_feasibility_csv
+    - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    - A_results_preproc20260626_preproc_ablation_report_md
+    profile: slt2026
+  C.task:
+    statement: The primary task is greedy character-level decoding from EPG time series
+      rather than closed-set word classification.
+    type: task_definition
+    emitted_by: Q.method.01_task_definition
+    slot: core.method
+    rhetorical_role: method.task_object
+    result_role: null
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    profile: slt2026
+  C.workflow:
+    statement: EPGSpeller uses character-level CTC sequence modeling for silent spelling
+      from EPG contact time series.
+    type: method
+    emitted_by: Q.method.02_workflow
+    slot: core.method
+    rhetorical_role: method.model_core
+    result_role: null
+    evidence:
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_msx20260224_paper_tables_table_spatial_k124_csv
+    profile: slt2026
+  C.protocols:
+    statement: The evaluation separates personalized recognition, unseen-word spelling,
+      cross-participant transfer, and calibration conditions.
+    type: evaluation
+    emitted_by: Q.setup.data_protocols
+    slot: core.evaluation
+    rhetorical_role: eval.data
+    result_role: null
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_dataset_summary_csv
+    - A_results_dataset_audit_silentspeller_2026_02_24_dataset_summary_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+    - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    profile: slt2026
+  C.metrics:
+    statement: Greedy character error rate is the primary recognition metric; lexicon-projected
+      scores and real-time factor are reported separately.
+    type: evaluation
+    emitted_by: Q.setup.metrics
+    slot: core.evaluation
+    rhetorical_role: eval.metrics
+    result_role: null
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    profile: slt2026
+  C.personalized_result:
+    statement: Under personalized or within-participant conditions, EPGSpeller achieves
+      substantially lower greedy CER than cross-participant transfer.
+    type: main_result
+    emitted_by: Q.result.01_personalized
+    slot: core.result
+    rhetorical_role: null
+    result_role: primary_evidence
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_main_compact_csv
+    - A_results_msx20260224_paper_tables_table_main_csv
+    profile: slt2026
+  C.silentspeller_lite:
+    statement: In a SilentSpeller-compatible-lite word-holdout condition, EPGSpeller
+      maintains low greedy CER on 100 unseen test word types for subj1.
+    type: main_result
+    emitted_by: Q.result.02_silentspeller_lite
+    slot: core.result
+    rhetorical_role: null
+    result_role: task_validity
+    evidence:
+    - A_results_slt_p2_20260626_paper_tables_table_silentspeller_lite_csv
+    - A_results_slt_p2_20260626_slt_p2_report_md
+    profile: slt2026
+  C.calibration_curve:
+    statement: For subj3, calibration reduces CER from roughly 0.84 in zero-shot transfer
+      to 0.3503 at k=1 and 0.2458 at k=2, but 50-word evaluation at k=4 and k=8 is
+      data-infeasible.
+    type: main_result
+    emitted_by: Q.result.03_calibration
+    slot: core.result
+    rhetorical_role: null
+    result_role: constraint_or_recovery
+    evidence:
+    - A_results_slt_p2_20260626_paper_tables_table_kshot_curve_csv
+    - A_results_slt_p2_20260626_paper_tables_table_lowshot_extended_csv
+    - A_results_slt_p2_20260626_kshot_feasibility_csv
+    profile: slt2026
+  C.cross_user_bottleneck:
+    statement: Cross-participant transfer remains substantially worse than personalized
+      decoding even with multi-source variants and simple preprocessing controls.
+    type: main_result
+    emitted_by: Q.result.04_cross_user
+    slot: core.result
+    rhetorical_role: null
+    result_role: failure_condition
+    evidence:
+    - A_results_paper_layout_2026_03_03_table_p3ms_compact_csv
+    - A_results_paper_layout_2026_03_03_table_to4_compact_csv
+    - A_results_msx20260224_paper_tables_table_p3ms_csv
+    - A_results_uc20260226_paper_tables_table_to4_generalization_csv
+    - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    - A_results_preproc20260626_preproc_ablation_report_md
+    profile: slt2026
+  C.boundary:
+    statement: The current evidence is bounded to four participants and available
+      repetition densities; simple normalization does not remove cross-user error,
+      and high-k calibration requires denser per-user data.
+    type: limitation
+    emitted_by: Q.limit.registration
+    slot: core.boundary
+    rhetorical_role: null
+    result_role: claim_scope
+    evidence:
+    - A_results_slt_p2_20260626_kshot_feasibility_csv
+    - A_results_slt_p2_20260626_experiment_status_md
+    - A_results_slt_p2_20260626_split_audit_protocol_split_summary_csv
+    - A_results_preproc20260626_paper_tables_table_preproc_protocol_condition_csv
+    - A_results_preproc20260626_experiment_status_md
+    profile: slt2026

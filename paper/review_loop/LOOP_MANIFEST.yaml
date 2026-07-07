@@ -12,7 +12,9 @@ loop:
   sentinel_prefix: AGENT_LOOP_WAKE_AUDITABLE_REVIEW
   stop_condition: "all required gates pass or user explicitly stops"
   armed_iteration: 6
-  stop_reason: "loop_pass true at iter_006"
+  stop_condition: "content_pages == 6 AND SLT audit PASS"
+  armed_iteration: 8
+  stop_reason: "content_pages == 6 and format audit PASS at iter_008"
 commit_each_revision: true
 gates_required:
   - writing_gate
@@ -31,8 +33,12 @@ positioning_gate:
     - abstract_overclaims
     - first_page_missing_takeaway
 compile_gate:
-  enabled: false
+  enabled: true
   command: "latexmk -pdf -interaction=nonstopmode paper/final/slt2026.tex"
+format_compression:
+  enabled: true
+  target_content_pages: 6
+  entrypoint: paper/final/slt2026.tex
 venue_thresholds:
   median_overall_min: 4
   reviewer_floor: 3

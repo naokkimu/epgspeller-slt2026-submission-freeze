@@ -1,0 +1,84 @@
+{
+  "paper_id": "graves2006_ctc",
+  "title": "Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks",
+  "authors": [
+    "Alex Graves",
+    "Santiago Fernández",
+    "Faustino Gomez",
+    "Jürgen Schmidhuber"
+  ],
+  "year": 2006,
+  "venue": "ICML 2006",
+  "doi": "10.1145/1143844.1143891",
+  "primary_url": "https://dl.acm.org/doi/10.1145/1143844.1143891",
+  "pdf_url": null,
+  "code_or_data_release": null,
+  "citation_key_suggestion": "graves2006ctc",
+  "modality": "Method paper (sequence learning / speech recognition)",
+  "device": "N/A",
+  "task": "Sequence labeling without pre-segmented alignments",
+  "output_unit": "generic label sequences (e.g., phonemes/characters)",
+  "vocabulary_setting": "N/A",
+  "datasets": "Demonstrated on TIMIT (as stated in the paper)",
+  "evaluation_protocol": "Speech recognition evaluation on TIMIT as reported",
+  "metrics_reported": "Speech recognition error rates as reported in the paper",
+  "decoder": "CTC objective + dynamic programming alignment; decoding can be greedy or beam search (not fixed by the objective)",
+  "model_architecture": "Recurrent neural networks trained with CTC",
+  "spatial_frontend": "N/A",
+  "augmentation": "N/A",
+  "key_contributions": [
+    "Introduces CTC for training sequence models without frame-level alignments.",
+    "Enables end-to-end mapping from input sequences to label sequences with monotonic alignment.",
+    "Became a foundational objective for speech recognition and other sequence transduction tasks."
+  ],
+  "limitations": [
+    "Assumes monotonic alignment; not suitable for general non-monotonic seq2seq tasks.",
+    "Decoding quality depends on inference strategy (greedy vs beam search with language model)."
+  ],
+  "reported_results_summary": "The paper demonstrates CTC on speech recognition (TIMIT) and compares against baselines; see ACM DL/DOI sources for details.",
+  "relevance_to_epgspeller": "Core method used in EPGSpeller-style models (RNN/CTC). Needed for Related Work section on decoding formulations and to justify open-vocabulary greedy decoding vs constrained decoding variants.",
+  "takeaways_for_related_work_section": "CTC is the standard alignment-free objective enabling RNN-based character/phoneme decoding from unsegmented inputs; cite this to ground the modeling choice and to discuss decoding (greedy vs constrained/LM).",
+  "sources": [
+    {
+      "url": "https://dl.acm.org/doi/10.1145/1143844.1143891",
+      "title": "ACM Digital Library: Connectionist Temporal Classification (ICML 2006)",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/1143844.1143891",
+      "year": 2006,
+      "venue": "ICML"
+    },
+    {
+      "url": "https://doi.org/10.1145/1143844.1143891",
+      "title": "DOI: 10.1145/1143844.1143891",
+      "retrieved_at": "2026-06-27",
+      "source_type": "academic",
+      "doi": "10.1145/1143844.1143891",
+      "year": 2006,
+      "venue": "ICML"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1145/1143844.1143891",
+      "title": "Crossref API: 10.1145/1143844.1143891",
+      "retrieved_at": "2026-06-27",
+      "source_type": "web",
+      "doi": "10.1145/1143844.1143891",
+      "year": 2006,
+      "venue": "ICML"
+    }
+  ],
+  "uncertain": [
+    "This entry does not specify a particular decoding algorithm beyond the CTC objective; decoding choices are discussed in later literature."
+  ],
+  "coverage_origin": "seeded_from_frozen_related_work_survey_2026-02-17",
+  "protocol_generalization": "Protocol is paper-specific; v2 report treats it as contextual unless split/metric definitions align with EPGSpeller.",
+  "participant_generalization": "Not a participant-generalization benchmark; use for modality, method, or representation context.",
+  "benchmark_or_audit_status": "Prior-work item from the frozen survey; not an EPGSpeller artifact. Sources are preserved and reprocessed in v2 for bibliography/audit consistency.",
+  "leakage_or_constraint_notes": "Use this item only under its own vocabulary/decoder constraints; EPGSpeller should keep greedy CER, lexicon projection, and LM/LLM assistance separated.",
+  "language_model_or_postprocessing": "Foundational CTC objective; not an SSI system and has no lexicon/LLM constraint itself.",
+  "transfer_or_adaptation_method": "Relevant as non-EPG SSI or method context; transfer/adaptation evidence should not be extrapolated to EPG without matched data.",
+  "source_quality_notes": "Seed item retained from the 2026-02-17 survey; sources include DOI/publisher/index records where available.",
+  "reproducibility_artifacts": "No v2-confirmed code/data artifact beyond cited publisher/index pages.",
+  "evidence_retrieved_at": "2026-06-27",
+  "gap_or_relevance_to_current_epgspeller_manuscript": "Seeded from the frozen 2026-02-17 survey; v2 uses this item to preserve the original EPG-centered baseline while adding protocol/audit/transfer lenses for the current manuscript."
+}
