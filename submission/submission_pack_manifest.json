@@ -1,0 +1,27 @@
+{
+  "generated_at_utc": "2026-07-02T08:06:53+00:00",
+  "venue": "IEEE SLT 2026",
+  "title": "EPGSpeller: Lexicon-Free Silent Spelling Recognition with Electropalatography",
+  "pack_dir": "/Volumes/lysd26/SLT_submission/epgspeller-lexicon-free-slt2026",
+  "files": {
+    "main_pdf": {
+      "path": "EPGSpeller: Lexicon-Free Silent Spelling.pdf",
+      "size_bytes": 118767,
+      "sha256": "466a89d2ee6bddcfd14951c4ee5b21fdcf2b7d85a7ff22326405b622232d0d0f"
+    },
+    "supplementary_material": {
+      "path": "put_this_zip_to_your_agent_or_llm_chat.zip",
+      "size_bytes": 129342,
+      "sha256": "088a966a6296bb316dd269d2d3060cb3d6a348b95c74b0ac4de7769ca062f40e"
+    },
+    "openreview_packet": {
+      "path": "openreview_packet.md",
+      "size_bytes": 2576,
+      "sha256": "3cab5df421a3c802c711897ec01c5eb610cb68f32894c7e6f5750c44b40a3840"
+    }
+  },
+  "openreview_upload": {
+    "pdf_field": "EPGSpeller: Lexicon-Free Silent Spelling.pdf",
+    "supplementary_material_field": "put_this_zip_to_your_agent_or_llm_chat.zip"
+  }
+}

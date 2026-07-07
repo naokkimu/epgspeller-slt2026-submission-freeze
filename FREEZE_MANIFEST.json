@@ -1,0 +1,46 @@
+{
+  "freeze_tag": "freeze-slt2026-submission-20260707",
+  "venue": "IEEE SLT 2026",
+  "title": "EPGSpeller: Lexicon-Free Silent Spelling Recognition with Electropalatography",
+  "timestamp_utc": "2026-07-07T07:24:15+00:00",
+  "repo_root": "/Volumes/ly_backup/resc_before_erase/naokkimu/lyworks_ssd/epgspeller_local_workspace/epgspeller-lexicon-free-silent-spelling-recognition-with-electropalatography",
+  "branch": "slt2026-submission-freeze",
+  "commit": "813091be1be518bf0166f1629c474c0d18c6794c",
+  "dirty": true,
+  "submission_pack_dir": "/Volumes/lysd26/SLT_submission/epgspeller-lexicon-free-slt2026",
+  "checks_note": "Post-submission freeze; integrity gate passed at build time.",
+  "artifacts": [
+    {
+      "path": "reports/slt2026/submission/main_submission.pdf",
+      "sha256": "466a89d2ee6bddcfd14951c4ee5b21fdcf2b7d85a7ff22326405b622232d0d0f"
+    },
+    {
+      "path": "reports/slt2026/submission/put_this_zip_to_your_agent_or_llm_chat.zip",
+      "sha256": "088a966a6296bb316dd269d2d3060cb3d6a348b95c74b0ac4de7769ca062f40e"
+    },
+    {
+      "path": "reports/slt2026/submission/openreview_packet.md",
+      "sha256": "3cab5df421a3c802c711897ec01c5eb610cb68f32894c7e6f5750c44b40a3840"
+    },
+    {
+      "path": "reports/slt2026/submission/submission_pack_manifest.json",
+      "sha256": "039a7331d2cda9976dde37d5019492f58bbcb7321b112595f3bdf7068f54fa2c"
+    },
+    {
+      "path": "reports/slt2026/submission/submission_pack_README.md",
+      "sha256": "984a6d7b087148a74ecd12791acdafdc41ba8cd5227efdcb5330702750142fca"
+    },
+    {
+      "path": "reports/slt2026/submission/slt2026.pdf",
+      "sha256": "466a89d2ee6bddcfd14951c4ee5b21fdcf2b7d85a7ff22326405b622232d0d0f"
+    },
+    {
+      "path": "reports/slt2026/submission/openreview_packet_project.md",
+      "sha256": "3cab5df421a3c802c711897ec01c5eb610cb68f32894c7e6f5750c44b40a3840"
+    },
+    {
+      "path": "reports/slt2026/submission/put_this_zip_project_copy.zip",
+      "sha256": "088a966a6296bb316dd269d2d3060cb3d6a348b95c74b0ac4de7769ca062f40e"
+    }
+  ]
+}

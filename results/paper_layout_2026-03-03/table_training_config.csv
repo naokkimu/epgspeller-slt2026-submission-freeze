@@ -1,0 +1,17 @@
+parameter,value
+n_units,512
+n_layers,5
+stride_len,4
+kernel_len,32
+input_proj_dim,64
+specaug_on,1
+white_noise_sd,0.8
+constant_offset_sd,0.2
+gaussian_smooth_width,2.0
+frame_ms,10.0
+n_batch,10000
+train_seed,0
+n_components,-1
+downsample_factor,1
+electrode_regions,all
+apply_ts2vec,0

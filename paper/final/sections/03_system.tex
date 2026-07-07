@@ -1,0 +1,72 @@
+\section{EPGSpeller Recognition System}
+\label{sec:system}
+
+This section defines the EPGSpeller recognition system.
+EPGSpeller provides a recognition layer for greedy character-string decoding on top of the input modality demonstrated by SilentSpeller~\cite{kimura2022silentspeller}.
+
+\subsection{Overview and CTC Decoding}
+
+EPGSpeller is a sequence recognizer that takes electropalatographic contact frame sequences and outputs the corresponding character strings.
+Each trial is a variable-length contact sequence; character boundaries and phoneme boundaries are not provided.
+The primary output path is lexicon-free greedy character-string decoding defined in Section~\ref{sec:task:definition}.
+
+In silent-spelling EPG sequences, the correspondence between each frame and a character is not explicit.
+Participants articulate continuously, and tongue--palate contact is not segmented at the character level.
+EPGSpeller uses connectionist temporal classification (CTC) for this alignment~\cite{graves2006connectionist}.
+CTC learns sequence outputs without frame-level labels by collapsing frame-level outputs that include blank symbols and repetitions into the final character string.
+
+\begin{table}[!b]
+\centering
+\caption{Boundary between main recognizer and design analyses.}
+\label{tab:recognizer_design}
+\setlength{\tabcolsep}{1.5pt}
+\renewcommand{\arraystretch}{1.03}
+\begin{tabular}{@{}p{0.34\columnwidth}p{0.18\columnwidth}p{0.38\columnwidth}@{}}
+\toprule
+Element & Claims? & Role \\
+\midrule
+vector/GRU + greedy decode & Yes & Primary result \\
+LEX projection & No & Closed-vocab.\ diag. \\
+Spatial / electrode variants & No & Engineering analyses \\
+Preprocessing controls & No & Transfer-gap control \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Main Recognizer: Vector/GRU Path}
+
+In the main recognizer, each electropalatographic frame is treated as a flat contact vector.
+The temporal recognizer is a GRU-based recurrent CTC decoder.
+We treat this vector/GRU CTC path as the main recognizer throughout the paper.
+The central claim that electropalatographic silent spelling can support greedy character-string decoding when personalized calibration is available is evaluated on this main recognizer and greedy decoding.
+
+Multichannel contact frames are mapped through an input projection into a representation that the sequence recognizer can process efficiently.
+Along the time axis, compression reduces sequence length while preserving local context.
+During training, we apply dropout, noise injection, smoothing, and SpecAugment-style temporal and channel regularization to improve robustness to contact-position variability, missing channels, and participant-specific differences~\cite{park2019specaugment}.
+
+\subsection{Spatial Front Ends and Electrode Reduction}
+
+SmartPalate contact channels have a layout on the palate.
+We compare row-column, grid, and patch front ends to test whether spatial structure helps electropalatographic silent-spelling recognition.
+The row-column front end summarizes contact patterns on the surrogate palatal grid into row-wise and column-wise activity.
+Grid and patch front ends use local spatial structure more explicitly, but electropalatographic contact is sparse and strongly participant-dependent, so a strong two-dimensional spatial assumption is not always advantageous.
+Results in Section~\ref{sec:results} show that the flat vector/GRU path remains competitive on P1.
+
+We also compare contact-frequency-based selection, spatially dispersed selection, ranking transfer from other participants, and random subsets to examine whether recognition performance can be preserved with fewer channels.
+Electrode reduction and missing-channel robustness are engineering analyses; they are not primary means of solving cross-user transfer.
+Later analyses indicate that K=64 channels retain near-main P1/P2 performance for the selection methods tested.
+
+\subsection{Implementation Details}
+
+The main recognizer connects a CTC output layer to a bidirectional GRU (1024 units, 5 layers); input projection maps contact-channel representations to 256 dimensions.
+Along time, compression with kernel length~32 and stride~4 reduces sequence length.
+The output has 40 classes (26 alphabet letters, blank, CTC blank, and other special symbols).
+Training uses batch size~64, fixed learning rate~0.02, L2 regularization coefficient 1e-5, dropout rate~0.4, and 10{,}000 training steps.
+Data augmentation applies SpecAugment-style temporal masking (T=12, rate~0.4), electrode masking (F=6, rate~0.4), and time warping (W=0.05, rate~0.2), plus noise and smoothing.
+Results are averaged over four trials with random seeds 0--3; mean and standard deviation are reported.
+In PCA variants, 120 contact channels are compressed to 16 principal components before input projection.
+Key hyperparameters are listed in the supplementary configuration table.
+
+Spatial front ends, electrode reduction, and regularization are engineering design comparisons for representing and simplifying SmartPalate-style electropalatographic signals.
+Table~\ref{tab:recognizer_design} separates the main recognizer from auxiliary analyses referenced later in the paper.
+The next section defines the evaluation conditions under which this recognizer is compared.

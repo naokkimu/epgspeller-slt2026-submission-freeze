@@ -1,0 +1,2 @@
+condition,n_test_words,n,cer_m,cer_s,rtf_m,rtf_s
+subj1_test100,100,4,0.113343,0.012833,0.000290,0.000042

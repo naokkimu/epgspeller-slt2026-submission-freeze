@@ -1,0 +1,117 @@
+\section{Results}
+\label{sec:results}
+
+This section presents EPGSpeller results as a single narrative organized around the protocol map in Table~\ref{tab:protocol_map}.
+We first compare within-user conditions with user calibration against cross-user transfer using the main vector/GRU recognizer and greedy string decoding before lexicon projection.
+We then connect to SilentSpeller-style unseen-word evaluation, evaluate low-shot calibration, multi-source transfer, and preprocessing controls, and summarize engineering analyses.
+
+\subsection{Main Results: Strong Within-User Performance, Large Cross-User Degradation}
+\label{sec:results_main}
+
+Table~\ref{tab:main_protocols} summarizes the main results.
+With the same vector/GRU recognizer and greedy string decoding, there is a large gap between within-user conditions with target-user calibration and cross-user transfer without it.
+P1 (word holdout, within user) reaches \cerstats{0.1796}{0.0844} CER (mean \textpm\ std over four random seeds).
+P2 (instance holdout, within user) reaches \cerstats{0.1451}{0.0627} CER (three seeds).
+In contrast, P3 (cross-user transfer) degrades to \cerstats{0.6909}{0.1332} CER (six transfer directions).
+The P1/P2 mean \textpm\ std values are aggregated over random-seed repeats (n=4 and n=3, respectively); P3 is aggregated over transfer directions (n=6).
+Lexicon-projected values (LEX) are reported as a supplementary diagnostic for closed-vocabulary conditions.
+LEX further reduces error under within-user conditions, but the lexicon-free claim rests on CER before lexicon projection.
+
+\begin{table}[!b]
+\centering
+\caption{Main results for the vector/GRU recognizer (mean \textpm\ std). n = seeds (P1/P2) or directions (P3). LEX: lexicon-projected CER; RTF: real-time factor.}
+\label{tab:main_protocols}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Cond. & CER & LEX & RTF \\
+\midrule
+P1 & \cerstats{0.1796}{0.0844} & \cerstats{0.1018}{0.0679} & \cerstats{0.000628}{0.000232} \\
+P2 & \cerstats{0.1451}{0.0627} & \cerstats{0.0747}{0.0476} & \cerstats{0.000107}{0.000010} \\
+P3 & \cerstats{0.6909}{0.1332} & \cerstats{0.6442}{0.0604} & \cerstats{0.000110}{0.000014} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{SilentSpeller Bridge and Low-Shot Calibration}
+
+\begin{table}[t]
+\centering
+\caption{Low-shot calibration and evaluability on p3 (CER mean \textpm\ std).}
+\label{tab:kshot_curve}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Condition & CER & n \\
+\midrule
+Zero-shot, single source & \cerstats{0.8403}{0.0948} & 8 \\
+Zero-shot, multi-source & \cerstats{0.8381}{0.0336} & 4 \\
+k=1 & \cerstats{0.3503}{0.0600} & 4 \\
+k=2 & \cerstats{0.2458}{0.0085} & 4 \\
+k=4 & --- (14 words) & --- \\
+k=8 & infeasible & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+We assess an auxiliary SilentSpeller bridge on participant p1 with 100 held-out test words from the same release.
+The vector/GRU recognizer reaches \cerstats{0.1133}{0.0128} CER averaged over four seeds under this non-interactive setup.
+This sanity check confirms unseen-word decoding within the release inventory; it does not compare against SilentSpeller-era interactive decoders (deferred; Section~\ref{sec:evaluation}).
+
+Low-shot calibration experiments quantify cross-user transfer as a calibration-quantity problem.
+On p3, zero-shot single-source transfer remains at \cerstats{0.8403}{0.0948} CER (n=8), and zero-shot multi-source transfer at \cerstats{0.8381}{0.0336} CER (n=4).
+One example per word improves to \cerstats{0.3503}{0.0600} CER (n=4); two examples per word to \cerstats{0.2458}{0.0085} CER (n=4).
+Higher-$k$ evaluation is constrained by public data density (Table~\ref{tab:calibration_setup}).
+
+\subsection{Transfer Controls and Engineering Analyses}
+
+\begin{table}[t]
+\centering
+\caption{Engineering analyses: spatial front ends and electrode reduction (greedy CER, mean \textpm\ std).}
+\label{tab:spatial_electrode}
+\setlength{\tabcolsep}{2pt}
+\begin{minipage}[t]{0.47\columnwidth}
+\centering
+\textbf{(a) P1 spatial front end}\par
+\begin{tabular}{@{}ll@{}}
+\toprule
+Front end & CER \\
+\midrule
+vector/GRU & \cerstats{0.18}{0.08} \\
+row-column & \cerstats{0.20}{0.09} \\
+grid & \cerstats{0.31}{0.15} \\
+patch & \cerstats{0.30}{0.07} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\columnwidth}
+\centering
+\textbf{(b) K=64 electrode reduction}\par
+\begin{tabular}{@{}lll@{}}
+\toprule
+Protocol & Method & CER \\
+\midrule
+P1 & top-k & \cerstats{0.195}{0.083} \\
+P1 & spatial & \cerstats{0.191}{0.078} \\
+P2 & top-k & \cerstats{0.154}{0.059} \\
+P2 & spatial & \cerstats{0.154}{0.062} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table}
+
+Transfer controls test whether multi-source training or simple preprocessing can close the cross-user gap without target-user calibration.
+Multi-source transfer partially improves cross-user performance but does not resolve the calibration problem.
+When p4 is the target user, single-source cross-user transfer with all training sources to p4 (P3) reaches 0.686 CER, whereas multi-source transfer (P3MS) reaches 0.582 CER---both remain far above the within-user P1/P2 range in Table~\ref{tab:main_protocols} (roughly 0.15--0.18 CER).
+Preprocessing controls test whether cross-user failure can be explained by simple scale differences or contact-rate mismatch alone.
+A sweep over raw input, standardization, contact-rate matching, target-neighborhood distribution normalization, and PCA-based standardization leaves best protocol averages at 0.6426 for P3 and 0.5692 for P3MS.
+
+We analyze how SmartPalate signals should be represented and how future devices might be simplified.
+On P1, the vector/GRU path reaches \cerstats{0.18}{0.08} CER; row-column pooling is close at \cerstats{0.20}{0.09}, whereas grid and patch variants degrade to roughly \cerstats{0.31}{0.15} and \cerstats{0.30}{0.07} (four seeds; Table~\ref{tab:spatial_electrode}(a)).
+Two-dimensional grid assumptions are therefore not consistently advantageous on sparse, user-specific contacts.
+
+Electrode reduction at K=64 channels retains near-main P1/P2 performance across top-k, spatial, transfer-ranked, and random selection (Table~\ref{tab:spatial_electrode}(b)).
+Augmentation suppresses degradation from local missing contacts and channel dropout.
+Taken together, the spatial-front-end, electrode-reduction, and preprocessing sweeps bound representation and normalization choices but leave the P3 calibration gap essentially unchanged relative to within-user P1/P2 performance.
+None of these engineering analyses closes the P3 cross-user gap without target-user examples.
