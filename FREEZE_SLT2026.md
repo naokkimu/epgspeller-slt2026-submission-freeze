@@ -1,42 +1,34 @@
-# IEEE SLT 2026 Submission Freeze
+# SLT 2026 Submission Freeze
 
-**Paper:** EPGSpeller: Lexicon-Free Silent Spelling Recognition with Electropalatography
+**Submitted:** IEEE SLT 2026 (OpenReview)  
+**Freeze tag:** `freeze-slt2026-submission-20260707`  
+**Canonical archive repo:** https://github.com/naokkimu/epgspeller-slt2026-submission-freeze
 
-**Status:** submitted (post-submission snapshot)
+## Local artifacts
 
-## Regenerate freeze bundle
+| Path | Role |
+| --- | --- |
+| `reports/slt2026/submission/` | OpenReview upload bundle copies + SHA256SUMS |
+| `reports/slt2026/freeze_manifest_*.json` | Freeze manifest with file hashes |
+| `reports/slt2026/freeze-slt2026-submission-20260707.tar.gz` | Tarball of submission bundle |
+| `../epgspeller-slt2026-submission-freeze/` | Standalone export (mirrors GitHub archive) |
+
+## Regenerate export
 
 ```bash
-uv run --with pyyaml python scripts/freeze_slt2026_submission.py \
+uv run --system-certs --with pyyaml python scripts/freeze_slt2026_submission.py \
   --root . \
-  --export-dir ../epgspeller-slt2026-submission-freeze
+  --export-dir ../epgspeller-slt2026-submission-freeze \
+  --freeze-tag freeze-slt2026-submission-20260707
 ```
 
-Outputs:
+## Submission hashes (OpenReview pack)
 
-| Path | Purpose |
-|---|---|
-| `reports/slt2026/submission/` | OpenReview upload copies + in-repo PDF/zip |
-| `reports/slt2026/freeze_manifest_*.json` | Commit hash + artifact SHA256 |
-| `reports/slt2026/freeze-slt2026-submission-*.tar.gz` | Portable submission tarball |
-| `../epgspeller-slt2026-submission-freeze/` | Standalone GitHub archive export |
+See `reports/slt2026/freeze_manifest_freeze-slt2026-submission-20260707.json`.
 
-## Git freeze branch
+Main PDF SHA256: `466a89d2ee6bddcfd14951c4ee5b21fdcf2b7d85a7ff22326405b622232d0d0f`  
+Supplement zip SHA256: `088a966a6296bb316dd269d2d3060cb3d6a348b95c74b0ac4de7769ca062f40e`
 
-- Branch: `freeze/slt2026-submission-20260707`
-- Tag: `freeze-slt2026-submission-20260707`
-- GitHub archive repo: `naokkimu/epgspeller-slt2026-submission-freeze`
+## Active development
 
-## Verify
-
-```bash
-cd reports/slt2026/submission && shasum -a 256 -c ../submission/SHA256SUMS.txt
-```
-
-Supplement integrity (pre-freeze build gate):
-
-```bash
-uv run --with pyyaml python ~/.codex/skills/llm-audit-supplement-zip/scripts/verify_supplement_integrity.py \
-  --staging paper/supplement/staging \
-  --zip paper/submission/put_this_zip_to_your_agent_or_llm_chat.zip
-```
+Do not continue feature work on branch `slt2026-submission-freeze`. Use `main` / feature branches in the dev tree.
